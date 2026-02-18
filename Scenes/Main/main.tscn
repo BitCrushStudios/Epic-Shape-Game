@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dl1jkvq3882bc" path="res://Scenes/Player/player.tscn" id="1_1r6ip"]
 [ext_resource type="PackedScene" uid="uid://5rmmj886ads0" path="res://Scenes/Weapons/basic_cube.tscn" id="2_lixft"]
+[ext_resource type="PackedScene" uid="uid://234xdwifsgpw" path="res://Scenes/Enemies/Basic Enemy/basic_enemy.tscn" id="3_qw60k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1r6ip"]
 
@@ -68,3 +69,5 @@ offset_bottom = -751.0
 zoom = Vector2(0.5, 0.5)
 
 [node name="BasicCube" parent="." unique_id=732637448 instance=ExtResource("2_lixft")]
+
+[node name="BasicEnemy" parent="." unique_id=2056028703 instance=ExtResource("3_qw60k")]

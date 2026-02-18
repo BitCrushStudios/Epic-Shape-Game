@@ -22,12 +22,15 @@ script = ExtResource("2_a3d8c")
 
 [node name="PlayerMovementComponent" type="Node" parent="." unique_id=1364279484 node_paths=PackedStringArray("walk_sprite", "slide_sprite")]
 script = ExtResource("3_htcer")
-walk_speed = 15000.0
+walk_speed = 1500.0
 walk_sprite = NodePath("../SpriteOrigin/Sprite")
 slide_sprite = NodePath("../SpriteOrigin/Sprite")
 
 [node name="PlayerExprience" type="Node" parent="." unique_id=1056169801]
 script = ExtResource("4_htcer")
+level_exp_min = 100.00000000000007
+level_exp_max = 192.08915032694938
+level_exp_diff = 92.08915032694931
 
 [node name="ScoreComponent" type="Node" parent="." unique_id=1232947429]
 script = ExtResource("5_jlvik")
