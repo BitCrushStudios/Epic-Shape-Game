@@ -11,7 +11,7 @@ func apply_damage(damage:float):
 	if iframe<=0:
 		super(damage)
 		
-func _recieved_damage(damage:float):
+func _recieved_damage(_damage:float):
 	%AnimationPlayer.play("damage")
 	iframe = iframe_max
 	await iframe_elapse

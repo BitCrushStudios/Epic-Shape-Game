@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
-     inkscape:zoom="2"
-     inkscape:cx="257"
-     inkscape:cy="-367.25"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="189.50462"
+     inkscape:cy="-32.173359"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
@@ -141,6 +141,36 @@
        inkscape:label="TextureProgress"
        margin="0"
        bleed="0" />
+    <inkscape:page
+       x="69.999985"
+       y="-70"
+       width="70"
+       height="70"
+       id="page12"
+       inkscape:label="WeaponCubeActivated"
+       margin="0"
+       bleed="0" />
+    <inkscape:page
+       x="139.99998"
+       y="-70"
+       width="70"
+       height="70"
+       id="page13"
+       margin="0"
+       bleed="0"
+       inkscape:label="WeaponTriangleActivated" />
+    <inkscape:page
+       x="209.99998"
+       y="-70"
+       width="70"
+       height="70"
+       id="page14"
+       inkscape:label="WeaponCircleActivated"
+       margin="0"
+       bleed="0"
+       inkscape:export-filename="WeaponCircleActivated.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </sodipodi:namedview>
   <defs
      id="defs1">
@@ -164,6 +194,45 @@
          d="m 614.14188,-140 c -2.76143,0 -5,2.23858 -5,5 0,2.76142 2.23857,5 5,5 h 90 c 2.76142,0 5,-2.23858 5,-5 0,-2.76142 -2.23858,-5 -5,-5 z"
          sodipodi:nodetypes="sssssss" />
     </clipPath>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter9"
+       x="-0.18678609"
+       y="-0.18678605"
+       width="1.3735722"
+       height="1.3735721">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.891376"
+         id="feGaussianBlur9" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter10"
+       x="-0.16212017"
+       y="-0.18720024"
+       width="1.3242403"
+       height="1.3744005">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.1107075"
+         id="feGaussianBlur10" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter11"
+       x="-0.18678918"
+       y="-0.18678918"
+       width="1.3735784"
+       height="1.3735784">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.891376"
+         id="feGaussianBlur11" />
+    </filter>
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -1279,5 +1348,77 @@
        height="10"
        x="569.5"
        y="-199.5" />
+    <rect
+       style="fill:#8787de;stroke:#2c2ca0;stroke-width:4;paint-order:stroke markers fill"
+       id="rect2"
+       width="49.999989"
+       height="50"
+       x="500"
+       y="150"
+       ry="12.04461"
+       rx="12.04461"
+       clip-path="none" />
+    <path
+       sodipodi:type="star"
+       style="fill:#8787de;stroke:#2c2ca0;stroke-width:4.22546;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+       id="path8"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="600.95911"
+       sodipodi:cy="281.15613"
+       sodipodi:r1="35.134205"
+       sodipodi:r2="17.549999"
+       sodipodi:arg1="1.5707963"
+       sodipodi:arg2="2.6179939"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 600.95911,316.29033 -30.42712,-52.7013 60.85423,-10e-6 z"
+       inkscape:transform-center-y="-10.673232"
+       transform="matrix(-0.94456071,0,0,-0.94873157,1162.6424,450.07482)"
+       inkscape:transform-center-x="-8.8556305e-05"
+       clip-path="none" />
+    <circle
+       style="fill:#8787de;stroke:#2c2ca0;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+       id="circle8"
+       cx="665.00043"
+       cy="175"
+       r="24.99958"
+       clip-path="none" />
+    <rect
+       style="fill:#f9f9f9;stroke:none;stroke-width:4;paint-order:stroke markers fill;filter:url(#filter9);opacity:0.57555178"
+       id="rect8"
+       width="49.999989"
+       height="50"
+       x="500"
+       y="150"
+       ry="12.04461"
+       rx="12.04461"
+       clip-path="none" />
+    <path
+       sodipodi:type="star"
+       style="fill:#f9f9f9;stroke:none;stroke-width:4.22546;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill;filter:url(#filter10);opacity:0.57555178"
+       id="path9"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="600.95911"
+       sodipodi:cy="281.15613"
+       sodipodi:r1="35.134205"
+       sodipodi:r2="17.549999"
+       sodipodi:arg1="1.5707963"
+       sodipodi:arg2="2.6179939"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 600.95911,316.29033 -30.42712,-52.7013 60.85423,-10e-6 z"
+       inkscape:transform-center-y="-10.673232"
+       transform="matrix(-0.94456071,0,0,-0.94873157,1162.6424,450.07482)"
+       inkscape:transform-center-x="-8.8556305e-05"
+       clip-path="none" />
+    <circle
+       style="fill:#f9f9f9;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill;filter:url(#filter11);opacity:0.57555178"
+       id="circle9"
+       cx="665.00043"
+       cy="175"
+       r="24.99958"
+       clip-path="none" />
   </g>
 </svg>

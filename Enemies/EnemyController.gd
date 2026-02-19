@@ -18,7 +18,7 @@ func _process(delta:float):
 		return
 	time_current+=delta
 	if time_current>time_rate:
-		time_current = 0.0
+		time_current = randf()*time_rate
 		target_position = Player.instance.global_position
 		pass
 	

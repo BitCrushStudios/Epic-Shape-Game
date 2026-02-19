@@ -24,7 +24,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_q3lat"]
 resource_name = "damage"
-length = 0.0667
+length = 0.0666
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -33,10 +33,10 @@ tracks/0/path = NodePath("SpriteOrigin:modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03333334, 0.06666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.53, 0.53, 0.53, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tok1r"]
@@ -49,14 +49,12 @@ _data = {
 y_sort_enabled = true
 mass = 10.0
 contact_monitor = true
-linear_damp = 0.5
 script = ExtResource("1_ddoul")
 health_max = 30.0
 
 [node name="SpriteOrigin" type="CanvasModulate" parent="." unique_id=597052794]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=250217813]
-position = Vector2(0, -7)
 texture = ExtResource("1_3qydi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
