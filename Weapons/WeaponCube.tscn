@@ -16,15 +16,17 @@ physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
 max_contacts_reported = 30
 script = ExtResource("1_x6q4i")
-texture_normal = ExtResource("1_svgc7")
-texture_activated = ExtResource("3_gx6kc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
 shape = SubResource("RectangleShape2D_x6q4i")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1895854747]
+[node name="NormalSprite" type="Sprite2D" parent="." unique_id=1895854747]
 unique_name_in_owner = true
 texture = ExtResource("1_svgc7")
+
+[node name="ActivatedSprite" type="Sprite2D" parent="." unique_id=1708969596]
+unique_name_in_owner = true
+texture = ExtResource("3_gx6kc")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 24.2

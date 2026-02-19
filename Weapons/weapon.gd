@@ -12,23 +12,16 @@ enum State{
 @export var state = State.Normal:
 	set(v):
 		state = v
-		update_sprite_texture()
-@export var texture_normal:Texture2D:
-	set(v):
-		texture_normal = v
-		update_sprite_texture()
-@export var texture_activated:Texture2D:
-	set(v):
-		texture_activated = v
-		update_sprite_texture()
-func update_sprite_texture():
-	if not is_inside_tree():
-		await tree_entered
-	match state:
-		State.Normal:
-			%Sprite.texture  = texture_normal
-		State.Activated:
-			%Sprite.texture  = texture_activated
+		if not is_inside_tree():
+			await tree_entered
+		var r = 0.5
+		var t = create_tween()
+		var c = Color.WHITE if state == State.Normal else Color.TRANSPARENT
+		t.tween_property(%NormalSprite,"modulate", c, r)
+		t = create_tween()
+		c = Color.WHITE if state == State.Activated else Color.TRANSPARENT
+		t.tween_property(%ActivatedSprite,"modulate", c, r)
+		
 func _ready():
 	body_entered.connect(_on_body_entered)
 	
@@ -36,7 +29,7 @@ func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	$NavigationObstacle2D.velocity = linear_velocity
-	if linear_velocity.length()/300.0>1:
+	if (linear_velocity.length()+angular_velocity)/300.0>1:
 		activation_value=clampf(activation_value+_delta,0,activation_max)
 	else:
 		activation_value=clampf(activation_value-_delta,0,activation_max)
