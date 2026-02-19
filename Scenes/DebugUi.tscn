@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cl21f5fbssv1d"]
+
+[ext_resource type="Script" uid="uid://dxiawoe8rypcp" path="res://Scenes/debug_ui.gd" id="1_7wx8d"]
+
+[node name="DebugUi" type="CanvasLayer" unique_id=1093902712]
+script = ExtResource("1_7wx8d")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2044177738]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="GridContainer" unique_id=188572075]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "Player Velocity"
+
+[node name="PlayerVelocity" type="Label" parent="GridContainer" unique_id=1458800271]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "0,0"
+
+[node name="Label2" type="Label" parent="GridContainer" unique_id=202381468]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "Player Health"
+
+[node name="PlayerHealth" type="Label" parent="GridContainer" unique_id=1418268718]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "0,0"

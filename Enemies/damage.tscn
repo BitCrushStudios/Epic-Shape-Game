@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ddh7d3mjwfw00"]
+
+[ext_resource type="Texture2D" uid="uid://cmsblqyjhkf5c" path="res://Assets/ProgrammerArt/ProgrammerArt__Drop.png" id="1_nhivp"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ucwfl"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 102.25
+initial_velocity_max = 180.68
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+scale_min = 0.39999998
+scale_max = 0.79999995
+
+[node name="Damage" type="GPUParticles2D" unique_id=345883373]
+emitting = false
+amount = 20
+texture = ExtResource("1_nhivp")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ucwfl")

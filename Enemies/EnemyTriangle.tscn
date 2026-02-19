@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dxtr5yed3wi54"]
+
+[ext_resource type="Texture2D" uid="uid://dpw41r2twnjy6" path="res://Assets/ProgrammerArt/ProgrammerArt__EnemyTriangle.png" id="1_6h8de"]
+[ext_resource type="Script" uid="uid://cwktqq3e7vpqy" path="res://Enemies/enemy_triangle.gd" id="1_e45y1"]
+[ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Enemies/EnemyController.gd" id="3_bccpk"]
+
+[sub_resource type="Animation" id="Animation_bccpk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ucwfl"]
+resource_name = "death"
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_llcvg"]
+resource_name = "take damage"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucwfl"]
+_data = {
+&"RESET": SubResource("Animation_bccpk"),
+&"death": SubResource("Animation_ucwfl"),
+&"take damage": SubResource("Animation_llcvg")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e45y1"]
+radius = 18.0
+height = 62.0
+
+[node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116 node_paths=PackedStringArray("agent")]
+linear_damp = 0.5
+script = ExtResource("1_e45y1")
+agent = NodePath("EnemyController")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1837075550]
+position = Vector2(0, -2)
+texture = ExtResource("1_6h8de")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=181849833]
+libraries/ = SubResource("AnimationLibrary_ucwfl")
+
+[node name="ShapeCast2D" type="CollisionShape2D" parent="." unique_id=1092370231]
+y_sort_enabled = true
+shape = SubResource("CapsuleShape2D_e45y1")
+
+[node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=723527212]
+avoidance_enabled = true
+max_speed = 300.0
+debug_enabled = true
+debug_use_custom = true
+script = ExtResource("3_bccpk")

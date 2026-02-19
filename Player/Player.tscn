@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cjp2b5iomkei"]
+
+[ext_resource type="Texture2D" uid="uid://g6pslsb00t7r" path="res://Assets/ProgrammerArt/ProgrammerArt__PlayerCube.png" id="1_3qydi"]
+[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Player/player.gd" id="1_ddoul"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tok1r"]
+radius = 16.0
+height = 52.0
+
+[node name="Player" type="RigidBody2D" unique_id=2019408090]
+y_sort_enabled = true
+contact_monitor = true
+linear_damp = 0.5
+script = ExtResource("1_ddoul")
+
+[node name="SpriteOrigin" type="Node2D" parent="." unique_id=2024571511]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=250217813]
+position = Vector2(0, -7)
+texture = ExtResource("1_3qydi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
+shape = SubResource("CapsuleShape2D_tok1r")

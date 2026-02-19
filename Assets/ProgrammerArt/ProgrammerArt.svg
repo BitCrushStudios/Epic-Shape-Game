@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="69.999992"
+   height="70"
+   viewBox="0 0 69.999991 70"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="ProgrammerArt.svg"
+   inkscape:export-batch-path="C:\Users\kit\dev\gsk\Epic-Shape-Game\Assets"
+   inkscape:export-batch-name="ProgrammerArt_"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="2.8284272"
+     inkscape:cx="274.71098"
+     inkscape:cy="141.95168"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="false">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="69.999992"
+       height="70"
+       id="page2"
+       margin="0"
+       bleed="0"
+       inkscape:label="PlayerCube" />
+    <inkscape:grid
+       id="grid6"
+       units="px"
+       originx="-420"
+       originy="-210"
+       spacingx="9.9999999"
+       spacingy="9.9999999"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="7"
+       enabled="true"
+       visible="true" />
+    <inkscape:page
+       x="69.999992"
+       y="0"
+       width="69.999992"
+       height="70"
+       id="page6"
+       margin="0"
+       bleed="0"
+       inkscape:label="WeaponCube" />
+    <inkscape:page
+       x="139.99998"
+       y="0"
+       width="69.999992"
+       height="70"
+       id="page7"
+       margin="0"
+       bleed="0"
+       inkscape:label="WeaponTriangle" />
+    <inkscape:page
+       x="209.99997"
+       y="0"
+       width="69.999992"
+       height="70"
+       id="page8"
+       margin="0"
+       bleed="0"
+       inkscape:label="WeaponCircle" />
+    <inkscape:page
+       x="0"
+       y="70"
+       width="69.999992"
+       height="70"
+       id="page11"
+       margin="0"
+       bleed="0"
+       inkscape:label="EnemyTriangle" />
+    <inkscape:page
+       x="69.999992"
+       y="70"
+       width="69.999992"
+       height="70"
+       id="page16"
+       inkscape:label="Warning"
+       margin="0"
+       bleed="0" />
+    <inkscape:page
+       x="139.99998"
+       y="70"
+       width="420"
+       height="210"
+       id="page18"
+       margin="0"
+       bleed="0"
+       inkscape:label="Tileset"
+       inkscape:export-filename="Tileset.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath97">
+      <rect
+         style="fill:#d7e3f4;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect97"
+         width="70.000069"
+         height="70.000145"
+         x="770"
+         y="279.99985" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-420.00001,-210)">
+    <ellipse
+       style="fill:#ccff00;fill-opacity:1;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+       id="ellipse102"
+       cx="-703.79077"
+       cy="-423.79083"
+       rx="15.959188"
+       ry="15.959108"
+       transform="scale(-1)" />
+    <ellipse
+       style="fill:#ccff00;fill-opacity:1;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+       id="ellipse51"
+       cx="627.25006"
+       cy="347.25006"
+       rx="15.959188"
+       ry="15.959108" />
+    <ellipse
+       style="fill:#ccff00;fill-opacity:1;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+       id="ellipse101"
+       cx="347.25006"
+       cy="-703.79083"
+       rx="15.959188"
+       ry="15.959108"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect102"
+       width="7.0000143"
+       height="22.500006"
+       x="-719.04083"
+       y="-419.04092"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect103"
+       width="7.0000143"
+       height="22.500006"
+       x="-719.04083"
+       y="-396.54092"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect104"
+       width="7.0000143"
+       height="22.500006"
+       x="-719.04083"
+       y="-375.54092"
+       transform="scale(-1)" />
+    <ellipse
+       style="fill:#ccff00;fill-opacity:1;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+       id="ellipse100"
+       cx="-423.79083"
+       cy="627.25"
+       rx="15.959188"
+       ry="15.959108"
+       transform="rotate(-90)" />
+    <path
+       style="fill:none;stroke:#d40055;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       d="m 467.50001,332.5 5,15"
+       id="path15" />
+    <path
+       style="fill:none;stroke:#d40055;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       d="m 442.50001,332.5 -5,15"
+       id="path16" />
+    <path
+       sodipodi:type="star"
+       style="fill:#ff80b2;stroke:#d40055;stroke-width:3.66286;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path11"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="340.95911"
+       sodipodi:cy="366.15613"
+       sodipodi:r1="30"
+       sodipodi:r2="15"
+       sodipodi:arg1="-1.5707963"
+       sodipodi:arg2="-0.52359878"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 340.95911,336.15613 25.98076,45 -51.96153,0 z"
+       inkscape:transform-center-y="-8.1918235"
+       transform="matrix(1.0918474,0,0,1.0922385,81.765524,-82.894188)"
+       inkscape:transform-center-x="2.1877963e-05" />
+    <g
+       id="g5"
+       transform="translate(-5.9591066,-60.781131)"
+       style="stroke:#44aa00">
+      <path
+         style="fill:none;stroke:#44aa00;stroke-width:4;paint-order:markers fill stroke"
+         d="m 446.0346,319.85284 -2.4096,16.92829 h 8.125"
+         id="path2" />
+      <path
+         style="fill:none;stroke:#44aa00;stroke-width:4;paint-order:markers fill stroke"
+         d="m 469.7846,319.85284 -2.4096,16.92829 h 8.125"
+         id="path3" />
+    </g>
+    <rect
+       style="fill:#b3ff80;stroke:#44aa00;stroke-width:4;paint-order:markers fill stroke"
+       id="rect1"
+       width="49.150757"
+       height="49.150757"
+       x="429.42462"
+       y="212"
+       ry="12.04461"
+       rx="12.04461" />
+    <circle
+       style="fill:none;stroke:#44aa00;stroke-width:4;paint-order:markers fill stroke"
+       id="path4"
+       cx="454.04089"
+       cy="247.59387"
+       r="5.25" />
+    <circle
+       style="fill:#44aa00;stroke:none;stroke-width:4;paint-order:markers fill stroke"
+       id="path5"
+       cx="444.22839"
+       cy="228.53137"
+       r="2.5625" />
+    <circle
+       style="fill:#44aa00;stroke:none;stroke-width:4;paint-order:markers fill stroke"
+       id="circle5"
+       cx="465.10339"
+       cy="228.53137"
+       r="2.5625" />
+    <rect
+       style="fill:#8787de;stroke:#2c2ca0;stroke-width:4;paint-order:markers fill stroke"
+       id="rect6"
+       width="49.999989"
+       height="50"
+       x="500"
+       y="220"
+       ry="12.04461"
+       rx="12.04461" />
+    <path
+       sodipodi:type="star"
+       style="fill:#8787de;stroke:#2c2ca0;stroke-width:4.22546;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path6"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="600.95911"
+       sodipodi:cy="281.15613"
+       sodipodi:r1="35.134205"
+       sodipodi:r2="17.549999"
+       sodipodi:arg1="1.5707963"
+       sodipodi:arg2="2.6179939"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 600.95911,316.29033 -30.42712,-52.7013 60.85423,-10e-6 z"
+       inkscape:transform-center-y="-10.673232"
+       transform="matrix(-0.94456071,0,0,-0.94873157,1162.6424,520.07482)"
+       inkscape:transform-center-x="-8.8556305e-05" />
+    <circle
+       style="fill:#8787de;stroke:#2c2ca0;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path7"
+       cx="665.00043"
+       cy="245"
+       r="24.99958" />
+    <path
+       style="fill:#ff0066;stroke:#d40055;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       d="m 468.72957,306.57806 -7.45912,6.84387"
+       id="path12" />
+    <path
+       style="fill:none;stroke:#d40055;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       d="m 450.00001,327.5 5,-5 5,5"
+       id="path13" />
+    <path
+       style="fill:#ff0066;stroke:#d40055;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       d="m 441.27045,306.57806 7.45912,6.84387"
+       id="path14" />
+    <circle
+       style="fill:#ff80b2;stroke:#d40055;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path17"
+       cx="525"
+       cy="339.5"
+       r="5.5" />
+    <path
+       id="rect17"
+       style="fill:#ff80b2;stroke:#d40055;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       d="m 518.4694,284.99999 h 13.06122 L 527.17687,325 h -4.35374 z"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect25"
+       width="7.0000143"
+       height="22.500006"
+       x="612"
+       y="352" />
+    <g
+       id="g97"
+       clip-path="url(#clipPath97)">
+      <rect
+         style="fill:#d7e3f4;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect96"
+         width="70"
+         height="20"
+         x="770"
+         y="330" />
+      <rect
+         style="fill:#d7e3f4;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect77"
+         width="17.242069"
+         height="70"
+         x="822.75793"
+         y="280" />
+      <g
+         id="g96"
+         transform="translate(-2.757932,-2.7580566)">
+        <path
+           id="ellipse1"
+           style="fill:#ccff00;fill-opacity:1;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+           d="m 822.7578,311.29017 v 5.48242 a 15.959188,15.959108 0 0 1 0,0.0273 15.959188,15.959108 0 0 1 -15.95899,15.95899 h -0.0449 -5.46289 a 15.959188,15.959108 0 0 0 14.2168,8.70898 15.959188,15.959108 0 0 0 15.95898,-15.95898 15.959188,15.959108 0 0 0 -8.70898,-14.21875 z" />
+        <rect
+           style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+           id="rect4"
+           width="7.0000143"
+           height="22.500006"
+           x="822.75793"
+           y="300.48761" />
+        <rect
+           style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+           id="rect7"
+           width="7.0000143"
+           height="22.500006"
+           x="332.75812"
+           y="-812.98761"
+           transform="rotate(90)" />
+        <circle
+           style="fill:#d7e3f4;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+           id="circle8"
+           cx="822.75793"
+           cy="332.75806"
+           r="5.2500749" />
+        <rect
+           style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+           id="rect78"
+           width="7.0000143"
+           height="22.500006"
+           x="822.75793"
+           y="277.98761" />
+        <rect
+           style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+           id="rect79"
+           width="7.0000143"
+           height="22.500006"
+           x="-339.75812"
+           y="767.98761"
+           transform="rotate(-90)" />
+      </g>
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g97"
+       id="use97"
+       transform="rotate(90,840,350)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g97"
+       id="use98"
+       transform="rotate(180,840,350)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use97"
+       id="use99"
+       transform="rotate(180,840,350)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect99"
+       width="7.0000143"
+       height="22.500006"
+       x="612"
+       y="374.5" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect100"
+       width="7.0000143"
+       height="22.500006"
+       x="612"
+       y="395.5" />
+    <rect
+       style="fill:#d7e3f4;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect58"
+       width="91.040932"
+       height="91.040894"
+       x="619.99994"
+       y="340"
+       rx="10.403806"
+       ry="10.403806" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect105"
+       width="7.0000143"
+       height="22.500006"
+       x="332"
+       y="-698"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect106"
+       width="7.0000143"
+       height="22.500006"
+       x="332"
+       y="-675.5"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect107"
+       width="7.0000143"
+       height="22.500006"
+       x="332"
+       y="-654.5"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect108"
+       width="7.0000143"
+       height="22.500006"
+       x="431"
+       y="-698"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect109"
+       width="7.0000143"
+       height="22.500006"
+       x="431"
+       y="-675.5"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#ccff00;stroke:#222b00;stroke-width:3.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect110"
+       width="7.0000143"
+       height="22.500006"
+       x="431"
+       y="-654.5"
+       transform="rotate(90)" />
+    <circle
+       style="fill:#d7e3f4;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="circle101"
+       cx="340"
+       cy="-711.04089"
+       r="5.2500749"
+       transform="rotate(90)" />
+    <circle
+       style="fill:#d7e3f4;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="circle102"
+       cx="-711.04083"
+       cy="-431.04089"
+       r="5.2500749"
+       transform="scale(-1)" />
+    <circle
+       style="fill:#d7e3f4;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="circle100"
+       cx="-431.04089"
+       cy="619.99994"
+       r="5.2500749"
+       transform="rotate(-90)" />
+    <circle
+       style="fill:#d7e3f4;stroke:#222b00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="circle49"
+       cx="620"
+       cy="340"
+       r="5.2500749" />
+  </g>
+</svg>

@@ -11,18 +11,21 @@ config_version=5
 [application]
 
 config/name="Epic Shape Game"
-run/main_scene="uid://daypldohkacei"
+run/main_scene="uid://tgx3wa77if6y"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Score="*uid://b3xjes22q37pc"
+Music="*uid://umlyaukquxis"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=960
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+window/size/viewport_height=540
 
 [input]
 
@@ -58,6 +61,7 @@ slide={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity_vector=Vector2(0, 0)
 
 [rendering]
 

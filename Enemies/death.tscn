@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b010pf6ffj3tl"]
+
+[ext_resource type="Texture2D" uid="uid://cmsblqyjhkf5c" path="res://Assets/ProgrammerArt/ProgrammerArt__Drop.png" id="1_njj2x"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_70358"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 22.88
+initial_velocity_max = 180.68
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -100.0
+linear_accel_max = -88.89
+scale_min = 0.39999998
+scale_max = 0.79999995
+turbulence_influence_min = 0.0
+
+[node name="Death" type="GPUParticles2D" unique_id=755023520]
+emitting = false
+amount = 100
+texture = ExtResource("1_njj2x")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_70358")
