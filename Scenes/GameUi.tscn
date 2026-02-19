@@ -1,22 +1,36 @@
 [gd_scene format=3 uid="uid://bmprloh75j06"]
 
 [ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Scenes/game_ui.gd" id="1_pjk1m"]
+[ext_resource type="Texture2D" uid="uid://bmtpmaqifkctb" path="res://Assets/Art/User Interface/Health Bar/Health bar Under.png" id="2_6wd7v"]
+[ext_resource type="Texture2D" uid="uid://v33mqutk2tgy" path="res://Assets/Art/User Interface/Health Bar/Health bar Over.png" id="3_3bj3t"]
+[ext_resource type="Texture2D" uid="uid://d36yx0pk7a4aw" path="res://Assets/Art/User Interface/Health Bar/Health bar Progress.png" id="4_cu33k"]
+[ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Fonts/Candy Beans.otf" id="5_3bj3t"]
 
 [node name="GameUi" type="CanvasLayer" unique_id=1360459017]
 script = ExtResource("1_pjk1m")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2030531802]
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1993686910]
 unique_name_in_owner = true
-offset_right = 497.0
-offset_bottom = 27.0
+offset_left = 7.9999995
+offset_top = 5.0000005
+offset_right = 505.0
+offset_bottom = 79.0
+scale = Vector2(0.4, 0.4)
 value = 50.0
-show_percentage = false
+texture_under = ExtResource("2_6wd7v")
+texture_over = ExtResource("3_3bj3t")
+texture_progress = ExtResource("4_cu33k")
 
 [node name="ProgressLabel" type="Label" parent="ProgressBar" unique_id=864519401]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 107.5
+offset_top = 9.999998
+offset_right = 164.5
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_3bj3t")
+theme_override_font_sizes/font_size = 40
+text = "1111"
