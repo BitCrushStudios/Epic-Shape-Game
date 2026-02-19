@@ -121,7 +121,14 @@ sources/1 = SubResource("TileSetAtlasSource_vy5pj")
 
 [node name="Main" type="Node2D" unique_id=1067101411]
 
-[node name="GapFiller" type="ColorRect" parent="." unique_id=295490911]
+[node name="Colors" type="Node2D" parent="." unique_id=1642021958]
+
+[node name="BackgroundColor" type="ColorRect" parent="Colors" unique_id=1840380293]
+offset_right = 1919.0
+offset_bottom = 1087.0
+color = Color(0.3254902, 0.45490196, 0.52156866, 1)
+
+[node name="GapFiller" type="ColorRect" parent="Colors" unique_id=295490911]
 offset_left = 242.99997
 offset_top = 191.99998
 offset_right = 1681.0
