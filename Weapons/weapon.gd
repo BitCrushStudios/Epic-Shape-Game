@@ -11,7 +11,7 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	$NavigationObstacle2D.velocity = linear_velocity
 	damage_ratio = lerp(
-		clampf(linear_velocity.length()/300.0, 0.0, 1.0),
+		clampf(linear_velocity.length()/100.0, 0.0, 1.0),
 		damage_ratio,
 		_delta
 	)

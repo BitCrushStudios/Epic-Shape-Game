@@ -66,6 +66,7 @@ height = 62.0
 [node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116 node_paths=PackedStringArray("agent")]
 y_sort_enabled = true
 contact_monitor = true
+max_contacts_reported = 30
 linear_damp = 0.5
 script = ExtResource("1_e45y1")
 agent = NodePath("EnemyController")
