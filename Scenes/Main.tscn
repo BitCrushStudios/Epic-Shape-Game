@@ -230,6 +230,6 @@ script = ExtResource("5_v1gob")
 position = Vector2(874, 465)
 
 [node name="EnemyTriangle3" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
-position = Vector2(68, 525)
+position = Vector2(205, 379)
 
 [node name="GameUi" parent="." unique_id=1360459017 instance=ExtResource("7_jw32o")]

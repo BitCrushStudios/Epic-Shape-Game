@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxtr5yed3wi54"]
 
-[ext_resource type="Texture2D" uid="uid://dpw41r2twnjy6" path="res://Assets/ProgrammerArt/ProgrammerArt__EnemyTriangle.png" id="1_6h8de"]
 [ext_resource type="Script" uid="uid://cwktqq3e7vpqy" path="res://Enemies/enemy_triangle.gd" id="1_e45y1"]
+[ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="2_bccpk"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Enemies/EnemyController.gd" id="3_bccpk"]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
@@ -60,8 +60,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e45y1"]
-radius = 18.0
-height = 62.0
+radius = 17.0
+height = 34.0
 
 [node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116 node_paths=PackedStringArray("agent")]
 y_sort_enabled = true
@@ -80,7 +80,8 @@ playback_default_blend_time = 0.2
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1837075550]
 unique_name_in_owner = true
 position = Vector2(0, -2)
-texture = ExtResource("1_6h8de")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_bccpk")
 
 [node name="ShapeCast2D" type="CollisionShape2D" parent="." unique_id=1092370231]
 y_sort_enabled = true
