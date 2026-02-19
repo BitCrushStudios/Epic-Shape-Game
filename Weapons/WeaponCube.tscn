@@ -10,7 +10,7 @@ bounce = 1.0
 size = Vector2(45, 45)
 
 [node name="WeaponCube" type="RigidBody2D" unique_id=1251268979]
-mass = 0.01
+y_sort_enabled = true
 physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
 max_contacts_reported = 30

@@ -9,9 +9,11 @@ height = 52.0
 
 [node name="Player" type="RigidBody2D" unique_id=2019408090]
 y_sort_enabled = true
+mass = 10.0
 contact_monitor = true
 linear_damp = 0.5
 script = ExtResource("1_ddoul")
+health_max = 30.0
 
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=2024571511]
 

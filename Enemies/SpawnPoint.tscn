@@ -71,6 +71,7 @@ script = ExtResource("1_jrm51")
 [node name="Node2D" type="Node2D" parent="." unique_id=1002393730]
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=2056881869]
+y_sort_enabled = true
 position = Vector2(0, -26)
 texture = ExtResource("1_ikb74")
 

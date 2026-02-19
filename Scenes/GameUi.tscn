@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bmprloh75j06"]
+
+[ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Scenes/game_ui.gd" id="1_pjk1m"]
+
+[node name="GameUi" type="CanvasLayer" unique_id=1360459017]
+script = ExtResource("1_pjk1m")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2030531802]
+unique_name_in_owner = true
+offset_right = 497.0
+offset_bottom = 27.0
+value = 50.0
+show_percentage = false

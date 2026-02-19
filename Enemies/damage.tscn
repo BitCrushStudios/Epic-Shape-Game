@@ -22,6 +22,8 @@ scale_max = 0.79999995
 alpha_curve = SubResource("CurveTexture_csjge")
 
 [node name="Damage" type="GPUParticles2D" unique_id=345883373]
+z_index = -1
+y_sort_enabled = true
 emitting = false
 amount = 20
 texture = ExtResource("1_nhivp")
