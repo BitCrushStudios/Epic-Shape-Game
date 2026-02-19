@@ -10,8 +10,7 @@ func _ready():
 	target_position = Player.instance.global_position
 	enemy.health_depleted.connect(_health_depleted)
 func _health_depleted():
-	process_mode = Node.PROCESS_MODE_DISABLED
-	velocity_computed.disconnect(_velocity_computed)
+	queue_free()
 
 func _process(delta:float):
 	velocity = enemy.global_position.direction_to(get_next_path_position()) * max_speed
@@ -24,5 +23,4 @@ func _process(delta:float):
 		pass
 	
 func _velocity_computed(safe_velocity:Vector2):
-	print("safe",safe_velocity)
-	enemy.apply_force((safe_velocity - enemy.linear_velocity) * enemy.mass)
+	enemy.apply_force((safe_velocity ) * enemy.mass)

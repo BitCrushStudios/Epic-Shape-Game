@@ -11,6 +11,5 @@ var health = 1.0
 func apply_damage(damage:float):
 	health -= damage
 	recieved_damage.emit(damage)
-	print(health)
 	if health<=0:
 		health_depleted.emit()

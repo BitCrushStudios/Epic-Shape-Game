@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Enemies/EnemyTriangle.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Weapons/WeaponCube.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://cl21f5fbssv1d" path="res://Scenes/DebugUi.tscn" id="5_pbw6q"]
+[ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Scenes/enemy_manager.gd" id="5_v1gob"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rgh2o"]
 vertices = PackedVector2Array(35, 35, 17.5, 35, 35, 17.5)
@@ -205,20 +206,26 @@ tile_set = SubResource("TileSet_frkhe")
 [node name="Player" parent="." unique_id=299479533 instance=ExtResource("1_r150o")]
 position = Vector2(488, 256)
 
-[node name="EnemyTriangle2" parent="." unique_id=1908247118 instance=ExtResource("3_kln2b")]
-position = Vector2(792, 232)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=946812904]
 anchor_mode = 0
 limit_enabled = false
 
 [node name="WeaponCube" parent="." unique_id=1251268979 instance=ExtResource("4_rgh2o")]
-position = Vector2(578, 172)
+position = Vector2(589, 296)
 
 [node name="WeaponCube2" parent="." unique_id=914140284 instance=ExtResource("4_rgh2o")]
-position = Vector2(581, 230)
+position = Vector2(388, 289)
 
 [node name="WeaponCube3" parent="." unique_id=2096959730 instance=ExtResource("4_rgh2o")]
-position = Vector2(579, 290)
+position = Vector2(475, 148)
 
 [node name="DebugUi" parent="." unique_id=1093902712 instance=ExtResource("5_pbw6q")]
+
+[node name="EnemyManager" type="Node" parent="." unique_id=1870972621]
+script = ExtResource("5_v1gob")
+
+[node name="EnemyTriangle2" parent="EnemyManager" unique_id=1908247118 instance=ExtResource("3_kln2b")]
+position = Vector2(864, 424)
+
+[node name="EnemyTriangle3" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
+position = Vector2(58, 484)

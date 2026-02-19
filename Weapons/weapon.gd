@@ -2,24 +2,19 @@ extends RigidBody2D
 class_name Weapon
 
 @export var damage = 1.0
-var motion_score_max = 1.0
-var motion_score_current = 0.0
-
+var max_obstacle_radius = 30.0
+var damage_ratio = 1.0
 func _ready():
 	body_entered.connect(_on_body_entered)
-	
-func _physics_process(delta: float) -> void:
-	if linear_velocity.length()>10.0:
-		motion_score_current = min(0,motion_score_current+delta)
-	else:
-		motion_score_current = max(motion_score_max,motion_score_current-delta)
+func _physics_process(_delta: float) -> void:
+	$NavigationObstacle2D.velocity = linear_velocity
+	damage_ratio = clampf(linear_velocity.length()/300.0, 0.0, 1.0)
+	$NavigationObstacle2D.radius = damage_ratio * max_obstacle_radius
 		
 func _on_body_entered(body:Node2D):
-	if body is  RigidBody2D:
-		var larger_force = body.linear_velocity.length() * body.mass < linear_velocity.length() * mass * 20.0 
-		
-		if not larger_force:
+	if body is RigidBody2D:
+		if body.linear_velocity.length()>linear_velocity.length():
 			return
 		if body is Unit:
-			body.apply_damage(damage)
+			body.apply_damage(damage_ratio * damage)
 	

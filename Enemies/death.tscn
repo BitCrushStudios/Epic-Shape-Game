@@ -2,6 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://cmsblqyjhkf5c" path="res://Assets/ProgrammerArt/ProgrammerArt__Drop.png" id="1_njj2x"]
 
+[sub_resource type="Curve" id="Curve_njj2x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_70358"]
+curve = SubResource("Curve_njj2x")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_70358"]
 particle_flag_disable_z = true
 spread = 180.0
@@ -12,6 +19,7 @@ linear_accel_min = -100.0
 linear_accel_max = -88.89
 scale_min = 0.39999998
 scale_max = 0.79999995
+alpha_curve = SubResource("CurveTexture_70358")
 turbulence_influence_min = 0.0
 
 [node name="Death" type="GPUParticles2D" unique_id=755023520]
@@ -20,6 +28,6 @@ amount = 100
 texture = ExtResource("1_njj2x")
 lifetime = 3.0
 one_shot = true
-explosiveness = 1.0
+explosiveness = 0.25
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_70358")
