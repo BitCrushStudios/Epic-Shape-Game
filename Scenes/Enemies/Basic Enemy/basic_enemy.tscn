@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://bv36fff2pv23e" path="res://Scripts/Components/provide_exprience_on_death.gd" id="3_mxo22"]
 [ext_resource type="Script" uid="uid://dqrfh3gfxh6jk" path="res://Scenes/Enemies/Basic Enemy/chance_to_drop_heal_orb.gd" id="4_mxo22"]
 [ext_resource type="Script" uid="uid://dewytwgd68nip" path="res://Scenes/Enemies/Basic Enemy/damage_player_on_collide.gd" id="5_xutld"]
-[ext_resource type="Script" uid="uid://7vq4s4mcrolh" path="res://Scenes/Player/rotate_towards_velocity.gd" id="6_12wo0"]
 [ext_resource type="Script" uid="uid://pn8rqof2dvet" path="res://Scenes/Enemies/Basic Enemy/persue_player_component.gd" id="6_xutld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xutld"]
 radius = 39.051247
 
 [node name="BasicEnemy" type="RigidBody2D" unique_id=2056028703]
+contact_monitor = true
 
 [node name="HealthComponent" type="Node" parent="." unique_id=220206729 node_paths=PackedStringArray("sprite")]
 script = ExtResource("2_x1jrb")
@@ -31,12 +31,6 @@ health = NodePath("../HealthComponent")
 
 [node name="PersuePlayerComponent" type="Node" parent="." unique_id=1571972711]
 script = ExtResource("6_xutld")
-
-[node name="RotateTowardsVelocity" type="Node" parent="." unique_id=1786959343 node_paths=PackedStringArray("body", "target")]
-script = ExtResource("6_12wo0")
-body = NodePath("..")
-target = NodePath("../SpriteOrigin/Sprite")
-metadata/_custom_type_script = "uid://7vq4s4mcrolh"
 
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=944784472]
 

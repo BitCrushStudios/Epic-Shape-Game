@@ -26,7 +26,8 @@ func apply_heal(heal: float, source: Node):
 	heal_received.emit(heal, source)
 	
 
-#func trigger_death():
+func trigger_death():
+	queue_free()
 	#health_current = 0.0
 	#has_died.emit()
 	#var death:CPUParticles2D = death_tscn.instantiate()
@@ -37,4 +38,4 @@ func apply_heal(heal: float, source: Node):
 	#get_parent().queue_free()
 	#death.restart()
 	#death.finished.connect(death.queue_free)
-	#
+	
