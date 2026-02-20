@@ -44,4 +44,5 @@ func _on_body_entered(body:Node2D):
 	if body is RigidBody2D:
 		if body is Enemy:
 			body.apply_damage( damage)
+	$Hit.play()
 	
