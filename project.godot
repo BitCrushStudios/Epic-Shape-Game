@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Epic Shape Game"
-run/main_scene="uid://tgx3wa77if6y"
+run/main_scene="uid://tpvjvvghrvyj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,55 @@
+[gd_resource type="Theme" format=3 uid="uid://byedsphmsdra5"]
+
+[ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Fonts/Candy Beans.otf" id="1_selbu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl5fw"]
+bg_color = Color(0.67058825, 0.3882353, 0.34901962, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piopd"]
+bg_color = Color(1, 0.5529412, 0.49019608, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81anv"]
+bg_color = Color(1, 0.5529412, 0.49019608, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu4tp"]
+bg_color = Color(0.93333334, 0.40784314, 0.33333334, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_selbu"]
+bg_color = Color(0.7019608, 0.3764706, 0.32941177, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[resource]
+default_font = ExtResource("1_selbu")
+Button/colors/font_color = Color(0.6770251, 0.20439124, 0.14830631, 1)
+Button/colors/font_focus_color = Color(0.9843137, 0.78039217, 0.7411765, 1)
+Button/colors/font_hover_color = Color(0.98625296, 0.77865106, 0.7410003, 1)
+Button/colors/font_hover_pressed_color = Color(0.72172314, 0.24067497, 0.17353234, 1)
+Button/colors/font_outline_color = Color(0.93333334, 0.40784314, 0.33333334, 1)
+Button/colors/font_pressed_color = Color(0.45402128, 0.13356292, 0.089396395, 1)
+Button/colors/icon_hover_color = Color(0.18000486, 0.18000486, 0.18000486, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_wl5fw")
+Button/styles/focus = SubResource("StyleBoxFlat_piopd")
+Button/styles/hover = SubResource("StyleBoxFlat_81anv")
+Button/styles/normal = SubResource("StyleBoxFlat_hu4tp")
+Button/styles/pressed = SubResource("StyleBoxFlat_selbu")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 100
