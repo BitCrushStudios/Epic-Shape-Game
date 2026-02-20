@@ -51,6 +51,8 @@ y_sort_enabled = true
 mass = 10.0
 contact_monitor = true
 script = ExtResource("1_ddoul")
+move_speed = 600.0
+accel_mult = 15.0
 health_max = 30.0
 
 [node name="SpriteOrigin" type="CanvasModulate" parent="." unique_id=597052794]

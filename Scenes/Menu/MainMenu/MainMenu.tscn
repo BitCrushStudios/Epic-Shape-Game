@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ceqekqfnu63qp" path="res://Scenes/Menu/MainMenu/main_menu.gd" id="1_621fb"]
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Themes/the_theme.tres" id="1_mjkrb"]
+[ext_resource type="AudioStream" uid="uid://doa863v7u1ndm" path="res://Music/Background/geoffharvey-silly-jazz-quirky-427913.mp3" id="3_621fb"]
 
 [node name="MainMenu" type="Control" unique_id=1665314715]
 layout_mode = 3
@@ -88,6 +89,12 @@ theme = ExtResource("1_mjkrb")
 text = "Epic Shape Game!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1827895134]
+stream = ExtResource("3_621fb")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Buttons/Control/BoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/Control/BoxContainer/Quit" to="." method="_on_quit_pressed"]
