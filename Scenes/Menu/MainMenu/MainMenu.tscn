@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://tpvjvvghrvyj"]
 
+[ext_resource type="Script" uid="uid://ceqekqfnu63qp" path="res://Scenes/Menu/MainMenu/main_menu.gd" id="1_621fb"]
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Themes/the_theme.tres" id="1_mjkrb"]
 
 [node name="MainMenu" type="Control" unique_id=1665314715]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_621fb")
 
 [node name="Background" type="ColorRect" parent="." unique_id=239319122]
 layout_mode = 0
@@ -86,3 +88,6 @@ theme = ExtResource("1_mjkrb")
 text = "Epic Shape Game!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/Control/BoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Control/BoxContainer/Quit" to="." method="_on_quit_pressed"]
