@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddh7d3mjwfw00"]
 
-[ext_resource type="Texture2D" uid="uid://cmsblqyjhkf5c" path="res://Assets/ProgrammerArt/ProgrammerArt__Drop.png" id="1_nhivp"]
+[ext_resource type="Texture2D" uid="uid://pojq8bpiexci" path="res://Assets/Art/Particles/Particle .png" id="1_nhivp"]
 
 [sub_resource type="Curve" id="Curve_nhivp"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

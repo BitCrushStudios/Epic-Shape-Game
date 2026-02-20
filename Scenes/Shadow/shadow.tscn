@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://mf1q4gswoide"]
+
+[ext_resource type="Texture2D" uid="uid://bjgi18ffgclvf" path="res://Assets/Art/Shadow/Shadow!.png" id="1_ivqx2"]
+
+[node name="Shadow" type="Sprite2D" unique_id=29450177]
+z_index = -1
+texture = ExtResource("1_ivqx2")

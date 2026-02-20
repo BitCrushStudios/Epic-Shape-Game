@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwktqq3e7vpqy" path="res://Enemies/enemy_triangle.gd" id="1_e45y1"]
 [ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="2_bccpk"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Scenes/Shadow/shadow.tscn" id="2_llcvg"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Enemies/EnemyController.gd" id="3_bccpk"]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
@@ -71,17 +72,24 @@ linear_damp = 0.5
 script = ExtResource("1_e45y1")
 agent = NodePath("EnemyController")
 
-[node name="Animation" type="AnimationPlayer" parent="." unique_id=2112371104]
-unique_name_in_owner = true
-root_node = NodePath("../Sprite2D")
-libraries/ = SubResource("AnimationLibrary_u3lwl")
-playback_default_blend_time = 0.2
+[node name="Origin" type="Node2D" parent="." unique_id=542101971]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1837075550]
+[node name="Shadow" parent="Origin" unique_id=29450177 instance=ExtResource("2_llcvg")]
+z_index = -1
+position = Vector2(0, 22)
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="Origin" unique_id=1837075550]
 unique_name_in_owner = true
 position = Vector2(0, -2)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_bccpk")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=2112371104]
+unique_name_in_owner = true
+root_node = NodePath("../Origin/Sprite2D")
+libraries/ = SubResource("AnimationLibrary_u3lwl")
+playback_default_blend_time = 0.2
 
 [node name="ShapeCast2D" type="CollisionShape2D" parent="." unique_id=1092370231]
 y_sort_enabled = true
