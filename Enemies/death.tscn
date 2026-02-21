@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b010pf6ffj3tl"]
 
-[ext_resource type="Texture2D" uid="uid://cmsblqyjhkf5c" path="res://Assets/ProgrammerArt/ProgrammerArt__Drop.png" id="1_njj2x"]
+[ext_resource type="Texture2D" uid="uid://pojq8bpiexci" path="res://Assets/Art/Particles/Particle .png" id="1_njj2x"]
 
 [sub_resource type="Curve" id="Curve_njj2x"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -27,7 +27,7 @@ z_index = -1
 emitting = false
 amount = 100
 texture = ExtResource("1_njj2x")
-lifetime = 3.0
+lifetime = 2.0
 one_shot = true
 explosiveness = 0.75
 randomness = 1.0
