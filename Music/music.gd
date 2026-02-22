@@ -6,10 +6,10 @@ const tracks = [
 ]
 var track_index = 0
 
-func _ready() -> void:
-	$AudioStreamPlayer.stream = tracks[0]
-	$AudioStreamPlayer.finished.connect(_audio_finished)
-	#$AudioStreamPlayer.play()
-	
+#func _ready() -> void:
+	#$AudioStreamPlayer.stream = tracks[0]
+	#$AudioStreamPlayer.finished.connect(_audio_finished)
+	##$AudioStreamPlayer.play()
+	#
 func _audio_finished():
 	track_index = (track_index + 1) % track_index.length()
