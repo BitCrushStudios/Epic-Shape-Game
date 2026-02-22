@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://d36yx0pk7a4aw" path="res://Assets/Art/User Interface/Health Bar/Health bar Progress.png" id="4_cu33k"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Fonts/Candy Beans.otf" id="5_3bj3t"]
 
+[sub_resource type="Gradient" id="Gradient_3bj3t"]
+offsets = PackedFloat32Array(0.6573427, 1)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 0.2901961)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cu33k"]
+gradient = SubResource("Gradient_3bj3t")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [node name="GameUi" type="CanvasLayer" unique_id=1360459017]
 script = ExtResource("1_pjk1m")
 
@@ -34,3 +44,12 @@ theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3bj3t")
 theme_override_font_sizes/font_size = 40
 text = "1111"
+
+[node name="HurtOverlay" type="TextureRect" parent="." unique_id=375065571]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_cu33k")

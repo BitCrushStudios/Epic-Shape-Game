@@ -17,7 +17,7 @@ y_sort_enabled = true
 mass = 3.0
 physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
-max_contacts_reported = 30
+max_contacts_reported = 5
 script = ExtResource("1_x6q4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
@@ -26,14 +26,17 @@ shape = SubResource("RectangleShape2D_x6q4i")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 24.2
 
-[node name="Hit" type="AudioStreamPlayer2D" parent="." unique_id=1327663535]
+[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1695796385]
 stream = ExtResource("4_0cfu2")
 volume_db = -10.0
+pitch_scale = 1.2
 
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]
 
 [node name="Shadow" parent="Origin" unique_id=29450177 instance=ExtResource("3_rdb24")]
-position = Vector2(0, 26)
+unique_name_in_owner = true
+position = Vector2(0, 24.996914)
+scale = Vector2(0.83950615, 0.919753)
 
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
 unique_name_in_owner = true

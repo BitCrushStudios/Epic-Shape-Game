@@ -50,6 +50,7 @@ _data = {
 y_sort_enabled = true
 mass = 10.0
 contact_monitor = true
+max_contacts_reported = 5
 script = ExtResource("1_ddoul")
 move_speed = 600.0
 accel_mult = 15.0

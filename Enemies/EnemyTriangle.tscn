@@ -79,7 +79,7 @@ height = 34.0
 [node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116 node_paths=PackedStringArray("agent")]
 y_sort_enabled = true
 contact_monitor = true
-max_contacts_reported = 30
+max_contacts_reported = 5
 linear_damp = 0.5
 script = ExtResource("1_e45y1")
 agent = NodePath("EnemyController")
@@ -108,6 +108,7 @@ shape = SubResource("CapsuleShape2D_e45y1")
 
 [node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=723527212]
 avoidance_enabled = true
+radius = 20.0
 time_horizon_obstacles = 1.0
 max_speed = 200.0
 script = ExtResource("3_bccpk")

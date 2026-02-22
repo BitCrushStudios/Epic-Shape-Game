@@ -5,7 +5,8 @@ class_name Player
 @export var accel_mult = 4.0
 
 static var instance:Player
-var iframe_max = 1.0
+
+var iframe_max = 0.5
 var iframe = 0.0
 signal iframe_elapse()
 func apply_damage(damage:float):
