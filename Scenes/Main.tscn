@@ -149,26 +149,26 @@ offset_right = 1681.0
 offset_bottom = 949.0
 color = Color(0.76862746, 0.84705883, 0.8901961, 1)
 
+[node name="WeaponCube" parent="Arena" unique_id=1251268979 instance=ExtResource("4_rgh2o")]
+position = Vector2(1565.7142, 832.8571)
+
+[node name="WeaponCube2" parent="Arena" unique_id=914140284 instance=ExtResource("4_rgh2o")]
+position = Vector2(1278.5714, 822.8571)
+
+[node name="WeaponCube3" parent="Arena" unique_id=2096959730 instance=ExtResource("4_rgh2o")]
+position = Vector2(1402.857, 621.4285)
+
 [node name="Player" parent="." unique_id=299479533 instance=ExtResource("1_r150o")]
 position = Vector2(974, 543)
 accel_mult = 8.0
 
-[node name="WeaponCube" parent="." unique_id=1251268979 instance=ExtResource("4_rgh2o")]
-position = Vector2(1075, 583)
-
-[node name="WeaponCube2" parent="." unique_id=914140284 instance=ExtResource("4_rgh2o")]
-position = Vector2(874, 576)
-
-[node name="WeaponCube3" parent="." unique_id=2096959730 instance=ExtResource("4_rgh2o")]
-position = Vector2(961, 435)
-
 [node name="EnemyManager" type="Node2D" parent="." unique_id=314124947]
 script = ExtResource("5_v1gob")
 
-[node name="EnemyTriangle2" parent="." unique_id=1908247118 instance=ExtResource("3_kln2b")]
+[node name="EnemyTriangle2" parent="EnemyManager" unique_id=1908247118 instance=ExtResource("3_kln2b")]
 position = Vector2(1584, 568)
 
-[node name="EnemyTriangle3" parent="." unique_id=166037116 instance=ExtResource("3_kln2b")]
+[node name="EnemyTriangle3" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
 position = Vector2(320, 549)
 
 [node name="DebugUi" parent="." unique_id=1093902712 instance=ExtResource("5_pbw6q")]

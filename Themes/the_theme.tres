@@ -79,6 +79,7 @@ CheckBox/icons/unchecked = ExtResource("2_hu4tp")
 DarkOptionButton/base_type = &"OptionButton"
 DarkOptionButton/colors/font_color = Color(1, 1, 1, 1)
 DarkOptionButton/styles/normal = SubResource("StyleBoxFlat_g7ogn")
+HeaderLarge/font_sizes/font_size = 100
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 50
 MarginContainer/constants/margin_bottom = 5

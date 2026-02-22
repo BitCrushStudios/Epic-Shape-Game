@@ -10,7 +10,7 @@
 bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6q4i"]
-size = Vector2(45, 45)
+size = Vector2(52, 52)
 
 [node name="WeaponCube" type="RigidBody2D" unique_id=1251268979]
 y_sort_enabled = true
@@ -24,7 +24,7 @@ script = ExtResource("1_x6q4i")
 shape = SubResource("RectangleShape2D_x6q4i")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
-radius = 24.2
+radius = 20.0
 
 [node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1695796385]
 stream = ExtResource("4_0cfu2")
@@ -35,15 +35,17 @@ pitch_scale = 1.2
 
 [node name="Shadow" parent="Origin" unique_id=29450177 instance=ExtResource("3_rdb24")]
 unique_name_in_owner = true
-position = Vector2(0, 24.996914)
-scale = Vector2(0.83950615, 0.919753)
+z_index = -2
+z_as_relative = false
+position = Vector2(0, 21)
+scale = Vector2(0.800247, 0.8002469)
 
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
 unique_name_in_owner = true
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_gx6kc")
 
 [node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=1708969596]
 unique_name_in_owner = true
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_0cfu2")
