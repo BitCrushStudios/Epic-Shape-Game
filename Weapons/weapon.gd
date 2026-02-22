@@ -23,8 +23,10 @@ func _physics_process(_delta: float) -> void:
 		activation_value=clampf(activation_value+_delta,0,activation_max)
 	else:
 		activation_value=clampf(activation_value-_delta,0,activation_max)
-	%NormalSprite.modulate.a = 1 - activation_value/activation_max
-	%ActivatedSprite.modulate.a = activation_value/activation_max
+	var r = activation_value/activation_max
+	#r = r * r * (3.0 - 2.0 * r)
+	%NormalSprite.modulate.a = 1 - r
+	%ActivatedSprite.modulate.a = r
 	%Shadow.global_rotation = 0
 	%Shadow.global_position = $Origin.global_position + Vector2.DOWN * 26.0
 	state = State.Activated if activation_value>0 else State.Normal
