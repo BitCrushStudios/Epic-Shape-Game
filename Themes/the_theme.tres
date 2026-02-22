@@ -59,6 +59,27 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghqyj"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpkmd"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [resource]
 default_font = ExtResource("1_selbu")
 Button/colors/font_color = Color(0.6770251, 0.20439124, 0.14830631, 1)
@@ -92,3 +113,7 @@ OutlineLabel/base_type = &"Label"
 OutlineLabel/colors/font_outline_color = Color(1, 1, 1, 1)
 OutlineLabel/constants/outline_size = 8
 PopupMenu/font_sizes/font_size = 50
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ghqyj")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_xpkmd")
+ProgressLabel/base_type = &"Label"
+ProgressLabel/font_sizes/font_size = 16
