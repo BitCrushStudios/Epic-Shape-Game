@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Player/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Enemies/EnemyTriangle.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Weapons/WeaponCube.tscn" id="4_rgh2o"]
-[ext_resource type="PackedScene" uid="uid://cl21f5fbssv1d" path="res://Scenes/DebugUi.tscn" id="5_pbw6q"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Scenes/enemy_manager.gd" id="5_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bmprloh75j06" path="res://Scenes/GameUi.tscn" id="7_jw32o"]
 [ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="8_50glp"]
@@ -171,11 +170,7 @@ position = Vector2(1584, 568)
 [node name="EnemyTriangle3" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
 position = Vector2(320, 549)
 
-[node name="DebugUi" parent="." unique_id=1093902712 instance=ExtResource("5_pbw6q")]
-
-[node name="GameUi" type="CanvasLayer" parent="." unique_id=1360459017]
-
-[node name="GameUi2" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
+[node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1504648383]
 position = Vector2(960, 540)

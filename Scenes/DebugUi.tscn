@@ -2,52 +2,54 @@
 
 [ext_resource type="Script" uid="uid://dxiawoe8rypcp" path="res://Scenes/debug_ui.gd" id="1_7wx8d"]
 
-[node name="DebugUi" type="CanvasLayer" unique_id=1093902712]
-script = ExtResource("1_7wx8d")
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=241918914]
+[node name="DebugUi" type="PanelContainer" unique_id=241918914]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -135.0
 offset_bottom = 46.0
 grow_horizontal = 0
+script = ExtResource("1_7wx8d")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=700544122]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=700544122]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=2044177738]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=2044177738]
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/GridContainer" unique_id=188572075]
+[node name="Label" type="Label" parent="MarginContainer/GridContainer" unique_id=188572075]
 layout_mode = 2
+theme_type_variation = &"OutlineLabel"
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 12
 text = "Player Velocity"
 
-[node name="PlayerVelocity" type="Label" parent="PanelContainer/MarginContainer/GridContainer" unique_id=1458800271]
+[node name="PlayerVelocity" type="Label" parent="MarginContainer/GridContainer" unique_id=1458800271]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"OutlineLabel"
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 12
 text = "0,0"
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/GridContainer" unique_id=202381468]
+[node name="Label2" type="Label" parent="MarginContainer/GridContainer" unique_id=202381468]
 layout_mode = 2
+theme_type_variation = &"OutlineLabel"
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 12
 text = "Player Health"
 
-[node name="PlayerHealth" type="Label" parent="PanelContainer/MarginContainer/GridContainer" unique_id=1418268718]
+[node name="PlayerHealth" type="Label" parent="MarginContainer/GridContainer" unique_id=1418268718]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"OutlineLabel"
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 12
 text = "0,0"
