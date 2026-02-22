@@ -175,38 +175,6 @@ position = Vector2(320, 549)
 
 [node name="GameUi" type="CanvasLayer" parent="." unique_id=1360459017]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameUi" unique_id=87449793]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="GameUi/VBoxContainer" unique_id=2030531802]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 16)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-value = 50.0
-show_percentage = false
-
-[node name="ProgressLabel" type="Label" parent="GameUi/VBoxContainer/ProgressBar" unique_id=864519401]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "aasd"
-
-[node name="Label" type="Label" parent="GameUi/VBoxContainer" unique_id=1405852986]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_font_sizes/font_size = 32
-text = "Wave 1"
-
 [node name="GameUi2" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1504648383]
