@@ -3,6 +3,10 @@ class_name Player
 
 @export var move_speed = 500.0
 @export var accel_mult = 4.0
+@export var experience = 0.0
+var exp_level: float:
+	get():
+		return experience/exp(1.1)
 
 static var instance:Player
 

@@ -18,18 +18,58 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=2044177738]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=661359638]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="GridContainer2" type="GridContainer" parent="MarginContainer/HBoxContainer" unique_id=1004743353]
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="MarginContainer/GridContainer" unique_id=188572075]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=687940439]
+layout_mode = 2
+theme_type_variation = &"OutlineLabel"
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "Experience"
+
+[node name="PlayerExperience" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=1535759839]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"OutlineLabel"
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "0000"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=1313372285]
+layout_mode = 2
+theme_type_variation = &"OutlineLabel"
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "Experience"
+
+[node name="PlayerLevel" type="Label" parent="MarginContainer/HBoxContainer/GridContainer2" unique_id=2029734636]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"OutlineLabel"
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "0000"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer" unique_id=2044177738]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/GridContainer" unique_id=188572075]
 layout_mode = 2
 theme_type_variation = &"OutlineLabel"
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 12
 text = "Player Velocity"
 
-[node name="PlayerVelocity" type="Label" parent="MarginContainer/GridContainer" unique_id=1458800271]
+[node name="PlayerVelocity" type="Label" parent="MarginContainer/HBoxContainer/GridContainer" unique_id=1458800271]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -38,14 +78,14 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 12
 text = "0,0"
 
-[node name="Label2" type="Label" parent="MarginContainer/GridContainer" unique_id=202381468]
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/GridContainer" unique_id=202381468]
 layout_mode = 2
 theme_type_variation = &"OutlineLabel"
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 12
 text = "Player Health"
 
-[node name="PlayerHealth" type="Label" parent="MarginContainer/GridContainer" unique_id=1418268718]
+[node name="PlayerHealth" type="Label" parent="MarginContainer/HBoxContainer/GridContainer" unique_id=1418268718]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

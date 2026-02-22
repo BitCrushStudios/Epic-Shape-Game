@@ -19,8 +19,8 @@ func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	$NavigationObstacle2D.velocity = linear_velocity
-	if (linear_velocity.length()+angular_velocity)/300.0>1:
-		activation_value=clampf(activation_value+_delta,0,activation_max)
+	if (linear_velocity.length()/300.0+absf(angular_velocity)/20.0)>1:
+		activation_value=clampf(activa tion_value+_delta,0,activation_max)
 	else:
 		activation_value=clampf(activation_value-_delta,0,activation_max)
 	var r = activation_value/activation_max

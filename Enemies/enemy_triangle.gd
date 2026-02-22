@@ -7,6 +7,7 @@ func _ready():
 	recieved_damage.connect(_recieved_damage)
 	health_depleted.connect(_health_depleted)
 	#body_entered.connect(_body_entered)
+	super()
 func _body_entered(other:Node2D):
 	if other is Player:
 		other.apply_damage(damage)
