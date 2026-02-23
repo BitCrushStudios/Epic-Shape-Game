@@ -37,6 +37,9 @@ func show_upgrade_modal():
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dev_player_upgrade"):
 		show_upgrade_modal()
+	if Input.is_action_just_pressed("dev_player_extra_weapon"):
+		var upgrade = UpgradeResource.create_extra_weapon_upgrade(self, 1)
+		upgrade.apply.call()
 	if iframe>0:
 		iframe = iframe - delta
 		if iframe<=0:

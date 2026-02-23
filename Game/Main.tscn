@@ -112,14 +112,17 @@ autoplay = true
 position = Vector2(911, 542)
 accel_mult = 8.0
 
-[node name="WeaponCube" parent="." unique_id=1251268979 instance=ExtResource("4_rgh2o")]
-position = Vector2(366, 554)
+[node name="WeaponCube" parent="Player" unique_id=1251268979 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(698, 548)
 
-[node name="WeaponCube2" parent="." unique_id=914140284 instance=ExtResource("4_rgh2o")]
-position = Vector2(870, 542)
+[node name="WeaponCube2" parent="Player" unique_id=1244505892 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(1202, 536)
 
-[node name="WeaponCube3" parent="." unique_id=2096959730 instance=ExtResource("4_rgh2o")]
-position = Vector2(982, 420)
+[node name="WeaponCube3" parent="Player" unique_id=1340926155 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
 
 [node name="EnemyManager" type="Node2D" parent="." unique_id=314124947]
 script = ExtResource("5_v1gob")
