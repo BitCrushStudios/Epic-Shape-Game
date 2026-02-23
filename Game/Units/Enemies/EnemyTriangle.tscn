@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="2_bccpk"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_llcvg"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_bccpk"]
+[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/shadow_origin.gd" id="3_hu5f4"]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
 length = 0.001
@@ -22,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("%Sprite2D/..:modulate")
+tracks/1/path = NodePath("..:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -55,7 +56,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("%Sprite2D/..:modulate")
+tracks/0/path = NodePath("..:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,9 +73,8 @@ _data = {
 &"death": SubResource("Animation_bccpk")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e45y1"]
-radius = 17.0
-height = 34.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_hu5f4"]
+radius = 28.01785
 
 [node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116 node_paths=PackedStringArray("agent")]
 y_sort_enabled = true
@@ -91,14 +91,17 @@ time_horizon_obstacles = 1.0
 max_speed = 200.0
 script = ExtResource("3_bccpk")
 
-[node name="Origin" type="Node2D" parent="." unique_id=542101971]
+[node name="SpriteOrigin" type="Node2D" parent="." unique_id=542101971]
 y_sort_enabled = true
 
-[node name="Shadow" parent="Origin" unique_id=29450177 instance=ExtResource("2_llcvg")]
+[node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=1106378316]
+script = ExtResource("3_hu5f4")
+
+[node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("2_llcvg")]
 position = Vector2(0, 22)
 scale = Vector2(0.7, 0.7)
 
-[node name="Sprite2D" type="Sprite2D" parent="Origin" unique_id=1837075550]
+[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=1837075550]
 unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(0, -2)
@@ -107,10 +110,10 @@ texture = ExtResource("2_bccpk")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=2112371104]
 unique_name_in_owner = true
-root_node = NodePath("../Origin/Sprite2D")
+root_node = NodePath("../SpriteOrigin/Sprite2D")
 libraries/ = SubResource("AnimationLibrary_u3lwl")
 playback_default_blend_time = 0.2
 
 [node name="ShapeCast2D" type="CollisionShape2D" parent="." unique_id=1092370231]
 y_sort_enabled = true
-shape = SubResource("CapsuleShape2D_e45y1")
+shape = SubResource("CircleShape2D_hu5f4")

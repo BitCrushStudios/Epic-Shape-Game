@@ -27,8 +27,6 @@ func _physics_process(_delta: float) -> void:
 	#r = r * r * (3.0 - 2.0 * r)
 	%NormalSprite.modulate.a = 1 - r
 	%ActivatedSprite.modulate.a = r
-	%Shadow.global_rotation = 0
-	%Shadow.global_position = $Origin.global_position + Vector2.DOWN * 26.0
 	state = State.Activated if activation_value>0 else State.Normal
 		
 	$NavigationObstacle2D.radius =  max_obstacle_radius if activation_value>0 else 0.0

@@ -1,6 +1,6 @@
 @tool
 extends Button
-
+@export var upgradeModal: UpgradeModal
 @export var resource:UpgradeResource:
 	get():
 		return resource
@@ -17,4 +17,6 @@ func update():
 		await tree_entered
 	%TextureRect.texture = resource.texture
 	%Label.text = resource.name
-	
+func _pressed() -> void:
+	print("pressed")
+	upgradeModal.upgrade_selected.emit(resource)

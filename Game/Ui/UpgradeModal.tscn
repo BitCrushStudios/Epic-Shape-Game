@@ -1,6 +1,141 @@
 [gd_scene format=3 uid="uid://dfmnunvb3wtwm"]
 
 [ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/upgrade_button.tscn" id="1_abdc0"]
+[ext_resource type="Script" uid="uid://dgrtttjenktlj" path="res://Game/Ui/upgrade_modal.gd" id="1_d0xgl"]
+
+[sub_resource type="Animation" id="Animation_aa4lv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/Control5/UpgradeButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 521)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/Control4/UpgradeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 471)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer/Control3/UpgradeButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 421)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer/Control2/UpgradeButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 471)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HBoxContainer/Control/UpgradeButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 521)]
+}
+
+[sub_resource type="Animation" id="Animation_nm8tj"]
+resource_name = "start"
+length = 1.2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/Control5/UpgradeButton:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 521), Vector2(0, 102)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/Control4/UpgradeButton:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 471), Vector2(0, 52)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer/Control3/UpgradeButton:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 421), Vector2(0, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer/Control2/UpgradeButton:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 471), Vector2(0, 52)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HBoxContainer/Control/UpgradeButton:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 521), Vector2(0, 102)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ngdt"]
+_data = {
+&"RESET": SubResource("Animation_aa4lv"),
+&"start": SubResource("Animation_nm8tj")
+}
 
 [node name="UpgradeModal" type="Control" unique_id=827339811]
 layout_mode = 3
@@ -9,6 +144,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d0xgl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1351904962]
 layout_mode = 1
@@ -16,27 +152,102 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -148.0
-offset_bottom = 148.0
+offset_top = -141.0
+offset_bottom = 161.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
 
-[node name="UpgradeButton" parent="HBoxContainer" unique_id=866692791 instance=ExtResource("1_abdc0")]
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=31451780]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton2" parent="HBoxContainer" unique_id=523418132 instance=ExtResource("1_abdc0")]
+[node name="UpgradeButton" parent="HBoxContainer/Control" unique_id=866692791 node_paths=PackedStringArray("upgradeModal") instance=ExtResource("1_abdc0")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 0.0
+offset_top = 219.0
+offset_right = 0.0
+offset_bottom = 419.00146
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+upgradeModal = NodePath("../../..")
+
+[node name="Control2" type="Control" parent="HBoxContainer" unique_id=285258251]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton3" parent="HBoxContainer" unique_id=1010894975 instance=ExtResource("1_abdc0")]
+[node name="UpgradeButton" parent="HBoxContainer/Control2" unique_id=819495792 node_paths=PackedStringArray("upgradeModal") instance=ExtResource("1_abdc0")]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 0.0
+offset_top = 169.0
+offset_right = 0.0
+offset_bottom = 419.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+upgradeModal = NodePath("../../..")
+
+[node name="Control3" type="Control" parent="HBoxContainer" unique_id=1531079599]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton4" parent="HBoxContainer" unique_id=264184145 instance=ExtResource("1_abdc0")]
+[node name="UpgradeButton" parent="HBoxContainer/Control3" unique_id=1161993865 node_paths=PackedStringArray("upgradeModal") instance=ExtResource("1_abdc0")]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 0.0
+offset_top = 119.0
+offset_right = 0.0
+offset_bottom = 419.00012
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+upgradeModal = NodePath("../../..")
+
+[node name="Control4" type="Control" parent="HBoxContainer" unique_id=763994441]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton5" parent="HBoxContainer" unique_id=1098682729 instance=ExtResource("1_abdc0")]
+[node name="UpgradeButton" parent="HBoxContainer/Control4" unique_id=1654414396 node_paths=PackedStringArray("upgradeModal") instance=ExtResource("1_abdc0")]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 0.0
+offset_top = 169.0
+offset_right = 0.0
+offset_bottom = 419.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+upgradeModal = NodePath("../../..")
+
+[node name="Control5" type="Control" parent="HBoxContainer" unique_id=214358438]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="UpgradeButton" parent="HBoxContainer/Control5" unique_id=119510827 node_paths=PackedStringArray("upgradeModal") instance=ExtResource("1_abdc0")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 0.0
+offset_top = 219.0
+offset_right = 0.0
+offset_bottom = 419.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+upgradeModal = NodePath("../../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2088189912]
+libraries/ = SubResource("AnimationLibrary_1ngdt")
+autoplay = &"start"
