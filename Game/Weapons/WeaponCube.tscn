@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cbt0babfbxfde"]
 
 [ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_x6q4i"]
-[ext_resource type="Texture2D" uid="uid://cmeldr7gejoqb" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Deactivated.png" id="2_gx6kc"]
-[ext_resource type="Texture2D" uid="uid://b6ll32mcnmeu8" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon.png" id="3_0cfu2"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_rdb24"]
 [ext_resource type="AudioStream" uid="uid://rf7jq4otctx2" path="res://Assets/Sound Effects/Cube Hit/Hit.wav" id="4_0cfu2"]
+[ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="4_6u5qs"]
+[ext_resource type="Texture2D" uid="uid://c8ul4mta8vnus" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active.png" id="5_8q1de"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
 bounce = 1.0
@@ -43,9 +43,9 @@ scale = Vector2(0.800247, 0.8002469)
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
 unique_name_in_owner = true
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_gx6kc")
+texture = ExtResource("4_6u5qs")
 
 [node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=1708969596]
 unique_name_in_owner = true
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_0cfu2")
+texture = ExtResource("5_8q1de")
