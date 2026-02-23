@@ -1,8 +1,11 @@
 extends CanvasLayer
+
 func _ready():
-	Player.instance.recieved_damage.connect(_recieved_damage)
 	%HurtOverlay.modulate = Color.TRANSPARENT
 	%HurtOverlay.show()
+	await get_tree().process_frame
+	Player.instance.recieved_damage.connect(_recieved_damage)
+	
 func _process(_delta:float):
 	if not Player.instance:
 		return
@@ -10,7 +13,9 @@ func _process(_delta:float):
 	%HealthBar.value = Player.instance.health_current
 	print(Player.instance.health_current)
 	%HealthLabel.text = "%d / %d" % [Player.instance.health_current, Player.instance.health_max]
+	
 var hurt_tween:Tween
+
 func _recieved_damage(_damage:float):
 	if hurt_tween:
 		hurt_tween.kill()

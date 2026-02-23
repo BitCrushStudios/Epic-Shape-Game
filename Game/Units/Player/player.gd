@@ -9,10 +9,10 @@ var exp_level: float:
 		return experience/exp(1.1)
 
 static var instance:Player
-
 var iframe_max = 0.5
 var iframe = 0.0
 signal iframe_elapse()
+
 func apply_damage(damage:float):
 	if iframe<=0:
 		super(damage)
@@ -32,6 +32,7 @@ func show_upgrade_modal():
 	var modal: UpgradeModal = preload("res://Game/Ui/UpgradeModal.tscn").instantiate()
 	$CanvasLayer.add_child(modal)
 	var upgrade = await modal.wait_for_selection()
+	modal.queue_free()
 	get_tree().paused=false
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dev_player_upgrade"):

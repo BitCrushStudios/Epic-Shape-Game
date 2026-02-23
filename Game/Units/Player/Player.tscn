@@ -54,6 +54,8 @@ _data = {
 y_sort_enabled = true
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_bd17y")
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 20)
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
@@ -84,3 +86,4 @@ libraries/ = SubResource("AnimationLibrary_tok1r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=226316493]
 process_mode = 3
+layer = 5

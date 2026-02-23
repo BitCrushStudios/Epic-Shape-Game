@@ -2,7 +2,7 @@ extends Node
 class_name EnemyManager
 
 func _process(_delta: float) -> void:
-	if get_child_count() < 10.0:
+	if get_child_count() < 10:
 		var spawnPoint: SpawnPoint = preload("./SpawnPoint.tscn").instantiate()
 		add_child(spawnPoint)
 		var map_rid = get_viewport().world_2d.navigation_map

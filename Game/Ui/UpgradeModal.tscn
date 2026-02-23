@@ -66,6 +66,71 @@ tracks/4/keys = {
 "values": [Vector2(0, 521)]
 }
 
+[sub_resource type="Animation" id="Animation_d0xgl"]
+resource_name = "close"
+length = 1.2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/Control5/UpgradeButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.40000004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 102), Vector2(0, 521)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/Control4/UpgradeButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.20000005, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 52), Vector2(0, 471)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer/Control3/UpgradeButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.40000004, 0.8000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 2), Vector2(0, 421)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer/Control2/UpgradeButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 52), Vector2(0, 471)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HBoxContainer/Control/UpgradeButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8000001, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 102), Vector2(0, 521)]
+}
+
 [sub_resource type="Animation" id="Animation_nm8tj"]
 resource_name = "start"
 length = 1.2
@@ -134,6 +199,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ngdt"]
 _data = {
 &"RESET": SubResource("Animation_aa4lv"),
+&"close": SubResource("Animation_d0xgl"),
 &"start": SubResource("Animation_nm8tj")
 }
 
@@ -156,6 +222,7 @@ offset_top = -141.0
 offset_bottom = 161.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 theme_override_constants/separation = 16
 
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=31451780]
@@ -170,7 +237,7 @@ anchor_top = 1.0
 offset_left = 0.0
 offset_top = 219.0
 offset_right = 0.0
-offset_bottom = 419.00146
+offset_bottom = 419.0017
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -188,7 +255,7 @@ anchor_top = 1.0
 offset_left = 0.0
 offset_top = 169.0
 offset_right = 0.0
-offset_bottom = 419.0
+offset_bottom = 419.00012
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -224,7 +291,7 @@ anchor_top = 1.0
 offset_left = 0.0
 offset_top = 169.0
 offset_right = 0.0
-offset_bottom = 419.0
+offset_bottom = 419.00012
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -242,7 +309,7 @@ anchor_top = 1.0
 offset_left = 0.0
 offset_top = 219.0
 offset_right = 0.0
-offset_bottom = 419.0
+offset_bottom = 419.00012
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -251,3 +318,8 @@ upgradeModal = NodePath("../../..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2088189912]
 libraries/ = SubResource("AnimationLibrary_1ngdt")
 autoplay = &"start"
+
+[node name="Control" type="Control" parent="." unique_id=1330812704]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

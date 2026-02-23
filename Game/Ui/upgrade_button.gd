@@ -10,6 +10,7 @@ extends Button
 		resource = v
 		update()
 		resource.changed.connect(update)
+		
 func update():
 	if not resource:
 		return
@@ -17,6 +18,7 @@ func update():
 		await tree_entered
 	%TextureRect.texture = resource.texture
 	%Label.text = resource.name
+	
 func _pressed() -> void:
 	print("pressed")
 	upgradeModal.upgrade_selected.emit(resource)
