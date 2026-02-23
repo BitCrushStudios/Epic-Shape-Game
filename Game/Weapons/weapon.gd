@@ -23,7 +23,7 @@ func _physics_process(_delta: float) -> void:
 		activation_value=clampf(activation_value+_delta,0,activation_max)
 	else:
 		activation_value=clampf(activation_value-_delta,0,activation_max)
-	var r = activation_value/activation_max
+	var r = clampf(activation_value/(activation_max/4.0),0,1)
 	#r = r * r * (3.0 - 2.0 * r)
 	%NormalSprite.modulate.a = 1 - r
 	%ActivatedSprite.modulate.a = r

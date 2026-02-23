@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ctf6ho5vxcyyy"]
+
+[ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="1_rkppi"]
+[ext_resource type="Script" uid="uid://bkfukgdcol76a" path="res://Game/Ui/upgrade_button.gd" id="1_w5r4s"]
+[ext_resource type="Script" uid="uid://bbcv6s6mm0x0h" path="res://Game/Upgrades/upgrade_resource.gd" id="2_vdi0g"]
+
+[sub_resource type="Resource" id="Resource_w4mop"]
+script = ExtResource("2_vdi0g")
+texture = ExtResource("1_rkppi")
+name = "Placeholder"
+description = "Just a placeholder"
+metadata/_custom_type_script = "uid://bbcv6s6mm0x0h"
+
+[node name="UpgradeButton" type="Button" unique_id=866692791]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 113.0
+offset_right = -370.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5r4s")
+resource = SubResource("Resource_w4mop")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1538523343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1567957265]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1279725324]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_rkppi")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=966070400]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Placeholder"
+horizontal_alignment = 1

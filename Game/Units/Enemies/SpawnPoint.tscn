@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cci2sl1ayq21k"]
 
-[ext_resource type="Script" uid="uid://cob0asl31kevp" path="res://Game/Enemies/spawn_point.gd" id="1_jrm51"]
+[ext_resource type="Script" uid="uid://cob0asl31kevp" path="res://Game/Units/Enemies/spawn_point.gd" id="1_jrm51"]
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="2_jrm51"]
 
 [sub_resource type="Animation" id="Animation_jrm51"]

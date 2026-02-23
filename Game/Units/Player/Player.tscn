@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cjp2b5iomkei"]
 
-[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Player/player.gd" id="1_ddoul"]
+[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/player.gd" id="1_ddoul"]
 [ext_resource type="Texture2D" uid="uid://dyorafuagjeta" path="res://Assets/Art/Player/Small Player.png" id="2_q3lat"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_tok1r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
+friction = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tok1r"]
 radius = 16.0
@@ -49,6 +52,7 @@ _data = {
 [node name="Player" type="RigidBody2D" unique_id=2019408090]
 y_sort_enabled = true
 mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_bd17y")
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
@@ -56,14 +60,16 @@ move_speed = 600.0
 accel_mult = 15.0
 health_max = 30.0
 
-[node name="SpriteOrigin" type="CanvasModulate" parent="." unique_id=597052794]
+[node name="SpriteOrigin" type="Node2D" parent="." unique_id=1318647114]
+y_sort_enabled = true
 
 [node name="Shadow" parent="SpriteOrigin" unique_id=29450177 instance=ExtResource("2_tok1r")]
-z_index = 0
 position = Vector2(-5.9604645e-08, 21.000002)
 scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=250217813]
+z_as_relative = false
+y_sort_enabled = true
 position = Vector2(-0.99999994, 0)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_q3lat")

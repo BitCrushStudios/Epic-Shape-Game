@@ -4,7 +4,7 @@ class_name Unit
 signal recieved_damage(damage:float)
 signal health_depleted()
 func _physics_process(_delta: float) -> void:	
-	apply_torque(-rotation_degrees * 1000.0)
+	apply_torque(-rotation_degrees * 1000.0 * mass)
 
 @export var health_max = 1.0
 @onready var health_current = health_max

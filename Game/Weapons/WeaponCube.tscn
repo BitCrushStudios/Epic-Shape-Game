@@ -32,20 +32,21 @@ volume_db = -10.0
 pitch_scale = 1.2
 
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]
+y_sort_enabled = true
 
 [node name="Shadow" parent="Origin" unique_id=29450177 instance=ExtResource("3_rdb24")]
 unique_name_in_owner = true
-z_index = -2
-z_as_relative = false
 position = Vector2(0, 21)
 scale = Vector2(0.800247, 0.8002469)
 
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
 unique_name_in_owner = true
+y_sort_enabled = true
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_gx6kc")
 
 [node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=1708969596]
 unique_name_in_owner = true
+y_sort_enabled = true
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_0cfu2")
