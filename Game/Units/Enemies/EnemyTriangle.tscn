@@ -88,7 +88,8 @@ agent = NodePath("EnemyController")
 avoidance_enabled = true
 radius = 20.0
 time_horizon_obstacles = 1.0
-max_speed = 200.0
+max_speed = 300.0
+debug_use_custom = true
 script = ExtResource("3_bccpk")
 
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=542101971]

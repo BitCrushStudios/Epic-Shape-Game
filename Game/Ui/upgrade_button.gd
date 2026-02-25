@@ -1,6 +1,6 @@
 @tool
 extends Button
-@export var upgradeModal: UpgradeModal
+signal upgrade_selected(resource:UpgradeResource)
 @export var resource:UpgradeResource:
 	get():
 		return resource
@@ -17,8 +17,15 @@ func update():
 	if not is_inside_tree():
 		await tree_entered
 	%TextureRect.texture = resource.texture
-	%Label.text = resource.name
+	%Label.text = "%s +%d" %[resource.name, resource.boost]
 	
 func _pressed() -> void:
-	print("pressed")
-	upgradeModal.upgrade_selected.emit(resource)
+	upgrade_selected.emit(resource)
+	
+	
+func modal():
+	var available_upgrades = UpgradeResource.get_available_upgrades()
+	var i = randi_range(0, available_upgrades.size()-1)
+	resource = available_upgrades.pop_at(i).new()
+
+@export_tool_button("Setup") var __setup = modal

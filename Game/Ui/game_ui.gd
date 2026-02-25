@@ -11,7 +11,6 @@ func _process(_delta:float):
 		return
 	%HealthBar.max_value = Player.instance.health_max
 	%HealthBar.value = Player.instance.health_current
-	print(Player.instance.health_current)
 	%HealthLabel.text = "%d / %d" % [Player.instance.health_current, Player.instance.health_max]
 	
 var hurt_tween:Tween
