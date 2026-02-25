@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b66bmdof44psr"]
+
+[node name="EquipWeaponButton" type="Button" unique_id=509255857]
+theme_type_variation = &"FlatButton"
+text = "Cube"

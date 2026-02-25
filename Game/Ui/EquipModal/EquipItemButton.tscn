@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://eysmb4e2s602"]
+
+[ext_resource type="Script" uid="uid://dq5vcdfr0j0tk" path="res://Game/Ui/EquipModal/EquipItemButton.gd" id="1_qucnc"]
+
+[node name="EquipItemButton" type="Button" unique_id=990913445]
+theme_type_variation = &"FlatButton"
+text = "Coffee"
+script = ExtResource("1_qucnc")

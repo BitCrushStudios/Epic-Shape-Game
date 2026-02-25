@@ -199,17 +199,17 @@ anchor_right = 1.0
 offset_bottom = 98.0
 grow_horizontal = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1299552836]
+[node name="PanelContainer" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1561531254]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_type_variation = &"TexturePanelContainer"
 
-[node name="CashLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer2" unique_id=1169638266]
+[node name="WaveLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer" unique_id=320715895]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"OutlineLabelSmall"
-text = "$ 10 000"
-horizontal_alignment = 2
+text = "Next Wave - 10"
+vertical_alignment = 1
 
 [node name="PanelContainer3" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1370799459]
 layout_mode = 2
@@ -221,17 +221,17 @@ layout_mode = 2
 theme_type_variation = &"OutlineLabel"
 text = "~Shop~"
 
-[node name="PanelContainer" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1561531254]
+[node name="PanelContainer2" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1299552836]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_type_variation = &"TexturePanelContainer"
 
-[node name="WaveLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer" unique_id=320715895]
+[node name="CashLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer2" unique_id=1169638266]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"OutlineLabelSmall"
-text = "Next Wave - 10"
-vertical_alignment = 1
+text = "$ 10 000"
+horizontal_alignment = 2
 
 [node name="ButtonContainerOffset" type="Control" parent="." unique_id=1911506529]
 layout_mode = 1
