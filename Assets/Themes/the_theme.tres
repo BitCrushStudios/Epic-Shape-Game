@@ -83,10 +83,10 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kqqdp"]
 texture = ExtResource("4_lp5de")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
 
 [resource]
 default_font = ExtResource("1_selbu")
