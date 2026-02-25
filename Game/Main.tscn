@@ -6,12 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/WeaponCube.tscn" id="4_rgh2o"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/enemy_manager.gd" id="5_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bmprloh75j06" path="res://Game/Ui/GameUi.tscn" id="7_jw32o"]
+[ext_resource type="PackedScene" uid="uid://o3qjyg751wn3" path="res://Scenes/Enemies/tank.tscn" id="7_x253o"]
 [ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="8_50glp"]
+[ext_resource type="PackedScene" uid="uid://d1f3mho1cdbnl" path="res://Scenes/Enemies/healer.tscn" id="8_krex0"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="8_vy5pj"]
 [ext_resource type="Texture2D" uid="uid://cxcax73lk7h5d" path="res://Assets/Art/Backgrounds/Main Scene/Background Vert.png" id="9_q34ae"]
 [ext_resource type="Texture2D" uid="uid://cl3ijdb6yf7tm" path="res://Assets/Art/Backgrounds/Main Scene/Background Horz.png" id="10_f77hp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3xx61"]
+vertices = PackedVector2Array(0, 50, -50, 50, -50, -50, 0, -50)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 50, -50, 50, -50, -50, 0, -50)])
+agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jw32o"]
 vertices = PackedVector2Array(50, 50, -50, 50, -50, -50, 50, -50)
@@ -20,6 +26,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-50, -50, 50, -50, 50, 
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q34ae"]
+vertices = PackedVector2Array(50, 50, 0, 50, 0, -50, 50, -50)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -50, 50, -50, 50, 50, 0, 50)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmxlf"]
 texture = ExtResource("1_50glp")
@@ -82,14 +92,208 @@ position = Vector2(1202, 536)
 top_level = true
 position = Vector2(585, 518)
 
+[node name="WeaponCube4" parent="Player" unique_id=306003124 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube5" parent="Player" unique_id=563915094 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube6" parent="Player" unique_id=1062131040 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube7" parent="Player" unique_id=1334477907 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube8" parent="Player" unique_id=717507341 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube9" parent="Player" unique_id=793393371 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube10" parent="Player" unique_id=676470708 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube11" parent="Player" unique_id=1151596418 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube12" parent="Player" unique_id=278480382 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube13" parent="Player" unique_id=889241511 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube14" parent="Player" unique_id=590355142 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube15" parent="Player" unique_id=1624148584 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube16" parent="Player" unique_id=149447796 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
 [node name="EnemyManager" type="Node2D" parent="." unique_id=314124947]
 script = ExtResource("5_v1gob")
 
-[node name="EnemyTriangle2" parent="EnemyManager" unique_id=1908247118 instance=ExtResource("3_kln2b")]
-position = Vector2(1584, 568)
+[node name="EnemyTriangle6" parent="EnemyManager" unique_id=1830514968 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
 
-[node name="EnemyTriangle3" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
-position = Vector2(316, 561)
+[node name="EnemyTriangle7" parent="EnemyManager" unique_id=717036112 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle8" parent="EnemyManager" unique_id=939912398 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle9" parent="EnemyManager" unique_id=183333135 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle10" parent="EnemyManager" unique_id=670030138 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle12" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle13" parent="EnemyManager" unique_id=1468725937 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle14" parent="EnemyManager" unique_id=1007850015 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle15" parent="EnemyManager" unique_id=1656601852 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle16" parent="EnemyManager" unique_id=2097731172 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle17" parent="EnemyManager" unique_id=1523079522 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle21" parent="EnemyManager" unique_id=624360115 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle22" parent="EnemyManager" unique_id=1514048991 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle23" parent="EnemyManager" unique_id=181042110 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle24" parent="EnemyManager" unique_id=1022039309 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle25" parent="EnemyManager" unique_id=807207162 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle26" parent="EnemyManager" unique_id=966152225 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle27" parent="EnemyManager" unique_id=2118895969 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle28" parent="EnemyManager" unique_id=149022082 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle29" parent="EnemyManager" unique_id=920945615 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle30" parent="EnemyManager" unique_id=1076756889 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle31" parent="EnemyManager" unique_id=1837369881 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle32" parent="EnemyManager" unique_id=1624558265 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle33" parent="EnemyManager" unique_id=1362766306 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle34" parent="EnemyManager" unique_id=1443364407 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle35" parent="EnemyManager" unique_id=1773502562 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle36" parent="EnemyManager" unique_id=2007151388 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle37" parent="EnemyManager" unique_id=1770490367 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle18" parent="EnemyManager" unique_id=122468196 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle19" parent="EnemyManager" unique_id=72075026 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="EnemyTriangle20" parent="EnemyManager" unique_id=1314722917 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+metadata/_edit_group_ = true
+
+[node name="EnemyTriangle11" parent="EnemyManager" unique_id=403370904 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
+
+[node name="Tank2" parent="EnemyManager" unique_id=1625776937 instance=ExtResource("7_x253o")]
+position = Vector2(790, 376)
+
+[node name="Tank3" parent="EnemyManager" unique_id=488919562 instance=ExtResource("7_x253o")]
+position = Vector2(1187, 681)
+
+[node name="Tank4" parent="EnemyManager" unique_id=663705568 instance=ExtResource("7_x253o")]
+position = Vector2(938, 388)
+
+[node name="Tank5" parent="EnemyManager" unique_id=270268580 instance=ExtResource("7_x253o")]
+position = Vector2(1322, 406)
+
+[node name="Tank6" parent="EnemyManager" unique_id=353620031 instance=ExtResource("7_x253o")]
+position = Vector2(405, 579)
+
+[node name="Tank" parent="EnemyManager" unique_id=211797002 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank7" parent="EnemyManager" unique_id=662248992 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank8" parent="EnemyManager" unique_id=1926458595 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank9" parent="EnemyManager" unique_id=688841932 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank10" parent="EnemyManager" unique_id=469992519 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank11" parent="EnemyManager" unique_id=1864435713 instance=ExtResource("8_krex0")]
+position = Vector2(763, 287)
+
+[node name="Tank12" parent="EnemyManager" unique_id=96922029 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank13" parent="EnemyManager" unique_id=1078008214 instance=ExtResource("8_krex0")]
+position = Vector2(524, 315)
+
+[node name="Tank14" parent="EnemyManager" unique_id=858007535 instance=ExtResource("8_krex0")]
+position = Vector2(498, 445)
+
+[node name="Tank15" parent="EnemyManager" unique_id=25192523 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank16" parent="EnemyManager" unique_id=53272649 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
+
+[node name="Tank17" parent="EnemyManager" unique_id=1262445344 instance=ExtResource("8_krex0")]
+position = Vector2(641, 362)
 
 [node name="Arena" type="TileMapLayer" parent="." unique_id=235472239]
 z_index = -3
