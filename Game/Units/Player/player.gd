@@ -66,10 +66,19 @@ var iframe_max:
 		return stat_iframe * 0.5
 var iframe = 0.0
 signal iframe_elapse()
+var size_tween:Tween
 func update_size():
+	if size_tween:
+		size_tween.kill()
 	if not is_inside_tree():
 		await tree_entered
-	$CollisionShape2D.scale = Vector2.ONE * (base_size + (base_size_add * stat_size))
+	size_tween = create_tween()
+	size_tween.tween_property(
+		$CollisionShape2D, 
+		"scale", 
+		Vector2.ONE * (base_size + (base_size_add * stat_size)), 
+		2.0
+	).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT_IN)
 func update_mass():
 	mass = base_mass + (base_mass_add * stat_mass)
 func apply_damage(damage:float):
@@ -90,7 +99,7 @@ var mouse_origin
 
 func show_upgrade_modal():
 	get_tree().paused=true
-	var modal: UpgradeModal = preload("res://Game/Ui/UpgradeModal.tscn").instantiate()
+	var modal: UpgradeModal = preload("res://Game/Ui/UpgradeModal/UpgradeModal.tscn").instantiate()
 	$CanvasLayer.add_child(modal)
 	var upgrade:UpgradeResource = await modal.modal()
 	upgrade.apply()
@@ -98,15 +107,16 @@ func show_upgrade_modal():
 	
 func show_shop_modal():
 	get_tree().paused=true
-	var modal: ShopModal = preload("res://Game/Ui/ShopModal.tscn").instantiate()
+	var modal: ShopModal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
 	$CanvasLayer.add_child(modal)
 	await modal.modal()
 	get_tree().paused=false
 
 func show_equip_modal():
 	get_tree().paused=true
-	var modal: ShopModal = preload("res://Game/Ui/ShopModal.tscn").instantiate()
+	var modal: ShopModal = preload("res://Game/Ui/EquipModal/EquipModal.tscn").instantiate()
 	$CanvasLayer.add_child(modal)
+	await modal.tree_entered
 	await modal.modal()
 	get_tree().paused=false
 

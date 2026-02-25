@@ -3,8 +3,8 @@ extends Control
 class_name UpgradeModal 
 
 signal upgrade_selected(upgrade:UpgradeResource)
-@export_tool_button("Setup") var __setup = modal
-func modal():
+@export_tool_button("Setup") var __setup = setup
+func setup():
 	var available_upgrades = UpgradeResource.get_available_upgrades()
 	for btn in get_buttons():
 		if available_upgrades.size()<=0:
@@ -13,15 +13,18 @@ func modal():
 		btn.show()
 		var i = randi_range(0,available_upgrades.size()-1)
 		btn.resource = available_upgrades.pop_at(i).new()
-		
-	$AnimationPlayer.play("open")
 	
+func modal():
+	setup()
+	
+	$AnimationPlayer.play("open")
 	var upgrade = await upgrade_selected
 	
 	$AnimationPlayer.play("close")
 	await $AnimationPlayer.animation_finished
 	
 	return upgrade
+	
 func get_buttons():
 	return [
 		%UpgradeButton1,

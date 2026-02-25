@@ -1,32 +1,32 @@
-[gd_scene format=3 uid="uid://dfmnunvb3wtwm"]
+[gd_scene format=3 uid="uid://cmia160hqk8ns"]
 
-[ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/UpgradeModal/upgrade_button.tscn" id="1_abdc0"]
-[ext_resource type="Script" uid="uid://dgrtttjenktlj" path="res://Game/Ui/UpgradeModal/upgrade_modal.gd" id="1_d0xgl"]
-[ext_resource type="Script" uid="uid://dvicl7tavrmp3" path="res://Game/Upgrades/extra_speed.gd" id="3_0yd5t"]
-[ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/extra_mass.gd" id="4_aa4lv"]
-[ext_resource type="Script" uid="uid://dms5y3buqcmqw" path="res://Game/Upgrades/extra_size.gd" id="5_1ngdt"]
-[ext_resource type="Script" uid="uid://d3kpx4mb6hmth" path="res://Game/Upgrades/extra_health.gd" id="5_aa4lv"]
-[ext_resource type="Script" uid="uid://lciut81gvo4h" path="res://Game/Upgrades/extra_weapon.gd" id="5_nm8tj"]
+[ext_resource type="Script" uid="uid://cqmbl2lc6yrsn" path="res://Game/Ui/ShopModal/ShopModal.gd" id="1_r31r5"]
+[ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/UpgradeModal/upgrade_button.tscn" id="2_wl5wi"]
+[ext_resource type="Script" uid="uid://dms5y3buqcmqw" path="res://Game/Upgrades/extra_size.gd" id="3_us35o"]
+[ext_resource type="Script" uid="uid://dvicl7tavrmp3" path="res://Game/Upgrades/extra_speed.gd" id="4_2fo01"]
+[ext_resource type="Script" uid="uid://d3kpx4mb6hmth" path="res://Game/Upgrades/extra_health.gd" id="5_1sfyp"]
+[ext_resource type="Script" uid="uid://lciut81gvo4h" path="res://Game/Upgrades/extra_weapon.gd" id="6_qvg6h"]
+[ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/extra_mass.gd" id="7_ar6dp"]
 
-[sub_resource type="Resource" id="Resource_72k1v"]
-script = ExtResource("3_0yd5t")
+[sub_resource type="Resource" id="Resource_oi6um"]
+script = ExtResource("3_us35o")
+name = "Extra Size"
+
+[sub_resource type="Resource" id="Resource_i7vh7"]
+script = ExtResource("4_2fo01")
 name = "Extra Speed"
 
-[sub_resource type="Resource" id="Resource_svbxa"]
-script = ExtResource("5_aa4lv")
+[sub_resource type="Resource" id="Resource_x1cxu"]
+script = ExtResource("5_1sfyp")
 name = "Extra Health"
 
-[sub_resource type="Resource" id="Resource_pbep4"]
-script = ExtResource("4_aa4lv")
-name = "Extra Strength"
-
-[sub_resource type="Resource" id="Resource_bvjom"]
-script = ExtResource("5_nm8tj")
+[sub_resource type="Resource" id="Resource_vdn81"]
+script = ExtResource("6_qvg6h")
 name = "Extra Weapon"
 
-[sub_resource type="Resource" id="Resource_ke5bf"]
-script = ExtResource("5_1ngdt")
-name = "Extra Size"
+[sub_resource type="Resource" id="Resource_sau8q"]
+script = ExtResource("7_ar6dp")
+name = "Extra Strength"
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
@@ -80,14 +80,14 @@ _data = {
 &"open": SubResource("Animation_2q4av")
 }
 
-[node name="UpgradeModal" type="Control" unique_id=827339811]
+[node name="ShopModal" type="Control" unique_id=827339811]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_d0xgl")
+script = ExtResource("1_r31r5")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1253458893]
 layout_mode = 1
@@ -96,7 +96,7 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_top = -145.0
-offset_bottom = 145.00018
+offset_bottom = 144.99994
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -104,7 +104,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton1" parent="HBoxContainer/Control" unique_id=866692791 instance=ExtResource("1_abdc0")]
+[node name="ShopButton1" parent="HBoxContainer/Control" unique_id=866692791 instance=ExtResource("2_wl5wi")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 0.0
@@ -112,13 +112,13 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 size_flags_horizontal = 3
-resource = SubResource("Resource_72k1v")
+resource = SubResource("Resource_oi6um")
 
 [node name="Control2" type="Control" parent="HBoxContainer" unique_id=401875013]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton2" parent="HBoxContainer/Control2" unique_id=819495792 instance=ExtResource("1_abdc0")]
+[node name="ShopButton2" parent="HBoxContainer/Control2" unique_id=819495792 instance=ExtResource("2_wl5wi")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 0.0
@@ -126,13 +126,13 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 size_flags_horizontal = 3
-resource = SubResource("Resource_svbxa")
+resource = SubResource("Resource_i7vh7")
 
 [node name="Control3" type="Control" parent="HBoxContainer" unique_id=689760613]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton3" parent="HBoxContainer/Control3" unique_id=1161993865 instance=ExtResource("1_abdc0")]
+[node name="ShopButton3" parent="HBoxContainer/Control3" unique_id=1161993865 instance=ExtResource("2_wl5wi")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 0.0
@@ -140,13 +140,13 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 size_flags_horizontal = 3
-resource = SubResource("Resource_pbep4")
+resource = SubResource("Resource_x1cxu")
 
 [node name="Control4" type="Control" parent="HBoxContainer" unique_id=212225677]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton4" parent="HBoxContainer/Control4" unique_id=1654414396 instance=ExtResource("1_abdc0")]
+[node name="ShopButton4" parent="HBoxContainer/Control4" unique_id=1654414396 instance=ExtResource("2_wl5wi")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 0.0
@@ -154,13 +154,13 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 size_flags_horizontal = 3
-resource = SubResource("Resource_bvjom")
+resource = SubResource("Resource_vdn81")
 
 [node name="Control5" type="Control" parent="HBoxContainer" unique_id=264009892]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpgradeButton5" parent="HBoxContainer/Control5" unique_id=119510827 instance=ExtResource("1_abdc0")]
+[node name="ShopButton5" parent="HBoxContainer/Control5" unique_id=119510827 instance=ExtResource("2_wl5wi")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 0.0
@@ -168,7 +168,7 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 size_flags_horizontal = 3
-resource = SubResource("Resource_ke5bf")
+resource = SubResource("Resource_sau8q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")

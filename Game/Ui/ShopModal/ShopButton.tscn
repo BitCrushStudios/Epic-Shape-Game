@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://ctf6ho5vxcyyy"]
+[gd_scene format=3 uid="uid://csd1cwka8wio6"]
 
-[ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="1_vdi0g"]
-[ext_resource type="Script" uid="uid://bkfukgdcol76a" path="res://Game/Ui/UpgradeModal/upgrade_button.gd" id="1_w5r4s"]
-[ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/extra_mass.gd" id="2_w5r4s"]
+[ext_resource type="Script" uid="uid://ijwqv1ttjeih" path="res://Game/Ui/ShopModal/ShopButton.gd" id="1_1tt3b"]
+[ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="2_j7hdu"]
+[ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="3_f533n"]
 
-[sub_resource type="Resource" id="Resource_w5r4s"]
-script = ExtResource("2_w5r4s")
-name = "Extra Mass"
+[sub_resource type="Resource" id="Resource_j7hdu"]
+script = ExtResource("2_j7hdu")
+name = "Coffee"
 
-[node name="UpgradeButton" type="Button" unique_id=866692791]
+[node name="ShopButton" type="Button" unique_id=866692791]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,8 +26,8 @@ theme_override_colors/font_hover_pressed_color = Color(0.72172314, 0.24067497, 0
 theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 theme_override_colors/font_outline_color = Color(0.93333334, 0.40784314, 0.33333334, 1)
 theme_override_font_sizes/font_size = 50
-script = ExtResource("1_w5r4s")
-resource = SubResource("Resource_w5r4s")
+script = ExtResource("1_1tt3b")
+resource = SubResource("Resource_j7hdu")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1538523343]
 layout_mode = 1
@@ -49,7 +49,7 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=966070400]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("1_vdi0g")
+theme = ExtResource("3_f533n")
 theme_override_font_sizes/font_size = 24
-text = "Extra Mass +1"
+text = "Coffee"
 horizontal_alignment = 1

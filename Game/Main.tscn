@@ -11,11 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cxcax73lk7h5d" path="res://Assets/Art/Backgrounds/Main Scene/Background Vert.png" id="9_q34ae"]
 [ext_resource type="Texture2D" uid="uid://cl3ijdb6yf7tm" path="res://Assets/Art/Backgrounds/Main Scene/Background Horz.png" id="10_f77hp"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_3xx61"]
-vertices = PackedVector2Array(0, 50, -50, 50, -50, -50, 0, -50)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 50, -50, 50, -50, -50, 0, -50)])
-agent_radius = 0.0
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_f77hp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jw32o"]
 vertices = PackedVector2Array(50, 50, -50, 50, -50, -50, 50, -50)
@@ -23,39 +19,34 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)])
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_q34ae"]
-vertices = PackedVector2Array(50, 50, 0, 50, 0, -50, 50, -50)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, -50, 50, -50, 50, 50, 0, 50)])
-agent_radius = 0.0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmxlf"]
 texture = ExtResource("1_50glp")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(50, 50, 0, 50, 0, -50, 50, -50)
-0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_3xx61")
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(50, -50, 50, 0, -50, 0, -50, -50)
-1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_3xx61")
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, 50, -50, 0, 0, 0, 0, -50, 50, -50, 50, 50)
-2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_q34ae")
+2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 0, -50, 0, 0, 50, 0, 50, 50, -50, 50)
-3:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_q34ae")
+3:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 0, -50, 0, 50, -50, 50)
-0:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_3xx61")
+0:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, 50, -50, 0, 50, 0, 50, 50)
-1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_3xx61")
+1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(50, 50, 0, 50, 0, 0, -50, 0, -50, -50, 50, -50)
-2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_q34ae")
+2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(50, -50, 50, 0, 0, 0, 0, 50, -50, 50, -50, -50)
-3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_q34ae")
+3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_f77hp")
+0:2/next_alternative_id = 2
 0:2/0 = 0
 0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_jw32o")
 1:2/0 = 0
@@ -82,11 +73,12 @@ mass = 11.0
 top_level = true
 position = Vector2(585, 518)
 
-[node name="EnemyManager" type="Node2D" parent="." unique_id=314124947]
+[node name="EnemyManager" type="Node" parent="." unique_id=578400424]
+process_mode = 4
 script = ExtResource("5_v1gob")
 
-[node name="EnemyTriangle11" parent="EnemyManager" unique_id=403370904 instance=ExtResource("3_kln2b")]
-position = Vector2(1016, 343)
+[node name="EnemyTriangle" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
+position = Vector2(1093, 374)
 
 [node name="Arena" type="TileMapLayer" parent="." unique_id=235472239]
 z_index = -3

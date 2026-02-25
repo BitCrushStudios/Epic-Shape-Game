@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="1_selbu"]
 [ext_resource type="Texture2D" uid="uid://bi5gaaqj0anua" path="res://Assets/ProgrammerArt/ProgrammerUiArt__Uncheck.png" id="2_hu4tp"]
 [ext_resource type="Texture2D" uid="uid://b8fgmlovc285c" path="res://Assets/ProgrammerArt/ProgrammerUiArt__DropDownArrow.png" id="3_g7ogn"]
+[ext_resource type="Texture2D" uid="uid://b6ll32mcnmeu8" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon.png" id="4_lp5de"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl5fw"]
 content_margin_left = 5.0
@@ -80,6 +81,13 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kqqdp"]
+texture = ExtResource("4_lp5de")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
 [resource]
 default_font = ExtResource("1_selbu")
 Button/colors/font_color = Color(0.6770251, 0.20439124, 0.14830631, 1)
@@ -112,8 +120,16 @@ OptionButton/icons/arrow = ExtResource("3_g7ogn")
 OutlineLabel/base_type = &"Label"
 OutlineLabel/colors/font_outline_color = Color(1, 1, 1, 1)
 OutlineLabel/constants/outline_size = 8
+OutlineLabelSmall/base_type = &"Label"
+OutlineLabelSmall/colors/font_outline_color = Color(1, 1, 1, 1)
+OutlineLabelSmall/constants/outline_size = 8
+OutlineLabelSmall/font_sizes/font_size = 24
 PopupMenu/font_sizes/font_size = 50
 ProgressBar/styles/background = SubResource("StyleBoxFlat_ghqyj")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_xpkmd")
 ProgressLabel/base_type = &"Label"
 ProgressLabel/font_sizes/font_size = 16
+TexturePanel/base_type = &"Panel"
+TexturePanel/styles/panel = SubResource("StyleBoxTexture_kqqdp")
+TexturePanelContainer/base_type = &"PanelContainer"
+TexturePanelContainer/styles/panel = SubResource("StyleBoxTexture_kqqdp")
