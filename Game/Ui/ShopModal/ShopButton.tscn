@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://csd1cwka8wio6"]
 
 [ext_resource type="Script" uid="uid://ijwqv1ttjeih" path="res://Game/Ui/ShopModal/ShopButton.gd" id="1_1tt3b"]
-[ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="2_j7hdu"]
+[ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemShake.gd" id="3_02jqq"]
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="3_f533n"]
+[ext_resource type="Texture2D" uid="uid://cdilxwowhi4yq" path="res://Assets/Art/User Interface/Shop/Item Size Test.png" id="3_sr35a"]
 
-[sub_resource type="Resource" id="Resource_j7hdu"]
-script = ExtResource("2_j7hdu")
-name = "Coffee"
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sr35a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02jqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1nkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yswop"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ofh7d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bmuq"]
+
+[sub_resource type="Resource" id="Resource_k1nkd"]
+script = ExtResource("3_02jqq")
+name = "Soy"
 
 [node name="ShopButton" type="Button" unique_id=866692791]
 anchors_preset = 15
@@ -26,8 +39,26 @@ theme_override_colors/font_hover_pressed_color = Color(0.72172314, 0.24067497, 0
 theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 theme_override_colors/font_outline_color = Color(0.93333334, 0.40784314, 0.33333334, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sr35a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_02jqq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_k1nkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yswop")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ofh7d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2bmuq")
 script = ExtResource("1_1tt3b")
-resource = SubResource("Resource_j7hdu")
+resource = SubResource("Resource_k1nkd")
+
+[node name="Label" type="Label" parent="." unique_id=966070400]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -13.0
+offset_top = 84.0
+offset_right = 197.0
+offset_bottom = 117.0
+theme = ExtResource("3_f533n")
+theme_override_font_sizes/font_size = 24
+text = "Soy"
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1538523343]
 layout_mode = 1
@@ -44,12 +75,5 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+texture = ExtResource("3_sr35a")
 stretch_mode = 5
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=966070400]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("3_f533n")
-theme_override_font_sizes/font_size = 24
-text = "Coffee"
-horizontal_alignment = 1

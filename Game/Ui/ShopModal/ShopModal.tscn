@@ -2,9 +2,32 @@
 
 [ext_resource type="Script" uid="uid://cqmbl2lc6yrsn" path="res://Game/Ui/ShopModal/ShopModal.gd" id="1_oi6um"]
 [ext_resource type="PackedScene" uid="uid://csd1cwka8wio6" path="res://Game/Ui/ShopModal/ShopButton.tscn" id="2_a2r72"]
+[ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="3_udy12"]
+[ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemShake.gd" id="4_wy88y"]
+[ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
+
+[sub_resource type="Resource" id="Resource_e7lec"]
+script = ExtResource("3_udy12")
+name = "Coffee"
+
+[sub_resource type="Resource" id="Resource_i3qng"]
+script = ExtResource("4_wy88y")
+name = "Soy"
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Podiums:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wjask"]
 resource_name = "close"
@@ -43,6 +66,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 20), Vector2(0, -20), Vector2(0, 600)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Podiums:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_2q4av"]
@@ -83,6 +118,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 600), Vector2(0, -20), Vector2(0, 20), Vector2(0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Podiums:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjask"]
 _data = {
@@ -101,6 +148,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oi6um")
 
+[node name="Podiums" type="Node2D" parent="." unique_id=1670303773]
+position = Vector2(91, 452)
+scale = Vector2(0.7, 0.7)
+
+[node name="ColorRect" type="ColorRect" parent="Podiums" unique_id=1653794823]
+offset_left = -129.99998
+offset_top = -645.71423
+offset_right = 1241.4285
+offset_bottom = 125.714294
+color = Color(0.76862746, 0.84705883, 0.8901961, 1)
+
+[node name="PodiumTest2" type="Sprite2D" parent="Podiums" unique_id=749608925]
+position = Vector2(270, 40)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_cpuug")
+
+[node name="PodiumTest4" type="Sprite2D" parent="Podiums" unique_id=1051598822]
+position = Vector2(554.28564, -31.428528)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_cpuug")
+
+[node name="PodiumTest5" type="Sprite2D" parent="Podiums" unique_id=528177981]
+position = Vector2(827.1428, 40)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_cpuug")
+
+[node name="PodiumTest6" type="Sprite2D" parent="Podiums" unique_id=1636078919]
+position = Vector2(1104.2856, 97.14288)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_cpuug")
+
+[node name="PodiumTest3" type="Sprite2D" parent="Podiums" unique_id=568719427]
+position = Vector2(4.285721, 101.42865)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_cpuug")
+
 [node name="HeaderContainerOffset" type="Control" parent="." unique_id=2078019511]
 layout_mode = 1
 anchors_preset = 10
@@ -113,8 +196,7 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = -136.0
-offset_bottom = -38.0
+offset_bottom = 98.0
 grow_horizontal = 2
 
 [node name="PanelContainer2" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1299552836]
@@ -168,8 +250,7 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = 655.0
-offset_bottom = 931.0007
+offset_bottom = 276.0006
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -180,10 +261,11 @@ size_flags_horizontal = 3
 [node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 4.0
+offset_bottom = 36.0
+resource = SubResource("Resource_e7lec")
 
 [node name="Control3" type="Control" parent="ButtonContainerOffset/ButtonContainer" unique_id=1838541998]
 layout_mode = 2
@@ -192,10 +274,10 @@ size_flags_horizontal = 3
 [node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = -4.0
+offset_top = -13.0
+offset_right = -4.0
+offset_bottom = -13.0
 
 [node name="Control1" type="Control" parent="ButtonContainerOffset/ButtonContainer" unique_id=584695649]
 layout_mode = 2
@@ -204,10 +286,11 @@ size_flags_horizontal = 3
 [node name="ShopButton1" parent="ButtonContainerOffset/ButtonContainer/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = 2.0
+offset_top = -54.0
+offset_right = 2.0
+offset_bottom = -54.0
+resource = SubResource("Resource_i3qng")
 
 [node name="Control4" type="Control" parent="ButtonContainerOffset/ButtonContainer" unique_id=453974080]
 layout_mode = 2
@@ -216,10 +299,10 @@ size_flags_horizontal = 3
 [node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = 2.0
+offset_top = -5.0
+offset_right = 2.0
+offset_bottom = -5.0
 
 [node name="Control5" type="Control" parent="ButtonContainerOffset/ButtonContainer" unique_id=867177716]
 layout_mode = 2
@@ -228,10 +311,10 @@ size_flags_horizontal = 3
 [node name="ShopButton5" parent="ButtonContainerOffset/ButtonContainer/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 1.0
+offset_bottom = 35.0
 
 [node name="NavContainerOffset" type="Control" parent="." unique_id=1609302305]
 layout_mode = 1
@@ -245,9 +328,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NavContainer" type="HBoxContainer" parent="NavContainerOffset" unique_id=1771758401]
 layout_mode = 1
-offset_top = 600.0
 offset_right = 171.00006
-offset_bottom = 666.00037
+offset_bottom = 66.00037
 
 [node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
