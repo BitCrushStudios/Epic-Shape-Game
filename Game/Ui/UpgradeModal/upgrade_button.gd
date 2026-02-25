@@ -23,9 +23,9 @@ func _pressed() -> void:
 	upgrade_selected.emit(resource)
 	
 	
-func modal():
+func setup():
 	var available_upgrades = UpgradeResource.get_available_upgrades()
 	var i = randi_range(0, available_upgrades.size()-1)
 	resource = available_upgrades.pop_at(i).new()
 
-@export_tool_button("Setup") var __setup = modal
+@export_tool_button("Setup") var _setup = setup

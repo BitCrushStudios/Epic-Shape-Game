@@ -13,9 +13,14 @@ func modal():
 		btn.show()
 		var i = randi_range(0,available_upgrades.size()-1)
 		btn.resource = available_upgrades.pop_at(i).new()
+		
+	$AnimationPlayer.play("open")
+	
 	var upgrade = await upgrade_selected
+	
 	$AnimationPlayer.play("close")
 	await $AnimationPlayer.animation_finished
+	
 	return upgrade
 func get_buttons():
 	return [

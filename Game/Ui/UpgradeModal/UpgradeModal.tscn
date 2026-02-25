@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfmnunvb3wtwm"]
 
-[ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/upgrade_button.tscn" id="1_abdc0"]
-[ext_resource type="Script" uid="uid://dgrtttjenktlj" path="res://Game/Ui/upgrade_modal.gd" id="1_d0xgl"]
+[ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/UpgradeModal/upgrade_button.tscn" id="1_abdc0"]
+[ext_resource type="Script" uid="uid://dgrtttjenktlj" path="res://Game/Ui/UpgradeModal/upgrade_modal.gd" id="1_d0xgl"]
 [ext_resource type="Script" uid="uid://dvicl7tavrmp3" path="res://Game/Upgrades/extra_speed.gd" id="3_0yd5t"]
 [ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/extra_mass.gd" id="4_aa4lv"]
 [ext_resource type="Script" uid="uid://dms5y3buqcmqw" path="res://Game/Upgrades/extra_size.gd" id="5_1ngdt"]
@@ -59,7 +59,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_2q4av"]
-resource_name = "start"
+resource_name = "open"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -77,7 +77,7 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_1ngdt"),
 &"close": SubResource("Animation_wjask"),
-&"start": SubResource("Animation_2q4av")
+&"open": SubResource("Animation_2q4av")
 }
 
 [node name="UpgradeModal" type="Control" unique_id=827339811]
@@ -96,7 +96,7 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_top = -145.0
-offset_bottom = 145.00012
+offset_bottom = 145.00024
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -172,4 +172,3 @@ resource = SubResource("Resource_2yqri")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")
-autoplay = &"start"

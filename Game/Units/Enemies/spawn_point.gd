@@ -8,6 +8,6 @@ func _process(delta: float) -> void:
 	spawn_time -= delta
 	if spawn_time<=0:
 		var node:Enemy = tscn.instantiate()
-		add_sibling(node)
+		add_sibling(node,true)
 		node.global_position = global_position
 		queue_free()

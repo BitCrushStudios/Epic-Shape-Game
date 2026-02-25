@@ -16,7 +16,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteOrigin:modulate")
+tracks/0/path = NodePath("CollisionShape2D/SpriteOrigin:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,7 +34,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteOrigin:modulate")
+tracks/0/path = NodePath("CollisionShape2D/SpriteOrigin:modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -59,25 +59,28 @@ center_of_mass = Vector2(0, 10)
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
-base_speed_add = 1.0
+stat_size = 2
+base_size_add = 0.25
 health_max = 30.0
 
-[node name="SpriteOrigin" type="Node2D" parent="." unique_id=1318647114]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_mbpe7")
+
+[node name="SpriteOrigin" type="Node2D" parent="CollisionShape2D" unique_id=1318647114]
+show_behind_parent = true
 y_sort_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=250217813]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D/SpriteOrigin" unique_id=250217813]
 scale = Vector2(0.70838416, 0.70838416)
 texture = ExtResource("3_fd82q")
 
-[node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=1960482243]
+[node name="ShadowOrigin" type="Node2D" parent="CollisionShape2D/SpriteOrigin" unique_id=1960482243]
 script = ExtResource("3_mbpe7")
 
-[node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("2_tok1r")]
+[node name="Shadow" parent="CollisionShape2D/SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("2_tok1r")]
 position = Vector2(0, 26.999998)
 scale = Vector2(0.6296514, 0.5596902)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
-shape = SubResource("CircleShape2D_mbpe7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1139761376]
 unique_name_in_owner = true
