@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cl3ijdb6yf7tm" path="res://Assets/Art/Backgrounds/Main Scene/Background Horz.png" id="10_f77hp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_3xx61"]
+vertices = PackedVector2Array(0, 50, -50, 50, -50, -50, 0, -50)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 50, -50, 50, -50, -50, 0, -50)])
+agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jw32o"]
 vertices = PackedVector2Array(50, 50, -50, 50, -50, -50, 50, -50)
@@ -20,6 +24,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-50, -50, 50, -50, 50, 
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q34ae"]
+vertices = PackedVector2Array(50, 50, 0, 50, 0, -50, 50, -50)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -50, 50, -50, 50, 50, 0, 50)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmxlf"]
 texture = ExtResource("1_50glp")
@@ -70,26 +78,15 @@ autoplay = true
 position = Vector2(911, 542)
 mass = 11.0
 
-[node name="WeaponCube" parent="Player" unique_id=1251268979 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(698, 548)
-
-[node name="WeaponCube2" parent="Player" unique_id=1244505892 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(1202, 536)
-
-[node name="WeaponCube3" parent="Player" unique_id=1340926155 instance=ExtResource("4_rgh2o")]
+[node name="WeaponCube16" parent="Player" unique_id=149447796 instance=ExtResource("4_rgh2o")]
 top_level = true
 position = Vector2(585, 518)
 
 [node name="EnemyManager" type="Node2D" parent="." unique_id=314124947]
 script = ExtResource("5_v1gob")
 
-[node name="EnemyTriangle2" parent="EnemyManager" unique_id=1908247118 instance=ExtResource("3_kln2b")]
-position = Vector2(1584, 568)
-
-[node name="EnemyTriangle3" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
-position = Vector2(316, 561)
+[node name="EnemyTriangle11" parent="EnemyManager" unique_id=403370904 instance=ExtResource("3_kln2b")]
+position = Vector2(1016, 343)
 
 [node name="Arena" type="TileMapLayer" parent="." unique_id=235472239]
 z_index = -3

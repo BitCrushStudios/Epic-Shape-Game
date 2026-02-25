@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ctf6ho5vxcyyy"]
 
-[ext_resource type="Script" uid="uid://bkfukgdcol76a" path="res://Game/Ui/UpgradeModal/upgrade_button.gd" id="1_w5r4s"]
-[ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/extra_mass.gd" id="2_w5r4s"]
+[ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="1_vdi0g"]
+[ext_resource type="Script" uid="uid://bkfukgdcol76a" path="res://Game/Ui/upgrade_button.gd" id="1_w5r4s"]
+[ext_resource type="Script" path="res://Game/Upgrades/extra_mass.gd" id="2_w5r4s"]
 
 [sub_resource type="Resource" id="Resource_w5r4s"]
 script = ExtResource("2_w5r4s")
@@ -17,6 +18,14 @@ offset_right = -370.0
 offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.6770251, 0.20439124, 0.14830631, 1)
+theme_override_colors/font_focus_color = Color(0.9843137, 0.78039217, 0.7411765, 1)
+theme_override_colors/font_pressed_color = Color(0.45402128, 0.13356292, 0.089396395, 1)
+theme_override_colors/font_hover_color = Color(0.98625296, 0.77865106, 0.7410003, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.72172314, 0.24067497, 0.17353234, 1)
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+theme_override_colors/font_outline_color = Color(0.93333334, 0.40784314, 0.33333334, 1)
+theme_override_font_sizes/font_size = 50
 script = ExtResource("1_w5r4s")
 resource = SubResource("Resource_w5r4s")
 
@@ -40,6 +49,7 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=966070400]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("1_vdi0g")
 theme_override_font_sizes/font_size = 24
 text = "Extra Mass +1"
 horizontal_alignment = 1

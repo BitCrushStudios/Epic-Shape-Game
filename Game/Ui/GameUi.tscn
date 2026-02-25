@@ -28,6 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ExpBar" type="ProgressBar" parent="VBoxContainer" unique_id=1576029006]
+visible = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 value = 49.27
@@ -53,8 +54,10 @@ layout_mode = 2
 [node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=1993686910]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 323.0
-offset_bottom = 74.0
+offset_left = 15.0
+offset_top = 20.0
+offset_right = 338.0
+offset_bottom = 94.0
 scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -80,22 +83,25 @@ text = "1111"
 [node name="WaveLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1714083808]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.5
-offset_top = -21.5
-offset_right = 45.5
-offset_bottom = 21.5
+offset_left = -88.0
+offset_right = 88.0
+offset_bottom = 86.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 2
-theme_override_font_sizes/font_size = 32
-text = "Wave 1"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 32
+theme_override_constants/outline_size = 14
+theme_override_constants/shadow_outline_size = 50
+theme_override_font_sizes/font_size = 55
+text = "WAVE 12"
 
 [node name="DebugUi" parent="VBoxContainer/HBoxContainer" unique_id=241918914 instance=ExtResource("6_cu33k")]
+visible = false
 layout_mode = 1
 
 [node name="HurtOverlay" type="TextureRect" parent="." unique_id=375065571]
