@@ -1,5 +1,12 @@
 [gd_scene format=3 uid="uid://b66bmdof44psr"]
 
+[ext_resource type="Texture2D" uid="uid://b6ll32mcnmeu8" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon.png" id="1_2u7e1"]
+[ext_resource type="Script" uid="uid://cahhcc0vqgtl" path="res://Game/Ui/EquipModal/EquipWeaponButton.gd" id="1_cnfrr"]
+
 [node name="EquipWeaponButton" type="Button" unique_id=509255857]
+offset_right = 229.0
+offset_bottom = 90.0
 theme_type_variation = &"FlatButton"
 text = "Cube"
+icon = ExtResource("1_2u7e1")
+script = ExtResource("1_cnfrr")
