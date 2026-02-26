@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://t8okmboocwvk"]
+
+[ext_resource type="Script" uid="uid://dmfyl6vva2dmh" path="res://bowling_ball.gd" id="1_i4e2e"]
+[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/shadow_origin.gd" id="2_ceqr3"]
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_g6h13"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_g6h13"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_sjvgc"]
+[ext_resource type="Texture2D" uid="uid://b2bbruv8lcm8s" path="res://Assets/Art/Weapons/Bowling Ball/Bowling Ball.png" id="4_intmm"]
+[ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="6_5oxer"]
+[ext_resource type="AudioStream" uid="uid://rf7jq4otctx2" path="res://Assets/Sound Effects/Cube Hit/Hit.wav" id="7_h3i4e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ceqr3"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="Resource" id="Resource_87kv1"]
+script = ExtResource("3_sjvgc")
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"
+
+[sub_resource type="Curve" id="Curve_xw14b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4543081, 0.44078946), 0.0, 0.0, 0, 0, Vector2(0.97389036, 0.16447371), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4e2e"]
+radius = 48.0
+height = 130.0
+
+[node name="Bowling Ball" type="RigidBody2D" unique_id=174184491]
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_ceqr3")
+script = ExtResource("1_i4e2e")
+resource = SubResource("Resource_87kv1")
+state = 1
+
+[node name="Origin" type="Node2D" parent="." unique_id=945874266]
+y_sort_enabled = true
+
+[node name="ShadowOrigin" type="Node2D" parent="Origin" unique_id=78060761]
+script = ExtResource("2_ceqr3")
+
+[node name="Shadow" parent="Origin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_g6h13")]
+unique_name_in_owner = true
+position = Vector2(0, 51)
+scale = Vector2(1.5, 1)
+
+[node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=794263973]
+unique_name_in_owner = true
+y_sort_enabled = true
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_intmm")
+
+[node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=765954535]
+unique_name_in_owner = true
+y_sort_enabled = true
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_intmm")
+
+[node name="Trail2D" type="Line2D" parent="." unique_id=1011419134]
+z_index = -1
+width = 100.0
+width_curve = SubResource("Curve_xw14b")
+default_color = Color(1, 0.45241642, 0.38395938, 0.2)
+script = ExtResource("6_5oxer")
+length = 20
+metadata/_custom_type_script = "uid://onfsof0qcqtj"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1329120293]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_i4e2e")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=179139107]
+radius = 50.0
+
+[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1540142201]
+stream = ExtResource("7_h3i4e")
+volume_db = -10.0
+pitch_scale = 1.2

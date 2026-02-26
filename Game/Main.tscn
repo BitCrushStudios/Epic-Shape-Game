@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="1_50glp"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="3_kln2b"]
-[ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://s63vso0w17h8" path="res://Game/Weapons/fist.tscn" id="4_3tq7c"]
+[ext_resource type="PackedScene" uid="uid://t8okmboocwvk" path="res://Game/Weapons/bowling_ball.tscn" id="4_krex0"]
+[ext_resource type="PackedScene" uid="uid://b2aqwrj35lr50" path="res://Game/Weapons/CircleWeapon.tscn" id="5_eg2md"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/enemy_manager.gd" id="5_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bmprloh75j06" path="res://Game/Ui/GameUi.tscn" id="7_jw32o"]
 [ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="8_50glp"]
@@ -71,28 +73,13 @@ autoplay = true
 position = Vector2(911, 542)
 mass = 11.0
 
-[node name="WeaponCube16" parent="Player" unique_id=149447796 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(585, 518)
+[node name="Bowling Ball" parent="Player" unique_id=174184491 instance=ExtResource("4_krex0")]
 
-[node name="WeaponCube17" parent="Player" unique_id=1251268979 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(930, 404)
+[node name="Fist" parent="Player" unique_id=579508121 instance=ExtResource("4_3tq7c")]
 
-[node name="WeaponCube18" parent="Player" unique_id=1724072341 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(1252, 561)
-
-[node name="WeaponCube19" parent="Player" unique_id=1766926968 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(1018, 738)
-
-[node name="WeaponCube20" parent="Player" unique_id=1982015212 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(758, 747)
+[node name="WeaponCircle" parent="Player" unique_id=1251268979 instance=ExtResource("5_eg2md")]
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
-process_mode = 4
 script = ExtResource("5_v1gob")
 
 [node name="EnemyTriangle" parent="EnemyManager" unique_id=166037116 instance=ExtResource("3_kln2b")]
@@ -111,8 +98,6 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="CameraShake" type="Node" parent="Camera2D" unique_id=342130638]
 script = ExtResource("8_vy5pj")
-
-[node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
 
 [node name="Background Stuff" type="Node2D" parent="." unique_id=1655149011]
 
@@ -145,3 +130,5 @@ visible = false
 modulate = Color(1, 1, 1, 0.33333334)
 position = Vector2(961, 543)
 texture = ExtResource("9_x253o")
+
+[node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
