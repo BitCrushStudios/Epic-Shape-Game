@@ -9,7 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="8_50glp"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="8_vy5pj"]
 [ext_resource type="Texture2D" uid="uid://cxcax73lk7h5d" path="res://Assets/Art/Backgrounds/Main Scene/Background Vert.png" id="9_q34ae"]
+[ext_resource type="Texture2D" uid="uid://bpgyi04fk4wrj" path="res://Assets/Art/Shadow/Effect2.png" id="9_x253o"]
 [ext_resource type="Texture2D" uid="uid://cl3ijdb6yf7tm" path="res://Assets/Art/Backgrounds/Main Scene/Background Horz.png" id="10_f77hp"]
+[ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="11_6o7ua"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f77hp"]
 
@@ -112,20 +114,34 @@ script = ExtResource("8_vy5pj")
 
 [node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
 
-[node name="BackgroundTest" type="Sprite2D" parent="." unique_id=761658560]
+[node name="Background Stuff" type="Node2D" parent="." unique_id=1655149011]
+
+[node name="BackgroundTest" type="Sprite2D" parent="Background Stuff" unique_id=761658560]
 position = Vector2(150, 540)
 texture = ExtResource("9_q34ae")
 
-[node name="BackgroundTest2" type="Sprite2D" parent="." unique_id=1726158472]
+[node name="BackgroundTest2" type="Sprite2D" parent="Background Stuff" unique_id=1726158472]
 position = Vector2(1770, 540)
-scale = Vector2(-1, 1)
+rotation = 3.1415927
+scale = Vector2(1, -1)
 texture = ExtResource("9_q34ae")
 
-[node name="BackgroundHorz" type="Sprite2D" parent="." unique_id=1757786479]
+[node name="BackgroundHorz" type="Sprite2D" parent="Background Stuff" unique_id=1757786479]
 position = Vector2(960, 1009)
 texture = ExtResource("10_f77hp")
 
-[node name="BackgroundHorz2" type="Sprite2D" parent="." unique_id=958701305]
+[node name="BackgroundHorz2" type="Sprite2D" parent="Background Stuff" unique_id=958701305]
 position = Vector2(960, 117)
 scale = Vector2(1, -1)
 texture = ExtResource("10_f77hp")
+
+[node name="Dark" type="Sprite2D" parent="Background Stuff" unique_id=1733018830]
+modulate = Color(1, 1, 1, 0.77254903)
+position = Vector2(960, 539)
+texture = ExtResource("11_6o7ua")
+
+[node name="White" type="Sprite2D" parent="Background Stuff" unique_id=1618926376]
+visible = false
+modulate = Color(1, 1, 1, 0.33333334)
+position = Vector2(961, 543)
+texture = ExtResource("9_x253o")
