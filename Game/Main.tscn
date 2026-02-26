@@ -73,6 +73,26 @@ mass = 11.0
 top_level = true
 position = Vector2(585, 518)
 
+[node name="WeaponCube17" parent="Player" unique_id=1251268979 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube18" parent="Player" unique_id=443360591 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube19" parent="Player" unique_id=1883959763 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube20" parent="Player" unique_id=1600397879 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
+[node name="WeaponCube21" parent="Player" unique_id=759364880 instance=ExtResource("4_rgh2o")]
+top_level = true
+position = Vector2(585, 518)
+
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 process_mode = 4
 script = ExtResource("5_v1gob")
