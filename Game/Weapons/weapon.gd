@@ -3,6 +3,8 @@ extends RigidBody2D
 class_name Weapon
 
 @export var resource: WeaponResource:
+	get():
+		return resource
 	set(v):
 		if resource:
 			resource.changed.disconnect(_resource_changed)
@@ -21,6 +23,7 @@ enum State{
 func _resource_changed():
 	%NormalSprite.texture = resource.normal_texture
 	%ActivatedSprite.texture = resource.activated_texture
+	$CollisionShape2D.shape = resource.shape
 func _ready():
 	body_entered.connect(_on_body_entered)
 	

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b2aqwrj35lr50"]
+
+[ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="1_m07e8"]
+[ext_resource type="Texture2D" uid="uid://cvv4vtbf4683p" path="res://Assets/ProgrammerArt/ProgrammerArt__WeaponCircleActivated.png" id="2_j2afy"]
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="3_38vbf"]
+[ext_resource type="Texture2D" uid="uid://b7uufd58dxmpj" path="res://Assets/ProgrammerArt/ProgrammerArt__WeaponCircle.png" id="4_htisi"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="5_a6uwo"]
+
+[sub_resource type="Resource" id="Resource_6lxqi"]
+script = ExtResource("5_a6uwo")
+normal_texture = ExtResource("4_htisi")
+activated_texture = ExtResource("2_j2afy")
+name = "Cube Weapon"
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"
+
+[node name="WeaponCircle" unique_id=1251268979 instance=ExtResource("1_m07e8")]
+resource = SubResource("Resource_6lxqi")
+
+[node name="NormalSprite" parent="Origin" parent_id_path=PackedInt32Array(1399568225) index="1" unique_id=1895854747]
+texture = ExtResource("4_htisi")
+
+[node name="ActivatedSprite" parent="Origin" parent_id_path=PackedInt32Array(1399568225) index="2" unique_id=1708969596]
+texture = ExtResource("2_j2afy")

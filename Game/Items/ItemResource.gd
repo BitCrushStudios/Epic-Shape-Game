@@ -3,14 +3,20 @@ extends Resource
 class_name ItemResource
 
 @export var texture: Texture2D:
+	get():
+		return texture
 	set(v):
 		texture = v
 		emit_changed()
-@export var name = "Item Name":
+@export var name:String:
+	get():
+		return name
 	set(v):
 		name = v
 		emit_changed()
-@export var description = "":
+@export var description:String:
+	get():
+		return description
 	set(v):
 		description = v
 		emit_changed()
@@ -27,3 +33,7 @@ static func get_available_items():
 		ItemCoffee,
 	]
 	
+func _init():
+	texture = null
+	name = "Item Name"
+	description = ""

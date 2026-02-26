@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cqmbl2lc6yrsn" path="res://Game/Ui/ShopModal/ShopModal.gd" id="1_oi6um"]
 [ext_resource type="PackedScene" uid="uid://csd1cwka8wio6" path="res://Game/Ui/ShopModal/ShopButton.tscn" id="2_a2r72"]
 [ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="3_udy12"]
-[ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemShake.gd" id="4_wy88y"]
+[ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
 [ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
 
 [sub_resource type="Resource" id="Resource_e7lec"]

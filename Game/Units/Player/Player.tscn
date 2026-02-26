@@ -59,12 +59,11 @@ center_of_mass = Vector2(0, 10)
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
-stat_size = 2
 base_size_add = 0.25
 health_max = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.1221772, 1.1221772)
 shape = SubResource("CircleShape2D_mbpe7")
 
 [node name="SpriteOrigin" type="Node2D" parent="CollisionShape2D" unique_id=1318647114]

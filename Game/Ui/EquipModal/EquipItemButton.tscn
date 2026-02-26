@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://eysmb4e2s602"]
 
+[ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="1_dk6pw"]
 [ext_resource type="Script" uid="uid://dq5vcdfr0j0tk" path="res://Game/Ui/EquipModal/EquipItemButton.gd" id="1_qucnc"]
+[ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="2_38eun"]
+
+[sub_resource type="Resource" id="Resource_dk6pw"]
+script = ExtResource("2_38eun")
+texture = ExtResource("1_dk6pw")
+name = "Coffee"
+metadata/_custom_type_script = "uid://dkimhnvplapun"
 
 [node name="EquipItemButton" type="Button" unique_id=990913445]
-theme_type_variation = &"FlatButton"
+anchors_preset = -1
+anchor_right = 0.257
+anchor_bottom = 0.124000005
+offset_right = 0.27999878
+offset_bottom = 0.039993286
+grow_horizontal = 2
+theme_type_variation = &"OutlineButton"
 text = "Coffee"
+icon = ExtResource("1_dk6pw")
+expand_icon = true
 script = ExtResource("1_qucnc")
+resource = SubResource("Resource_dk6pw")

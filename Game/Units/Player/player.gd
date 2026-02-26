@@ -76,7 +76,7 @@ func update_size():
 	size_tween.tween_property(
 		$CollisionShape2D, 
 		"scale", 
-		Vector2.ONE * (base_size + (base_size_add * stat_size)), 
+		Vector2.ONE * (base_size + (base_size_add * (stat_size-1))), 
 		2.0
 	).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT_IN)
 func update_mass():
@@ -114,7 +114,7 @@ func show_shop_modal():
 
 func show_equip_modal():
 	get_tree().paused=true
-	var modal: ShopModal = preload("res://Game/Ui/EquipModal/EquipModal.tscn").instantiate()
+	var modal: EquipModal = preload("res://Game/Ui/EquipModal/EquipModal.tscn").instantiate()
 	$CanvasLayer.add_child(modal)
 	await modal.tree_entered
 	await modal.modal()

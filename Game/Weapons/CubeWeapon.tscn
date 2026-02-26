@@ -1,41 +1,33 @@
 [gd_scene format=3 uid="uid://cbt0babfbxfde"]
 
 [ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_x6q4i"]
+[ext_resource type="Resource" uid="uid://clky6g0bw3w53" path="res://Game/Weapons/CubeWeaponResource.tres" id="2_qg1ck"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/shadow_origin.gd" id="2_r617p"]
-[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="3_lt8sh"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_rdb24"]
 [ext_resource type="AudioStream" uid="uid://rf7jq4otctx2" path="res://Assets/Sound Effects/Cube Hit/Hit.wav" id="4_0cfu2"]
 [ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="4_6u5qs"]
 [ext_resource type="Texture2D" uid="uid://c8ul4mta8vnus" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active.png" id="5_8q1de"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="5_xrb46"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="6_8q1de"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
 friction = 0.0
 bounce = 31.6
 
-[sub_resource type="Resource" id="Resource_s3knr"]
-script = ExtResource("5_xrb46")
-normal_texture = ExtResource("4_6u5qs")
-activated_texture = ExtResource("5_8q1de")
-name = "Cube Weapon"
-metadata/_custom_type_script = "uid://bvtjy2mkl872g"
-
 [sub_resource type="Curve" id="Curve_8q1de"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4543081, 0.44078946), 0.0, 0.0, 0, 0, Vector2(0.97389036, 0.16447371), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6q4i"]
-size = Vector2(52, 52)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ck"]
+size = Vector2(60, 60)
 
-[node name="WeaponCube" type="RigidBody2D" unique_id=1251268979]
+[node name="Weapon" type="RigidBody2D" unique_id=1251268979]
 y_sort_enabled = true
 mass = 3.0
 physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_x6q4i")
-resource = SubResource("Resource_s3knr")
+resource = ExtResource("2_qg1ck")
 
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]
 y_sort_enabled = true
@@ -70,7 +62,7 @@ length = 13
 metadata/_custom_type_script = "uid://onfsof0qcqtj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
-shape = SubResource("RectangleShape2D_x6q4i")
+shape = SubResource("RectangleShape2D_qg1ck")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 20.0

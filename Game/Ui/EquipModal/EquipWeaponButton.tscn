@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://b66bmdof44psr"]
 
-[ext_resource type="Texture2D" uid="uid://b6ll32mcnmeu8" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon.png" id="1_2u7e1"]
+[ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="1_c8uq6"]
 [ext_resource type="Script" uid="uid://cahhcc0vqgtl" path="res://Game/Ui/EquipModal/EquipWeaponButton.gd" id="1_cnfrr"]
+[ext_resource type="Resource" uid="uid://clky6g0bw3w53" path="res://Game/Weapons/CubeWeaponResource.tres" id="3_pfg06"]
 
-[node name="EquipWeaponButton" type="Button" unique_id=509255857]
-offset_right = 229.0
-offset_bottom = 90.0
-theme_type_variation = &"FlatButton"
-text = "Cube"
-icon = ExtResource("1_2u7e1")
+[node name="EquipWeaponButton" type="Button" unique_id=1452206220]
+offset_left = -1.0
+offset_right = 251.0
+offset_bottom = 48.0
+theme_type_variation = &"OutlineButtonToggleLeft"
+toggle_mode = true
+keep_pressed_outside = true
+text = "Cube Weapon"
+icon = ExtResource("1_c8uq6")
+expand_icon = true
 script = ExtResource("1_cnfrr")
+resource = ExtResource("3_pfg06")

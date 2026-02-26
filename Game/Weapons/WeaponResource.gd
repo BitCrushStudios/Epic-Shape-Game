@@ -1,8 +1,12 @@
+@tool
 extends Resource
 class_name WeaponResource
 
 
-@export var activation_max = 1.0
+@export var activation_max = 1.0:
+	set(v):
+		activation_max = v
+		emit_changed()
 @export var normal_texture: Texture2D:
 	set(v):
 		normal_texture = v
@@ -11,6 +15,11 @@ class_name WeaponResource
 	set(v):
 		activated_texture = v
 		emit_changed()
+@export var shape: Shape2D:
+	set(v):
+		shape = v
+		emit_changed()
+		
 @export var name:String="Weapon":
 	set(v):
 		name = v

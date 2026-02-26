@@ -2,14 +2,19 @@
 extends Button
 class_name EquipWeaponButton
 
-@export var weapon: WeaponResource:
+@export var resource: WeaponResource:
 	set(v):
-		weapon = v
-		update_weapon()
+		if resource:
+			resource.changed.disconnect(update_resource)
+		resource = v
+		if resource:
+			resource.changed.connect(update_resource)
+		update_resource()
 		
-func update_weapon():
-	if weapon.texture:
-		icon = weapon.texture
-	else:
+func update_resource():
+	if not resource:
+		text = "Weapon"
 		icon = null
-	text = weapon.name
+		return
+	icon = resource.normal_texture if resource.normal_texture else null
+	text = resource.name

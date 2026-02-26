@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://clky6g0bw3w53"]
+
+[ext_resource type="Texture2D" uid="uid://c8ul4mta8vnus" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active.png" id="1_hin20"]
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_8fb2p"]
+[ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="3_21gk6"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_rwgur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ck"]
+size = Vector2(64, 64)
+
+[resource]
+script = ExtResource("4_rwgur")
+normal_texture = ExtResource("3_21gk6")
+activated_texture = ExtResource("1_hin20")
+shape = SubResource("RectangleShape2D_qg1ck")
+name = "Cube Weapon"
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"

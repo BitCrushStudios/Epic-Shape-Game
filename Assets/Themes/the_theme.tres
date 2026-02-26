@@ -5,6 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://bi5gaaqj0anua" path="res://Assets/ProgrammerArt/ProgrammerUiArt__Uncheck.png" id="2_hu4tp"]
 [ext_resource type="Texture2D" uid="uid://b8fgmlovc285c" path="res://Assets/ProgrammerArt/ProgrammerUiArt__DropDownArrow.png" id="3_g7ogn"]
 [ext_resource type="Texture2D" uid="uid://b6ll32mcnmeu8" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon.png" id="4_lp5de"]
+[ext_resource type="StyleBox" uid="uid://butod7dgfoitr" path="res://Assets/Themes/styleboxes/OutlineButton/BlackOutline.stylebox" id="5_glsmj"]
+[ext_resource type="StyleBox" uid="uid://djvsfes8ubn6l" path="res://Assets/Themes/styleboxes/OutlineButton/GrayOutline.stylebox" id="6_cek3a"]
+[ext_resource type="StyleBox" uid="uid://licbw7cn6wdu" path="res://Assets/Themes/styleboxes/OutlineButton/WhiteOutline.stylebox" id="7_o5uv1"]
+[ext_resource type="StyleBox" uid="uid://bsq0i0bg08me2" path="res://Assets/Themes/styleboxes/OutlineButton/OutlineButtonToggleLeftPanel/BlackOutline.stylebox" id="8_g6s5i"]
+[ext_resource type="StyleBox" uid="uid://ccdute4arh5kt" path="res://Assets/Themes/styleboxes/OutlineButton/OutlineButtonToggleLeftPanel/GrayOutline.stylebox" id="9_af5ys"]
+[ext_resource type="StyleBox" uid="uid://cfe23r48vwws2" path="res://Assets/Themes/styleboxes/OutlineButton/OutlineButtonToggleLeftPanel/WhiteOutline.stylebox" id="10_8lfb5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl5fw"]
 content_margin_left = 5.0
@@ -117,6 +123,28 @@ MarginContainer/constants/margin_right = 5
 MarginContainer/constants/margin_top = 5
 OptionButton/constants/modulate_arrow = 1
 OptionButton/icons/arrow = ExtResource("3_g7ogn")
+OutlineButton/base_type = &"Button"
+OutlineButton/colors/font_color = Color(0.67, 0.67, 0.67, 1)
+OutlineButton/colors/font_disabled_color = Color(1, 1, 1, 1)
+OutlineButton/colors/font_focus_color = Color(0.76862746, 0.76862746, 0.76862746, 1)
+OutlineButton/colors/font_hover_color = Color(0.76862746, 0.76862746, 0.76862746, 1)
+OutlineButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OutlineButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OutlineButton/colors/icon_hover_color = Color(1, 1, 1, 1)
+OutlineButton/font_sizes/font_size = 30
+OutlineButton/styles/disabled = ExtResource("5_glsmj")
+OutlineButton/styles/focus = ExtResource("6_cek3a")
+OutlineButton/styles/hover = ExtResource("6_cek3a")
+OutlineButton/styles/hover_pressed = ExtResource("7_o5uv1")
+OutlineButton/styles/normal = ExtResource("6_cek3a")
+OutlineButton/styles/pressed = ExtResource("7_o5uv1")
+OutlineButtonToggleLeft/base_type = &"OutlineButton"
+OutlineButtonToggleLeft/styles/disabled = ExtResource("8_g6s5i")
+OutlineButtonToggleLeft/styles/focus = ExtResource("9_af5ys")
+OutlineButtonToggleLeft/styles/hover = ExtResource("9_af5ys")
+OutlineButtonToggleLeft/styles/hover_pressed = ExtResource("10_8lfb5")
+OutlineButtonToggleLeft/styles/normal = ExtResource("9_af5ys")
+OutlineButtonToggleLeft/styles/pressed = ExtResource("10_8lfb5")
 OutlineLabel/base_type = &"Label"
 OutlineLabel/colors/font_outline_color = Color(1, 1, 1, 1)
 OutlineLabel/constants/outline_size = 8
