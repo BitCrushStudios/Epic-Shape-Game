@@ -3,7 +3,11 @@ extends Control
 class_name ShopModal 
 
 signal item_selected(item:ItemResource)
-	
+@export var player: PlayerResource
+@export var items:Array[ItemResource]:
+	set(v):
+		items = v
+		items_changed()
 	
 func get_buttons() -> Array[ShopButton]:
 	return [
@@ -14,19 +18,41 @@ func get_buttons() -> Array[ShopButton]:
 		%ShopButton5,
 	]
 
-@export_tool_button("Setup") var __setup = setup
-func setup():
+func items_changed():
+	if not is_inside_tree():
+		await tree_entered
+	var buttons = get_buttons()
+	for i in range(buttons.size()):
+		buttons[i].hide()
+		buttons[i].resource = null
+	for i in range(buttons.size()):
+		if i<items.size() and items[i]:
+			buttons[i].show()
+			buttons[i].resource = items[i]
+			
+			
+func random_items():
 	var available_items = ItemResource.get_available_items()
-	for btn in get_buttons():
-		if available_items.size()<=0:
-			btn.hide()
-			continue
-		btn.show()
-		var i = randi_range(0,available_items.size()-1)
-		btn.resource = available_items.pop_at(i).new()
+	print(available_items)
+	var count =  get_buttons().size()
+	var arr_indices = range(count)
+	arr_indices.shuffle()
+	var vs:Array[ItemResource] = []
+	vs.resize(count)
+	for i in arr_indices:
+		if available_items.size()>0:
+			var item: ItemResource = available_items.pop_at(randi_range(0, available_items.size()-1)).new()
+			prints(i, item)
+			vs.set(i,item)
+		else:
+			vs.set(i,null)
+	items = vs
 	
+@export_tool_button("Randomize")
+var _random_items_action = random_items
+		
 func modal():
-	setup()
+	#items_changed()
 	$AnimationPlayer.play("open")
 	await %AcceptButton.pressed
 	$AnimationPlayer.play("close")
