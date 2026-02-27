@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://5iwvoicmbndj"]
+
+[ext_resource type="PackedScene" uid="uid://dfmnunvb3wtwm" path="res://Game/Ui/UpgradeModal/UpgradeModal.tscn" id="1_lmoty"]
+[ext_resource type="PackedScene" uid="uid://ojqs7tyhjare" path="res://Game/Ui/ShopModal/ShopModal.tscn" id="2_1a0g2"]
+[ext_resource type="PackedScene" uid="uid://cmia160hqk8ns" path="res://Game/Ui/EquipModal/EquipModal.tscn" id="3_rwyap"]
+
+[node name="Control" type="VBoxContainer" unique_id=599679868]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpgradeModal" parent="." unique_id=827339811 instance=ExtResource("1_lmoty")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopModal" parent="." unique_id=427878958 instance=ExtResource("2_1a0g2")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopModal2" parent="." unique_id=702365589 instance=ExtResource("3_rwyap")]
+layout_mode = 2
+size_flags_vertical = 3

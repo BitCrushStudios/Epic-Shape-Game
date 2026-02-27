@@ -40,5 +40,24 @@ func _ready() -> void:
 	for btn in get_buttons():
 		btn.upgrade_selected.connect(upgrade_selected.emit.call)
 	if get_tree().root == self:
-		modal()
+		await get_tree().process_frame
+		await modal()
+	
+func _process(_delta:float):
+	if Engine.is_editor_hint():
+		return
+	var mpos = get_global_mouse_position()
+	for btn in get_buttons():
+		var p = btn.get_parent()
+		p.scale = (Vector2.ONE - 
+			(
+				(p.get_global_rect().get_center() - mpos)
+				.limit_length(3000.0)
+				/3000.0
+			)
+			.abs()
+		).clampf(0.8,1.0)
+		
+		
+		
 	

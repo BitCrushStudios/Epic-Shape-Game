@@ -521,7 +521,7 @@ text = "Accept"
 libraries/ = SubResource("AnimationLibrary_wjask")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1395427466]
-z_index = 2
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
