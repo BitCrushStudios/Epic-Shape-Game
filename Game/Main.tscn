@@ -80,7 +80,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("BackgroundHorz:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4),
@@ -92,7 +92,7 @@ tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("BackgroundTest2:position")
-tracks/2/interp = 1
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.99996644),
@@ -104,13 +104,25 @@ tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("BackgroundTest:position")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.99996644),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(150, 540), Vector2(120, 540), Vector2(150, 540)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dark:modulate")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.10000001, 0.4, 0.8),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.09411765), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_eru0w"]
@@ -163,6 +175,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(150, 540)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dark:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.827451)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mdl5u"]
 _data = {
@@ -194,66 +218,6 @@ position = Vector2(-76, -101)
 position = Vector2(-76, -101)
 
 [node name="Weapon5" parent="Player" unique_id=382424902 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon6" parent="Player" unique_id=1288958706 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon7" parent="Player" unique_id=1842107126 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon8" parent="Player" unique_id=227706103 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon9" parent="Player" unique_id=353834417 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon10" parent="Player" unique_id=968106920 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon11" parent="Player" unique_id=1847106257 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon12" parent="Player" unique_id=1605081814 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon13" parent="Player" unique_id=2048642338 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon14" parent="Player" unique_id=2024088390 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon15" parent="Player" unique_id=314581967 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon16" parent="Player" unique_id=647079937 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon17" parent="Player" unique_id=66295572 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon18" parent="Player" unique_id=1241705836 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon19" parent="Player" unique_id=1126908694 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon20" parent="Player" unique_id=2075856048 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon21" parent="Player" unique_id=1595583186 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon22" parent="Player" unique_id=376729038 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon23" parent="Player" unique_id=745326054 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon24" parent="Player" unique_id=1478337715 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon25" parent="Player" unique_id=759753368 instance=ExtResource("3_x253o")]
 position = Vector2(-76, -101)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
@@ -299,6 +263,11 @@ texture = ExtResource("12_3tq7c")
 
 [node name="Dark" type="Sprite2D" parent="Background Stuff" unique_id=1733018830]
 modulate = Color(1, 1, 1, 0.827451)
+position = Vector2(960, 539)
+texture = ExtResource("11_6o7ua")
+
+[node name="Dark2" type="Sprite2D" parent="Background Stuff" unique_id=145441098]
+modulate = Color(1, 1, 1, 0.4509804)
 position = Vector2(960, 539)
 texture = ExtResource("11_6o7ua")
 
