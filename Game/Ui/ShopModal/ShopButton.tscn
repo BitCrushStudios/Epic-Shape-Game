@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ijwqv1ttjeih" path="res://Game/Ui/ShopModal/ShopButton.gd" id="1_1tt3b"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="3_02jqq"]
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="3_f533n"]
-[ext_resource type="Texture2D" uid="uid://cdilxwowhi4yq" path="res://Assets/Art/User Interface/Shop/Item Size Test.png" id="3_sr35a"]
+[ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="3_sr35a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sr35a"]
 
@@ -19,6 +19,7 @@
 
 [sub_resource type="Resource" id="Resource_k1nkd"]
 script = ExtResource("3_02jqq")
+texture = ExtResource("3_sr35a")
 name = "Soy"
 
 [node name="ShopButton" type="Button" unique_id=866692791]

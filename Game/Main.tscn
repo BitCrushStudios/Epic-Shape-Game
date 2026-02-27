@@ -201,24 +201,26 @@ stream = ExtResource("8_50glp")
 volume_db = -20.0
 autoplay = true
 
+[node name="Weapons" type="Node2D" parent="." unique_id=919234323]
+
+[node name="Weapon" parent="Weapons" unique_id=1251268979 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon2" parent="Weapons" unique_id=1963918511 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon3" parent="Weapons" unique_id=814990011 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon4" parent="Weapons" unique_id=1526692540 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon5" parent="Weapons" unique_id=382424902 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
 [node name="Player" parent="." unique_id=299479533 instance=ExtResource("1_r150o")]
 position = Vector2(911, 542)
 mass = 11.0
-
-[node name="Weapon" parent="Player" unique_id=1251268979 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon2" parent="Player" unique_id=1963918511 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon3" parent="Player" unique_id=814990011 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon4" parent="Player" unique_id=1526692540 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
-
-[node name="Weapon5" parent="Player" unique_id=382424902 instance=ExtResource("3_x253o")]
-position = Vector2(-76, -101)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("5_v1gob")

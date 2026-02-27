@@ -22,8 +22,18 @@ friction = 0.0
 bounce = 31.6
 
 [sub_resource type="Curve" id="Curve_8q1de"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4543081, 0.44078946), 0.0, 0.0, 0, 0, Vector2(0.97389036, 0.16447371), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.114882514, 1), 0.0, 0.0, 0, 0, Vector2(0.15143603, 0.57236844), 0.0, 0.0, 0, 0, Vector2(0.46214098, 0.375), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_ueyrc"]
+colors = PackedColorArray(1, 0.42914, 0.32646862, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_5pe0l"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jet8k"]
+gradient = SubResource("Gradient_5pe0l")
+width = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ck"]
 size = Vector2(60, 60)
@@ -102,8 +112,11 @@ z_index = -1
 width = 35.0
 width_curve = SubResource("Curve_8q1de")
 default_color = Color(1, 0.45241642, 0.38395938, 0.2)
+gradient = SubResource("Gradient_ueyrc")
+texture = SubResource("GradientTexture2D_jet8k")
+texture_mode = 1
 script = ExtResource("6_8q1de")
-length = 13
+length = 20
 metadata/_custom_type_script = "uid://onfsof0qcqtj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
