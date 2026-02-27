@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cob0asl31kevp" path="res://Game/Units/Enemies/spawn_point.gd" id="1_jrm51"]
 [ext_resource type="Texture2D" uid="uid://c3ac72yds2k4w" path="res://Assets/Art/Spawn Icon/Spawn Icon.png" id="2_21wjv"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_gq7lf"]
+[ext_resource type="Texture2D" uid="uid://dipq55cj25ihk" path="res://Assets/Art/Particles/Gold .png" id="4_gq7lf"]
 
 [sub_resource type="Animation" id="Animation_jrm51"]
 length = 0.001
@@ -42,10 +43,34 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0.99999994, -25.999998)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spawn:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shadow:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
 
 [sub_resource type="Animation" id="Animation_xgrhl"]
 resource_name = "default"
-loop_mode = 1
+length = 1.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -66,10 +91,10 @@ tracks/1/path = NodePath("Node2D:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.5, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.1, 0.5, 0.9, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.7, 0.7), Vector2(1, 1), Vector2(0.8, 0.8)]
+"values": [Vector2(0.7, 0.7), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1.4, 1.4), Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -78,10 +103,34 @@ tracks/2/path = NodePath("Node2D/Sprite2D:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.4, 0.65),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.1, 0.4, 1.05, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -20), Vector2(0.99999994, -25.999998), Vector2(1, -19.147)]
+"values": [Vector2(1, -20), Vector2(0.99999994, -25.999998), Vector2(1, -19.147), Vector2(1, 30)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spawn:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1830475, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shadow:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.20000005, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.7, 0.7)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m2e3v"]
@@ -89,6 +138,32 @@ _data = {
 &"RESET": SubResource("Animation_jrm51"),
 &"default": SubResource("Animation_xgrhl")
 }
+
+[sub_resource type="Curve" id="Curve_snp54"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ug7qw"]
+curve = SubResource("Curve_snp54")
+
+[sub_resource type="Curve" id="Curve_gq7lf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8187311, 0.65625), 0.0, 0.0, 0, 0, Vector2(1, 0.1796875), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_snp54"]
+curve = SubResource("Curve_gq7lf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_snp54"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = -65.0
+initial_velocity_max = 65.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.7
+scale_max = 0.9
+scale_curve = SubResource("CurveTexture_snp54")
+alpha_curve = SubResource("CurveTexture_ug7qw")
 
 [node name="SpawnPoint" type="Node2D" unique_id=1469410418]
 script = ExtResource("1_jrm51")
@@ -108,3 +183,14 @@ autoplay = &"default"
 [node name="Shadow" parent="." unique_id=29450177 instance=ExtResource("3_gq7lf")]
 position = Vector2(-3.9999998, 3.9999998)
 scale = Vector2(0.4, 0.4)
+
+[node name="Spawn" type="GPUParticles2D" parent="." unique_id=1315006386]
+visible = false
+emitting = false
+amount = 25
+texture = ExtResource("4_gq7lf")
+lifetime = 1.2
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_snp54")

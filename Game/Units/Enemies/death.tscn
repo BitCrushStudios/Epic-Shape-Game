@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://b010pf6ffj3tl"]
 
-[ext_resource type="Texture2D" uid="uid://pojq8bpiexci" path="res://Assets/Art/Particles/Particle .png" id="1_njj2x"]
+[ext_resource type="Texture2D" uid="uid://bihvhfy2na4xg" path="res://Assets/Art/Particles/Spawn Particle.png" id="1_4bfsk"]
+[ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="2_lqxq2"]
 
 [sub_resource type="Curve" id="Curve_njj2x"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.47129908, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_70358"]
 curve = SubResource("Curve_njj2x")
+
+[sub_resource type="Curve" id="Curve_4bfsk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lqxq2"]
+curve = SubResource("Curve_4bfsk")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_70358"]
 particle_flag_disable_z = true
@@ -18,17 +26,76 @@ gravity = Vector3(0, 0, 0)
 linear_accel_min = -100.0
 linear_accel_max = -88.89
 scale_min = 0.39999998
-scale_max = 0.79999995
+scale_max = 0.59999996
+scale_curve = SubResource("CurveTexture_lqxq2")
 alpha_curve = SubResource("CurveTexture_70358")
 turbulence_influence_min = 0.0
+
+[sub_resource type="Curve" id="Curve_5jnvf"]
+_data = [Vector2(0.2924282, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_lqxq2"]
+colors = PackedColorArray(1, 0, 0, 0.32941177, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_lqxq2"]
+resource_name = "Hide"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trail2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.7917245, 0.29295477, 0.24256057, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5jnvf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trail2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_syxwp"]
+_data = {
+&"Hide": SubResource("Animation_lqxq2"),
+&"RESET": SubResource("Animation_5jnvf")
+}
 
 [node name="Death" type="GPUParticles2D" unique_id=755023520]
 z_index = -1
 emitting = false
 amount = 100
-texture = ExtResource("1_njj2x")
+texture = ExtResource("1_4bfsk")
 lifetime = 2.0
 one_shot = true
 explosiveness = 0.75
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_70358")
+
+[node name="Trail2D" type="Line2D" parent="." unique_id=672626645]
+visible = false
+width = 25.0
+width_curve = SubResource("Curve_5jnvf")
+default_color = Color(1, 1, 1, 0.654902)
+gradient = SubResource("Gradient_lqxq2")
+script = ExtResource("2_lqxq2")
+length = 100
+metadata/_custom_type_script = "uid://onfsof0qcqtj"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=239300941]
+libraries/ = SubResource("AnimationLibrary_syxwp")
+autoplay = &"Hide"
