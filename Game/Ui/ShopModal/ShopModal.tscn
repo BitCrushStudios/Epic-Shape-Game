@@ -3,27 +3,33 @@
 [ext_resource type="Script" uid="uid://cqmbl2lc6yrsn" path="res://Game/Ui/ShopModal/ShopModal.gd" id="1_oi6um"]
 [ext_resource type="PackedScene" uid="uid://csd1cwka8wio6" path="res://Game/Ui/ShopModal/ShopButton.tscn" id="2_a2r72"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_cpuug"]
+[ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="2_e7lec"]
 [ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="3_udy12"]
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_i3qng"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
 [ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
 
-[sub_resource type="Resource" id="Resource_cpuug"]
-script = ExtResource("3_udy12")
-texture = ExtResource("4_cpuug")
-name = "Coffee"
+[sub_resource type="Resource" id="Resource_i3qng"]
+script = ExtResource("2_e7lec")
+metadata/_custom_type_script = "uid://dfj50wg6u44xx"
 
-[sub_resource type="Resource" id="Resource_e7lec"]
+[sub_resource type="Resource" id="Resource_cpuug"]
 script = ExtResource("4_wy88y")
 texture = ExtResource("4_cpuug")
 name = "Soy"
+
+[sub_resource type="Resource" id="Resource_e7lec"]
+script = ExtResource("3_udy12")
+texture = ExtResource("4_cpuug")
+name = "Coffee"
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/path = NodePath("HeaderContainerOffset:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -35,22 +41,10 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HeaderContainerOffset:modulate")
+tracks/1/path = NodePath("ButtonContainerOffset:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ButtonContainerOffset:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -162,34 +156,22 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect:modulate")
+tracks/3/path = NodePath("HeaderContainerOffset:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.13333334, 0.6333333, 1.1666666, 1.9666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("HeaderContainerOffset:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.26666668, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ButtonContainerOffset:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ButtonContainerOffset:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0.26666668, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -212,7 +194,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oi6um")
-items = Array[ExtResource("2_cpuug")]([SubResource("Resource_cpuug"), null, SubResource("Resource_e7lec"), null, null])
+player = SubResource("Resource_i3qng")
+items = Array[ExtResource("2_cpuug")]([SubResource("Resource_cpuug"), null, null, SubResource("Resource_e7lec"), null])
 
 [node name="HeaderContainerOffset" type="Control" parent="." unique_id=2078019511]
 z_index = 1
@@ -300,7 +283,7 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_bottom = 523.9995
+offset_bottom = 523.99854
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -351,6 +334,7 @@ size_flags_horizontal = 3
 
 [node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 1
@@ -365,7 +349,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_type_variation = &"OutlineButton"
 flat = false
-resource = SubResource("Resource_e7lec")
+resource = null
 
 [node name="TextureRect2" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control3" unique_id=1155977084]
 layout_mode = 1
@@ -427,7 +411,6 @@ size_flags_horizontal = 3
 
 [node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 1
@@ -442,7 +425,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_type_variation = &"OutlineButton"
 flat = false
-resource = null
+resource = SubResource("Resource_e7lec")
 
 [node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1373859225]
 layout_mode = 1
@@ -508,8 +491,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NavContainer" type="HBoxContainer" parent="NavContainerOffset" unique_id=1771758401]
 layout_mode = 1
+offset_top = 20.0
 offset_right = 171.00006
-offset_bottom = 66.00037
+offset_bottom = 86.00037
 
 [node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
@@ -519,14 +503,3 @@ text = "Accept"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1395427466]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)

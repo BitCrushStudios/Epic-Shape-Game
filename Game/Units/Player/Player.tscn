@@ -59,7 +59,6 @@ center_of_mass = Vector2(0, 10)
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
-base_size_add = 0.25
 health_max = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]

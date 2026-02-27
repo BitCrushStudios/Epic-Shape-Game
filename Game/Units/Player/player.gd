@@ -1,69 +1,15 @@
 @tool
 extends Unit
 class_name Player
-@export_category("Stats")
-@export var stat_size = 1:
-	get():
-		return stat_size
-	set(v):
-		stat_size = clampi(v, 1, stat_size_max)
-		update_size()
-@export var stat_size_max = 10
 
-@export var stat_speed = 1:
-	get():
-		return stat_speed
-	set(v):
-		stat_speed = clampi(v, 0, stat_speed_max)
-@export var stat_speed_max = 10
-
-@export var stat_iframe = 1:
-	get():
-		return stat_iframe
-	set(v):
-		stat_iframe = clampi(v, 0, stat_iframe_max)
-@export var stat_iframe_max = 10
-
-@export var stat_mass = 1:
-	get():
-		return stat_mass
-	set(v):
-		stat_mass = clampi(v, 0, stat_mass_max)
-		update_mass()
-@export var stat_mass_max = 10
-
-@export_category("Stats Base")
-@export var base_mass = 10.0:
-	set(v):
-		base_mass = v
-		update_mass()
-@export var base_mass_add = 1.0:
-	set(v):
-		base_mass_add = v
-		update_mass()
-@export var base_speed = 500.0
-@export var base_speed_add = 100.0
-@export var base_size = 1.0
-@export var base_size_add = 0.1
-@export var accel_mult = 10.0
-@export var exp_rate = 1.1
-
-@export_category("Stat Result")
-@export_custom(PROPERTY_HINT_NONE, "", PROPERTY_USAGE_NONE) 
-var speed: float:
-	get():
-		return base_speed + (base_speed_add * stat_speed)
-@export var experience = 0.0
-var exp_level: float:
-	get():
-		return experience/exp(exp_rate)
+static var instance:Player
+@export var resource: PlayerResource
 
 func _init():
 	health_max = 30.0
-static var instance:Player
 var iframe_max:
 	get():
-		return stat_iframe * 0.5
+		return resource.stat_iframe * 0.5
 var iframe = 0.0
 signal iframe_elapse()
 var size_tween:Tween
@@ -76,11 +22,11 @@ func update_size():
 	size_tween.tween_property(
 		$CollisionShape2D, 
 		"scale", 
-		Vector2.ONE * (base_size + (base_size_add * (stat_size-1))), 
+		Vector2.ONE * (resource.base_size + (resource.base_size_add * (resource.stat_size-1))), 
 		2.0
 	).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT_IN)
 func update_mass():
-	mass = base_mass + (base_mass_add * stat_mass)
+	mass = resource.base_mass + (resource.base_mass_add * resource.stat_mass)
 func apply_damage(damage:float):
 	if iframe<=0:
 		super(damage)
@@ -137,10 +83,10 @@ func _physics_process(delta: float) -> void:
 		var upgrade = ExtraWeaponUpgradeResource.new().apply()
 	
 	if Input.is_action_just_pressed("dev_player_size_up"):
-		stat_size += 1
+		resource.stat_size += 1
 		
 	if Input.is_action_just_pressed("dev_player_size_down"):
-		stat_size -= 1
+		resource.stat_size -= 1
 	
 	if iframe>0:
 		iframe = iframe - delta
@@ -148,10 +94,10 @@ func _physics_process(delta: float) -> void:
 			iframe_elapse.emit()
 			
 	var mvec = Input.get_vector("move_left","move_right","move_up","move_down")
-	var desired_velocity = mvec * speed
+	var desired_velocity = mvec * resource.speed
 	desired_velocity = desired_velocity - linear_velocity
-	desired_velocity = desired_velocity.limit_length(speed) / speed
-	desired_velocity = desired_velocity * speed * accel_mult
+	desired_velocity = desired_velocity.limit_length(resource.speed) / resource.speed
+	desired_velocity = desired_velocity * resource.speed * resource.accel_mult
 	apply_central_force(desired_velocity * mass)
 	
 	super(delta)

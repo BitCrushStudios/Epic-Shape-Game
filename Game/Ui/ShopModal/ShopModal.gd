@@ -3,6 +3,7 @@ extends Control
 class_name ShopModal 
 
 signal item_selected(item:ItemResource)
+signal btn_pressed(btn:EquipItemButton)
 @export var player: PlayerResource
 @export var items:Array[ItemResource]:
 	set(v):
@@ -61,5 +62,13 @@ func modal():
 func _ready():
 	for btn in get_buttons():
 		btn.item_selected.connect(item_selected.emit)
+		btn.pressed.connect(btn_pressed.emit.bind(btn))
+	btn_pressed.connect(_btn_pressed)
 	if get_tree().root == self:
 		await modal()
+
+func _btn_pressed(btn:EquipItemButton):
+	pass
+	
+	
+	
