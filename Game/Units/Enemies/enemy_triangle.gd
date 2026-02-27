@@ -26,6 +26,7 @@ func _health_depleted():
 	recieved_damage.disconnect(_recieved_damage)
 	health_depleted.disconnect(_health_depleted)
 	%Animation.play("death")
+	$Death.play()
 	await _particle_create(preload("./death.tscn").instantiate())
 	queue_free()
 	
