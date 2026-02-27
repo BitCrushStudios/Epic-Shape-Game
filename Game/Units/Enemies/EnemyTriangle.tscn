@@ -218,3 +218,5 @@ shape = SubResource("CircleShape2D_hu5f4")
 
 [node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=224412386]
 stream = ExtResource("14_fm6ei")
+volume_db = 1.0
+pitch_scale = 1.5
