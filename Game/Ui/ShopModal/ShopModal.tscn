@@ -95,6 +95,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 20), Vector2(0, -20), Vector2(0, 600)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HeaderContainerOffset:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ButtonContainerOffset:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_2q4av"]
 resource_name = "open"
@@ -203,8 +227,7 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = -136.0
-offset_bottom = -6.0
+offset_bottom = 130.0
 grow_horizontal = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1561531254]
@@ -277,8 +300,7 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = 655.0
-offset_bottom = 1178.9995
+offset_bottom = 523.9995
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -486,9 +508,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NavContainer" type="HBoxContainer" parent="NavContainerOffset" unique_id=1771758401]
 layout_mode = 1
-offset_top = 600.0
 offset_right = 171.00006
-offset_bottom = 666.00037
+offset_bottom = 66.00037
 
 [node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
