@@ -3,6 +3,7 @@ extends Control
 class_name UpgradeModal 
 
 signal upgrade_selected(upgrade:UpgradeResource)
+@export var player:PlayerResource
 @export_tool_button("Setup") var __setup = setup
 func setup():
 	var available_upgrades = UpgradeResource.get_available_upgrades()
@@ -38,4 +39,6 @@ func get_buttons():
 func _ready() -> void:
 	for btn in get_buttons():
 		btn.upgrade_selected.connect(upgrade_selected.emit.call)
+	if get_tree().root == self:
+		modal()
 	

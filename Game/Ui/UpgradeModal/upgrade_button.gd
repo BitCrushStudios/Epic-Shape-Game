@@ -1,6 +1,10 @@
 @tool
 extends Button
 signal upgrade_selected(resource:UpgradeResource)
+@export var facing = 1.0:
+	set(v):
+		facing = v
+		update_facing()
 @export var resource:UpgradeResource:
 	get():
 		return resource
@@ -10,7 +14,12 @@ signal upgrade_selected(resource:UpgradeResource)
 		resource = v
 		update()
 		resource.changed.connect(update)
-		
+
+func update_facing():
+	if not is_inside_tree():
+		await tree_entered
+	%Content.visible = facing > 0
+	scale.x = facing
 func update():
 	if not resource:
 		return
