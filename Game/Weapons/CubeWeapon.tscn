@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cocw1thxukq66" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0003.png" id="11_jet8k"]
 [ext_resource type="Texture2D" uid="uid://n4fg4on6xo6f" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0004.png" id="12_svcc6"]
 [ext_resource type="Texture2D" uid="uid://coqxi4pi3fadr" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0005.png" id="13_d514m"]
+[ext_resource type="Texture2D" uid="uid://eguwph4baa4e" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0008.png" id="14_5pe0l"]
 [ext_resource type="Texture2D" uid="uid://c8papk51mxa54" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0006.png" id="14_fywxt"]
 [ext_resource type="Texture2D" uid="uid://jxfi475epduf" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0007.png" id="15_ggmsm"]
 [ext_resource type="Texture2D" uid="uid://ofbpyov6dv04" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0000.png" id="16_bhfdh"]
@@ -20,6 +21,41 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
 friction = 0.0
 bounce = 31.6
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jet8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_bhfdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ueyrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5pe0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jet8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_svcc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d514m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fywxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ggmsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5pe0l")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 5.0
+}]
 
 [sub_resource type="Curve" id="Curve_8q1de"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.114882514, 1), 0.0, 0.0, 0, 0, Vector2(0.15143603, 0.57236844), 0.0, 0.0, 0, 0, Vector2(0.46214098, 0.375), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
@@ -101,11 +137,15 @@ y_sort_enabled = true
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_6u5qs")
 
-[node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=1708969596]
+[node name="ActivatedSprite" type="AnimatedSprite2D" parent="Origin" unique_id=709605317]
 unique_name_in_owner = true
 y_sort_enabled = true
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_8q1de")
+sprite_frames = SubResource("SpriteFrames_jet8k")
+animation = &"Hit"
+frame = 8
+frame_progress = 1.0
+speed_scale = 2.5
 
 [node name="Trail2D" type="Line2D" parent="." unique_id=1395042242]
 z_index = -1
