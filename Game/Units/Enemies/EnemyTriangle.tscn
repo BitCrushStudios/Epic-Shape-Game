@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b2djkh87fdg2n" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0005.png" id="10_a6ea0"]
 [ext_resource type="Texture2D" uid="uid://cidicdre2bvgu" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0006.png" id="11_qfnel"]
 [ext_resource type="Texture2D" uid="uid://b1uy44x1y33ei" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0007.png" id="12_8qflq"]
-[ext_resource type="AudioStream" uid="uid://rf7jq4otctx2" path="res://Assets/Sound Effects/Cube Hit/Hit.wav" id="14_fm6ei"]
+[ext_resource type="AudioStream" uid="uid://cp7v870j8cueu" path="res://Assets/Sound Effects/Enemy Death.wav" id="14_fm6ei"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fm6ei"]
 animations = [{
@@ -218,4 +218,4 @@ shape = SubResource("CircleShape2D_hu5f4")
 
 [node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=224412386]
 stream = ExtResource("14_fm6ei")
-volume_db = -10.0
+volume_db = -6.0
