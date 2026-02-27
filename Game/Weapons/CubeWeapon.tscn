@@ -58,14 +58,14 @@ animations = [{
 }]
 
 [sub_resource type="Curve" id="Curve_8q1de"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.114882514, 1), 0.0, 0.0, 0, 0, Vector2(0.15143603, 0.57236844), 0.0, 0.0, 0, 0, Vector2(0.46214098, 0.375), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
-point_count = 5
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_ueyrc"]
-colors = PackedColorArray(1, 0.42914, 0.32646862, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 0.42914, 0.32646862, 1, 1, 1, 1, 0.7019608)
 
 [sub_resource type="Gradient" id="Gradient_5pe0l"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jet8k"]
 gradient = SubResource("Gradient_5pe0l")
@@ -149,9 +149,9 @@ speed_scale = 2.5
 
 [node name="Trail2D" type="Line2D" parent="." unique_id=1395042242]
 z_index = -1
-width = 35.0
+width = 45.0
 width_curve = SubResource("Curve_8q1de")
-default_color = Color(1, 0.45241642, 0.38395938, 0.2)
+default_color = Color(1, 0.4509804, 0.38431373, 0.09411765)
 gradient = SubResource("Gradient_ueyrc")
 texture = SubResource("GradientTexture2D_jet8k")
 texture_mode = 1
