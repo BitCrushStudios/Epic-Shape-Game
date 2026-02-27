@@ -4,7 +4,6 @@
 [ext_resource type="Resource" uid="uid://clky6g0bw3w53" path="res://Game/Weapons/CubeWeaponResource.tres" id="2_qg1ck"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/shadow_origin.gd" id="2_r617p"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_rdb24"]
-[ext_resource type="AudioStream" uid="uid://rf7jq4otctx2" path="res://Assets/Sound Effects/Cube Hit/Hit.wav" id="4_0cfu2"]
 [ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="4_6u5qs"]
 [ext_resource type="Texture2D" uid="uid://c8ul4mta8vnus" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active.png" id="5_8q1de"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="6_8q1de"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://eguwph4baa4e" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0008.png" id="14_5pe0l"]
 [ext_resource type="Texture2D" uid="uid://c8papk51mxa54" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0006.png" id="14_fywxt"]
 [ext_resource type="Texture2D" uid="uid://jxfi475epduf" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0007.png" id="15_ggmsm"]
+[ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="16_5pe0l"]
 [ext_resource type="Texture2D" uid="uid://ofbpyov6dv04" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0000.png" id="16_bhfdh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
@@ -165,9 +165,9 @@ shape = SubResource("RectangleShape2D_qg1ck")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 20.0
 
-[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1695796385]
-stream = ExtResource("4_0cfu2")
-volume_db = -10.0
+[node name="Hit" type="AudioStreamPlayer2D" parent="." unique_id=699531714]
+stream = ExtResource("16_5pe0l")
+volume_db = -7.0
 pitch_scale = 1.2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294832071]
