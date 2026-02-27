@@ -8,6 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="4_6u5qs"]
 [ext_resource type="Texture2D" uid="uid://c8ul4mta8vnus" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active.png" id="5_8q1de"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="6_8q1de"]
+[ext_resource type="Texture2D" uid="uid://bxiuh0yo1ncto" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0001.png" id="9_ueyrc"]
+[ext_resource type="Texture2D" uid="uid://ccm2jxd3x4hkc" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0002.png" id="10_5pe0l"]
+[ext_resource type="Texture2D" uid="uid://cocw1thxukq66" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0003.png" id="11_jet8k"]
+[ext_resource type="Texture2D" uid="uid://n4fg4on6xo6f" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0004.png" id="12_svcc6"]
+[ext_resource type="Texture2D" uid="uid://coqxi4pi3fadr" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0005.png" id="13_d514m"]
+[ext_resource type="Texture2D" uid="uid://c8papk51mxa54" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0006.png" id="14_fywxt"]
+[ext_resource type="Texture2D" uid="uid://jxfi475epduf" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0007.png" id="15_ggmsm"]
+[ext_resource type="Texture2D" uid="uid://ofbpyov6dv04" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0000.png" id="16_bhfdh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
 friction = 0.0
@@ -19,6 +27,43 @@ point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ck"]
 size = Vector2(60, 60)
+
+[sub_resource type="Animation" id="Animation_eov6p"]
+resource_name = "Hit"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Origin/ActivatedSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5, 0.56666666, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_8q1de"), ExtResource("9_ueyrc"), ExtResource("10_5pe0l"), ExtResource("11_jet8k"), ExtResource("12_svcc6"), ExtResource("13_d514m"), ExtResource("14_fywxt"), ExtResource("15_ggmsm"), ExtResource("16_bhfdh")]
+}
+
+[sub_resource type="Animation" id="Animation_iqdjm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Origin/ActivatedSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_8q1de")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmfvw"]
+_data = {
+&"Hit": SubResource("Animation_eov6p"),
+&"RESET": SubResource("Animation_iqdjm")
+}
 
 [node name="Weapon" type="RigidBody2D" unique_id=1251268979]
 y_sort_enabled = true
@@ -42,6 +87,7 @@ scale = Vector2(0.888889, 0.8445679)
 
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
 unique_name_in_owner = true
+visible = false
 y_sort_enabled = true
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_6u5qs")
@@ -71,3 +117,6 @@ radius = 20.0
 stream = ExtResource("4_0cfu2")
 volume_db = -10.0
 pitch_scale = 1.2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294832071]
+libraries/ = SubResource("AnimationLibrary_rmfvw")
