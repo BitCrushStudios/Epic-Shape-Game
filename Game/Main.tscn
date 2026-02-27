@@ -10,8 +10,9 @@
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="8_vy5pj"]
 [ext_resource type="Texture2D" uid="uid://cxcax73lk7h5d" path="res://Assets/Art/Backgrounds/Main Scene/Background Vert.png" id="9_q34ae"]
 [ext_resource type="Texture2D" uid="uid://bpgyi04fk4wrj" path="res://Assets/Art/Shadow/Effect2.png" id="9_x253o"]
-[ext_resource type="Texture2D" uid="uid://cl3ijdb6yf7tm" path="res://Assets/Art/Backgrounds/Main Scene/Background Horz.png" id="10_f77hp"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="11_6o7ua"]
+[ext_resource type="Texture2D" uid="uid://brkfgcstrond8" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0001.png" id="12_3tq7c"]
+[ext_resource type="Texture2D" uid="uid://dmomqi8ipwfd0" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0000.png" id="14_eg2md"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f77hp"]
 
@@ -60,6 +61,115 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_bmxlf")
 
+[sub_resource type="Animation" id="Animation_b3cwe"]
+resource_name = "HZ"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundHorz2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(960, 117), Vector2(960, 95), Vector2(960, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackgroundHorz:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 1009), Vector2(960, 1000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackgroundTest2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.99996644),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1770, 540), Vector2(1810.26, 540), Vector2(1770, 540)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackgroundTest:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.99996644),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(150, 540), Vector2(120, 540), Vector2(150, 540)]
+}
+
+[sub_resource type="Animation" id="Animation_eru0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundHorz2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackgroundHorz:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1009)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackgroundTest2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1770, 540)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackgroundTest:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 540)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdl5u"]
+_data = {
+&"HZ": SubResource("Animation_b3cwe"),
+&"RESET": SubResource("Animation_eru0w")
+}
+
 [node name="Main" type="Node" unique_id=1855663093]
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
@@ -72,6 +182,78 @@ position = Vector2(911, 542)
 mass = 11.0
 
 [node name="Weapon" parent="Player" unique_id=1251268979 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon2" parent="Player" unique_id=1963918511 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon3" parent="Player" unique_id=814990011 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon4" parent="Player" unique_id=1526692540 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon5" parent="Player" unique_id=382424902 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon6" parent="Player" unique_id=1288958706 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon7" parent="Player" unique_id=1842107126 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon8" parent="Player" unique_id=227706103 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon9" parent="Player" unique_id=353834417 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon10" parent="Player" unique_id=968106920 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon11" parent="Player" unique_id=1847106257 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon12" parent="Player" unique_id=1605081814 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon13" parent="Player" unique_id=2048642338 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon14" parent="Player" unique_id=2024088390 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon15" parent="Player" unique_id=314581967 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon16" parent="Player" unique_id=647079937 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon17" parent="Player" unique_id=66295572 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon18" parent="Player" unique_id=1241705836 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon19" parent="Player" unique_id=1126908694 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon20" parent="Player" unique_id=2075856048 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon21" parent="Player" unique_id=1595583186 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon22" parent="Player" unique_id=376729038 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon23" parent="Player" unique_id=745326054 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon24" parent="Player" unique_id=1478337715 instance=ExtResource("3_x253o")]
+position = Vector2(-76, -101)
+
+[node name="Weapon25" parent="Player" unique_id=759753368 instance=ExtResource("3_x253o")]
 position = Vector2(-76, -101)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
@@ -108,15 +290,15 @@ texture = ExtResource("9_q34ae")
 
 [node name="BackgroundHorz" type="Sprite2D" parent="Background Stuff" unique_id=1757786479]
 position = Vector2(960, 1009)
-texture = ExtResource("10_f77hp")
+texture = ExtResource("14_eg2md")
 
 [node name="BackgroundHorz2" type="Sprite2D" parent="Background Stuff" unique_id=958701305]
 position = Vector2(960, 117)
 scale = Vector2(1, -1)
-texture = ExtResource("10_f77hp")
+texture = ExtResource("12_3tq7c")
 
 [node name="Dark" type="Sprite2D" parent="Background Stuff" unique_id=1733018830]
-modulate = Color(1, 1, 1, 0.77254903)
+modulate = Color(1, 1, 1, 0.827451)
 position = Vector2(960, 539)
 texture = ExtResource("11_6o7ua")
 
@@ -125,5 +307,9 @@ visible = false
 modulate = Color(1, 1, 1, 0.33333334)
 position = Vector2(961, 543)
 texture = ExtResource("9_x253o")
+
+[node name="HZ" type="AnimationPlayer" parent="Background Stuff" unique_id=1422261420]
+libraries/ = SubResource("AnimationLibrary_mdl5u")
+autoplay = &"HZ"
 
 [node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
