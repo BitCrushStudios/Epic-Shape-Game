@@ -29,3 +29,9 @@ func setup():
 	resource = available_upgrades.pop_at(i).new()
 
 @export_tool_button("Setup") var _setup = setup
+
+
+
+
+func _on_mouse_entered() -> void:
+	pass # Replace with function body.

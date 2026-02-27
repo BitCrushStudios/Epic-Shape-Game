@@ -21,3 +21,6 @@ texture = ExtResource("4_htisi")
 
 [node name="ActivatedSprite" parent="Origin" parent_id_path=PackedInt32Array(1399568225) index="2" unique_id=1708969596]
 texture = ExtResource("2_j2afy")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1915139529]
+visible = false

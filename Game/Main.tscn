@@ -3,13 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="1_50glp"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="3_kln2b"]
-[ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="3_x253o"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/enemy_manager.gd" id="5_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bmprloh75j06" path="res://Game/Ui/GameUi.tscn" id="7_jw32o"]
 [ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="8_50glp"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="8_vy5pj"]
 [ext_resource type="Texture2D" uid="uid://cxcax73lk7h5d" path="res://Assets/Art/Backgrounds/Main Scene/Background Vert.png" id="9_q34ae"]
-[ext_resource type="Texture2D" uid="uid://cl3ijdb6yf7tm" path="res://Assets/Art/Backgrounds/Main Scene/Background Horz.png" id="10_f77hp"]
+[ext_resource type="Texture2D" uid="uid://bpgyi04fk4wrj" path="res://Assets/Art/Shadow/Effect2.png" id="9_x253o"]
+[ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="11_6o7ua"]
+[ext_resource type="Texture2D" uid="uid://brkfgcstrond8" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0001.png" id="12_3tq7c"]
+[ext_resource type="Texture2D" uid="uid://dmomqi8ipwfd0" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0000.png" id="14_eg2md"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f77hp"]
 
@@ -58,6 +61,139 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_bmxlf")
 
+[sub_resource type="Animation" id="Animation_b3cwe"]
+resource_name = "HZ"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundHorz2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(960, 117), Vector2(960, 95), Vector2(960, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackgroundHorz:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 1009), Vector2(960, 1000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackgroundTest2:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.99996644),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1770, 540), Vector2(1810.26, 540), Vector2(1770, 540)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackgroundTest:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.99996644),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(150, 540), Vector2(120, 540), Vector2(150, 540)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dark:modulate")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.10000001, 0.4, 0.8),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.09411765), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eru0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundHorz2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackgroundHorz:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1009)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackgroundTest2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1770, 540)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackgroundTest:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 540)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dark:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.827451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdl5u"]
+_data = {
+&"HZ": SubResource("Animation_b3cwe"),
+&"RESET": SubResource("Animation_eru0w")
+}
+
 [node name="Main" type="Node" unique_id=1855663093]
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
@@ -65,29 +201,26 @@ stream = ExtResource("8_50glp")
 volume_db = -20.0
 autoplay = true
 
+[node name="Weapons" type="Node2D" parent="." unique_id=919234323]
+
+[node name="Weapon" parent="Weapons" unique_id=1251268979 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon2" parent="Weapons" unique_id=1963918511 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon3" parent="Weapons" unique_id=814990011 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon4" parent="Weapons" unique_id=1526692540 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
+[node name="Weapon5" parent="Weapons" unique_id=382424902 instance=ExtResource("3_x253o")]
+position = Vector2(835, 441)
+
 [node name="Player" parent="." unique_id=299479533 instance=ExtResource("1_r150o")]
 position = Vector2(911, 542)
 mass = 11.0
-
-[node name="WeaponCube16" parent="Player" unique_id=149447796 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(585, 518)
-
-[node name="WeaponCube17" parent="Player" unique_id=1251268979 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(930, 404)
-
-[node name="WeaponCube18" parent="Player" unique_id=1724072341 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(1252, 561)
-
-[node name="WeaponCube19" parent="Player" unique_id=1766926968 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(1018, 738)
-
-[node name="WeaponCube20" parent="Player" unique_id=1982015212 instance=ExtResource("4_rgh2o")]
-top_level = true
-position = Vector2(758, 747)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("5_v1gob")
@@ -109,22 +242,45 @@ zoom = Vector2(0.5, 0.5)
 [node name="CameraShake" type="Node" parent="Camera2D" unique_id=342130638]
 script = ExtResource("8_vy5pj")
 
-[node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
+[node name="Background Stuff" type="Node2D" parent="." unique_id=1655149011]
 
-[node name="BackgroundTest" type="Sprite2D" parent="." unique_id=761658560]
+[node name="BackgroundTest" type="Sprite2D" parent="Background Stuff" unique_id=761658560]
 position = Vector2(150, 540)
 texture = ExtResource("9_q34ae")
 
-[node name="BackgroundTest2" type="Sprite2D" parent="." unique_id=1726158472]
+[node name="BackgroundTest2" type="Sprite2D" parent="Background Stuff" unique_id=1726158472]
 position = Vector2(1770, 540)
-scale = Vector2(-1, 1)
+rotation = 3.1415927
+scale = Vector2(1, -1)
 texture = ExtResource("9_q34ae")
 
-[node name="BackgroundHorz" type="Sprite2D" parent="." unique_id=1757786479]
+[node name="BackgroundHorz" type="Sprite2D" parent="Background Stuff" unique_id=1757786479]
 position = Vector2(960, 1009)
-texture = ExtResource("10_f77hp")
+texture = ExtResource("14_eg2md")
 
-[node name="BackgroundHorz2" type="Sprite2D" parent="." unique_id=958701305]
+[node name="BackgroundHorz2" type="Sprite2D" parent="Background Stuff" unique_id=958701305]
 position = Vector2(960, 117)
 scale = Vector2(1, -1)
-texture = ExtResource("10_f77hp")
+texture = ExtResource("12_3tq7c")
+
+[node name="Dark" type="Sprite2D" parent="Background Stuff" unique_id=1733018830]
+modulate = Color(1, 1, 1, 0.827451)
+position = Vector2(960, 539)
+texture = ExtResource("11_6o7ua")
+
+[node name="Dark2" type="Sprite2D" parent="Background Stuff" unique_id=145441098]
+modulate = Color(1, 1, 1, 0.4509804)
+position = Vector2(960, 539)
+texture = ExtResource("11_6o7ua")
+
+[node name="White" type="Sprite2D" parent="Background Stuff" unique_id=1618926376]
+visible = false
+modulate = Color(1, 1, 1, 0.33333334)
+position = Vector2(961, 543)
+texture = ExtResource("9_x253o")
+
+[node name="HZ" type="AnimationPlayer" parent="Background Stuff" unique_id=1422261420]
+libraries/ = SubResource("AnimationLibrary_mdl5u")
+autoplay = &"HZ"
+
+[node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]

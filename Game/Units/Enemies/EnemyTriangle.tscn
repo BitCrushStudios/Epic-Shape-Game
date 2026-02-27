@@ -5,6 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_llcvg"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_bccpk"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/shadow_origin.gd" id="3_hu5f4"]
+[ext_resource type="Texture2D" uid="uid://3agonshy8dmu" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0001.png" id="6_kycqo"]
+[ext_resource type="Texture2D" uid="uid://drsr0asqs5y65" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0002.png" id="7_fnvyr"]
+[ext_resource type="Texture2D" uid="uid://b2wsyungnvtcm" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0003.png" id="8_fm6ei"]
+[ext_resource type="Texture2D" uid="uid://b4bofavndlwvh" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0004.png" id="9_r8414"]
+[ext_resource type="Texture2D" uid="uid://b2djkh87fdg2n" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0005.png" id="10_a6ea0"]
+[ext_resource type="Texture2D" uid="uid://cidicdre2bvgu" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0006.png" id="11_qfnel"]
+[ext_resource type="Texture2D" uid="uid://b1uy44x1y33ei" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0007.png" id="12_8qflq"]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
 length = 0.001
@@ -31,6 +38,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_bccpk")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_ucwfl"]
@@ -66,11 +97,41 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.3647059), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_rv688"]
+resource_name = "walk"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333333, 0.20000002, 0.26666665, 0.3333333, 0.39999998, 0.46666667, 0.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_bccpk"), ExtResource("6_kycqo"), ExtResource("7_fnvyr"), ExtResource("8_fm6ei"), ExtResource("9_r8414"), ExtResource("10_a6ea0"), ExtResource("11_qfnel"), ExtResource("12_8qflq"), ExtResource("2_bccpk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2617993877991494, -0.2617993877991494]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3lwl"]
 _data = {
 &"RESET": SubResource("Animation_u3lwl"),
 &"damage": SubResource("Animation_ucwfl"),
-&"death": SubResource("Animation_bccpk")
+&"death": SubResource("Animation_bccpk"),
+&"walk": SubResource("Animation_rv688")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hu5f4"]
@@ -113,6 +174,7 @@ texture = ExtResource("2_bccpk")
 unique_name_in_owner = true
 root_node = NodePath("../SpriteOrigin/Sprite2D")
 libraries/ = SubResource("AnimationLibrary_u3lwl")
+autoplay = &"walk"
 playback_default_blend_time = 0.2
 
 [node name="ShapeCast2D" type="CollisionShape2D" parent="." unique_id=1092370231]

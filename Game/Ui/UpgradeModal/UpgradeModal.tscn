@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/UpgradeModal/upgrade_button.tscn" id="1_abdc0"]
 [ext_resource type="Script" uid="uid://dgrtttjenktlj" path="res://Game/Ui/UpgradeModal/upgrade_modal.gd" id="1_d0xgl"]
-[ext_resource type="Script" uid="uid://dvicl7tavrmp3" path="res://Game/Upgrades/extra_speed.gd" id="3_0yd5t"]
-[ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/extra_mass.gd" id="4_aa4lv"]
-[ext_resource type="Script" uid="uid://dms5y3buqcmqw" path="res://Game/Upgrades/extra_size.gd" id="5_1ngdt"]
-[ext_resource type="Script" uid="uid://d3kpx4mb6hmth" path="res://Game/Upgrades/extra_health.gd" id="5_aa4lv"]
+[ext_resource type="Texture2D" uid="uid://dxjimpcfutnxj" path="res://Assets/Art/User Interface/Level Up/Upgrade.png" id="2_svbxa"]
+[ext_resource type="Script" path="res://Game/Upgrades/extra_speed.gd" id="3_0yd5t"]
+[ext_resource type="Script" path="res://Game/Upgrades/extra_mass.gd" id="4_aa4lv"]
+[ext_resource type="Script" path="res://Game/Upgrades/extra_size.gd" id="5_1ngdt"]
+[ext_resource type="Script" path="res://Game/Upgrades/extra_health.gd" id="5_aa4lv"]
 [ext_resource type="Script" uid="uid://lciut81gvo4h" path="res://Game/Upgrades/extra_weapon.gd" id="5_nm8tj"]
 
 [sub_resource type="Resource" id="Resource_72k1v"]
@@ -42,6 +43,114 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 125)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(294.5, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HBoxContainer:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HBoxContainer:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Upgrade:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.60784316)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HBoxContainer:mouse_filter")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HBoxContainer:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wjask"]
 resource_name = "close"
@@ -55,11 +164,48 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 125), Vector2(0, 655)]
+"values": [Vector2(65, 125), Vector2(65, 655)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Upgrade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.6862745), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.26666668, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_2q4av"]
 resource_name = "open"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -67,10 +213,118 @@ tracks/0/path = NodePath("HBoxContainer:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1.0333333, 1.3666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 655), Vector2(0, 125)]
+"values": [Vector2(0, 655), Vector2(65, 125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335, 0.76666665, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03333333, 0.46666667, 0.76666665, 0.8666667, 1.2333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.5235987755982988, -0.5235987755982988, 0.0, 0.05235987755982989, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333335, 0.76666665, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1000), Vector2(300, -10), Vector2(300, 0), Vector2(300, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HBoxContainer:scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033333335, 0.53333336, 1.3666667, 1.7666667, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(2, 2), Vector2(0.7, 0.7), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HBoxContainer:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.8666667, 1.3, 1.6333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3490658503988659, -0.17453292519943295, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Upgrade:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.033333335, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.6862745)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HBoxContainer:mouse_filter")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.0001, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 2, 1]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HBoxContainer:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjask"]
@@ -89,6 +343,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d0xgl")
 
+[node name="Upgrade" type="Sprite2D" parent="." unique_id=1342776277]
+modulate = Color(1, 1, 1, 0.60784316)
+position = Vector2(390, 331)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_svbxa")
+offset = Vector2(180, -122)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1253458893]
 layout_mode = 1
 anchors_preset = 14
@@ -96,9 +357,11 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_top = -145.0
-offset_bottom = 145.00018
+offset_right = -60.0
+offset_bottom = 145.00006
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(480, 145)
 
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=584695649]
 layout_mode = 2
@@ -109,8 +372,8 @@ unique_name_in_owner = true
 layout_mode = 1
 offset_left = 0.0
 offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_right = -96.0
+offset_bottom = -89.00006
 size_flags_horizontal = 3
 resource = SubResource("Resource_72k1v")
 
@@ -121,10 +384,10 @@ size_flags_horizontal = 3
 [node name="UpgradeButton2" parent="HBoxContainer/Control2" unique_id=819495792 instance=ExtResource("1_abdc0")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
+offset_left = 20.0
 offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_right = -77.0
+offset_bottom = -89.0
 size_flags_horizontal = 3
 resource = SubResource("Resource_svbxa")
 
@@ -135,10 +398,10 @@ size_flags_horizontal = 3
 [node name="UpgradeButton3" parent="HBoxContainer/Control3" unique_id=1161993865 instance=ExtResource("1_abdc0")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
+offset_left = 20.0
 offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_right = -77.0
+offset_bottom = -89.0
 size_flags_horizontal = 3
 resource = SubResource("Resource_pbep4")
 
@@ -149,10 +412,10 @@ size_flags_horizontal = 3
 [node name="UpgradeButton4" parent="HBoxContainer/Control4" unique_id=1654414396 instance=ExtResource("1_abdc0")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
+offset_left = 20.0
 offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_right = -77.0
+offset_bottom = -89.0
 size_flags_horizontal = 3
 resource = SubResource("Resource_bvjom")
 
@@ -163,12 +426,24 @@ size_flags_horizontal = 3
 [node name="UpgradeButton5" parent="HBoxContainer/Control5" unique_id=119510827 instance=ExtResource("1_abdc0")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
+offset_left = 20.0
 offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_right = -77.0
+offset_bottom = -89.0
 size_flags_horizontal = 3
 resource = SubResource("Resource_ke5bf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")
+
+[node name="Label" type="Label" parent="." unique_id=906313717]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 294.5
+offset_right = 665.5006
+offset_bottom = 92.00072
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 70
+text = "WAVE ENDED!"

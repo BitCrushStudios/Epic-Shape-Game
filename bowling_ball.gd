@@ -1,6 +1,6 @@
 @tool
 extends RigidBody2D
-class_name Bowling
+class_name Weapon
 
 @export var resource: WeaponResource:
 	get():
@@ -44,7 +44,6 @@ func _physics_process(_delta: float) -> void:
 	$NavigationObstacle2D.radius =  max_obstacle_radius if activation_value>0 else 0.0
 		
 func _on_body_entered(body:Node2D):
-	$AnimationPlayer.play("Hit")
 	if state != State.Activated:
 		return
 	if body is RigidBody2D:

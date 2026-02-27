@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmtpmaqifkctb"
-path="res://.godot/imported/Health bar Under.png-ee956a14d0d07eb5a07ed3f687ef1579.ctex"
+uid="uid://c8papk51mxa54"
+path="res://.godot/imported/frame0006.png-614f37bfd2d547e66c547ed02dbc584e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Health Bar/Health bar Under.png"
-dest_files=["res://.godot/imported/Health bar Under.png-ee956a14d0d07eb5a07ed3f687ef1579.ctex"]
+source_file="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0006.png"
+dest_files=["res://.godot/imported/frame0006.png-614f37bfd2d547e66c547ed02dbc584e.ctex"]
 
 [params]
 
