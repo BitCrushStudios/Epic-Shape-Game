@@ -197,6 +197,7 @@ _data = {
 [node name="Main" type="Node" unique_id=1855663093]
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
+process_mode = 3
 stream = ExtResource("8_50glp")
 volume_db = -20.0
 autoplay = true

@@ -20,6 +20,42 @@ name = "Soy"
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeaderContainerOffset:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ButtonContainerOffset:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wjask"]
 resource_name = "close"
@@ -62,6 +98,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_2q4av"]
 resource_name = "open"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,7 +106,7 @@ tracks/0/path = NodePath("ButtonContainerOffset/ButtonContainer/ButtonContainer:
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.3, 0.46666667, 0.6333333),
+"times": PackedFloat32Array(1.0333333, 1.2, 1.3333333, 1.5, 1.6666666),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 655), Vector2(0, 655), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
@@ -81,7 +118,7 @@ tracks/1/path = NodePath("HeaderContainerOffset/HeaderContainer:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666665, 0.39999998),
+"times": PackedFloat32Array(1.0333333, 1.1666666, 1.3, 1.4333333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -136), Vector2(0, 16.789), Vector2(0, -2.78), Vector2(0, 0)]
@@ -93,10 +130,46 @@ tracks/2/path = NodePath("NavContainerOffset/NavContainer:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.56666666, 0.6666666, 0.76666665, 1),
+"times": PackedFloat32Array(1.5999999, 1.6999999, 1.8, 2.0333333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 600), Vector2(0, -20), Vector2(0, 20), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.13333334, 0.6333333, 1.1666666, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HeaderContainerOffset:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.26666668, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ButtonContainerOffset:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.26666668, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjask"]
@@ -130,7 +203,8 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 130.0
+offset_top = -136.0
+offset_bottom = -6.0
 grow_horizontal = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1561531254]
@@ -203,7 +277,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_bottom = 523.9989
+offset_top = 655.0
+offset_bottom = 1178.9995
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -411,8 +486,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NavContainer" type="HBoxContainer" parent="NavContainerOffset" unique_id=1771758401]
 layout_mode = 1
+offset_top = 600.0
 offset_right = 171.00006
-offset_bottom = 66.00037
+offset_bottom = 666.00037
 
 [node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
@@ -422,3 +498,13 @@ text = "Accept"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1395427466]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
