@@ -27,6 +27,8 @@ func _health_depleted():
 	health_depleted.disconnect(_health_depleted)
 	%Animation.play("death")
 	$Death.play()
+	$Death.volume_db = randf_range(-2,0)
+	$Death.pitch_scale = randf_range(1.2,1.5)
 	await _particle_create(preload("./death.tscn").instantiate())
 	queue_free()
 	

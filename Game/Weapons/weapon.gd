@@ -50,6 +50,6 @@ func _on_body_entered(body:Node2D):
 	if body is RigidBody2D:
 		if body is Enemy:
 			body.apply_damage(resource.damage)
-	$Hit.pitch_scale = randf_range(0.95, 1.15)
+	$Hit.pitch_scale = randf_range(0.9, 1.3)
 	$Hit.play()
 	
