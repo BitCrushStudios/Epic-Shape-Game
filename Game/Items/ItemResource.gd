@@ -3,20 +3,17 @@ extends Resource
 class_name ItemResource
 
 @export var texture: Texture2D:
-	get():
-		return texture
 	set(v):
 		texture = v
 		emit_changed()
+		
 @export var name:String:
-	get():
-		return name
 	set(v):
+		print("n", v)
 		name = v
 		emit_changed()
+		
 @export var description:String:
-	get():
-		return description
 	set(v):
 		description = v
 		emit_changed()
@@ -34,6 +31,6 @@ static func get_available_items():
 	]
 	
 func _init():
-	texture = null
+	texture = preload("res://Assets/Art/User Interface/Shop/Item Size Test.png")
 	name = "Item Name"
 	description = ""
