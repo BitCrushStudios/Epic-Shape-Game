@@ -8,14 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="4_6u5qs"]
 [ext_resource type="Texture2D" uid="uid://c8ul4mta8vnus" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active.png" id="5_8q1de"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="6_8q1de"]
-[ext_resource type="Texture2D" uid="uid://bxiuh0yo1ncto" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0001.png" id="9_ueyrc"]
-[ext_resource type="Texture2D" uid="uid://ccm2jxd3x4hkc" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0002.png" id="10_5pe0l"]
-[ext_resource type="Texture2D" uid="uid://cocw1thxukq66" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0003.png" id="11_jet8k"]
-[ext_resource type="Texture2D" uid="uid://n4fg4on6xo6f" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0004.png" id="12_svcc6"]
-[ext_resource type="Texture2D" uid="uid://coqxi4pi3fadr" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0005.png" id="13_d514m"]
-[ext_resource type="Texture2D" uid="uid://c8papk51mxa54" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0006.png" id="14_fywxt"]
-[ext_resource type="Texture2D" uid="uid://jxfi475epduf" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0007.png" id="15_ggmsm"]
-[ext_resource type="Texture2D" uid="uid://ofbpyov6dv04" path="res://Assets/Art/Weapons/Basic Cube/Animations/frame0000.png" id="16_bhfdh"]
+[ext_resource type="Texture2D" uid="uid://bxiuh0yo1ncto" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0001.png" id="9_ueyrc"]
+[ext_resource type="Texture2D" uid="uid://ccm2jxd3x4hkc" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0002.png" id="10_5pe0l"]
+[ext_resource type="Texture2D" uid="uid://cocw1thxukq66" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0003.png" id="11_jet8k"]
+[ext_resource type="Texture2D" uid="uid://n4fg4on6xo6f" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0004.png" id="12_svcc6"]
+[ext_resource type="Texture2D" uid="uid://coqxi4pi3fadr" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0005.png" id="13_d514m"]
+[ext_resource type="Texture2D" uid="uid://c8papk51mxa54" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0006.png" id="14_fywxt"]
+[ext_resource type="Texture2D" uid="uid://jxfi475epduf" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0007.png" id="15_ggmsm"]
+[ext_resource type="Texture2D" uid="uid://ofbpyov6dv04" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0000.png" id="16_bhfdh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
 friction = 0.0
@@ -87,7 +87,6 @@ scale = Vector2(0.888889, 0.8445679)
 
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
 unique_name_in_owner = true
-visible = false
 y_sort_enabled = true
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_6u5qs")

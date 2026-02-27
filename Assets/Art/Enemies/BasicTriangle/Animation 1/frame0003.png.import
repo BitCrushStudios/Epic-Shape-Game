@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cocw1thxukq66"
-path="res://.godot/imported/frame0003.png-481e4a74b0dcbec3cbdeadc985ca577a.ctex"
+uid="uid://b2wsyungnvtcm"
+path="res://.godot/imported/frame0003.png-81a7e90b03fe7873fd1d955e464cfbf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Weapons/Basic Cube/Animations/frame0003.png"
-dest_files=["res://.godot/imported/frame0003.png-481e4a74b0dcbec3cbdeadc985ca577a.ctex"]
+source_file="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0003.png"
+dest_files=["res://.godot/imported/frame0003.png-81a7e90b03fe7873fd1d955e464cfbf0.ctex"]
 
 [params]
 
