@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://yr6yf2u3lxf0"]
+
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_aljkd"]
+[ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_gtfyx"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_15di7"]
+[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_aljkd"]
+[ext_resource type="Texture2D" uid="uid://b26qrveirc2yy" path="res://Assets/Art/Enemies/Roller/Roller.png" id="4_gtfyx"]
+
+[sub_resource type="Animation" id="Animation_u3lwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ucwfl"]
+resource_name = "damage"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45000002, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bccpk"]
+resource_name = "death"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.3647059), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1btlr"]
+_data = {
+&"RESET": SubResource("Animation_u3lwl"),
+&"damage": SubResource("Animation_ucwfl"),
+&"death": SubResource("Animation_bccpk")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gtfyx"]
+radius = 20.880613
+
+[node name="EnemyRoller" type="RigidBody2D" unique_id=1524725432 node_paths=PackedStringArray("agent")]
+contact_monitor = true
+script = ExtResource("1_aljkd")
+agent = NodePath("EnemyController")
+
+[node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=708564447]
+avoidance_enabled = true
+radius = 20.0
+time_horizon_obstacles = 1.0
+max_speed = 300.0
+debug_use_custom = true
+script = ExtResource("2_gtfyx")
+
+[node name="SpriteOrigin" type="Node2D" parent="." unique_id=1373824456]
+
+[node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=2067394731]
+script = ExtResource("3_aljkd")
+
+[node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_15di7")]
+position = Vector2(0, 47)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=320445841]
+unique_name_in_owner = true
+position = Vector2(0, 9.999999)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_gtfyx")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1503840458]
+unique_name_in_owner = true
+root_node = NodePath("../SpriteOrigin/Sprite2D")
+libraries/ = SubResource("AnimationLibrary_1btlr")
+playback_default_blend_time = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1443651180]
+position = Vector2(4, 10)
+shape = SubResource("CircleShape2D_gtfyx")

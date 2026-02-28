@@ -4,12 +4,21 @@ class_name ShopModal
 
 signal item_selected(item:ItemResource)
 signal btn_pressed(btn:EquipItemButton)
-@export var player: PlayerResource
+@export var player:PlayerResource = PlayerResource.new():
+	set(v):
+		if player:
+			player.changed.disconnect(update_player_ui)
+		player = v
+		if player:
+			player.changed.connect(update_player_ui)
+		update_player_ui()
+func update_player_ui():
+	pass
 @export var items:Array[ShopItemResource]:
 	set(v):
 		items = v
 		items_changed()
-	
+
 func get_buttons() -> Array[ShopButton]:
 	return [
 		%ShopButton1,
@@ -30,7 +39,7 @@ func items_changed():
 			buttons[i].resource = items[i]
 			
 			
-func random_items():
+func setup_ui():
 	var available_items = ItemResource.get_available_items()
 	print(available_items)
 	var count =  get_buttons().size()
@@ -47,10 +56,10 @@ func random_items():
 	items = vs
 	
 @export_tool_button("Randomize")
-var _random_items_action = random_items
-		
+var _random_items_action = setup_ui
+
 func modal():
-	#items_changed()
+	setup_ui()
 	$AnimationPlayer.play("open")
 	await %AcceptButton.pressed
 	$AnimationPlayer.play("close")
@@ -61,6 +70,8 @@ func _ready():
 		btn.item_selected.connect(item_selected.emit)
 	item_selected.connect(_item_selected)
 	if get_tree().root == self:
+		Player.instance = Player.new()
+		Player.instance.resource = PlayerResource.new()
 		await modal()
 
 func _item_selected(shopItem:ShopItemResource):
@@ -68,6 +79,9 @@ func _item_selected(shopItem:ShopItemResource):
 	if shopItem.quantity>0 and shopItem.price <= player.money:
 		player.money -= shopItem.price
 		shopItem.quantity -= 1
-	
+		var arr = player.inventory.duplicate()
+		arr.append(shopItem.item)
+		player.inventory = arr
+		#player.inventory = player.inventory
 	
 	

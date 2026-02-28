@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cci2sl1ayq21k"]
 
-[ext_resource type="Script" uid="uid://cob0asl31kevp" path="res://Game/Units/Enemies/spawn_point.gd" id="1_jrm51"]
+[ext_resource type="Script" uid="uid://cob0asl31kevp" path="res://Game/Units/Enemies/EnemySpawnPoint.gd" id="1_jrm51"]
 [ext_resource type="Texture2D" uid="uid://c3ac72yds2k4w" path="res://Assets/Art/Spawn Icon/Spawn Icon.png" id="2_21wjv"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_gq7lf"]
 [ext_resource type="Texture2D" uid="uid://dipq55cj25ihk" path="res://Assets/Art/Particles/Gold .png" id="4_gq7lf"]

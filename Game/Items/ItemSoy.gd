@@ -2,10 +2,10 @@
 extends ItemResource
 class_name ItemSoy
 
-func register(weapon:Weapon):
+func register(_weapon:Weapon):
 	pass
 	
-func unregister(weapon:Weapon):
+func unregister(_weapon:Weapon):
 	pass
 	
 func _init():

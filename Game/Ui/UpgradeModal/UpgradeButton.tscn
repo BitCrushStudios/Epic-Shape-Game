@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctf6ho5vxcyyy"]
 
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="1_vdi0g"]
-[ext_resource type="Script" uid="uid://bkfukgdcol76a" path="res://Game/Ui/UpgradeModal/upgrade_button.gd" id="1_w5r4s"]
+[ext_resource type="Script" uid="uid://bkfukgdcol76a" path="res://Game/Ui/UpgradeModal/UpgradeButton.gd" id="1_w5r4s"]
 [ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/extra_mass.gd" id="2_w5r4s"]
 
 [sub_resource type="Resource" id="Resource_w5r4s"]

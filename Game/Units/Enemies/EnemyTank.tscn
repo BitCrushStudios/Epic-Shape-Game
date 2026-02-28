@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://yr6yf2u3lxf0"]
+[gd_scene format=3 uid="uid://o3qjyg751wn3"]
 
-[ext_resource type="Script" uid="uid://byihn6yx8t2nn" path="res://roller.gd" id="1_8ehpw"]
-[ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_gtfyx"]
-[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_15di7"]
-[ext_resource type="Texture2D" uid="uid://b26qrveirc2yy" path="res://Assets/Art/Enemies/Roller/Roller.png" id="4_gtfyx"]
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_2j44q"]
+[ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_sdms5"]
+[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_ub88h"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_nips6"]
+[ext_resource type="Texture2D" uid="uid://bbkglt5jwg3mv" path="res://Assets/Art/Enemies/Tank/Tank.png" id="5_exddk"]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
 length = 0.001
@@ -65,48 +66,51 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.3647059), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1btlr"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0t8mf"]
 _data = {
 &"RESET": SubResource("Animation_u3lwl"),
 &"damage": SubResource("Animation_ucwfl"),
 &"death": SubResource("Animation_bccpk")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gtfyx"]
-radius = 20.880613
+[sub_resource type="CircleShape2D" id="CircleShape2D_2m6jk"]
+radius = 43.046486
 
-[node name="Roller" type="RigidBody2D" unique_id=1524725432 node_paths=PackedStringArray("agent")]
+[node name="EnemyTank" type="RigidBody2D" unique_id=211797002 node_paths=PackedStringArray("agent")]
+mass = 10.0
 contact_monitor = true
-script = ExtResource("1_8ehpw")
+script = ExtResource("1_2j44q")
 agent = NodePath("EnemyController")
 
-[node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=708564447]
+[node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=278399034]
 avoidance_enabled = true
 radius = 20.0
 time_horizon_obstacles = 1.0
 max_speed = 300.0
 debug_use_custom = true
-script = ExtResource("2_gtfyx")
+script = ExtResource("2_sdms5")
 
-[node name="SpriteOrigin" type="Node2D" parent="." unique_id=1373824456]
+[node name="SpriteOrigin" type="Node2D" parent="." unique_id=970983081]
 
-[node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=2067394731]
+[node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=1985275814]
+script = ExtResource("3_ub88h")
 
-[node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_15di7")]
+[node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("4_nips6")]
 position = Vector2(0, 47)
+scale = Vector2(1.5, 1.3)
 
-[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=320445841]
+[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=572259211]
 unique_name_in_owner = true
 position = Vector2(0, 9.999999)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_gtfyx")
+texture = ExtResource("5_exddk")
 
-[node name="Animation" type="AnimationPlayer" parent="." unique_id=1503840458]
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1084563019]
 unique_name_in_owner = true
 root_node = NodePath("../SpriteOrigin/Sprite2D")
-libraries/ = SubResource("AnimationLibrary_1btlr")
+libraries/ = SubResource("AnimationLibrary_0t8mf")
 playback_default_blend_time = 0.2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1443651180]
-position = Vector2(4, 10)
-shape = SubResource("CircleShape2D_gtfyx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=73121276]
+position = Vector2(-2, 12)
+shape = SubResource("CircleShape2D_2m6jk")

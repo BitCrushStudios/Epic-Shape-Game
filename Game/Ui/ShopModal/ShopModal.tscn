@@ -11,10 +11,10 @@
 [ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
 [ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
 
-[sub_resource type="Resource" id="Resource_i3qng"]
-script = ExtResource("2_e7lec")
-money = 900
-metadata/_custom_type_script = "uid://dfj50wg6u44xx"
+[sub_resource type="Resource" id="Resource_llh7c"]
+script = ExtResource("3_udy12")
+texture = ExtResource("4_cpuug")
+name = "Coffee"
 
 [sub_resource type="Resource" id="Resource_0k88i"]
 script = ExtResource("3_udy12")
@@ -22,17 +22,25 @@ texture = ExtResource("4_cpuug")
 name = "Coffee"
 
 [sub_resource type="Resource" id="Resource_q3cp0"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_0k88i")
-
-[sub_resource type="Resource" id="Resource_llh7c"]
 script = ExtResource("4_wy88y")
 texture = ExtResource("4_cpuug")
 name = "Soy"
 
+[sub_resource type="Resource" id="Resource_i3qng"]
+script = ExtResource("2_e7lec")
+inventory = Array[ExtResource("2_cpuug")]([SubResource("Resource_llh7c"), SubResource("Resource_0k88i"), SubResource("Resource_q3cp0")])
+money = 300
+metadata/_custom_type_script = "uid://dfj50wg6u44xx"
+
 [sub_resource type="Resource" id="Resource_374k4"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_llh7c")
+item = SubResource("Resource_q3cp0")
+quantity = 0
+
+[sub_resource type="Resource" id="Resource_decmg"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_0k88i")
+quantity = 0
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
@@ -205,7 +213,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oi6um")
 player = SubResource("Resource_i3qng")
-items = Array[ExtResource("5_0k88i")]([null, SubResource("Resource_q3cp0"), null, null, SubResource("Resource_374k4")])
+items = Array[ExtResource("5_0k88i")]([null, null, null, SubResource("Resource_374k4"), SubResource("Resource_decmg")])
 
 [node name="HeaderContainerOffset" type="Control" parent="." unique_id=2078019511]
 z_index = 1
@@ -220,13 +228,12 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 130.0
+offset_bottom = 66.0
 grow_horizontal = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1561531254]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_type_variation = &"TexturePanelContainer"
 
 [node name="WaveLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer" unique_id=320715895]
 unique_name_in_owner = true
@@ -238,7 +245,6 @@ vertical_alignment = 1
 [node name="PanelContainer3" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1370799459]
 layout_mode = 2
 size_flags_horizontal = 6
-theme_type_variation = &"TexturePanelContainer"
 
 [node name="Label" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer3" unique_id=1404561267]
 layout_mode = 2
@@ -248,7 +254,6 @@ text = "~Shop~"
 [node name="PanelContainer2" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1299552836]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_type_variation = &"TexturePanelContainer"
 
 [node name="CashLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer2" unique_id=1169638266]
 unique_name_in_owner = true
@@ -306,9 +311,11 @@ size_flags_horizontal = 3
 
 [node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
-resource = SubResource("Resource_q3cp0")
+disabled = true
+resource = null
 
 [node name="TextureRect" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control2" unique_id=444131488]
 layout_mode = 2
@@ -326,6 +333,7 @@ size_flags_horizontal = 3
 
 [node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 disabled = true
@@ -346,6 +354,7 @@ size_flags_horizontal = 3
 
 [node name="ShopButton1" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 disabled = true
@@ -367,10 +376,11 @@ size_flags_horizontal = 3
 
 [node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 disabled = true
-resource = null
+resource = SubResource("Resource_374k4")
 
 [node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1373859225]
 layout_mode = 2
@@ -388,9 +398,11 @@ size_flags_horizontal = 3
 
 [node name="ShopButton5" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
-resource = SubResource("Resource_374k4")
+disabled = true
+resource = SubResource("Resource_decmg")
 
 [node name="TextureRect5" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control5" unique_id=1697602729]
 layout_mode = 2

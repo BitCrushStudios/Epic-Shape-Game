@@ -26,7 +26,7 @@ class_name WeaponResource
 		emit_changed()
 @export var items: Array[ItemResource] = []:
 	set(v):
-		items = v
+		items = v 
 		emit_changed()
 @export var damage = 1.0:
 	set(v):

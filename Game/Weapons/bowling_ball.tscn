@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://t8okmboocwvk"]
 
 [ext_resource type="Script" uid="uid://dmfyl6vva2dmh" path="res://bowling_ball.gd" id="1_i4e2e"]
-[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/shadow_origin.gd" id="2_ceqr3"]
+[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_ceqr3"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_g6h13"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_g6h13"]
 [ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_sjvgc"]

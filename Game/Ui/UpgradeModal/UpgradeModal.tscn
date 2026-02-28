@@ -1,32 +1,15 @@
 [gd_scene format=3 uid="uid://dfmnunvb3wtwm"]
 
-[ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/UpgradeModal/upgrade_button.tscn" id="1_abdc0"]
-[ext_resource type="Script" uid="uid://dgrtttjenktlj" path="res://Game/Ui/UpgradeModal/upgrade_modal.gd" id="1_d0xgl"]
+[ext_resource type="PackedScene" uid="uid://ctf6ho5vxcyyy" path="res://Game/Ui/UpgradeModal/UpgradeButton.tscn" id="1_abdc0"]
+[ext_resource type="Script" uid="uid://dgrtttjenktlj" path="res://Game/Ui/UpgradeModal/UpgradeModal.gd" id="1_d0xgl"]
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_bvjom"]
 [ext_resource type="Texture2D" uid="uid://dxjimpcfutnxj" path="res://Assets/Art/User Interface/Level Up/Upgrade.png" id="2_svbxa"]
-[ext_resource type="Script" uid="uid://dvicl7tavrmp3" path="res://Game/Upgrades/extra_speed.gd" id="3_0yd5t"]
-[ext_resource type="Script" uid="uid://dms5y3buqcmqw" path="res://Game/Upgrades/extra_size.gd" id="5_1ngdt"]
-[ext_resource type="Script" uid="uid://d3kpx4mb6hmth" path="res://Game/Upgrades/extra_health.gd" id="5_aa4lv"]
-[ext_resource type="Script" uid="uid://lciut81gvo4h" path="res://Game/Upgrades/extra_weapon.gd" id="5_nm8tj"]
+[ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_ke5bf"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_223da"]
 
-[sub_resource type="Resource" id="Resource_72k1v"]
-script = ExtResource("3_0yd5t")
-name = "Extra Speed"
-
-[sub_resource type="Resource" id="Resource_svbxa"]
-script = ExtResource("5_aa4lv")
-name = "Extra Health"
-
-[sub_resource type="Resource" id="Resource_pbep4"]
-script = ExtResource("5_nm8tj")
-name = "Extra Weapon"
-
-[sub_resource type="Resource" id="Resource_bvjom"]
-script = ExtResource("5_nm8tj")
-name = "Extra Weapon"
-
-[sub_resource type="Resource" id="Resource_ke5bf"]
-script = ExtResource("5_1ngdt")
-name = "Extra Size"
+[sub_resource type="Resource" id="Resource_223da"]
+script = ExtResource("3_ke5bf")
+metadata/_custom_type_script = "uid://dfj50wg6u44xx"
 
 [sub_resource type="Animation" id="Animation_ke5bf"]
 length = 0.001
@@ -52,7 +35,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 254)]
+"values": [Vector2(0, 200)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -369,6 +352,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d0xgl")
+player = SubResource("Resource_223da")
 
 [node name="Upgrade" type="TextureRect" parent="." unique_id=1050721719]
 modulate = Color(1, 1, 1, 0.6862745)
@@ -396,7 +380,7 @@ anchor_bottom = 0.5
 offset_left = -480.0
 offset_top = -86.0
 offset_right = 49.0
-offset_bottom = 46.00061
+offset_bottom = 46.00067
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -414,8 +398,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -286.0
-offset_bottom = 58.0
+offset_top = -340.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
@@ -439,7 +423,7 @@ unique_name_in_owner = true
 layout_mode = 1
 size_flags_horizontal = 3
 theme = null
-resource = SubResource("Resource_72k1v")
+resource = null
 
 [node name="Control2" type="Control" parent="HBoxContainer" unique_id=1922890617]
 layout_mode = 2
@@ -460,7 +444,7 @@ unique_name_in_owner = true
 layout_mode = 1
 size_flags_horizontal = 3
 theme = null
-resource = SubResource("Resource_svbxa")
+resource = null
 
 [node name="Control3" type="Control" parent="HBoxContainer" unique_id=1323324405]
 layout_mode = 2
@@ -481,7 +465,7 @@ unique_name_in_owner = true
 layout_mode = 1
 size_flags_horizontal = 3
 theme = null
-resource = SubResource("Resource_pbep4")
+resource = null
 
 [node name="Control4" type="Control" parent="HBoxContainer" unique_id=1358057647]
 layout_mode = 2
@@ -502,7 +486,7 @@ unique_name_in_owner = true
 layout_mode = 1
 size_flags_horizontal = 3
 theme = null
-resource = SubResource("Resource_bvjom")
+resource = null
 
 [node name="Control5" type="Control" parent="HBoxContainer" unique_id=411667545]
 layout_mode = 2
@@ -523,7 +507,7 @@ unique_name_in_owner = true
 layout_mode = 1
 size_flags_horizontal = 3
 theme = null
-resource = SubResource("Resource_ke5bf")
+resource = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")

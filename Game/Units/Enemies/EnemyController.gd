@@ -6,9 +6,8 @@ var time_rate = 0.5
 
 func _ready():
 	velocity_computed.connect(_velocity_computed)
-	#target_position = enemy.global_position
-	target_position = Player.instance.global_position
 	enemy.health_depleted.connect(_health_depleted)
+	
 func _health_depleted():
 	queue_free()
 

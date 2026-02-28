@@ -8,3 +8,8 @@ func _init():
 
 func apply():
 	Player.instance.resource.stat_size += 1
+
+static func poll(player:PlayerResource):
+	if player.stat_size>=player.stat_size_max:
+		return 0.0
+	return player.stat_size / player.stat_size_max

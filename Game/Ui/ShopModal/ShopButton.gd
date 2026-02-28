@@ -31,3 +31,5 @@ func resource_changed():
 func _pressed() -> void:
 	print("SE")
 	item_selected.emit(resource)
+
+@export_tool_button("Trigger") var _trigger = _pressed
