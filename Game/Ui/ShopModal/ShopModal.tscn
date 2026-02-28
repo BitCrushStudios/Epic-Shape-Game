@@ -8,21 +8,31 @@
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
 [ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_i3qng"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
+[ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
 [ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
 
 [sub_resource type="Resource" id="Resource_i3qng"]
 script = ExtResource("2_e7lec")
+money = 900
 metadata/_custom_type_script = "uid://dfj50wg6u44xx"
 
-[sub_resource type="Resource" id="Resource_cpuug"]
+[sub_resource type="Resource" id="Resource_0k88i"]
+script = ExtResource("3_udy12")
+texture = ExtResource("4_cpuug")
+name = "Coffee"
+
+[sub_resource type="Resource" id="Resource_q3cp0"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_0k88i")
+
+[sub_resource type="Resource" id="Resource_llh7c"]
 script = ExtResource("4_wy88y")
 texture = ExtResource("4_cpuug")
 name = "Soy"
 
-[sub_resource type="Resource" id="Resource_e7lec"]
-script = ExtResource("3_udy12")
-texture = ExtResource("4_cpuug")
-name = "Coffee"
+[sub_resource type="Resource" id="Resource_374k4"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_llh7c")
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
@@ -195,7 +205,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oi6um")
 player = SubResource("Resource_i3qng")
-items = Array[ExtResource("2_cpuug")]([SubResource("Resource_cpuug"), null, null, SubResource("Resource_e7lec"), null])
+items = Array[ExtResource("5_0k88i")]([null, SubResource("Resource_q3cp0"), null, null, SubResource("Resource_374k4")])
 
 [node name="HeaderContainerOffset" type="Control" parent="." unique_id=2078019511]
 z_index = 1
@@ -287,85 +297,48 @@ offset_bottom = 523.99854
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control2" type="Control" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=1801818745]
-anchors_preset = 0
+[node name="Control2" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=968915602]
+layout_mode = 0
+offset_top = 85.0
 offset_right = 188.0
-offset_bottom = 524.0
+offset_bottom = 609.0
 size_flags_horizontal = 3
 
 [node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-visible = false
-z_index = 1
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -430.0
-offset_right = 0.0
-offset_bottom = -242.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_type_variation = &"OutlineButton"
-flat = false
-resource = null
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+resource = SubResource("Resource_q3cp0")
 
 [node name="TextureRect" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control2" unique_id=444131488]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -246.66669
-offset_bottom = 153.33331
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control3" type="Control" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=66350193]
-anchors_preset = 0
+[node name="Control3" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=768994115]
+layout_mode = 0
 offset_left = 192.0
+offset_top = 43.0
 offset_right = 381.0
-offset_bottom = 524.0
+offset_bottom = 567.0
 size_flags_horizontal = 3
 
 [node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-visible = false
-z_index = 1
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -481.0
-offset_right = 0.0
-offset_bottom = -293.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_type_variation = &"OutlineButton"
-flat = false
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+disabled = true
 resource = null
 
 [node name="TextureRect2" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control3" unique_id=1155977084]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -295.0
-offset_bottom = 105.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control1" type="Control" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=396756740]
-anchors_preset = 0
+[node name="Control1" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=1696070561]
+layout_mode = 0
 offset_left = 385.0
 offset_right = 574.0
 offset_bottom = 524.0
@@ -373,109 +346,55 @@ size_flags_horizontal = 3
 
 [node name="ShopButton1" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-z_index = 1
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -515.0
-offset_right = 0.0
-offset_bottom = -327.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_type_variation = &"OutlineButton"
-flat = false
-resource = SubResource("Resource_cpuug")
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+disabled = true
+resource = null
 
 [node name="TextureRect3" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control1" unique_id=406888666]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -328.0
-offset_bottom = 72.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control4" type="Control" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=1339103342]
-anchors_preset = 0
+[node name="Control4" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=1717860420]
+layout_mode = 0
 offset_left = 578.0
+offset_top = 43.0
 offset_right = 767.0
-offset_bottom = 524.0
+offset_bottom = 567.0
 size_flags_horizontal = 3
 
 [node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-z_index = 1
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -481.0
-offset_right = 0.0
-offset_bottom = -293.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_type_variation = &"OutlineButton"
-flat = false
-resource = SubResource("Resource_e7lec")
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+disabled = true
+resource = null
 
 [node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1373859225]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -295.0
-offset_bottom = 105.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control5" type="Control" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=616826704]
-anchors_preset = 0
+[node name="Control5" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=458906006]
+layout_mode = 0
 offset_left = 771.0
+offset_top = 85.0
 offset_right = 960.0
-offset_bottom = 524.0
+offset_bottom = 609.0
 size_flags_horizontal = 3
 
 [node name="ShopButton5" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-visible = false
-z_index = 1
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -430.0
-offset_right = 0.0
-offset_bottom = -242.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_type_variation = &"OutlineButton"
-flat = false
-resource = null
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+resource = SubResource("Resource_374k4")
 
 [node name="TextureRect5" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control5" unique_id=1697602729]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -248.0
-offset_bottom = 152.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 

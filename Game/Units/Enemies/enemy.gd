@@ -12,4 +12,4 @@ func _ready() -> void:
 	health_depleted.connect(_on_death)
 	
 func _on_death():
-	Player.instance.experience += experience_on_death
+	Player.instance.resource.experience += experience_on_death

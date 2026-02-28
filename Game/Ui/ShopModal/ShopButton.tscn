@@ -3,19 +3,25 @@
 [ext_resource type="Script" uid="uid://ijwqv1ttjeih" path="res://Game/Ui/ShopModal/ShopButton.gd" id="1_1tt3b"]
 [ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="3_02jqq"]
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_k1nkd"]
+[ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="4_sr35a"]
 
-[sub_resource type="Resource" id="Resource_yswop"]
+[sub_resource type="Resource" id="Resource_02jqq"]
 script = ExtResource("3_02jqq")
 texture = ExtResource("4_k1nkd")
 name = "Coffee"
+metadata/_custom_type_script = "uid://dkimhnvplapun"
+
+[sub_resource type="Resource" id="Resource_k1nkd"]
+script = ExtResource("4_sr35a")
+item = SubResource("Resource_02jqq")
+metadata/_custom_type_script = "uid://cyj57dpj0ij47"
 
 [node name="ShopButton" type="Button" unique_id=866692791]
 offset_right = 252.0
 offset_bottom = 321.0
-theme_type_variation = &"FlatButton"
 flat = true
 script = ExtResource("1_1tt3b")
-resource = SubResource("Resource_yswop")
+resource = SubResource("Resource_k1nkd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=131644122]
 layout_mode = 1

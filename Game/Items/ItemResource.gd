@@ -18,10 +18,10 @@ class_name ItemResource
 		description = v
 		emit_changed()
 
-func register(weapon:Weapon):
+func register(_weapon:Weapon):
 	pass
 	
-func unregister(weapon:Weapon):
+func unregister(_weapon:Weapon):
 	pass
 	
 static func get_available_items():

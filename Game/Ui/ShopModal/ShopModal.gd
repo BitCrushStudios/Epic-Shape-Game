@@ -5,7 +5,7 @@ class_name ShopModal
 signal item_selected(item:ItemResource)
 signal btn_pressed(btn:EquipItemButton)
 @export var player: PlayerResource
-@export var items:Array[ItemResource]:
+@export var items:Array[ShopItemResource]:
 	set(v):
 		items = v
 		items_changed()
@@ -24,11 +24,9 @@ func items_changed():
 		await tree_entered
 	var buttons = get_buttons()
 	for i in range(buttons.size()):
-		buttons[i].hide()
 		buttons[i].resource = null
 	for i in range(buttons.size()):
 		if i<items.size() and items[i]:
-			buttons[i].show()
 			buttons[i].resource = items[i]
 			
 			
@@ -38,15 +36,14 @@ func random_items():
 	var count =  get_buttons().size()
 	var arr_indices = range(count)
 	arr_indices.shuffle()
-	var vs:Array[ItemResource] = []
+	var vs:Array[ShopItemResource] = []
 	vs.resize(count)
 	for i in arr_indices:
 		if available_items.size()>0:
 			var item: ItemResource = available_items.pop_at(randi_range(0, available_items.size()-1)).new()
-			prints(i, item)
-			vs.set(i,item)
-		else:
-			vs.set(i,null)
+			var shopItem = ShopItemResource.new()
+			shopItem.item = item
+			vs.set(i,shopItem)
 	items = vs
 	
 @export_tool_button("Randomize")
@@ -62,13 +59,15 @@ func modal():
 func _ready():
 	for btn in get_buttons():
 		btn.item_selected.connect(item_selected.emit)
-		btn.pressed.connect(btn_pressed.emit.bind(btn))
-	btn_pressed.connect(_btn_pressed)
+	item_selected.connect(_item_selected)
 	if get_tree().root == self:
 		await modal()
 
-func _btn_pressed(btn:EquipItemButton):
-	pass
+func _item_selected(shopItem:ShopItemResource):
+	prints(shopItem.price,player.money)
+	if shopItem.quantity>0 and shopItem.price <= player.money:
+		player.money -= shopItem.price
+		shopItem.quantity -= 1
 	
 	
 	

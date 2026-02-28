@@ -50,6 +50,10 @@ class_name PlayerResource
 @export var base_size_add = 0.1
 @export var accel_mult = 10.0
 @export var exp_rate = 1.1
+@export var money = 1000:
+	set(v):
+		money = v 
+		emit_changed()
 
 @export_category("Stat Result")
 @export_custom(PROPERTY_HINT_NONE, "", PROPERTY_USAGE_NONE) 

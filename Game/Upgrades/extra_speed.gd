@@ -1,3 +1,4 @@
+@tool
 extends UpgradeResource
 class_name ExtraSpeedUpgradeResource
 
