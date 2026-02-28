@@ -12,8 +12,11 @@ class_name PlayerResource
 		return weapons
 	set(v):
 		weapons = v
+		weapons_changed.emit()
 		emit_changed()
+signal weapons_changed()
 
+	
 @export_category("Stats")
 @export var stat_size = 1:
 
@@ -59,6 +62,10 @@ class_name PlayerResource
 @export var base_size_add = 0.1
 @export var accel_mult = 10.0
 @export var exp_rate = 1.1
+@export var current_wave:int:
+	set(v):
+		current_wave = v
+		emit_changed()
 @export var money = 1000:
 	set(v):
 		money = v 

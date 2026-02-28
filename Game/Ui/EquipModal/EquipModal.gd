@@ -6,7 +6,7 @@ class_name EquipModal
 	get():
 		return player
 	set(v):
-		if player:
+		if player and player.changed.is_connected(update_player_ui):
 			player.changed.disconnect(update_player_ui)
 		player = v
 		if player:
@@ -52,10 +52,9 @@ func update_player_ui():
 	
 	for c in %PlayerInvItems.get_children(true):
 		c.queue_free.call_deferred()
-	for item in Player.instance.resource.inventory:
+	for item in player.inventory:
 		var btn: EquipItemButton = preload("res://Game/Ui/EquipModal/EquipItemButton.tscn").instantiate()
 		btn.resource = item
-		print(item.name)
 		%PlayerInvItems.add_child(btn, true, Node.INTERNAL_MODE_FRONT)
 		btn.pressed.connect(player_inv_btn_pressed.bind(btn))
 
@@ -65,7 +64,7 @@ func player_inv_btn_pressed(btn:EquipItemButton):
 	player.inventory.erase(btn.resource)
 	active_weapon.items.append(btn.resource)
 	
-	#player = player
+	player = player
 	weapons = weapons
 	
 func weapon_inv_btn_pressed(btn:EquipItemButton):
@@ -74,12 +73,11 @@ func weapon_inv_btn_pressed(btn:EquipItemButton):
 	player.inventory.append(btn.resource)
 	active_weapon.items.erase(btn.resource)
 	
-	#player = player
+	player = player
 	weapons = weapons
 	
 	
 func update_items_ui():
-	prints("Update Items For Selected Weapon")
 	if not is_inside_tree():
 		await tree_entered
 	if weapon_index < %WeaponItems.get_child_count(true):
@@ -109,5 +107,5 @@ func _ready():
 	#for btn in get_buttons():
 		#btn.item_selected.connect(item_selected.emit)
 	#item_selected.connect(_item_selected)
-	if get_tree().root == self:
+	if get_tree().current_scene == self:
 		await modal()

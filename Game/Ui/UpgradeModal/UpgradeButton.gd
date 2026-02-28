@@ -1,5 +1,6 @@
 @tool
 extends Button
+class_name UpgradeButton
 signal upgrade_selected(resource:UpgradeResource)
 @export var facing = 1.0:
 	set(v):
@@ -22,12 +23,14 @@ func update_facing_ui():
 	%Content.visible = facing > 0
 	scale.x = facing
 func update_resource_ui():
-	if not resource:
-		return
 	if not is_inside_tree():
 		await tree_entered
-	%TextureRect.texture = resource.texture
-	%Label.text = "%s +%d" %[resource.name, resource.boost]
+	if resource:
+		%TextureRect.texture = resource.texture if resource.texture else null
+		%Label.text = "%s +%d" %[resource.name, resource.boost]
+	else:
+		%TextureRect.texture = null
+		%Label.text = "Blank"
 	
 func _pressed() -> void:
 	upgrade_selected.emit(resource)

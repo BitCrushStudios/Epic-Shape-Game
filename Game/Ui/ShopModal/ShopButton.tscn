@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cyj57dpj0ij47"
 
 [node name="ShopButton" type="Button" unique_id=866692791]
 offset_right = 252.0
-offset_bottom = 321.0
+offset_bottom = 224.0
 flat = true
 script = ExtResource("1_1tt3b")
 resource = SubResource("Resource_k1nkd")
@@ -31,6 +31,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="PriceLabel" type="Label" parent="VBoxContainer" unique_id=2081087733]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"OutlineLabelSmall"
+text = "$ 100"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=856560911]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"OutlineLabelSmall"
+text = "Coffee"
+horizontal_alignment = 1
+
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=801848120]
 unique_name_in_owner = true
 layout_mode = 2
@@ -39,9 +53,8 @@ texture = ExtResource("4_k1nkd")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=856560911]
+[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1931081603]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
-theme_type_variation = &"OutlineLabel"
-text = "Coffee"
-horizontal_alignment = 1
+size_flags_vertical = 3

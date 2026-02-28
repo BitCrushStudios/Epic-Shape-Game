@@ -9,7 +9,6 @@ class_name ItemResource
 		
 @export var name:String:
 	set(v):
-		print("n", v)
 		name = v
 		emit_changed()
 		

@@ -6,14 +6,17 @@ signal item_selected(item:ItemResource)
 signal btn_pressed(btn:EquipItemButton)
 @export var player:PlayerResource = PlayerResource.new():
 	set(v):
-		if player:
+		if player and player.changed.is_connected(update_player_ui):
 			player.changed.disconnect(update_player_ui)
 		player = v
 		if player:
 			player.changed.connect(update_player_ui)
 		update_player_ui()
 func update_player_ui():
-	pass
+	if not is_inside_tree():
+		await tree_entered
+	%WaveLabel.text = "Next Wave - %d" % (player.current_wave + 1)
+	%CashLabel.text = "$ %d" % (player.money)
 @export var items:Array[ShopItemResource]:
 	set(v):
 		items = v
@@ -41,7 +44,6 @@ func items_changed():
 			
 func setup_ui():
 	var available_items = ItemResource.get_available_items()
-	print(available_items)
 	var count =  get_buttons().size()
 	var arr_indices = range(count)
 	arr_indices.shuffle()
@@ -69,13 +71,12 @@ func _ready():
 	for btn in get_buttons():
 		btn.item_selected.connect(item_selected.emit)
 	item_selected.connect(_item_selected)
-	if get_tree().root == self:
+	if get_tree().current_scene == self:
 		Player.instance = Player.new()
 		Player.instance.resource = PlayerResource.new()
 		await modal()
 
 func _item_selected(shopItem:ShopItemResource):
-	prints(shopItem.price,player.money)
 	if shopItem.quantity>0 and shopItem.price <= player.money:
 		player.money -= shopItem.price
 		shopItem.quantity -= 1

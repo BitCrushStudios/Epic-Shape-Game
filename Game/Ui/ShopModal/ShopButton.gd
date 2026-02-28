@@ -13,23 +13,23 @@ signal item_selected(item:ShopItemResource)
 			resource.changed.connect(resource_changed)
 		resource_changed()
 func resource_changed():
-	print("RC")
 	if not is_inside_tree():
 		await tree_entered
-	print(resource)
 	if resource and resource.item:
-		print(resource.item.name)
 		%TextureRect.texture = resource.item.texture if resource.item.texture else null
-		%Label.text = resource.item.name
+		%NameLabel.text = resource.item.name
+		%DescriptionLabel.text = resource.item.description
+		%PriceLabel.text = "$ %d" % resource.price
 		disabled = resource.quantity<=0
 		modulate = Color.DIM_GRAY if disabled else Color.WHITE
 	else:
 		%TextureRect.texture = null
-		%Label.text = ""
+		%NameLabel.text = ""
+		%DescriptionLabel.text = ""
+		%PriceLabel.text = ""
 		disabled=true
 		
 func _pressed() -> void:
-	print("SE")
 	item_selected.emit(resource)
 
 @export_tool_button("Trigger") var _trigger = _pressed

@@ -1,7 +1,7 @@
 @tool
 extends RigidBody2D
 class_name Weapon
-
+static var instances:Array[Weapon] = []
 @export var resource: WeaponResource:
 	get():
 		return resource
@@ -26,6 +26,12 @@ func _resource_changed():
 	$CollisionShape2D.shape = resource.shape
 func _ready():
 	body_entered.connect(_on_body_entered)
+	
+func _enter_tree() -> void:
+	Weapon.instances.append(self)
+	
+func _exit_tree() -> void:
+	Weapon.instances.erase(self)
 	
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():

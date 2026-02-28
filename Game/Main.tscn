@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="1_50glp"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="1_r150o"]
+[ext_resource type="Script" uid="uid://k5cm3nqg7dpf" path="res://Game/WeaponsManager.gd" id="2_3tq7c"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="3_x253o"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="5_v1gob"]
@@ -202,21 +203,22 @@ stream = ExtResource("8_50glp")
 volume_db = -20.0
 autoplay = true
 
-[node name="Weapons" type="Node2D" parent="." unique_id=919234323]
+[node name="WeaponsManager" type="Node2D" parent="." unique_id=919234323]
+script = ExtResource("2_3tq7c")
 
-[node name="Weapon" parent="Weapons" unique_id=1251268979 instance=ExtResource("3_x253o")]
+[node name="Weapon" parent="WeaponsManager" unique_id=1251268979 instance=ExtResource("3_x253o")]
 position = Vector2(835, 441)
 
-[node name="Weapon2" parent="Weapons" unique_id=1963918511 instance=ExtResource("3_x253o")]
+[node name="Weapon2" parent="WeaponsManager" unique_id=1963918511 instance=ExtResource("3_x253o")]
 position = Vector2(835, 441)
 
-[node name="Weapon3" parent="Weapons" unique_id=814990011 instance=ExtResource("3_x253o")]
+[node name="Weapon3" parent="WeaponsManager" unique_id=814990011 instance=ExtResource("3_x253o")]
 position = Vector2(835, 441)
 
-[node name="Weapon4" parent="Weapons" unique_id=1526692540 instance=ExtResource("3_x253o")]
+[node name="Weapon4" parent="WeaponsManager" unique_id=1526692540 instance=ExtResource("3_x253o")]
 position = Vector2(835, 441)
 
-[node name="Weapon5" parent="Weapons" unique_id=382424902 instance=ExtResource("3_x253o")]
+[node name="Weapon5" parent="WeaponsManager" unique_id=382424902 instance=ExtResource("3_x253o")]
 position = Vector2(835, 441)
 
 [node name="Player" parent="." unique_id=299479533 instance=ExtResource("1_r150o")]

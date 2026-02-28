@@ -2,6 +2,54 @@
 extends Control
 class_name UpgradeModal 
 
+
+class ChanceArray:
+	var pairs = []
+	
+	func add(value,chance):
+		pairs.append([value,chance])
+	
+	func shuffle():
+		pairs.shuffle()
+		
+	func total():
+		var _total = 0.0
+		for pair in pairs:
+			_total += pair[1]
+		return _total
+		
+	func accumulated():
+		var acc = []
+		var n = 0.0
+		for pair in pairs:
+			acc.append([pair[0],n])
+			n+=pair[1]
+		return acc
+		
+	func random_index():
+		var t = total()
+		var q = randf_range(0, t)
+		var n1 = 0.0
+		var n2:float
+		for i in range(pairs.size()):
+			n2 = n1 + pairs[i][1]
+			if q>n1 and q < n2:
+				return i
+			n1 = n2
+		return pairs.size()-1
+		
+		
+	func take():
+		var i = random_index()
+		if i != -1:
+			return pairs.pop_at(i)[0]
+		return null
+		
+	func size():
+		return pairs.size()
+			
+			
+			
 signal upgrade_selected(upgrade:UpgradeResource)
 @export var player:PlayerResource = PlayerResource.new():
 	get():
@@ -15,86 +63,81 @@ signal upgrade_selected(upgrade:UpgradeResource)
 		update_player_ui()
 func update_player_ui():
 	pass
-@export_tool_button("Setup") var __setup = setup_ui
-class ChanceArray:
-	var pairs = []
 	
-	func add(value,chance):
-		pairs.append([value,chance])
+@export var upgrades: Array[UpgradeResource] = []:
+	get():
+		return upgrades
+	set(v):
+		upgrades = v
+		update_upgrades_ui()
 		
-	func remove(value):
-		for i in range(pairs.size()):
-			if pairs[i][0] == value:
-				pairs.remove_at(i)
-				return
-				
-	func shuffle():
-		pairs.shuffle()
-	func total():
-		var max_chance = 0.0
-		for pair in pairs:
-			max_chance += pair[1]
-		return max_chance
-	func accumulated():
-		var acc = []
-		var n = 0.0
-		for pair in pairs:
-			acc.append([pair[0],n])
-			n+=pair[1]
-		return acc
-	func random_index():
-		var q = randf_range(0, total())
-		var n = 0.0
-		for i in range(pairs.size()):
-			if n>q:
-				return i-1
-			n+=pairs[i][1]
-		return pairs.size()-1
-		
-	func random():
-		var i = random_index()
-		if i == -1:
-			return pairs[i][0]
-		return null
-		
-	func take():
-		var i = random_index()
-		if i == -1:
-			return pairs.pop_at(i)[0]
-		return null
-	func size():
-		return pairs.size()
-			
-			
-			
+func update_upgrades_ui():
+	if not is_inside_tree():
+		await tree_entered
+	var btns: Array[UpgradeButton] = get_buttons()
 	
-func setup_ui():
-	var upgrades = UpgradeResource.get_available_upgrades()
+	for i in range(min(btns.size(),upgrades.size())):
+		var p:Control = btns[i].get_parent().get_parent()
+		if i < upgrades.size():
+			btns[i].resource = upgrades[i]
+			p.visible = upgrades[i] != null
+		else:
+			btns[i].resource = null
+			p.visible = false
+func randomize():
+	if not is_inside_tree():
+		await tree_entered
+	var available = UpgradeResource.get_available_upgrades()
 	var randArr = ChanceArray.new()
-	for upg in upgrades:
-		randArr.add(upg,upg.poll(player))
+	for upg in available:
+		randArr.add(upg, upg.poll(player))
 	randArr.shuffle()
-	for btn in get_buttons():
-		if randArr.size()<=0:
-			btn.hide()
-			continue
-		btn.show()
-		
-		var upg = randArr.take()
-		btn.resource = upg
+	var btns: Array[UpgradeButton] = get_buttons()
+	var arr:Array[UpgradeResource] = []
+	arr.resize(btns.size())
+	for i in range(btns.size()):
+		if randArr.size()>0:
+			var upg = randArr.take().new()
+			arr.set(i, upg)
+	upgrades = arr
 	
-func modal():
+
+func setup_ui():
+	if not is_inside_tree():
+		await tree_entered
+	randomize()
+	
+@export_tool_button("Setup") var _randomize_action = randomize
+func apply_upgrade(upgrade:UpgradeResource):
+	upgrade.apply(player)
+func modal(turns=1):
+	assert(turns>=1)
+	if not is_inside_tree():
+		await tree_entered
 	setup_ui()
 	
+	var upgrades:Array[UpgradeResource] = []
+	var u:UpgradeResource
 	$AnimationPlayer.play("open")
-	var upgrade = await upgrade_selected
-	
+	#await $AnimationPlayer.animation_finished
+	for i in range(turns,1,-1):
+		u = await upgrade_selected
+		upgrades.append(u)
+		apply_upgrade(u)
+		$CardsContainer/AnimationPlayer.play("close")
+		await $CardsContainer/AnimationPlayer.animation_finished
+		$CardsContainer/AnimationPlayer.play("open")
+		#await $CardsContainer/AnimationPlayer.animation_finished
+		
+	u = await upgrade_selected
+	upgrades.append(u)
+	apply_upgrade(u)
 	$AnimationPlayer.play("close")
 	await $AnimationPlayer.animation_finished
+		
 	
-	return upgrade
 	
-func get_buttons():
+func get_buttons()->Array[UpgradeButton]:
 	return [
 		%UpgradeButton1,
 		%UpgradeButton2,
@@ -107,24 +150,6 @@ func get_buttons():
 func _ready() -> void:
 	for btn in get_buttons():
 		btn.upgrade_selected.connect(upgrade_selected.emit.call)
-	if get_tree().root == self:
-		await modal()
-	
-func _process(_delta:float):
-	if Engine.is_editor_hint():
-		return
-	var mpos = get_global_mouse_position()
-	for btn in get_buttons():
-		var p = btn.get_parent()
-		p.scale = (Vector2.ONE - 
-			(
-				(p.get_global_rect().get_center() - mpos)
-				.limit_length(3000.0)
-				/3000.0
-			)
-			.abs()
-		).clampf(0.8,1.0)
-		
-		
-		
+	if get_tree().current_scene == self:
+		await modal(4)
 	

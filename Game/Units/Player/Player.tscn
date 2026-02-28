@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjp2b5iomkei"]
 
-[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/player.gd" id="1_ddoul"]
+[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/Player.gd" id="1_ddoul"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_cvipf"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_tok1r"]
 [ext_resource type="Texture2D" uid="uid://c65lwc744dgwt" path="res://Assets/Art/Player/Player @.png" id="3_fd82q"]

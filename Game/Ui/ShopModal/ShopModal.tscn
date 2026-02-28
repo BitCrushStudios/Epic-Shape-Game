@@ -74,7 +74,7 @@ resource_name = "close"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ButtonContainerOffset/ButtonContainer/ButtonContainer:position")
+tracks/0/path = NodePath("ButtonContainerOffset/ButtonContainer2:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -138,7 +138,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ButtonContainerOffset/ButtonContainer/ButtonContainer:position")
+tracks/0/path = NodePath("ButtonContainerOffset/ButtonContainer2:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -239,7 +239,7 @@ size_flags_horizontal = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"OutlineLabelSmall"
-text = "Next Wave - 10"
+text = "Next Wave - 1"
 vertical_alignment = 1
 
 [node name="PanelContainer3" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1370799459]
@@ -259,8 +259,17 @@ size_flags_horizontal = 10
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"OutlineLabelSmall"
-text = "$ 10 000"
+text = "$ 300"
 horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1653794823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.76862746, 0.84705883, 0.8901961, 1)
 
 [node name="ButtonContainerOffset" type="Control" parent="." unique_id=1911506529]
 layout_mode = 1
@@ -268,31 +277,12 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -131.0
-offset_bottom = -131.0
+offset_top = -270.0
+offset_bottom = -270.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ButtonContainer" type="Control" parent="ButtonContainerOffset" unique_id=354027146]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="ButtonContainerOffset/ButtonContainer" unique_id=1653794823]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -139.0
-offset_bottom = 401.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.76862746, 0.84705883, 0.8901961, 1)
-
-[node name="ButtonContainer" type="Control" parent="ButtonContainerOffset/ButtonContainer" unique_id=609931546]
+[node name="ButtonContainer2" type="Control" parent="ButtonContainerOffset" unique_id=609931546]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -302,28 +292,28 @@ offset_bottom = 523.99866
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control2" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=968915602]
+[node name="Control2" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=968915602]
 layout_mode = 0
 offset_top = 85.0
 offset_right = 188.0
 offset_bottom = 609.0
 size_flags_horizontal = 3
 
-[node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
+[node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer2/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 180)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
 resource = null
 
-[node name="TextureRect" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control2" unique_id=444131488]
+[node name="TextureRect" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control2" unique_id=444131488]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control3" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=768994115]
+[node name="Control3" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=768994115]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 43.0
@@ -331,42 +321,42 @@ offset_right = 381.0
 offset_bottom = 567.0
 size_flags_horizontal = 3
 
-[node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
+[node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer2/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 180)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
 resource = null
 
-[node name="TextureRect2" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control3" unique_id=1155977084]
+[node name="TextureRect2" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control3" unique_id=1155977084]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control1" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=1696070561]
+[node name="Control1" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=1696070561]
 layout_mode = 0
 offset_left = 385.0
 offset_right = 574.0
 offset_bottom = 524.0
 size_flags_horizontal = 3
 
-[node name="ShopButton1" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
+[node name="ShopButton1" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 180)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
 resource = null
 
-[node name="TextureRect3" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control1" unique_id=406888666]
+[node name="TextureRect3" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=406888666]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control4" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=1717860420]
+[node name="Control4" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=1717860420]
 layout_mode = 0
 offset_left = 578.0
 offset_top = 43.0
@@ -374,21 +364,21 @@ offset_right = 767.0
 offset_bottom = 567.0
 size_flags_horizontal = 3
 
-[node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
+[node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer2/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 180)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
 resource = SubResource("Resource_374k4")
 
-[node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control4" unique_id=1373859225]
+[node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control4" unique_id=1373859225]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
-[node name="Control5" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer" unique_id=458906006]
+[node name="Control5" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=458906006]
 layout_mode = 0
 offset_left = 771.0
 offset_top = 85.0
@@ -396,15 +386,15 @@ offset_right = 960.0
 offset_bottom = 609.0
 size_flags_horizontal = 3
 
-[node name="ShopButton5" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
+[node name="ShopButton5" parent="ButtonContainerOffset/ButtonContainer2/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 180)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
 resource = SubResource("Resource_decmg")
 
-[node name="TextureRect5" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer/ButtonContainer/Control5" unique_id=1697602729]
+[node name="TextureRect5" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control5" unique_id=1697602729]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")

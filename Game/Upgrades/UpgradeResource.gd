@@ -28,7 +28,7 @@ var description:String:
 func _init():
 	boost = 1
 
-func apply():
+func apply(player:PlayerResource):
 	pass
 
 static func get_available_upgrades():

@@ -19,7 +19,6 @@ class_name WeaponResource
 	set(v):
 		shape = v
 		emit_changed()
-		
 @export var name:String="Weapon":
 	set(v):
 		name = v

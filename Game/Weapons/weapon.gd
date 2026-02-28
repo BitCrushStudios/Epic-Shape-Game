@@ -1,7 +1,6 @@
 @tool
 extends RigidBody2D
 class_name Bowling
-
 @export var resource: WeaponResource:
 	get():
 		return resource
