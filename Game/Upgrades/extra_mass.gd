@@ -7,4 +7,4 @@ func _init():
 	name ="Extra Strength"
 
 func apply():
-	Player.instance.stat_mass += 1
+	Player.instance.resource.stat_mass += 1

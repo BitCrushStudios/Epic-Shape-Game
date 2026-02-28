@@ -7,4 +7,4 @@ func _init():
 	name ="Extra Size"
 
 func apply():
-	Player.instance.stat_size += 1
+	Player.instance.resource.stat_size += 1

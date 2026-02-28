@@ -7,4 +7,4 @@ func _init():
 	name ="Extra Speed"
 
 func apply():
-	Player.instance.stat_speed += 1
+	Player.instance.resource.stat_speed += 1

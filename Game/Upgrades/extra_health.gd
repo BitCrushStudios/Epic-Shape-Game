@@ -7,4 +7,4 @@ func _init():
 	name ="Extra Health"
 	
 func apply():
-	Player.instance.health_max += 1
+	Player.instance.resource.health_max += 1
