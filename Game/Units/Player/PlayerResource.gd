@@ -1,3 +1,4 @@
+@tool
 extends Resource
 class_name PlayerResource
 
@@ -61,7 +62,7 @@ signal weapons_changed()
 @export var base_size = 1.0
 @export var base_size_add = 0.1
 @export var accel_mult = 10.0
-@export var exp_rate = 1.1
+@export var exp_rate = 4.0
 @export var current_wave:int:
 	set(v):
 		current_wave = v
@@ -72,11 +73,41 @@ signal weapons_changed()
 		emit_changed()
 
 @export_category("Stat Result")
-@export_custom(PROPERTY_HINT_NONE, "", PROPERTY_USAGE_NONE) 
+@export
 var speed: float:
 	get():
 		return base_speed + (base_speed_add * stat_speed)
-@export var experience = 0.0
-var exp_level: float:
+
+@export_category("Experience")
+func calc_level_from_exp(v:float):
+	return pow(v, 1.0 / exp_rate)
+func calc_exp_from_level(level:int):
+	return pow(level, exp_rate) 
+func exp_add(v:float):
+	var last_level = current_level
+	experience += v
+	levels_gained += (current_level - current_level)
+var levels_gained = 0
+@export var experience = 0.0:
+	set(v):
+		experience = v
+		emit_changed()
+@export var current_level: int:
 	get():
-		return experience/exp(exp_rate)
+		return calc_level_from_exp(experience)
+	set(v):
+		experience = calc_exp_from_level(v+0.001)
+	
+@export
+var current_level_exp_required: float:
+	get():
+		return calc_exp_from_level(current_level)
+		
+@export
+var next_level_exp_required: float:
+	get():
+		return calc_exp_from_level(current_level+1)
+
+@export var exp_required:float:
+	get():
+		return next_level_exp_required - current_level_exp_required

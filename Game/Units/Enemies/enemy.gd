@@ -10,6 +10,7 @@ var update_target_position_time = 0.0
 @export var experience_on_death = 1.0
 @export var damage = 1.0
 
+
 	
 
 
@@ -21,7 +22,7 @@ func _ready():
 	#body_entered.connect(_body_entered)
 	
 func _on_death():
-	Player.instance.resource.experience += experience_on_death
+	Player.instance.resource.exp_add(experience_on_death)
 
 func _body_entered(other:Node2D):
 	if other is Player:

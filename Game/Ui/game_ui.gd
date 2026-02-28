@@ -13,6 +13,9 @@ func _process(_delta:float):
 	%HealthBar.value = Player.instance.health_current
 	%HealthLabel.text = "%d / %d" % [Player.instance.health_current, Player.instance.health_max]
 	
+	%ExpBar.max_value = Player.instance.resource.experience
+	%ExpBar.value = Player.instance.resource.experience
+	
 var hurt_tween:Tween
 
 func _recieved_damage(_damage:float):

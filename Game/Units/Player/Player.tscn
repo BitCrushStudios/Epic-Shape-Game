@@ -1,19 +1,13 @@
 [gd_scene format=3 uid="uid://cjp2b5iomkei"]
 
 [ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/Player.gd" id="1_ddoul"]
-[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_cvipf"]
+[ext_resource type="Resource" uid="uid://crqoii6jjixak" path="res://player_resource.tres" id="2_0gvlh"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_tok1r"]
 [ext_resource type="Texture2D" uid="uid://c65lwc744dgwt" path="res://Assets/Art/Player/Player @.png" id="3_fd82q"]
-[ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_i7tqw"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_mbpe7"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_jiict"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
 friction = 0.0
-
-[sub_resource type="Resource" id="Resource_wnw4f"]
-script = ExtResource("3_i7tqw")
-metadata/_custom_type_script = "uid://dfj50wg6u44xx"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbpe7"]
 radius = 28.01785
@@ -59,18 +53,17 @@ _data = {
 
 [node name="Player" type="RigidBody2D" unique_id=2019408090]
 y_sort_enabled = true
-mass = 2.0
+mass = 11.0
 physics_material_override = SubResource("PhysicsMaterial_bd17y")
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 10)
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
-resource = SubResource("Resource_wnw4f")
+resource = ExtResource("2_0gvlh")
 health_max = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
-scale = Vector2(1.1221772, 1.1221772)
 shape = SubResource("CircleShape2D_mbpe7")
 
 [node name="SpriteOrigin" type="Node2D" parent="CollisionShape2D" unique_id=1318647114]

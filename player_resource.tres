@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PlayerResource" format=3 uid="uid://crqoii6jjixak"]
+
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="1_fj6go"]
+[ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="2_uuqbm"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_omiyr"]
+
+[resource]
+script = ExtResource("2_uuqbm")
+speed = 600.0
+experience = 16.0
+current_level = 2
+current_level_exp_required = 16.0
+next_level_exp_required = 81.0
+exp_required = 65.0
+metadata/_custom_type_script = "uid://dfj50wg6u44xx"
