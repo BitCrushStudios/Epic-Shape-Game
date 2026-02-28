@@ -4,8 +4,21 @@
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="2_uuqbm"]
 [ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_omiyr"]
 
+[sub_resource type="Resource" id="Resource_fj6go"]
+script = ExtResource("3_omiyr")
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"
+
+[sub_resource type="Resource" id="Resource_uuqbm"]
+script = ExtResource("3_omiyr")
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"
+
+[sub_resource type="Resource" id="Resource_omiyr"]
+script = ExtResource("3_omiyr")
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"
+
 [resource]
 script = ExtResource("2_uuqbm")
+weapons = Array[ExtResource("3_omiyr")]([SubResource("Resource_fj6go"), SubResource("Resource_uuqbm"), SubResource("Resource_omiyr")])
 speed = 600.0
 experience = 16.0
 current_level = 2

@@ -8,6 +8,7 @@ class_name PlayerResource
 	set(v):
 		inventory = v
 		emit_changed()
+		
 @export var weapons: Array[WeaponResource] = []:
 	get():
 		return weapons
@@ -16,7 +17,6 @@ class_name PlayerResource
 		weapons_changed.emit()
 		emit_changed()
 signal weapons_changed()
-
 	
 @export_category("Stats")
 @export var stat_size = 1:

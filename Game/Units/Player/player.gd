@@ -7,11 +7,14 @@ static var instance:Player
 	set(v):
 		if resource and resource.changed.is_connected(update_resource):
 				resource.changed.disconnect(update_resource)
+		if resource and resource.weapons_changed.is_connected(update_weapons):
+				resource.weapons_changed.disconnect(update_weapons)
 		resource = v
 		if resource:
 			resource.changed.connect(update_resource)
+			resource.weapons_changed.connect(update_weapons)
 		update_resource()
-		
+		update_weapons()
 
 func _init():
 	health_max = 30.0
@@ -39,22 +42,24 @@ func _update_size():
 	
 func _update_mass():
 	mass = resource.base_mass + (resource.base_mass_add * resource.stat_mass)
-
 func update_weapons():
-	var weapons = resource.weapons
-	for c in Weapon.instances:
-		if weapons.has(c.resource):
-			weapons.erase(c.resource)
+	var to_be_added = resource.weapons.duplicate()
+	for ins in Weapon.instances:
+		if resource.weapons.has(ins.resource):
+			to_be_added.erase(ins.resource)
 		else:
-			c.queue_free.call_deferred()
-	for res in weapons:
-		var c = WeaponsManager.instance.add_weapon(res)
-		
-	
+			ins.queue_free.call_deferred()
+	prints("WEP", resource.weapons.size(), to_be_added.size())
+	for res in to_be_added:
+		var ins: Weapon = preload("res://Game/Weapons/CubeWeapon.tscn").instantiate()
+		ins.resource = res
+		ins.top_level = true
+		ins.global_position = global_position + Vector2(randf_range(-20,20),randf_range(-20,20))
+		add_child(ins,true)
+			
 func update_resource():
 	_update_size()
 	_update_mass()
-	update_weapons()
 	
 func apply_damage(damage:float):
 	if iframe<=0:
