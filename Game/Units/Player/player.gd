@@ -15,11 +15,6 @@ static var instance:Player
 			resource.weapons_changed.connect(update_weapons)
 		update_resource()
 		update_weapons()
-var iframe_max:
-	get():
-		return resource.stat_iframe * 0.5
-var iframe = 0.0
-signal iframe_elapse()
 
 var size_tween:Tween
 
@@ -58,15 +53,14 @@ func update_resource():
 	_update_mass()
 	
 		
-func _recieved_damage(_damage:float):
+func _iframe_triggered():
 	%AnimationPlayer.play("damage")
-	iframe = iframe_max
-	await iframe_elapse
+	await resource.iframe_elapsed
 	%AnimationPlayer.stop()
 	
 func _ready():
 	Player.instance = self
-	resource.took_damage.connect(_recieved_damage)
+	resource.iframe_triggered.connect(_iframe_triggered)
 	resource.reset_health()
 	for w in Weapon.instances:
 		resource.weapons.append(w.resource)
@@ -74,13 +68,15 @@ func _ready():
 var mouse_origin
 
 func show_upgrade_modal():
-	get_tree().paused=true
-	var modal: UpgradeModal = preload("res://Game/Ui/UpgradeModal/UpgradeModal.tscn").instantiate()
-	$CanvasLayer.add_child(modal)
-	modal.player = resource
-	await modal.modal()
-	modal.queue_free()
-	get_tree().paused=false
+	if resource.levels_gained>0:
+		get_tree().paused=true
+		var modal: UpgradeModal = preload("res://Game/Ui/UpgradeModal/UpgradeModal.tscn").instantiate()
+		$CanvasLayer.add_child(modal)
+		modal.player = resource
+		await modal.modal(resource.levels_gained)
+		modal.queue_free()
+		get_tree().paused=false
+		resource.levels_gained = 0
 	
 func show_shop_modal():
 	get_tree().paused=true
@@ -116,11 +112,7 @@ func _physics_process(delta: float) -> void:
 		resource.stat_size += 1
 	elif Input.is_action_just_pressed("dev_player_size_down"):
 		resource.stat_size -= 1
-	
-	if iframe>0:
-		iframe = iframe - delta
-		if iframe<=0:
-			iframe_elapse.emit()
+	resource.update_iframe(delta)
 			
 	var mvec = Input.get_vector("move_left","move_right","move_up","move_down")
 	var desired_velocity = mvec * resource.speed

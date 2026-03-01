@@ -73,13 +73,16 @@ var active_wave: ActiveWave
 func _ready():
 	EnemyManager.instance = self
 	await get_tree().process_frame
-	for wave in waves:
-		active_wave = ActiveWave.new(self, wave)
+	var i = 0
+	while true:
+		active_wave = ActiveWave.new(self, waves[i])
 		await active_wave.finished
 		active_wave = null
+		
 		await Player.instance.show_upgrade_modal()
-		await Player.instance.show_shop_modal()
-		await Player.instance.show_equip_modal()
+		#await Player.instance.show_shop_modal()
+		#await Player.instance.show_equip_modal()
+		i = (i + 1) % waves.size()
 		
 func _process(delta:float):
 	if active_wave:

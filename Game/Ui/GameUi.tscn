@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Game/Ui/game_ui.gd" id="1_pjk1m"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_5w5jd"]
-[ext_resource type="Texture2D" uid="uid://cu532q23ccxui" path="res://Assets/ProgrammerArt__ProgressUnder.png" id="2_47yhi"]
+[ext_resource type="Texture2D" uid="uid://cu532q23ccxui" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressUnder.png" id="2_47yhi"]
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_foxdu"]
-[ext_resource type="Texture2D" uid="uid://b40cu08tbu7o" path="res://Assets/ProgrammerArt__ProgressOver.png" id="3_wlq61"]
+[ext_resource type="Texture2D" uid="uid://b40cu08tbu7o" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressOver.png" id="3_wlq61"]
 [ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_bno2x"]
-[ext_resource type="Texture2D" uid="uid://voek72lu102g" path="res://Assets/ProgrammerArt__ProgressRed.png" id="4_vtlts"]
+[ext_resource type="Texture2D" uid="uid://voek72lu102g" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressRed.png" id="4_vtlts"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="5_3bj3t"]
 [ext_resource type="Texture2D" uid="uid://7jhfanvregga" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressGreen.png" id="6_dhkw6"]
 [ext_resource type="PackedScene" uid="uid://djknudmo3e1rs" path="res://Game/Ui/GameUi/UpgradeStar.tscn" id="7_wlq61"]
@@ -14,10 +14,12 @@
 [sub_resource type="Resource" id="Resource_pcuml"]
 script = ExtResource("3_foxdu")
 health_max = 10.0
-health_current = null
+exp_rate = 4.0
 speed = 600.0
 next_level_exp_required = 1.0
 exp_required = 1.0
+iframe_max = null
+iframe_current = null
 metadata/_custom_type_script = "uid://dfj50wg6u44xx"
 
 [sub_resource type="Gradient" id="Gradient_3bj3t"]

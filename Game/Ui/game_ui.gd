@@ -4,40 +4,49 @@ class_name GameUi
 
 @export var player: PlayerResource:
 	set(v):
-		if player and player.changed.is_connected(_player_changed):
-			player.changed.disconnect(_player_changed)
-		if player and player.level_changed.is_connected(_player_level_changed):
-			player.level_changed.disconnect(_player_level_changed)
-		if player and player.took_damage.is_connected(_recieved_damage):
-			player.took_damage.disconnect(_recieved_damage)
-		if player and player.health_changed.is_connected(_health_changed):
-			player.took_damage.disconnect(_health_changed)
+		if player and player.changed.is_connected(update_exp_ui):
+			player.changed.disconnect(update_exp_ui)
+		if player and player.level_changed.is_connected(update_level_ui):
+			player.level_changed.disconnect(update_level_ui)
+		if player and player.took_damage.is_connected(trigger_damage_ui):
+			player.took_damage.disconnect(trigger_damage_ui)
+		if player and player.health_changed.is_connected(update_health_ui):
+			player.health_changed.disconnect(update_health_ui)
 		player = v
 		if player:
-			player.changed.connect(_player_changed)
-			player.level_changed.connect(_player_level_changed)
-			player.took_damage.connect(_recieved_damage)
-			player.took_damage.connect(_health_changed)
+			player.changed.connect(update_exp_ui)
+			player.level_changed.connect(update_level_ui)
+			player.took_damage.connect(trigger_damage_ui)
+			player.health_changed.connect(update_health_ui)
 
 func _ready():
 	%HurtOverlay.modulate = Color.TRANSPARENT
 	%HurtOverlay.show()
-	_player_level_changed()
+	update_all_ui()
 	if not get_tree().current_scene == self:
 		player = Player.instance.resource
 	
-func _player_changed():
+func update_exp_ui():
 	%ExpBar.min_value = player.current_level_exp_required
 	%ExpBar.max_value = player.next_level_exp_required
 	%ExpBar.value = player.experience
+	%ExpLabel.text = "%d / %d" % [
+		player.experience - player.current_level_exp_required, 
+		player.next_level_exp_required - player.current_level_exp_required 
+	]
 
-func _player_level_changed():
+func update_level_ui():
 	for c in %LevelsGained.get_children(true):
 		c.queue_free()
 	
 	for i in range(player.levels_gained):
 		var star = preload("res://Game/Ui/GameUi/UpgradeStar.tscn").instantiate()
 		%LevelsGained.add_child(star,true,Node.INTERNAL_MODE_FRONT)
+		
+func update_all_ui():
+	update_level_ui()
+	update_exp_ui()
+	update_health_ui()
 
 func _process(_delta:float):
 	if not Player.instance:
@@ -48,15 +57,15 @@ func _process(_delta:float):
 	
 	
 var hurt_tween:Tween
-func _health_changed():
+func update_health_ui():
 	%HealthBar.max_value = player.health_max
 	%HealthBar.value = player.health_current
 	%HealthLabel.text = "%d / %d" % [
-		Player.instance.health_current, 
-		Player.instance.health_max
+		player.health_current, 
+		player.health_max
 	]
 	
-func _recieved_damage(_damage:float):
+func trigger_damage_ui(_damage:float):
 	if hurt_tween:
 		hurt_tween.kill()
 	hurt_tween = create_tween()

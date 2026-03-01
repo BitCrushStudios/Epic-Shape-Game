@@ -61,12 +61,13 @@ signal health_changed()
 signal took_damage(damage:float)
 signal health_depleted()
 func reset_health():
-	prints("HM",health_max)
 	health_current = health_max
 func take_damage(damage:float):
-	prints("HM",damage)
+	if iframe_current>0:
+		return
 	health_current -= damage
 	took_damage.emit(damage)
+	iframe_trigger()
 @export_category("Stats Base")
 @export var base_mass = 10.0:
 	set(v):
@@ -82,7 +83,7 @@ func take_damage(damage:float):
 @export var base_size = 1.0
 @export var base_size_add = 0.1
 @export var accel_mult = 10.0
-@export var exp_rate = 4.0
+@export var exp_rate = 2.0
 @export var current_wave:int:
 	set(v):
 		current_wave = v
@@ -137,3 +138,16 @@ var next_level_exp_required: float:
 @export var exp_required:float:
 	get():
 		return next_level_exp_required - current_level_exp_required
+
+signal iframe_elapsed()
+signal iframe_triggered()
+@export var iframe_max = 0.5
+@export var iframe_current = 0.0
+func update_iframe(delta:float):
+	if iframe_current>0:
+		iframe_current-=delta
+		if iframe_current<0:
+			iframe_elapsed.emit()
+func iframe_trigger():
+	iframe_current = iframe_max
+	iframe_triggered.emit()
