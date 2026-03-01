@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyoh6d0gx735c"
-path="res://.godot/imported/ProgrammerArt__WeaponCircle.png-3421cf76b6dadd1265455eddb56ccd97.ctex"
+uid="uid://7jhfanvregga"
+path="res://.godot/imported/ProgrammerArt__ProgressGreen.png-4a8b926fe53b9896779e496a8046af4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__WeaponCircle.png"
-dest_files=["res://.godot/imported/ProgrammerArt__WeaponCircle.png-3421cf76b6dadd1265455eddb56ccd97.ctex"]
+source_file="res://Assets/ProgrammerArt/ProgrammerArt__ProgressGreen.png"
+dest_files=["res://.godot/imported/ProgrammerArt__ProgressGreen.png-4a8b926fe53b9896779e496a8046af4c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy1qqj2kwf1oq"
-path="res://.godot/imported/ProgrammerArt__Star.png-576205ccdc7c0adf11e4a57311a50215.ctex"
+uid="uid://be2gij00yblnm"
+path="res://.godot/imported/Banner.png-b1f4cda63993b695fb788516c129bf49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__Star.png"
-dest_files=["res://.godot/imported/ProgrammerArt__Star.png-576205ccdc7c0adf11e4a57311a50215.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Banners/Banner.png"
+dest_files=["res://.godot/imported/Banner.png-b1f4cda63993b695fb788516c129bf49.ctex"]
 
 [params]
 

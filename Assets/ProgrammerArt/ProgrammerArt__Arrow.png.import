@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7jhfanvregga"
-path="res://.godot/imported/ProgrammerArt__ProgressGreen.png-2b384339f1f5748914643b4ecbf30e75.ctex"
+uid="uid://iqldcriqkh02"
+path="res://.godot/imported/ProgrammerArt__Arrow.png-366f571701d13f0cb87c6fb1510e8575.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__ProgressGreen.png"
-dest_files=["res://.godot/imported/ProgrammerArt__ProgressGreen.png-2b384339f1f5748914643b4ecbf30e75.ctex"]
+source_file="res://Assets/ProgrammerArt/ProgrammerArt__Arrow.png"
+dest_files=["res://.godot/imported/ProgrammerArt__Arrow.png-366f571701d13f0cb87c6fb1510e8575.ctex"]
 
 [params]
 

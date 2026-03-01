@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b40cu08tbu7o"
-path="res://.godot/imported/ProgrammerArt__ProgressOver.png-2ac6a80f9fc393cf69a6e051f644ddbf.ctex"
+uid="uid://vw24vmwu0q32"
+path="res://.godot/imported/Pillar 2 Left.png-0e335597f04c3be349ed834245794d25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__ProgressOver.png"
-dest_files=["res://.godot/imported/ProgrammerArt__ProgressOver.png-2ac6a80f9fc393cf69a6e051f644ddbf.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Pillars/Pillar 2 Left.png"
+dest_files=["res://.godot/imported/Pillar 2 Left.png-0e335597f04c3be349ed834245794d25.ctex"]
 
 [params]
 

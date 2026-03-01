@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djknudmo3e1rs"]
 
-[ext_resource type="Texture2D" uid="uid://dy1qqj2kwf1oq" path="res://Assets/ProgrammerArt__Star.png" id="1_d0gut"]
+[ext_resource type="Texture2D" uid="uid://dy1qqj2kwf1oq" path="res://Assets/ProgrammerArt/ProgrammerArt__Star.png" id="1_d0gut"]
 
 [node name="TextureRect" type="TextureRect" unique_id=1092809859]
 texture_filter = 1

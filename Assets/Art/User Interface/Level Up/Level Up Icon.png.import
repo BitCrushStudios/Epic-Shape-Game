@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgmem53kfbd30"
-path="res://.godot/imported/ProgrammerArt.svg-7a48f810d10f754073864c9c92600da0.ctex"
+uid="uid://cfbq3gwwqsxe4"
+path="res://.godot/imported/Level Up Icon.png-2a6a8c3dd134939d84262c2a40f1a6e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt.svg"
-dest_files=["res://.godot/imported/ProgrammerArt.svg-7a48f810d10f754073864c9c92600da0.ctex"]
+source_file="res://Assets/Art/User Interface/Level Up/Level Up Icon.png"
+dest_files=["res://.godot/imported/Level Up Icon.png-2a6a8c3dd134939d84262c2a40f1a6e3.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iqldcriqkh02"
-path="res://.godot/imported/ProgrammerArt__Arrow.png-ff26f867d76a175e4f32ed2e2d084500.ctex"
+uid="uid://crlsrk2sfnbiq"
+path="res://.godot/imported/Pillar 2.png-3a4410893d5915c6cf41278e6d404da1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__Arrow.png"
-dest_files=["res://.godot/imported/ProgrammerArt__Arrow.png-ff26f867d76a175e4f32ed2e2d084500.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Pillars/Pillar 2.png"
+dest_files=["res://.godot/imported/Pillar 2.png-3a4410893d5915c6cf41278e6d404da1.ctex"]
 
 [params]
 

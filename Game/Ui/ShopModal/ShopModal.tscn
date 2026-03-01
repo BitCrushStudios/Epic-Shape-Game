@@ -10,6 +10,15 @@
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
 [ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
 [ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
+[ext_resource type="Texture2D" uid="uid://bg6v1wsvgqafk" path="res://Assets/Art/User Interface/Shop/Background Shop.png" id="9_374k4"]
+[ext_resource type="Texture2D" uid="uid://b8cgbuno7xeia" path="res://Assets/Art/User Interface/Shop/Background Spice Shop.png" id="10_0edsf"]
+[ext_resource type="Texture2D" uid="uid://dhjobbrc3aj56" path="res://Assets/Art/User Interface/Shop/Pillars/Pillar 1 .png" id="11_decmg"]
+[ext_resource type="Texture2D" uid="uid://crlsrk2sfnbiq" path="res://Assets/Art/User Interface/Shop/Pillars/Pillar 2.png" id="11_q3cp0"]
+[ext_resource type="Texture2D" uid="uid://vw24vmwu0q32" path="res://Assets/Art/User Interface/Shop/Pillars/Pillar 2 Left.png" id="13_decmg"]
+[ext_resource type="Texture2D" uid="uid://be2gij00yblnm" path="res://Assets/Art/User Interface/Shop/Banners/Banner.png" id="14_qit7n"]
+[ext_resource type="Texture2D" uid="uid://bxtu0n1chf56x" path="res://Assets/Art/User Interface/Shop/Pillars/Pillar 1 Left.png" id="15_5xt70"]
+[ext_resource type="Texture2D" uid="uid://bjj2nrb6w2xhm" path="res://Assets/Art/User Interface/Shop/Banners/Banner Waves.png" id="15_hitma"]
+[ext_resource type="Texture2D" uid="uid://cjq8m7ck3rays" path="res://Assets/Art/User Interface/Shop/Pillars/Center.png" id="16_n0hoh"]
 
 [sub_resource type="Resource" id="Resource_llh7c"]
 script = ExtResource("3_udy12")
@@ -30,6 +39,9 @@ name = "Soy"
 script = ExtResource("2_e7lec")
 inventory = Array[ExtResource("2_cpuug")]([SubResource("Resource_llh7c"), SubResource("Resource_0k88i"), SubResource("Resource_q3cp0")])
 money = 300
+speed = 600.0
+next_level_exp_required = 1.0
+exp_required = 1.0
 metadata/_custom_type_script = "uid://dfj50wg6u44xx"
 
 [sub_resource type="Resource" id="Resource_374k4"]
@@ -235,41 +247,30 @@ grow_horizontal = 2
 layout_mode = 2
 size_flags_horizontal = 2
 
-[node name="WaveLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer" unique_id=320715895]
-unique_name_in_owner = true
-layout_mode = 2
-theme_type_variation = &"OutlineLabelSmall"
-text = "Next Wave - 1"
-vertical_alignment = 1
-
 [node name="PanelContainer3" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1370799459]
 layout_mode = 2
 size_flags_horizontal = 6
-
-[node name="Label" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer3" unique_id=1404561267]
-layout_mode = 2
-theme_type_variation = &"OutlineLabel"
-text = "~Shop~"
 
 [node name="PanelContainer2" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1299552836]
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="CashLabel" type="Label" parent="HeaderContainerOffset/HeaderContainer/PanelContainer2" unique_id=1169638266]
-unique_name_in_owner = true
-layout_mode = 2
-theme_type_variation = &"OutlineLabelSmall"
-text = "$ 300"
-horizontal_alignment = 2
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1653794823]
+[node name="ColorRect" type="TextureRect" parent="." unique_id=129273608]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.76862746, 0.84705883, 0.8901961, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_374k4")
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect" unique_id=1386089288]
+modulate = Color(1, 1, 1, 0.28627452)
+position = Vector2(960, 540)
+texture = ExtResource("10_0edsf")
 
 [node name="ButtonContainerOffset" type="Control" parent="." unique_id=1911506529]
 layout_mode = 1
@@ -294,9 +295,10 @@ grow_vertical = 2
 
 [node name="Control2" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=968915602]
 layout_mode = 0
-offset_top = 85.0
-offset_right = 188.0
-offset_bottom = 609.0
+offset_left = 11.0
+offset_top = 16.0
+offset_right = 199.0
+offset_bottom = 540.0
 size_flags_horizontal = 3
 
 [node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer2/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
@@ -308,17 +310,19 @@ disabled = true
 resource = null
 
 [node name="TextureRect" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control2" unique_id=444131488]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_cpuug")
+texture = ExtResource("11_decmg")
 expand_mode = 5
 
 [node name="Control3" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=768994115]
 layout_mode = 0
 offset_left = 192.0
-offset_top = 43.0
+offset_top = 173.99998
 offset_right = 381.0
-offset_bottom = 567.0
+offset_bottom = 698.0
+scale = Vector2(0.7, 0.7)
 size_flags_horizontal = 3
 
 [node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer2/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
@@ -330,9 +334,10 @@ disabled = true
 resource = null
 
 [node name="TextureRect2" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control3" unique_id=1155977084]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_cpuug")
+texture = ExtResource("11_q3cp0")
 expand_mode = 5
 
 [node name="Control1" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=1696070561]
@@ -351,17 +356,29 @@ disabled = true
 resource = null
 
 [node name="TextureRect3" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=406888666]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
 expand_mode = 5
 
+[node name="Banner" type="Sprite2D" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=2019276585]
+position = Vector2(114, 66)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_qit7n")
+
+[node name="BannerWaves" type="Sprite2D" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=1822997950]
+position = Vector2(-304, 97)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_hitma")
+
 [node name="Control4" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=1717860420]
 layout_mode = 0
 offset_left = 578.0
-offset_top = 43.0
+offset_top = 174.0
 offset_right = 767.0
-offset_bottom = 567.0
+offset_bottom = 698.0
+scale = Vector2(0.7, 0.7)
 size_flags_horizontal = 3
 
 [node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer2/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
@@ -373,9 +390,10 @@ disabled = true
 resource = SubResource("Resource_374k4")
 
 [node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control4" unique_id=1373859225]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_cpuug")
+texture = ExtResource("13_decmg")
 expand_mode = 5
 
 [node name="Control5" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=458906006]
@@ -395,6 +413,7 @@ disabled = true
 resource = SubResource("Resource_decmg")
 
 [node name="TextureRect5" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control5" unique_id=1697602729]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
@@ -418,9 +437,85 @@ offset_bottom = 86.00037
 
 [node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Accept"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")
+
+[node name="Art" type="Control" parent="." unique_id=114313069]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pillar2" type="Sprite2D" parent="Art" unique_id=122652434]
+position = Vector2(265, 442)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_q3cp0")
+
+[node name="Pillar1" type="Sprite2D" parent="Art" unique_id=62160900]
+position = Vector2(109, 415)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_decmg")
+
+[node name="Pillar2Left" type="Sprite2D" parent="Art" unique_id=1221272163]
+position = Vector2(695, 442)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_decmg")
+
+[node name="Pillar1Left" type="Sprite2D" parent="Art" unique_id=2042459708]
+position = Vector2(926, 415)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_5xt70")
+
+[node name="Center" type="Sprite2D" parent="Art" unique_id=272077493]
+position = Vector2(480, 423)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_n0hoh")
+
+[node name="Information" type="Control" parent="." unique_id=1073873313]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CashLabel" type="Label" parent="Information" unique_id=1169638266]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 413.0
+offset_top = 37.0
+offset_right = 534.0
+offset_bottom = 103.0
+theme_type_variation = &"OutlineLabelSmall"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "$ 300"
+horizontal_alignment = 2
+
+[node name="WaveLabel" type="Label" parent="Information" unique_id=320715895]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 43.0
+offset_right = 152.0
+offset_bottom = 112.0
+theme_type_variation = &"OutlineLabelSmall"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Next Wave :
+   ~ 1 ~"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Information" unique_id=1404561267]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 97.0
+offset_right = 633.0
+offset_bottom = 163.0
+theme_type_variation = &"OutlineLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "~Shop~"

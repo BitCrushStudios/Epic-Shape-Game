@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4bcyqfpf0ye8"
-path="res://.godot/imported/ProgrammerArt__WeaponTriangle.png-5b9439fb9e08f7611d89f3111085aa48.ctex"
+uid="uid://bjj2nrb6w2xhm"
+path="res://.godot/imported/Banner Waves.png-9728b19afb56b01cc193a642e5d14a15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__WeaponTriangle.png"
-dest_files=["res://.godot/imported/ProgrammerArt__WeaponTriangle.png-5b9439fb9e08f7611d89f3111085aa48.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Banners/Banner Waves.png"
+dest_files=["res://.godot/imported/Banner Waves.png-9728b19afb56b01cc193a642e5d14a15.ctex"]
 
 [params]
 
