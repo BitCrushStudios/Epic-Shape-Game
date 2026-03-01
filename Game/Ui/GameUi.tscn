@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://bmprloh75j06"]
 
 [ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Game/Ui/game_ui.gd" id="1_pjk1m"]
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_5w5jd"]
 [ext_resource type="Texture2D" uid="uid://cu532q23ccxui" path="res://Assets/ProgrammerArt__ProgressUnder.png" id="2_47yhi"]
+[ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_foxdu"]
 [ext_resource type="Texture2D" uid="uid://b40cu08tbu7o" path="res://Assets/ProgrammerArt__ProgressOver.png" id="3_wlq61"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_bno2x"]
 [ext_resource type="Texture2D" uid="uid://voek72lu102g" path="res://Assets/ProgrammerArt__ProgressRed.png" id="4_vtlts"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="5_3bj3t"]
 [ext_resource type="Texture2D" uid="uid://7jhfanvregga" path="res://Assets/ProgrammerArt__ProgressGreen.png" id="6_dhkw6"]
 [ext_resource type="PackedScene" uid="uid://djknudmo3e1rs" path="res://Game/Ui/GameUi/UpgradeStar.tscn" id="7_wlq61"]
+
+[sub_resource type="Resource" id="Resource_pcuml"]
+script = ExtResource("3_foxdu")
+health_max = 10.0
+health_current = null
+speed = 600.0
+next_level_exp_required = 1.0
+exp_required = 1.0
+metadata/_custom_type_script = "uid://dfj50wg6u44xx"
 
 [sub_resource type="Gradient" id="Gradient_3bj3t"]
 offsets = PackedFloat32Array(0.6573427, 1)
@@ -20,6 +32,7 @@ fill_to = Vector2(1, 0.5)
 
 [node name="GameUi" type="CanvasLayer" unique_id=1360459017]
 script = ExtResource("1_pjk1m")
+player = SubResource("Resource_pcuml")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=15512166]
 anchors_preset = 15
@@ -158,64 +171,36 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -38.0
-offset_right = -38.0
-offset_bottom = 29.0
+offset_left = -164.0
+offset_right = 2.0
+offset_bottom = 40.0
 grow_horizontal = 0
+pivot_offset_ratio = Vector2(1, 0)
 theme_override_constants/separation = -19
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=95441080]
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1092809859 instance=ExtResource("7_wlq61")]
 layout_mode = 2
 
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control" unique_id=1092809859 instance=ExtResource("7_wlq61")]
-layout_mode = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1207628536]
+[node name="TextureRect2" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1358559467 instance=ExtResource("7_wlq61")]
 layout_mode = 2
 
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control2" unique_id=1358559467 instance=ExtResource("7_wlq61")]
-layout_mode = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1808355878]
+[node name="TextureRect3" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=739263445 instance=ExtResource("7_wlq61")]
 layout_mode = 2
 
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control3" unique_id=739263445 instance=ExtResource("7_wlq61")]
-layout_mode = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="Control4" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1528496831]
+[node name="TextureRect4" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=669161038 instance=ExtResource("7_wlq61")]
 layout_mode = 2
 
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control4" unique_id=669161038 instance=ExtResource("7_wlq61")]
-layout_mode = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="Control5" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1440846735]
+[node name="TextureRect5" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=2130276164 instance=ExtResource("7_wlq61")]
 layout_mode = 2
 
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control5" unique_id=2130276164 instance=ExtResource("7_wlq61")]
-layout_mode = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="Control6" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1079870222]
+[node name="TextureRect6" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=80860772 instance=ExtResource("7_wlq61")]
 layout_mode = 2
 
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control6" unique_id=80860772 instance=ExtResource("7_wlq61")]
-layout_mode = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="Control7" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1741863947]
+[node name="TextureRect7" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1125625124 instance=ExtResource("7_wlq61")]
 layout_mode = 2
-
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control7" unique_id=1125625124 instance=ExtResource("7_wlq61")]
-layout_mode = 0
-pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="HurtOverlay" type="TextureRect" parent="." unique_id=375065571]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

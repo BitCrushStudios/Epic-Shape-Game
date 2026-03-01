@@ -49,17 +49,13 @@ func _on_body_entered(body:Node2D):
 		return
 	if body is RigidBody2D:
 		if body is Enemy:
-			body.apply_damage(resource.damage)
+			body.take_damage(resource.damage)
 	$Hit.pitch_scale = randf_range(0.9, 1.3)
 	$Hit.play()
 	
 func _enter_tree() -> void:
 	instances.append(self)
-	if Player.instance and not Player.instance.resource.weapons.has(resource):
-		Player.instance.resource.weapons.append(resource)
 	
 func _exit_tree() -> void:
 	instances.erase(self)
-	if Player.instance:
-		Player.instance.resource.weapons.erase(resource)
 	

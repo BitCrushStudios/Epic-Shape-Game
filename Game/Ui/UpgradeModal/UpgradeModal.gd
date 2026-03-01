@@ -106,10 +106,11 @@ func setup_ui():
 	if not is_inside_tree():
 		await tree_entered
 	randomize()
-	
 @export_tool_button("Setup") var _randomize_action = randomize
+
 func apply_upgrade(upgrade:UpgradeResource):
 	upgrade.apply(player)
+	
 func modal(turns=1):
 	assert(turns>=1)
 	if not is_inside_tree():
@@ -137,7 +138,7 @@ func modal(turns=1):
 		
 	
 	
-func get_buttons()->Array[UpgradeButton]:
+func get_buttons() -> Array[UpgradeButton]:
 	return [
 		%UpgradeButton1,
 		%UpgradeButton2,

@@ -20,7 +20,6 @@ signal weapons_changed()
 	
 @export_category("Stats")
 @export var stat_size = 1:
-
 	set(v):
 		stat_size = clampi(v, 1, stat_size_max)
 		emit_changed()
@@ -47,7 +46,27 @@ signal weapons_changed()
 		stat_health = clampi(v, 0, stat_health_max)
 		emit_changed()
 @export var stat_health_max = 10
+@export var health_max:float:
+	get():
+		return stat_health * 10.0
+@export var health_current: float = 1.0:
+	set(v):
+		if v<=0:
+			health_depleted.emit()
+		health_current = v
+		emit_changed()
+		health_changed.emit()
 
+signal health_changed()
+signal took_damage(damage:float)
+signal health_depleted()
+func reset_health():
+	prints("HM",health_max)
+	health_current = health_max
+func take_damage(damage:float):
+	prints("HM",damage)
+	health_current -= damage
+	took_damage.emit(damage)
 @export_category("Stats Base")
 @export var base_mass = 10.0:
 	set(v):
@@ -57,6 +76,7 @@ signal weapons_changed()
 	set(v):
 		base_mass_add = v
 		emit_changed()
+		
 @export var base_speed = 500.0
 @export var base_speed_add = 100.0
 @export var base_size = 1.0
@@ -79,6 +99,7 @@ var speed: float:
 		return base_speed + (base_speed_add * stat_speed)
 
 @export_category("Experience")
+signal level_changed()
 func calc_level_from_exp(v:float):
 	return pow(v, 1.0 / exp_rate)
 func calc_exp_from_level(level:int):
@@ -86,8 +107,13 @@ func calc_exp_from_level(level:int):
 func exp_add(v:float):
 	var last_level = current_level
 	experience += v
-	levels_gained += (current_level - current_level)
+	var level_diff = (current_level - last_level)
+	if level_diff!=0:
+		levels_gained += level_diff
+		level_changed.emit()
 var levels_gained = 0
+func clear_levels_gained():
+	levels_gained = 0
 @export var experience = 0.0:
 	set(v):
 		experience = v

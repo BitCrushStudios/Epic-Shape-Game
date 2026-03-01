@@ -1,5 +1,5 @@
 @tool 
-extends Unit
+extends RigidBody2D
 class_name Enemy
 
 
@@ -9,25 +9,36 @@ var update_target_position_rate = 2.0
 var update_target_position_time = 0.0
 @export var experience_on_death = 1.0
 @export var damage = 1.0
+@export var health_max = 1.0
+@onready var health_current=health_max:
+	set(v):
+		health_current = v
+		health_changed.emit()
+signal took_damage(damage:float)
+signal health_depleted()
+signal health_changed()
 
-
+func take_damage(damage:float):
+	health_current -= damage
+	took_damage.emit(damage)
+	if health_current<=0.0:
+		health_depleted.emit()
 	
 
 func _ready():
 	health_depleted.connect(_on_death)
 	z_index = 0
-	recieved_damage.connect(_recieved_damage)
+	took_damage.connect(_recieved_damage)
 	health_depleted.connect(_health_depleted)
-	#body_entered.connect(_body_entered)
 	
 func _on_death():
 	Player.instance.resource.exp_add(experience_on_death)
 
 func _body_entered(other:Node2D):
 	if other is Player:
-		other.apply_damage(damage)
+		other.resource.take_damage(damage)
 func _physics_process(_delta: float) -> void:
-	super(_delta)
+	apply_torque(-rotation_degrees * 1000.0 * mass)
 	for other in get_colliding_bodies():
 		_body_entered(other)
 func _recieved_damage(_damage:float):
@@ -38,7 +49,7 @@ func _health_depleted():
 	collision_mask = 0
 	collision_layer = 0
 	z_index = -1
-	recieved_damage.disconnect(_recieved_damage)
+	took_damage.disconnect(_recieved_damage)
 	health_depleted.disconnect(_health_depleted)
 	%Animation.play("death")
 	$Death.play()

@@ -6,10 +6,8 @@
 
 [resource]
 script = ExtResource("2_uuqbm")
+health_max = 10.0
 speed = 600.0
-experience = 16.0
-current_level = 2
-current_level_exp_required = 16.0
-next_level_exp_required = 81.0
-exp_required = 65.0
+next_level_exp_required = 1.0
+exp_required = 1.0
 metadata/_custom_type_script = "uid://dfj50wg6u44xx"

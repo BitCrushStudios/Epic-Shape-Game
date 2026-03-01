@@ -1,5 +1,5 @@
 @tool
-extends Unit
+extends RigidBody2D
 class_name Player
 
 static var instance:Player
@@ -15,10 +15,6 @@ static var instance:Player
 			resource.weapons_changed.connect(update_weapons)
 		update_resource()
 		update_weapons()
-
-func _init():
-	health_max = 30.0
-
 var iframe_max:
 	get():
 		return resource.stat_iframe * 0.5
@@ -61,9 +57,6 @@ func update_resource():
 	_update_size()
 	_update_mass()
 	
-func apply_damage(damage:float):
-	if iframe<=0:
-		super(damage)
 		
 func _recieved_damage(_damage:float):
 	%AnimationPlayer.play("damage")
@@ -73,7 +66,10 @@ func _recieved_damage(_damage:float):
 	
 func _ready():
 	Player.instance = self
-	recieved_damage.connect(_recieved_damage)
+	resource.took_damage.connect(_recieved_damage)
+	resource.reset_health()
+	for w in Weapon.instances:
+		resource.weapons.append(w.resource)
 	
 var mouse_origin
 
@@ -105,6 +101,7 @@ func show_equip_modal():
 	get_tree().paused=false
 
 func _physics_process(delta: float) -> void:
+	apply_torque(-rotation_degrees * 1000.0 * mass)
 	if Engine.is_editor_hint():
 		return
 	elif Input.is_action_just_pressed("dev_player_upgrade"):
@@ -132,4 +129,3 @@ func _physics_process(delta: float) -> void:
 	desired_velocity = desired_velocity * resource.speed * resource.accel_mult
 	apply_central_force(desired_velocity * mass)
 	
-	super(delta)
