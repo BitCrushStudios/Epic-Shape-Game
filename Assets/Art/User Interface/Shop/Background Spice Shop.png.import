@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hnyjbmacdjff"
-path="res://.godot/imported/WeaponCircleActivated.png-152f07b4b70abba2982b9a69cfc6be3a.ctex"
+uid="uid://b8cgbuno7xeia"
+path="res://.godot/imported/Background Spice Shop.png-469fc04f0439949c6cf08cbd9f055fe2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WeaponCircleActivated.png"
-dest_files=["res://.godot/imported/WeaponCircleActivated.png-152f07b4b70abba2982b9a69cfc6be3a.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Background Spice Shop.png"
+dest_files=["res://.godot/imported/Background Spice Shop.png-469fc04f0439949c6cf08cbd9f055fe2.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://clky6g0bw3w53" path="res://Game/Weapons/CubeWeaponResource.tres" id="4_rsl2h"]
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="6_fq1tl"]
 [ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="6_rsl2h"]
-[ext_resource type="Texture2D" uid="uid://iqldcriqkh02" path="res://Assets/ProgrammerArt__Arrow.png" id="9_fq1tl"]
+[ext_resource type="Texture2D" uid="uid://iqldcriqkh02" path="res://Assets/ProgrammerArt/ProgrammerArt__Arrow.png" id="9_fq1tl"]
 
 [sub_resource type="Resource" id="Resource_fq1tl"]
 script = ExtResource("3_4gdak")

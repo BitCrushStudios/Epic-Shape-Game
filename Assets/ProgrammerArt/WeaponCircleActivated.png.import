@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw5en8vbtwewc"
-path="res://.godot/imported/ProgrammerArt__PlayerCube.png-c09593029ae227fa1f04e070e92b2138.ctex"
+uid="uid://hnyjbmacdjff"
+path="res://.godot/imported/WeaponCircleActivated.png-2317130cdfe8034424954bcca1923691.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__PlayerCube.png"
-dest_files=["res://.godot/imported/ProgrammerArt__PlayerCube.png-c09593029ae227fa1f04e070e92b2138.ctex"]
+source_file="res://Assets/ProgrammerArt/WeaponCircleActivated.png"
+dest_files=["res://.godot/imported/WeaponCircleActivated.png-2317130cdfe8034424954bcca1923691.ctex"]
 
 [params]
 

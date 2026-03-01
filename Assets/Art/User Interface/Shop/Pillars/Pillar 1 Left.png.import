@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q8uxuquxiy3c"
-path="res://.godot/imported/ProgrammerArt__Tileset.png-48fabd28505c0701b3d6c8a972aabb1e.ctex"
+uid="uid://bxtu0n1chf56x"
+path="res://.godot/imported/Pillar 1 Left.png-1c464bfd21b8b956a7f24a5db3d99662.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__Tileset.png"
-dest_files=["res://.godot/imported/ProgrammerArt__Tileset.png-48fabd28505c0701b3d6c8a972aabb1e.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Pillars/Pillar 1 Left.png"
+dest_files=["res://.godot/imported/Pillar 1 Left.png-1c464bfd21b8b956a7f24a5db3d99662.ctex"]
 
 [params]
 

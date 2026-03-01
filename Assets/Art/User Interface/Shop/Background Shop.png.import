@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu532q23ccxui"
-path="res://.godot/imported/ProgrammerArt__ProgressUnder.png-9c28ba24f5a2376b62d6fccd0e8a95bc.ctex"
+uid="uid://bg6v1wsvgqafk"
+path="res://.godot/imported/Background Shop.png-cd711250c1527c633980103f317950ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__ProgressUnder.png"
-dest_files=["res://.godot/imported/ProgrammerArt__ProgressUnder.png-9c28ba24f5a2376b62d6fccd0e8a95bc.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Background Shop.png"
+dest_files=["res://.godot/imported/Background Shop.png-cd711250c1527c633980103f317950ea.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwdv3fpb20enk"
-path="res://.godot/imported/ProgrammerArt__WeaponCube.png-540fb0c254b745a1ba93c4c30c1c65dc.ctex"
+uid="uid://cjq8m7ck3rays"
+path="res://.godot/imported/Center.png-df52244b7df5df6e632bb3e9d38ae699.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt/ProgrammerArt__WeaponCube.png"
-dest_files=["res://.godot/imported/ProgrammerArt__WeaponCube.png-540fb0c254b745a1ba93c4c30c1c65dc.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Pillars/Center.png"
+dest_files=["res://.godot/imported/Center.png-df52244b7df5df6e632bb3e9d38ae699.ctex"]
 
 [params]
 

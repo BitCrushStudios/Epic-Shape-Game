@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwdv3fpb20enk"
-path="res://.godot/imported/ProgrammerArt__WeaponCube.png-7a4ea79a9079b684504f7e2d3b5a0d3b.ctex"
+uid="uid://b40cu08tbu7o"
+path="res://.godot/imported/ProgrammerArt__ProgressOver.png-d26b6d95be923313ff2684f960327113.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgrammerArt__WeaponCube.png"
-dest_files=["res://.godot/imported/ProgrammerArt__WeaponCube.png-7a4ea79a9079b684504f7e2d3b5a0d3b.ctex"]
+source_file="res://Assets/ProgrammerArt/ProgrammerArt__ProgressOver.png"
+dest_files=["res://.godot/imported/ProgrammerArt__ProgressOver.png-d26b6d95be923313ff2684f960327113.ctex"]
 
 [params]
 
