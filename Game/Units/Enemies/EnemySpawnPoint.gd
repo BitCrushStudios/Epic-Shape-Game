@@ -12,3 +12,10 @@ func _process(delta: float) -> void:
 		node.global_position = global_position
 		await get_tree().create_timer(0.5)
 		queue_free()
+
+func _enter_tree() -> void:
+	if EnemyManager.instance:
+		EnemyManager.instance.register_spawner(self)
+func _exit_tree() -> void:
+	if EnemyManager.instance:
+		EnemyManager.instance.unregister_spawner(self)

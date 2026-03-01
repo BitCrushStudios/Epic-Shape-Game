@@ -33,3 +33,6 @@
 # Designer / Artist
 - [ ] Mini Boss
 
+## Phase 5
+- [ ] shop item reroll
+- [ ] shop item replaced with new item on purchase

@@ -16,6 +16,8 @@ func _process(_delta:float):
 	%ExpBar.max_value = Player.instance.resource.experience
 	%ExpBar.value = Player.instance.resource.experience
 	
+	%
+	
 var hurt_tween:Tween
 
 func _recieved_damage(_damage:float):

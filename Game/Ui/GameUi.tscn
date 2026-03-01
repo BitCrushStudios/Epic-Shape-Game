@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://voek72lu102g" path="res://Assets/ProgrammerArt__ProgressRed.png" id="4_vtlts"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="5_3bj3t"]
 [ext_resource type="Texture2D" uid="uid://7jhfanvregga" path="res://Assets/ProgrammerArt__ProgressGreen.png" id="6_dhkw6"]
+[ext_resource type="PackedScene" uid="uid://djknudmo3e1rs" path="res://Game/Ui/GameUi/UpgradeStar.tscn" id="7_wlq61"]
 
 [sub_resource type="Gradient" id="Gradient_3bj3t"]
 offsets = PackedFloat32Array(0.6573427, 1)
@@ -153,11 +154,64 @@ vertical_alignment = 1
 
 [node name="LevelsGained" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=938525333]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -38.0
+offset_right = -38.0
+offset_bottom = 29.0
+grow_horizontal = 0
+theme_override_constants/separation = -19
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=95441080]
+layout_mode = 2
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control" unique_id=1092809859 instance=ExtResource("7_wlq61")]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 39.0
-offset_right = 357.0
-offset_bottom = 68.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1207628536]
+layout_mode = 2
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control2" unique_id=1358559467 instance=ExtResource("7_wlq61")]
+layout_mode = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1808355878]
+layout_mode = 2
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control3" unique_id=739263445 instance=ExtResource("7_wlq61")]
+layout_mode = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Control4" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1528496831]
+layout_mode = 2
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control4" unique_id=669161038 instance=ExtResource("7_wlq61")]
+layout_mode = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Control5" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1440846735]
+layout_mode = 2
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control5" unique_id=2130276164 instance=ExtResource("7_wlq61")]
+layout_mode = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Control6" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1079870222]
+layout_mode = 2
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control6" unique_id=80860772 instance=ExtResource("7_wlq61")]
+layout_mode = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Control7" type="Control" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1741863947]
+layout_mode = 2
+
+[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained/Control7" unique_id=1125625124 instance=ExtResource("7_wlq61")]
+layout_mode = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="HurtOverlay" type="TextureRect" parent="." unique_id=375065571]
 unique_name_in_owner = true

@@ -13,7 +13,6 @@ var update_target_position_time = 0.0
 
 	
 
-
 func _ready():
 	health_depleted.connect(_on_death)
 	z_index = 0
@@ -54,3 +53,11 @@ func _particle_create(particles:GPUParticles2D):
 	await particles.finished
 	particles.queue_free()
 	
+func _enter_tree() -> void:
+	if EnemyManager.instance:
+		EnemyManager.instance.register(self)
+func _exit_tree() -> void:
+	if EnemyManager.instance:
+		EnemyManager.instance.unregister(self)
+		
+		

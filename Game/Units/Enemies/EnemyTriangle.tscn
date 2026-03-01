@@ -170,12 +170,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_hu5f4"]
 radius = 28.01785
 
-[node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116]
+[node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116 node_paths=PackedStringArray("agent")]
 y_sort_enabled = true
 contact_monitor = true
 max_contacts_reported = 5
 linear_damp = 0.5
 script = ExtResource("1_fm6ei")
+agent = NodePath("EnemyController")
 
 [node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=723527212]
 avoidance_enabled = true
