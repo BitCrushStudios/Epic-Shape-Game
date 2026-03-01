@@ -15,8 +15,10 @@ func _process(_delta:float):
 	
 	%ExpBar.max_value = Player.instance.resource.experience
 	%ExpBar.value = Player.instance.resource.experience
-	
-	%
+	if EnemyManager.instance.active_wave:
+		var active_wave = EnemyManager.instance.active_wave
+		
+		%TimerLabel.text = "%0.2f" % (active_wave.time_max - active_wave.time_current)
 	
 var hurt_tween:Tween
 
