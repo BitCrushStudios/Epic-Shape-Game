@@ -92,19 +92,51 @@ func unregister_spawner(spawner:SpawnPoint):
 var waves = [
 	PopulationWave.create([
 		WavePair.create(
-			preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
-			4,
-			preload("res://Assets/Art/Enemies/Roller/Roller.png")
-		),
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+			5,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+		)
+		],
+		0.5,
+	),
+	PopulationWave.create([
 		WavePair.create(
-			preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
-			1,
-			preload("res://Assets/Art/Enemies/Tank/Tank.png")
-		),
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+			20,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+		)
+		],
+		0.5,
+	),
+	PopulationWave.create([
 		WavePair.create(
 			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
 			10,
 			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+		),
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+			3,
+			preload("res://Assets/Art/Enemies/Roller/Roller.png")
+		)
+		],
+		0.5,
+	),
+	PopulationWave.create([
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+			3,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+		),
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+			6,
+			preload("res://Assets/Art/Enemies/Roller/Roller.png")
+		),
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
+			6,
+			preload("res://Assets/Art/Enemies/Tank/Tank.png")
 		)
 		],
 		0.5,
