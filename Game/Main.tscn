@@ -215,6 +215,22 @@ autoplay = true
 [node name="Player" parent="." unique_id=299479533 instance=ExtResource("1_r150o")]
 position = Vector2(911, 542)
 
+[node name="Weapon" parent="Player" unique_id=1251268979 instance=ExtResource("13_krex0")]
+top_level = true
+position = Vector2(730, 490)
+
+[node name="Weapon2" parent="Player" unique_id=961456879 instance=ExtResource("13_krex0")]
+top_level = true
+position = Vector2(902, 379)
+
+[node name="Weapon3" parent="Player" unique_id=1245725903 instance=ExtResource("13_krex0")]
+top_level = true
+position = Vector2(1116, 543)
+
+[node name="Weapon4" parent="Player" unique_id=1318507199 instance=ExtResource("13_krex0")]
+top_level = true
+position = Vector2(876, 675)
+
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("5_v1gob")
 
@@ -277,18 +293,6 @@ libraries/ = SubResource("AnimationLibrary_mdl5u")
 autoplay = &"HZ"
 
 [node name="GameUi" parent="." unique_id=1158345816 instance=ExtResource("7_jw32o")]
-
-[node name="Weapon" parent="." unique_id=1251268979 instance=ExtResource("13_krex0")]
-position = Vector2(730, 490)
-
-[node name="Weapon2" parent="." unique_id=961456879 instance=ExtResource("13_krex0")]
-position = Vector2(902, 379)
-
-[node name="Weapon3" parent="." unique_id=1245725903 instance=ExtResource("13_krex0")]
-position = Vector2(1116, 543)
-
-[node name="Weapon4" parent="." unique_id=1318507199 instance=ExtResource("13_krex0")]
-position = Vector2(876, 675)
 
 [node name="EnemyTriangle" parent="." unique_id=1870736647 instance=ExtResource("3_kln2b")]
 position = Vector2(587, 298)

@@ -1,3 +1,4 @@
+@tool
 extends CanvasLayer
 class_name GameUi
 
@@ -18,7 +19,7 @@ class_name GameUi
 			player.level_changed.connect(update_level_ui)
 			player.took_damage.connect(trigger_damage_ui)
 			player.health_changed.connect(update_health_ui)
-
+@export var active_wave:ActiveWave
 func _ready():
 	%HurtOverlay.modulate = Color.TRANSPARENT
 	%HurtOverlay.show()
