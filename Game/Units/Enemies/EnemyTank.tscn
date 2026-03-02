@@ -1,11 +1,53 @@
 [gd_scene format=3 uid="uid://o3qjyg751wn3"]
 
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_2j44q"]
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/enemy.gd" id="1_2j44q"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_sdms5"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_ub88h"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_nips6"]
-[ext_resource type="Texture2D" uid="uid://bbkglt5jwg3mv" path="res://Assets/Art/Enemies/Tank/Tank.png" id="5_exddk"]
+[ext_resource type="Texture2D" uid="uid://xpskem8jlost" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0000.png" id="5_eibic"]
+[ext_resource type="Texture2D" uid="uid://ddba3yjvlb2xw" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0001.png" id="6_nrv21"]
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="6_sdms5"]
+[ext_resource type="Texture2D" uid="uid://cr8t20y3gpptd" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0002.png" id="7_r8v6j"]
+[ext_resource type="Texture2D" uid="uid://mm3k1kfnyprb" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0003.png" id="8_3vpu8"]
+[ext_resource type="Texture2D" uid="uid://d2ir31wfdg2p1" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0004.png" id="9_rvnpe"]
+[ext_resource type="Texture2D" uid="uid://ba3v0f2d27akl" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0005.png" id="10_yjol7"]
+[ext_resource type="Texture2D" uid="uid://bg6g077ak5d7u" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0006.png" id="11_4qcre"]
+[ext_resource type="Texture2D" uid="uid://cd2kbtjsyow6t" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0007.png" id="12_1uspc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v16b6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_eibic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nrv21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r8v6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3vpu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rvnpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yjol7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4qcre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1uspc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eibic")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
 length = 0.001
@@ -104,11 +146,13 @@ script = ExtResource("3_ub88h")
 position = Vector2(0, 47)
 scale = Vector2(1.5, 1.3)
 
-[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=572259211]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=761628496]
 unique_name_in_owner = true
-position = Vector2(0, 9.999999)
+position = Vector2(3.0000005, -12)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_exddk")
+sprite_frames = SubResource("SpriteFrames_v16b6")
+autoplay = "default"
+frame_progress = 0.66698986
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=1084563019]
 unique_name_in_owner = true
