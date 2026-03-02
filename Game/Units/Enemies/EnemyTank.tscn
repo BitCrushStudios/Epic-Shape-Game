@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_ub88h"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_nips6"]
 [ext_resource type="Texture2D" uid="uid://bbkglt5jwg3mv" path="res://Assets/Art/Enemies/Tank/Tank.png" id="5_exddk"]
+[ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="6_sdms5"]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
 length = 0.001
@@ -77,18 +78,22 @@ _data = {
 radius = 43.046486
 
 [node name="EnemyTank" type="RigidBody2D" unique_id=211797002 node_paths=PackedStringArray("agent")]
-mass = 10.0
+mass = 50.0
 contact_monitor = true
 script = ExtResource("1_2j44q")
 agent = NodePath("EnemyController")
+experience_on_death = 50.0
+damage = 5.0
+health_max = 50.0
 
 [node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=278399034]
 avoidance_enabled = true
-radius = 20.0
-time_horizon_obstacles = 1.0
-max_speed = 300.0
+radius = 48.0
+time_horizon_agents = 0.0
+max_speed = 200.0
 debug_use_custom = true
 script = ExtResource("2_sdms5")
+time_rate = 0.0
 
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=970983081]
 
@@ -114,3 +119,7 @@ playback_default_blend_time = 0.2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=73121276]
 position = Vector2(-2, 12)
 shape = SubResource("CircleShape2D_2m6jk")
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=567472421]
+stream = ExtResource("6_sdms5")
+pitch_scale = 1.5

@@ -34,11 +34,16 @@ class ActiveWave:
 		root = _root
 		wave = _wave
 		instance_counts.resize(_wave.pairs.size())
+	var nodes:Array[Node]
+	func clear():
+		for c in nodes:
+			c.queue_free()
 	func _process(delta: float):
 		time_current+=delta
 		if interval_current<interval_max:
 			interval_current+=delta
 		if time_current>=time_max:
+			clear()
 			finished.emit()
 		else:
 			while interval_current>interval_max:
@@ -52,8 +57,10 @@ class ActiveWave:
 						spawnPoint.global_position = rand_point
 						spawnPoint.tscn = wave.pairs[i].scene
 						spawnPoint.spawned.connect(func(node:Node):
+							nodes.append(node)
 							node.tree_exiting.connect(func():
 								instance_counts[i] -= 1
+								nodes.erase(node)
 							)
 						)
 						instance_counts[i] += 1
@@ -86,26 +93,16 @@ var waves = [
 	PopulationWave.create([
 		WavePair.create(
 			preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
-			10,
+			4,
 			preload("res://Assets/Art/Enemies/Roller/Roller.png")
-		)],
+		),
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
+			1,
+			preload("res://Assets/Art/Enemies/Tank/Tank.png")
+		)
+		],
 		0.5,
-	),
-	PopulationWave.create([
-		WavePair.create(
-			preload("res://Game/Units/Enemies/EnemyRoller.tscn"),
-			20,
-			preload("res://Assets/Art/Enemies/Roller/Roller.png")
-		)],
-		1.0
-	),
-	PopulationWave.create([
-		WavePair.create(
-			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"),
-			40,
-			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
-		)],
-		1.0
 	),
 ]
 var active_wave: ActiveWave
@@ -117,8 +114,7 @@ func _ready():
 		active_wave = ActiveWave.new(self, waves[i])
 		await active_wave.finished
 		active_wave = null
-		
-		await Player.instance.show_upgrade_modal()
+		#await Player.instance.show_upgrade_modal()
 		#await Player.instance.show_shop_modal()
 		#await Player.instance.show_equip_modal()
 		i = (i + 1) % waves.size()
