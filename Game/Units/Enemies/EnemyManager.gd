@@ -100,6 +100,11 @@ var waves = [
 			preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
 			1,
 			preload("res://Assets/Art/Enemies/Tank/Tank.png")
+		),
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+			10,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
 		)
 		],
 		0.5,
@@ -114,6 +119,7 @@ func _ready():
 		active_wave = ActiveWave.new(self, waves[i])
 		await active_wave.finished
 		active_wave = null
+		Player.instance.resource.reset_health()
 		#await Player.instance.show_upgrade_modal()
 		#await Player.instance.show_shop_modal()
 		#await Player.instance.show_equip_modal()
