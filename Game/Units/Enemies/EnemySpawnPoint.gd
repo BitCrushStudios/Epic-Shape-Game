@@ -3,6 +3,7 @@ class_name SpawnPoint
 
 @export var tscn:PackedScene
 @export var spawn_time = 2.2
+signal spawned(node:Node)
 
 func _process(delta: float) -> void:
 	spawn_time -= delta
@@ -10,6 +11,7 @@ func _process(delta: float) -> void:
 		var node:Enemy = tscn.instantiate()
 		add_sibling(node,true)
 		node.global_position = global_position
+		spawned.emit(node)
 		await get_tree().create_timer(0.5)
 		queue_free()
 

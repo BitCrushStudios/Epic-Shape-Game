@@ -1,19 +1,29 @@
 extends Node
 class_name EnemyManager
 static var instance:EnemyManager
+class WavePair:
+	var scene:PackedScene
+	var count:int
+	var image:Texture2D
+	static func create(_scene:PackedScene, _count:int, _image:Texture2D=null):
+		var result = WavePair.new()
+		result.scene = _scene
+		result.count = _count
+		result.image = _image
+		return result
+		
 class PopulationWave:
-	var scenes: Array[PackedScene]
-	var counts: Array[int]
+	var pairs: Array[WavePair]
 	var interval: float
-	static func create(_scenes: Array[PackedScene], _counts: Array[int], _interval: float):
+	static func create(_pairs: Array[WavePair], _interval: float):
 		var ob = PopulationWave.new()
-		ob.scenes = _scenes
-		ob.counts = _counts
+		ob.pairs = _pairs
 		ob.interval = _interval
 		return ob
 		
 class ActiveWave:
 	var wave:PopulationWave
+	var instance_counts: Array[int] = []
 	var time_max = 30.0
 	var time_current = 0.0
 	var interval_max = 0.5
@@ -23,6 +33,7 @@ class ActiveWave:
 	func _init(_root: EnemyManager, _wave:PopulationWave):
 		root = _root
 		wave = _wave
+		instance_counts.resize(_wave.pairs.size())
 	func _process(delta: float):
 		time_current+=delta
 		if interval_current<interval_max:
@@ -30,15 +41,22 @@ class ActiveWave:
 		if time_current>=time_max:
 			finished.emit()
 		else:
-			if (root.enemies.size()+root.spawners.size())<wave.counts[0]:
-				while interval_current>interval_max:
-					interval_current -= interval_max
-					var spawnPoint: SpawnPoint = preload("./SpawnPoint.tscn").instantiate()
-					root.add_child(spawnPoint,true)
-					var map_rid = root.get_viewport().world_2d.navigation_map
-					var rand_point = NavigationServer2D.map_get_random_point(map_rid,1,false)
-					spawnPoint.global_position = rand_point
-					spawnPoint.tscn = wave.scenes[0]
+			while interval_current>interval_max:
+				interval_current -= interval_max
+				for i in range(wave.pairs.size()):
+					if instance_counts[i] < wave.pairs[i].count:
+						var spawnPoint: SpawnPoint = preload("./SpawnPoint.tscn").instantiate()
+						root.add_child(spawnPoint,true)
+						var map_rid = root.get_viewport().world_2d.navigation_map
+						var rand_point = NavigationServer2D.map_get_random_point(map_rid,1,false)
+						spawnPoint.global_position = rand_point
+						spawnPoint.tscn = wave.pairs[i].scene
+						spawnPoint.spawned.connect(func(node:Node):
+							node.tree_exiting.connect(func():
+								instance_counts[i] -= 1
+							)
+						)
+						instance_counts[i] += 1
 					
 var wave_index = 0
 signal enemy_added(enemy:Enemy)
@@ -65,9 +83,30 @@ func unregister_spawner(spawner:SpawnPoint):
 	spawners.erase(spawner)
 	spawners_chanced.emit()
 var waves = [
-	PopulationWave.create([preload("res://Game/Units/Enemies/EnemyTriangle.tscn")],[10],0.5),
-	PopulationWave.create([preload("res://Game/Units/Enemies/EnemyTriangle.tscn")],[20],1.0),
-	PopulationWave.create([preload("res://Game/Units/Enemies/EnemyTriangle.tscn")],[40],1.0),
+	PopulationWave.create([
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+			10,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+		)],
+		0.5,
+	),
+	PopulationWave.create([
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"),
+			20,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+		)],
+		1.0
+	),
+	PopulationWave.create([
+		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"),
+			40,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+		)],
+		1.0
+	),
 ]
 var active_wave: ActiveWave
 func _ready():
