@@ -167,6 +167,7 @@ alpha_curve = SubResource("CurveTexture_ug7qw")
 
 [node name="SpawnPoint" type="Node2D" unique_id=1469410418]
 script = ExtResource("1_jrm51")
+spawn_time = 1.1
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1002393730]
 

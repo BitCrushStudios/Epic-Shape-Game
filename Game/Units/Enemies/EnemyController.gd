@@ -1,7 +1,7 @@
 extends NavigationAgent2D
 
 @onready var enemy:Enemy = get_parent()
-var time_rate = 0.5
+@export var time_rate = 0.5
 @onready var time_current = time_rate
 
 func _ready():

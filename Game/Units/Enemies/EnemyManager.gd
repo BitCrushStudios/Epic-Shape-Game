@@ -85,17 +85,17 @@ func unregister_spawner(spawner:SpawnPoint):
 var waves = [
 	PopulationWave.create([
 		WavePair.create(
-			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+			preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
 			10,
-			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+			preload("res://Assets/Art/Enemies/Roller/Roller.png")
 		)],
 		0.5,
 	),
 	PopulationWave.create([
 		WavePair.create(
-			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"),
+			preload("res://Game/Units/Enemies/EnemyRoller.tscn"),
 			20,
-			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+			preload("res://Assets/Art/Enemies/Roller/Roller.png")
 		)],
 		1.0
 	),
