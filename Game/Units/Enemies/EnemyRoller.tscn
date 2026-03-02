@@ -1,12 +1,59 @@
 [gd_scene format=3 uid="uid://yr6yf2u3lxf0"]
 
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_aljkd"]
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/enemy.gd" id="1_aljkd"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_gtfyx"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_15di7"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_aljkd"]
-[ext_resource type="Texture2D" uid="uid://b26qrveirc2yy" path="res://Assets/Art/Enemies/Roller/Roller.png" id="4_gtfyx"]
-[ext_resource type="Script" uid="uid://bv1ocp5hdxckh" path="res://Game/Units/Enemies/rotate_with_velocity.gd" id="6_f3mh7"]
+[ext_resource type="Texture2D" uid="uid://bd3p5co1m04l5" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0000.png" id="5_tkbb7"]
+[ext_resource type="Texture2D" uid="uid://cvomp4jhowfkk" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0001.png" id="6_7yhbt"]
+[ext_resource type="Script" path="res://Game/Units/Enemies/rotate_with_velocity.gd" id="6_f3mh7"]
+[ext_resource type="Texture2D" uid="uid://dm6jliisjtjvn" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0002.png" id="7_8jaoy"]
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="7_g7c88"]
+[ext_resource type="Texture2D" uid="uid://dt00yw240q6yx" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0003.png" id="8_gxtv7"]
+[ext_resource type="Texture2D" uid="uid://djnnpowlytcer" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0004.png" id="9_a3n17"]
+[ext_resource type="Texture2D" uid="uid://cixasy2mkkxms" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0005.png" id="10_nrrqh"]
+[ext_resource type="Texture2D" uid="uid://by6noaodrdddl" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0006.png" id="11_4rptp"]
+[ext_resource type="Texture2D" uid="uid://cwlolnxvk08oj" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0007.png" id="12_skti8"]
+[ext_resource type="Texture2D" uid="uid://bvyaxvoy6xav4" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0008.png" id="13_qjo1e"]
+[ext_resource type="Texture2D" uid="uid://bjkaatv4wiui" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0009.png" id="14_rjgth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0x2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tkbb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7yhbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8jaoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gxtv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a3n17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nrrqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4rptp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_skti8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qjo1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rjgth")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
 length = 0.001
@@ -92,13 +139,17 @@ script = ExtResource("3_aljkd")
 [node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_15di7")]
 position = Vector2(0, 47)
 
-[node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=320445841]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=2138081243]
 unique_name_in_owner = true
+position = Vector2(2.9999998, 10)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_gtfyx")
+sprite_frames = SubResource("SpriteFrames_k0x2q")
+autoplay = "default"
+frame_progress = 0.46062905
 offset = Vector2(-6.875, 0)
 
 [node name="RotateWithVelocity" type="Node" parent="SpriteOrigin" unique_id=1536040864 node_paths=PackedStringArray("target", "source")]
+process_mode = 4
 script = ExtResource("6_f3mh7")
 target = NodePath("..")
 source = NodePath("../..")

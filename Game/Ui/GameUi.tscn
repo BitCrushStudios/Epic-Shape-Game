@@ -175,14 +175,14 @@ vertical_alignment = 1
 
 [node name="LevelsGained" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=938525333]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.3372549)
+layout_direction = 3
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -164.0
-offset_right = 2.0
-offset_bottom = 40.0
-grow_horizontal = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 594.0
+offset_bottom = 108.0
+scale = Vector2(0.5, 0.5)
 pivot_offset_ratio = Vector2(1, 0)
 theme_override_constants/separation = -19
 
