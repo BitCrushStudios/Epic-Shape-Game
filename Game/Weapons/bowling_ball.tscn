@@ -11,8 +11,8 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="Curve" id="Curve_xw14b"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4543081, 0.44078946), 0.0, 0.0, 0, 0, Vector2(0.97389036, 0.16447371), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0, 0.3595506), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4e2e"]
 radius = 48.0
@@ -51,7 +51,7 @@ width = 100.0
 width_curve = SubResource("Curve_xw14b")
 default_color = Color(1, 0.45241642, 0.38395938, 0.2)
 script = ExtResource("6_5oxer")
-length = 20
+length = 40
 metadata/_custom_type_script = "uid://onfsof0qcqtj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1329120293]

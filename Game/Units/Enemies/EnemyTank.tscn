@@ -75,6 +75,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
 
 [sub_resource type="Animation" id="Animation_ucwfl"]
 resource_name = "damage"
@@ -84,13 +96,25 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.45000002, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.25, 0.35000002),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 0.52156866), Color(1, 1, 1, 0.5921569), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(0.9, 0.9), Vector2(0.7, 0.7)]
 }
 
 [sub_resource type="Animation" id="Animation_bccpk"]
@@ -122,11 +146,12 @@ radius = 43.046486
 [node name="EnemyTank" type="RigidBody2D" unique_id=211797002 node_paths=PackedStringArray("agent")]
 mass = 50.0
 contact_monitor = true
+max_contacts_reported = 5
 script = ExtResource("1_2j44q")
 agent = NodePath("EnemyController")
 experience_on_death = 50.0
-damage = 5.0
-health_max = 50.0
+damage = 2.0
+health_max = 10.0
 
 [node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=278399034]
 avoidance_enabled = true

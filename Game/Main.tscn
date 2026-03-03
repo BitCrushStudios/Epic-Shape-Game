@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="1_50glp"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://t8okmboocwvk" path="res://Game/Weapons/bowling_ball.tscn" id="4_hoyip"]
+[ext_resource type="PackedScene" uid="uid://s63vso0w17h8" path="res://Game/Weapons/fist.tscn" id="5_ccwv3"]
 [ext_resource type="Script" uid="uid://md6msurfapyu" path="res://Game/Waves/ActiveWave.gd" id="5_ijdku"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="5_v1gob"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="6_wo11f"]
@@ -278,6 +280,22 @@ position = Vector2(1116, 543)
 [node name="Weapon8" parent="Player" unique_id=1318507199 instance=ExtResource("13_krex0")]
 top_level = true
 position = Vector2(876, 675)
+
+[node name="Bowling Ball" parent="Player" unique_id=174184491 instance=ExtResource("4_hoyip")]
+
+[node name="Bowling Ball2" parent="Player" unique_id=740170022 instance=ExtResource("4_hoyip")]
+
+[node name="Bowling Ball3" parent="Player" unique_id=327197162 instance=ExtResource("4_hoyip")]
+
+[node name="Bowling Ball4" parent="Player" unique_id=136682735 instance=ExtResource("4_hoyip")]
+
+[node name="Bowling Ball5" parent="Player" unique_id=1938556629 instance=ExtResource("4_hoyip")]
+
+[node name="Bowling Ball6" parent="Player" unique_id=1684444437 instance=ExtResource("4_hoyip")]
+
+[node name="Fist" parent="Player" unique_id=579508121 instance=ExtResource("5_ccwv3")]
+position = Vector2(163, -65)
+script = null
 
 [node name="GameUi" parent="." unique_id=1158345816 node_paths=PackedStringArray("player", "enemyManager") instance=ExtResource("7_jw32o")]
 player = NodePath("../Player")

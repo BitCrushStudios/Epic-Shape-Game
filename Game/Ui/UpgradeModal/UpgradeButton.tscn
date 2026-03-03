@@ -3,10 +3,72 @@
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="1_vdi0g"]
 [ext_resource type="Script" uid="uid://bkfukgdcol76a" path="res://Game/Ui/UpgradeModal/UpgradeButton.gd" id="1_w5r4s"]
 [ext_resource type="Script" uid="uid://nm5n8qgx1xr0" path="res://Game/Upgrades/UpgradeMass.gd" id="2_w5r4s"]
+[ext_resource type="Texture2D" uid="uid://bob4mrftu0s0u" path="res://Game/Upgrades/Upgrade Pannel.png" id="4_gxona"]
 
 [sub_resource type="Resource" id="Resource_w5r4s"]
 script = ExtResource("2_w5r4s")
 name = "Extra Mass"
+
+[sub_resource type="Animation" id="Animation_gxona"]
+resource_name = "Mouse"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pannel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.45, 0.45), Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pannel:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.2, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3490658503988659, -0.3490658503988659, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bwtxf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pannel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.45, 0.45)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pannel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_edijw"]
+_data = {
+&"Mouse": SubResource("Animation_gxona"),
+&"RESET": SubResource("Animation_bwtxf")
+}
 
 [node name="UpgradeButton" type="Button" unique_id=866692791]
 custom_minimum_size = Vector2(180, 300)
@@ -35,6 +97,11 @@ theme_override_colors/font_outline_color = Color(0.93333334, 0.40784314, 0.33333
 theme_override_font_sizes/font_size = 50
 script = ExtResource("1_w5r4s")
 resource = SubResource("Resource_w5r4s")
+
+[node name="Pannel" type="Sprite2D" parent="." unique_id=726067953]
+position = Vector2(87, 165)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_gxona")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1538523343]
 layout_mode = 1
@@ -65,5 +132,8 @@ theme_override_constants/outline_size = 11
 theme_override_font_sizes/font_size = 20
 text = "Extra Mass +1"
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1830232011]
+libraries/ = SubResource("AnimationLibrary_edijw")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

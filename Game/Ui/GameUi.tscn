@@ -47,22 +47,23 @@ script = ExtResource("1_pjk1m")
 wave_composition = Array[ExtResource("2_wlq61")]([SubResource("Resource_bno2x"), SubResource("Resource_xc7dv"), SubResource("Resource_3gxc4")])
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=591781538]
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 275.0
-offset_bottom = 74.0
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 281.0
+offset_bottom = 76.0
+scale = Vector2(0.9, 0.9)
 
 [node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer2" unique_id=1993686910]
 unique_name_in_owner = true
-texture_filter = 1
+texture_filter = 2
 layout_mode = 2
 size_flags_vertical = 3
 max_value = 1.0
 value = 1.0
 nine_patch_stretch = true
-stretch_margin_left = 15
+stretch_margin_left = 10
 stretch_margin_top = 15
-stretch_margin_right = 15
+stretch_margin_right = 10
 stretch_margin_bottom = 15
 texture_under = ExtResource("2_47yhi")
 texture_over = ExtResource("3_wlq61")
@@ -93,16 +94,16 @@ vertical_alignment = 1
 
 [node name="ExpBar" type="TextureProgressBar" parent="VBoxContainer2" unique_id=513338522]
 unique_name_in_owner = true
-texture_filter = 1
+texture_filter = 2
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 3
 max_value = 1.0
 value = 1.0
 nine_patch_stretch = true
-stretch_margin_left = 15
+stretch_margin_left = 10
 stretch_margin_top = 15
-stretch_margin_right = 15
+stretch_margin_right = 10
 stretch_margin_bottom = 15
 texture_under = ExtResource("2_47yhi")
 texture_over = ExtResource("3_wlq61")
@@ -149,8 +150,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -86.0
+offset_top = 4.0
 offset_right = 86.0
-offset_bottom = 71.0
+offset_bottom = 75.0
 grow_horizontal = 2
 
 [node name="WaveLabel" type="Label" parent="VBoxContainer4" unique_id=1714083808]
@@ -162,20 +164,23 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 32
 theme_override_constants/outline_size = 14
 theme_override_constants/shadow_outline_size = 50
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 15
 text = "Wave 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimerLabel" type="Label" parent="VBoxContainer4" unique_id=28793160]
+[node name="TimerLabel" type="Label" parent="VBoxContainer4/WaveLabel" unique_id=28793160]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
+offset_top = 15.0
+offset_right = 172.0
+offset_bottom = 62.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 32
 theme_override_constants/outline_size = 14
 theme_override_constants/shadow_outline_size = 50
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 35
 text = "30.00"
 horizontal_alignment = 1
 vertical_alignment = 1
