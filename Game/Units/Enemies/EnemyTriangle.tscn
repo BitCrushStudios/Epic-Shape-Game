@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxtr5yed3wi54"]
 
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_fm6ei"]
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/enemy.gd" id="1_fm6ei"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_llcvg"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_bccpk"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_hu5f4"]
@@ -12,7 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://b2djkh87fdg2n" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0005.png" id="10_a6ea0"]
 [ext_resource type="Texture2D" uid="uid://cidicdre2bvgu" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0006.png" id="11_qfnel"]
 [ext_resource type="Texture2D" uid="uid://b1uy44x1y33ei" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0007.png" id="12_8qflq"]
+[ext_resource type="Texture2D" uid="uid://5sgmw1nlwo56" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0000.png" id="13_lhhv3"]
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="14_fm6ei"]
+[ext_resource type="Texture2D" uid="uid://bhbdmvim7wkc" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0001.png" id="14_xt6rt"]
+[ext_resource type="Texture2D" uid="uid://biaeraamusqxa" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0002.png" id="15_lonei"]
+[ext_resource type="Texture2D" uid="uid://bd0dkd2jgdel3" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0003.png" id="16_t2gew"]
+[ext_resource type="Texture2D" uid="uid://b8vtsf5rs4764" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0004.png" id="17_y56ig"]
+[ext_resource type="Texture2D" uid="uid://dpfx846ksyhuf" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0005.png" id="18_i2fi2"]
+[ext_resource type="Texture2D" uid="uid://dy5pnm04qh1p3" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0006.png" id="19_7ihax"]
+[ext_resource type="Texture2D" uid="uid://bln07wgbqhiu" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0007.png" id="20_5th7d"]
+[ext_resource type="Texture2D" uid="uid://qfpw6pxxstdw" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0008.png" id="21_o5vmo"]
+[ext_resource type="Texture2D" uid="uid://btt3xnlr8tw8j" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0009.png" id="22_4sy75"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fm6ei"]
 animations = [{
@@ -44,6 +54,44 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ii70o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_lhhv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xt6rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lonei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t2gew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_y56ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i2fi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7ihax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5th7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_o5vmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4sy75")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 14.0
 }]
 
 [sub_resource type="Animation" id="Animation_u3lwl"]
@@ -181,6 +229,13 @@ sprite_frames = SubResource("SpriteFrames_fm6ei")
 autoplay = "default"
 frame_progress = 0.2224027
 speed_scale = 2.0
+
+[node name="Death" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=2135288138]
+visible = false
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_ii70o")
+animation = &"Death"
+autoplay = "Death"
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=2112371104]
 unique_name_in_owner = true
