@@ -112,7 +112,10 @@ func exp_add(v:float):
 	if level_diff!=0:
 		levels_gained += level_diff
 		level_changed.emit()
-var levels_gained = 0
+@export var levels_gained = 0:
+	set(v):
+		levels_gained = v 
+		emit_changed()
 func clear_levels_gained():
 	levels_gained = 0
 @export var experience = 0.0:

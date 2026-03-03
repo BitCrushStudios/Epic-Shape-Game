@@ -1,26 +1,16 @@
 [gd_scene format=3 uid="uid://bmprloh75j06"]
 
 [ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Game/Ui/game_ui.gd" id="1_pjk1m"]
-[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_5w5jd"]
 [ext_resource type="Texture2D" uid="uid://cu532q23ccxui" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressUnder.png" id="2_47yhi"]
-[ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_foxdu"]
+[ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="2_wlq61"]
 [ext_resource type="Texture2D" uid="uid://b40cu08tbu7o" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressOver.png" id="3_wlq61"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_bno2x"]
 [ext_resource type="Texture2D" uid="uid://voek72lu102g" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressRed.png" id="4_vtlts"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="5_3bj3t"]
 [ext_resource type="Texture2D" uid="uid://7jhfanvregga" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressGreen.png" id="6_dhkw6"]
-[ext_resource type="PackedScene" uid="uid://djknudmo3e1rs" path="res://Game/Ui/GameUi/UpgradeStar.tscn" id="7_wlq61"]
 
-[sub_resource type="Resource" id="Resource_pcuml"]
-script = ExtResource("3_foxdu")
-health_max = 10.0
-exp_rate = 4.0
-speed = 600.0
-next_level_exp_required = 1.0
-exp_required = 1.0
-iframe_max = null
-iframe_current = null
-metadata/_custom_type_script = "uid://dfj50wg6u44xx"
+[sub_resource type="Resource" id="Resource_vtlts"]
+script = ExtResource("2_wlq61")
+metadata/_custom_type_script = "uid://cx0degy3b2dww"
 
 [sub_resource type="Gradient" id="Gradient_3bj3t"]
 offsets = PackedFloat32Array(0.6573427, 1)
@@ -34,32 +24,21 @@ fill_to = Vector2(1, 0.5)
 
 [node name="GameUi" type="CanvasLayer" unique_id=1360459017]
 script = ExtResource("1_pjk1m")
-player = SubResource("Resource_pcuml")
+wave_composition = Array[ExtResource("2_wlq61")]([SubResource("Resource_vtlts")])
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=15512166]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="Control" parent="VBoxContainer" unique_id=911009148]
-custom_minimum_size = Vector2(0, 38.705)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=591781538]
-layout_mode = 0
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=591781538]
 offset_left = 7.0
 offset_top = 6.0
 offset_right = 275.0
 offset_bottom = 74.0
 
-[node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1993686910]
+[node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer2" unique_id=1993686910]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
-value = 50.0
+max_value = 1.0
+value = 1.0
 nine_patch_stretch = true
 stretch_margin_left = 15
 stretch_margin_top = 15
@@ -69,7 +48,7 @@ texture_under = ExtResource("2_47yhi")
 texture_over = ExtResource("3_wlq61")
 texture_progress = ExtResource("4_vtlts")
 
-[node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HealthBar" unique_id=864519401]
+[node name="HealthLabel" type="Label" parent="VBoxContainer2/HealthBar" unique_id=864519401]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -88,17 +67,18 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("5_3bj3t")
 theme_override_font_sizes/font_size = 22
-text = "30/30"
+text = "1 / 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ExpBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=513338522]
+[node name="ExpBar" type="TextureProgressBar" parent="VBoxContainer2" unique_id=513338522]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 3
-value = 49.0
+max_value = 1.0
+value = 1.0
 nine_patch_stretch = true
 stretch_margin_left = 15
 stretch_margin_top = 15
@@ -108,7 +88,7 @@ texture_under = ExtResource("2_47yhi")
 texture_over = ExtResource("3_wlq61")
 texture_progress = ExtResource("6_dhkw6")
 
-[node name="ExpLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/ExpBar" unique_id=2093757014]
+[node name="ExpLabel" type="Label" parent="VBoxContainer2/ExpBar" unique_id=2093757014]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -128,12 +108,23 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/shadow_outline_size = 17
 theme_override_font_sizes/font_size = 22
-text = "0/100"
+text = "1 / 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1030637227]
-layout_mode = 1
+[node name="LevelsGained" type="HBoxContainer" parent="." unique_id=938525333]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.49411765)
+layout_direction = 3
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 508.0
+offset_bottom = 108.0
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(1, 0)
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="." unique_id=1030637227]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -142,7 +133,7 @@ offset_right = 86.0
 offset_bottom = 71.0
 grow_horizontal = 2
 
-[node name="WaveLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1714083808]
+[node name="WaveLabel" type="Label" parent="VBoxContainer4" unique_id=1714083808]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -152,63 +143,39 @@ theme_override_constants/shadow_offset_y = 32
 theme_override_constants/outline_size = 14
 theme_override_constants/shadow_outline_size = 50
 theme_override_font_sizes/font_size = 20
-text = "WAVE 12"
+text = "Wave 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimerLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/WaveLabel" unique_id=28793160]
+[node name="TimerLabel" type="Label" parent="VBoxContainer4" unique_id=28793160]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 2.0
-offset_top = 23.0
-offset_right = 174.0
-offset_bottom = 63.0
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 32
 theme_override_constants/outline_size = 14
 theme_override_constants/shadow_outline_size = 50
 theme_override_font_sizes/font_size = 30
-text = "10.5"
+text = "30.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelsGained" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=938525333]
+[node name="WaveOverview" type="VBoxContainer" parent="." unique_id=15512166]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.3372549)
-layout_direction = 3
-layout_mode = 1
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 594.0
-offset_bottom = 108.0
-scale = Vector2(0.5, 0.5)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_top = 73.0
+offset_right = -5.0
+offset_bottom = 281.0
+grow_horizontal = 0
 pivot_offset_ratio = Vector2(1, 0)
-theme_override_constants/separation = -19
-
-[node name="TextureRect" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1092809859 instance=ExtResource("7_wlq61")]
-layout_mode = 2
-
-[node name="TextureRect2" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1358559467 instance=ExtResource("7_wlq61")]
-layout_mode = 2
-
-[node name="TextureRect3" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=739263445 instance=ExtResource("7_wlq61")]
-layout_mode = 2
-
-[node name="TextureRect4" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=669161038 instance=ExtResource("7_wlq61")]
-layout_mode = 2
-
-[node name="TextureRect5" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=2130276164 instance=ExtResource("7_wlq61")]
-layout_mode = 2
-
-[node name="TextureRect6" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=80860772 instance=ExtResource("7_wlq61")]
-layout_mode = 2
-
-[node name="TextureRect7" parent="VBoxContainer/HBoxContainer/LevelsGained" unique_id=1125625124 instance=ExtResource("7_wlq61")]
-layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="HurtOverlay" type="TextureRect" parent="." unique_id=375065571]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

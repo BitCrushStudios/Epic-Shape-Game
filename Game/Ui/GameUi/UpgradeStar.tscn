@@ -7,3 +7,4 @@ texture_filter = 2
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_d0gut")
+expand_mode = 3
