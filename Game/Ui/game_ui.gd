@@ -60,7 +60,7 @@ func player_resource_changed():
 	health_max = player.resource.health_max
 	health_current = player.resource.health_current
 	exp_max = player.resource.next_level_exp_required - player.resource.current_level_exp_required
-	exp_current = player.resource.current_level_exp_required - player.resource.experience
+	exp_current = player.resource.experience - player.resource.current_level_exp_required 
 	current_wave = player.resource.current_wave
 	upgrade_star_count = player.resource.levels_gained
 	show_hurt_indicator = player.resource.iframe_current>0
