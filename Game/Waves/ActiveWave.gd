@@ -22,7 +22,7 @@ func process(root:Node, delta:float):
 			for i in range(wave.pairs.size()):
 				if instance_counts[i] < wave.pairs[i].count:
 					var spawnPoint: SpawnPoint = preload("res://Game/Units/Enemies/SpawnPoint.tscn").instantiate()
-					root.add_child(root,true)
+					root.add_child(spawnPoint,true)
 					var map_rid = root.get_viewport().world_2d.navigation_map
 					var rand_point = NavigationServer2D.map_get_random_point(map_rid,1,false)
 					spawnPoint.global_position = rand_point

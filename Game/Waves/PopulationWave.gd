@@ -2,7 +2,10 @@
 extends Resource
 class_name PopulationWave
 
-@export var pairs: Array[WavePair]
+@export var pairs: Array[WavePair]:
+	set(v):
+		pairs = v
+		emit_changed()
 var interval: float
 var time_max = 30.0
 var interval_max = 0.5

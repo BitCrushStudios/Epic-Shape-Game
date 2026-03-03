@@ -121,8 +121,17 @@ func _process(delta:float):
 		return
 	if active_wave:
 		active_wave.process(self,delta)
-	enemy_basic_pair.count = max(0, enemy_basic_pair.count+Input.get_axis("dev_enemy_basic_down","dev_enemy_basic_up"))
-	enemy_roller_pair.count = max(0, enemy_roller_pair.count+Input.get_axis("dev_enemy_roller_down","dev_enemy_roller_up"))
-	enemy_tank_pair.count = max(0, enemy_tank_pair.count+Input.get_axis("dev_enemy_tank_down","dev_enemy_tank_up")) 
+	var basic_diff = (1 if Input.is_action_just_pressed("dev_enemy_basic_up") else 0 - 1 if Input.is_action_just_pressed("dev_enemy_basic_down") else 0)
+	if basic_diff:
+		enemy_basic_pair.count = max(0, enemy_basic_pair.count+basic_diff)
+		resource_changed.emit()
+	var roller_diff = (1 if Input.is_action_just_pressed("dev_enemy_roller_up") else 0 - 1 if Input.is_action_just_pressed("dev_enemy_roller_down") else 0)
+	if roller_diff:
+		enemy_roller_pair.count = max(0, enemy_roller_pair.count+roller_diff)
+		resource_changed.emit()
+	var tank_diff = (1 if Input.is_action_just_pressed("dev_enemy_tank_up") else 0 - 1 if Input.is_action_just_pressed("dev_enemy_tank_down") else 0)
+	if tank_diff:
+		enemy_tank_pair.count = max(0, enemy_tank_pair.count+tank_diff) 
+		resource_changed.emit()
 	
 	
