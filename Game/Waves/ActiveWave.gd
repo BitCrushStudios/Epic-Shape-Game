@@ -1,3 +1,4 @@
+@tool
 extends Resource
 class_name ActiveWave
 
@@ -7,6 +8,10 @@ class_name ActiveWave
 @export var time_current = 0.0
 @export var interval_current = 0.0
 
+static func create(_wave:PopulationWave):
+	var ob = ActiveWave.new()
+	ob.wave = _wave
+	return ob
 func process(root:Node, delta:float):
 	instance_counts.resize(wave.pairs.size())
 	time_current += delta

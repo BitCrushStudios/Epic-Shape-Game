@@ -1,7 +1,25 @@
 @tool
 extends CanvasLayer
 class_name GameUi
-
+@export var player:Player:
+	set(v):
+		if player and player.resource_changed.is_connected(player_resource_changed):
+			player.resource_changed.disconnect(player_resource_changed)
+		player = v
+		if player:
+			player.resource_changed.connect(player_resource_changed)
+		player_resource_changed()
+@export var enemyManager:EnemyManager:
+	set(v):
+		if enemyManager and enemyManager.resource_changed.is_connected(enemy_manager_resource_changed):
+			enemyManager.resource_changed.disconnect(enemy_manager_resource_changed)
+		
+		enemyManager = v
+		print(v)
+		if enemyManager:
+			enemyManager.resource_changed.connect(enemy_manager_resource_changed)
+		player_resource_changed()
+		
 @export var health_max = 1.0:
 	set(v):
 		health_max = v
@@ -38,7 +56,19 @@ class_name GameUi
 	set(v):
 		show_hurt_indicator = v
 		update_all_ui()
-
+func player_resource_changed():
+	health_max = player.resource.health_max
+	health_current = player.resource.health_current
+	exp_max = player.resource.next_level_exp_required - player.resource.current_level_exp_required
+	exp_current = player.resource.current_level_exp_required - player.resource.experience
+	current_wave = player.resource.current_wave
+	upgrade_star_count = player.resource.levels_gained
+	show_hurt_indicator = player.resource.iframe_current>0
+func enemy_manager_resource_changed():
+	wave_composition = enemyManager.active_wave.wave.pairs
+	time_remaining = enemyManager.active_wave.wave.time_max - enemyManager.active_wave.time_current
+	
+	
 func _ready():
 	%HurtOverlay.modulate = Color.TRANSPARENT
 	%HurtOverlay.show()
@@ -64,7 +94,6 @@ func _update_exp_ui():
 	]
 func _update_level_ui():
 	var diff = upgrade_star_count - %LevelsGained.get_child_count(true)
-	print(diff)
 	if diff<0:
 		for c in %LevelsGained.get_children(true).slice(0, -diff):
 			c.queue_free()
@@ -82,11 +111,20 @@ func _update_health_ui():
 	%HealthLabel.text = "%d / %d" % [health_current, health_max]
 
 func _update_enemy_wave_ui():
-	for c in %WaveOverview.get_children(true):
-		c.queue_free.call_deferred()
-	for pair in wave_composition:
-		var pair_ui:WavePairUi = preload("res://Game/Waves/WavePairUi.tscn").instantiate()
+	var diff = wave_composition.size() - %WaveOverview.get_child_count(true)
+	if diff<0:
+		for c in %WaveOverview.get_children(true).slice(0, -diff):
+			c.queue_free()
+	else:
+		for i in range(diff):
+			var pair_ui: WavePairUi = preload("res://Game/Waves/WavePairUi.tscn").instantiate()
+			%WaveOverview.add_child(pair_ui, true, Node.INTERNAL_MODE_FRONT)
+	for i in range(wave_composition.size()):
+		var pair_ui: WavePairUi = %WaveOverview.get_child(i, true)
+		var pair = wave_composition[i]
 		pair_ui.resource = pair
+
+
 	
 func update_all_ui():
 	if not is_inside_tree():

@@ -1,20 +1,22 @@
 @tool
 extends RigidBody2D
 class_name Player
-
 static var instance:Player
+
+signal resource_changed()
+signal weapons_changed()
 @export var resource: PlayerResource:
 	set(v):
-		if resource and resource.changed.is_connected(update_resource):
-				resource.changed.disconnect(update_resource)
-		if resource and resource.weapons_changed.is_connected(update_weapons):
-				resource.weapons_changed.disconnect(update_weapons)
+		if resource and resource.changed.is_connected(resource_changed.emit):
+				resource.changed.disconnect(resource_changed.emit)
+		if resource and resource.weapons_changed.is_connected(weapons_changed.emit):
+				resource.weapons_changed.disconnect(weapons_changed.emit)
 		resource = v
 		if resource:
-			resource.changed.connect(update_resource)
-			resource.weapons_changed.connect(update_weapons)
-		update_resource()
-		update_weapons()
+			resource.changed.connect(resource_changed.emit)
+			resource.weapons_changed.connect(weapons_changed.emit)
+		resource_changed.emit()
+		weapons_changed.emit()
 
 var size_tween:Tween
 
@@ -40,7 +42,6 @@ func update_weapons():
 			to_be_added.erase(ins.resource)
 		else:
 			ins.queue_free.call_deferred()
-	prints("WEP", resource.weapons.size(), to_be_added.size())
 	for res in to_be_added:
 		var ins: Weapon = preload("res://Game/Weapons/CubeWeapon.tscn").instantiate()
 		ins.resource = res
@@ -62,6 +63,8 @@ func _ready():
 	Player.instance = self
 	resource.iframe_triggered.connect(_iframe_triggered)
 	resource.reset_health()
+	weapons_changed.connect(update_weapons)
+	resource_changed.connect(update_resource)
 	for w in Weapon.instances:
 		resource.weapons.append(w.resource)
 	

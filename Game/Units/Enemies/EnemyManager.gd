@@ -1,11 +1,46 @@
+@tool
 extends Node
 class_name EnemyManager
 static var instance:EnemyManager
 					
 var wave_index = 0
+
 signal enemy_added(enemy:Enemy)
 signal enemy_removed(enemy:Enemy)
 signal enemies_changed()
+signal spawners_chanced()
+signal resource_changed()
+signal wave_finished()
+@export var enemy_basic_pair = WavePair.create(
+		preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+		0,
+		preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+	)
+@export var enemy_roller_pair = WavePair.create(
+		preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+		0,
+		preload("res://Assets/Art/Enemies/Roller/Roller.png")
+	)
+@export var enemy_tank_pair = WavePair.create(
+		preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
+		0,
+		preload("res://Assets/Art/Enemies/Tank/Tank.png")
+	)
+@export var active_wave: ActiveWave = ActiveWave.create(
+	PopulationWave.create([
+		enemy_basic_pair,
+		enemy_roller_pair,
+		enemy_tank_pair
+	],0.5)
+):
+	set(v):
+		if active_wave and active_wave.changed.is_connected(resource_changed.emit):
+			active_wave.changed.disconnect(resource_changed.emit)
+		active_wave = v
+		if active_wave:
+			active_wave.changed.connect(resource_changed.emit)
+		resource_changed.emit()
+
 var enemies:Array[Enemy]
 func register(enemy:Enemy):
 	enemies.append(enemy)
@@ -18,7 +53,6 @@ func unregister(enemy:Enemy):
 	enemy_removed.emit(enemy)
 	enemies_changed.emit()
 	
-signal spawners_chanced()
 var spawners:Array[SpawnPoint]
 func register_spawner(spawner:SpawnPoint):
 	spawners.append(spawner)
@@ -26,7 +60,6 @@ func register_spawner(spawner:SpawnPoint):
 func unregister_spawner(spawner:SpawnPoint):
 	spawners.erase(spawner)
 	spawners_chanced.emit()
-signal wave_finished()
 var waves = [
 	PopulationWave.create([
 		WavePair.create(
@@ -80,32 +113,12 @@ var waves = [
 		0.5,
 	),
 ]
-@export var active_wave: ActiveWave
-var enemy_basic_pair = WavePair.create(
-		preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
-		0,
-		preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
-	)
-var enemy_roller_pair = WavePair.create(
-		preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
-		0,
-		preload("res://Assets/Art/Enemies/Roller/Roller.png")
-	)
-var enemy_tank_pair = WavePair.create(
-		preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
-		0,
-		preload("res://Assets/Art/Enemies/Tank/Tank.png")
-	)
 func _ready():
 	EnemyManager.instance = self
-	active_wave = ActiveWave.new()
-	active_wave.wave = PopulationWave.create([
-		enemy_basic_pair,
-		enemy_roller_pair,
-		enemy_tank_pair
-	],0.5)
 		
 func _process(delta:float):
+	if Engine.is_editor_hint():
+		return
 	if active_wave:
 		active_wave.process(self,delta)
 	enemy_basic_pair.count = max(0, enemy_basic_pair.count+Input.get_axis("dev_enemy_basic_down","dev_enemy_basic_up"))

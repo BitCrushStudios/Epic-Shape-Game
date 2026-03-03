@@ -3,13 +3,33 @@
 [ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Game/Ui/game_ui.gd" id="1_pjk1m"]
 [ext_resource type="Texture2D" uid="uid://cu532q23ccxui" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressUnder.png" id="2_47yhi"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="2_wlq61"]
+[ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="3_pcuml"]
 [ext_resource type="Texture2D" uid="uid://b40cu08tbu7o" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressOver.png" id="3_wlq61"]
+[ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="4_70m18"]
 [ext_resource type="Texture2D" uid="uid://voek72lu102g" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressRed.png" id="4_vtlts"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="5_3bj3t"]
+[ext_resource type="Texture2D" uid="uid://b26qrveirc2yy" path="res://Assets/Art/Enemies/Roller/Roller.png" id="5_pp0kc"]
 [ext_resource type="Texture2D" uid="uid://7jhfanvregga" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressGreen.png" id="6_dhkw6"]
+[ext_resource type="PackedScene" uid="uid://yr6yf2u3lxf0" path="res://Game/Units/Enemies/EnemyRoller.tscn" id="6_fi0kh"]
+[ext_resource type="Texture2D" uid="uid://bbkglt5jwg3mv" path="res://Assets/Art/Enemies/Tank/Tank.png" id="7_ewu2f"]
+[ext_resource type="PackedScene" uid="uid://o3qjyg751wn3" path="res://Game/Units/Enemies/EnemyTank.tscn" id="8_g1dnx"]
 
-[sub_resource type="Resource" id="Resource_vtlts"]
+[sub_resource type="Resource" id="Resource_bno2x"]
 script = ExtResource("2_wlq61")
+scene = ExtResource("4_70m18")
+image = ExtResource("3_pcuml")
+metadata/_custom_type_script = "uid://cx0degy3b2dww"
+
+[sub_resource type="Resource" id="Resource_xc7dv"]
+script = ExtResource("2_wlq61")
+scene = ExtResource("6_fi0kh")
+image = ExtResource("5_pp0kc")
+metadata/_custom_type_script = "uid://cx0degy3b2dww"
+
+[sub_resource type="Resource" id="Resource_3gxc4"]
+script = ExtResource("2_wlq61")
+scene = ExtResource("8_g1dnx")
+image = ExtResource("7_ewu2f")
 metadata/_custom_type_script = "uid://cx0degy3b2dww"
 
 [sub_resource type="Gradient" id="Gradient_3bj3t"]
@@ -24,7 +44,7 @@ fill_to = Vector2(1, 0.5)
 
 [node name="GameUi" type="CanvasLayer" unique_id=1360459017]
 script = ExtResource("1_pjk1m")
-wave_composition = Array[ExtResource("2_wlq61")]([SubResource("Resource_vtlts")])
+wave_composition = Array[ExtResource("2_wlq61")]([SubResource("Resource_bno2x"), SubResource("Resource_xc7dv"), SubResource("Resource_3gxc4")])
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=591781538]
 offset_left = 7.0
@@ -165,11 +185,12 @@ unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -86.0
+offset_left = -164.0
 offset_top = 73.0
 offset_right = -5.0
-offset_bottom = 281.0
+offset_bottom = 540.0
 grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
 pivot_offset_ratio = Vector2(1, 0)
 size_flags_horizontal = 8
 

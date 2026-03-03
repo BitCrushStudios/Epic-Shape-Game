@@ -1,189 +1,31 @@
 [gd_scene format=3 uid="uid://coeagw61r0ppt"]
 
 [ext_resource type="Script" uid="uid://bhcacodb1p170" path="res://Game/Waves/WavePairUi.gd" id="1_d00rg"]
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="2_tipt5"]
-[ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_ruga0"]
-[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="4_rdx03"]
-[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="5_6tkfw"]
-[ext_resource type="Texture2D" uid="uid://bcdq1bui4fm5t" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0000.png" id="6_u70o4"]
-[ext_resource type="Texture2D" uid="uid://3agonshy8dmu" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0001.png" id="7_vkgux"]
-[ext_resource type="Texture2D" uid="uid://drsr0asqs5y65" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0002.png" id="8_od42s"]
-[ext_resource type="Texture2D" uid="uid://b2wsyungnvtcm" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0003.png" id="9_xsf0f"]
-[ext_resource type="Texture2D" uid="uid://b4bofavndlwvh" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0004.png" id="10_7j8yh"]
-[ext_resource type="Texture2D" uid="uid://b2djkh87fdg2n" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0005.png" id="11_iapgt"]
-[ext_resource type="Texture2D" uid="uid://cidicdre2bvgu" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0006.png" id="12_k1l3y"]
-[ext_resource type="Texture2D" uid="uid://b1uy44x1y33ei" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0007.png" id="13_sdsc2"]
-[ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="14_h83bd"]
+[ext_resource type="Texture2D" uid="uid://bbkglt5jwg3mv" path="res://Assets/Art/Enemies/Tank/Tank.png" id="2_ua5qt"]
+[ext_resource type="PackedScene" uid="uid://o3qjyg751wn3" path="res://Game/Units/Enemies/EnemyTank.tscn" id="3_084k1"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="15_vcjvl"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8w8rs"]
-load_path = "res://.godot/imported/Basic Enemy.png-2f3f635d1c7dc2e1321e3a1dfda5b10d.ctex"
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fm6ei"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_u70o4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_vkgux")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_od42s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_xsf0f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_7j8yh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_iapgt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_k1l3y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_sdsc2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_u3lwl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ucwfl"]
-resource_name = "damage"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.45000002, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_bccpk"]
-resource_name = "death"
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.35, 0.95),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.3647059), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_rv688"]
-resource_name = "walk"
-length = 0.55
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.43333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.2617993877991494, -0.2617993877991494]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3lwl"]
-_data = {
-&"RESET": SubResource("Animation_u3lwl"),
-&"damage": SubResource("Animation_ucwfl"),
-&"death": SubResource("Animation_bccpk"),
-&"walk": SubResource("Animation_rv688")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hu5f4"]
-radius = 28.01785
-
-[sub_resource type="PackedScene" id="PackedScene_j4te4"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("EnemyTriangle", "RigidBody2D", "y_sort_enabled", "contact_monitor", "max_contacts_reported", "linear_damp", "script", "agent", "EnemyController", "NavigationAgent2D", "avoidance_enabled", "radius", "time_horizon_obstacles", "max_speed", "debug_use_custom", "script", "SpriteOrigin", "Node2D", "y_sort_enabled", "ShadowOrigin", "Node2D", "script", "Shadow", "position", "scale", "Sprite2D", "AnimatedSprite2D", "unique_name_in_owner", "y_sort_enabled", "position", "scale", "sprite_frames", "autoplay", "frame_progress", "speed_scale", "Animation", "AnimationPlayer", "unique_name_in_owner", "root_node", "libraries/", "playback_default_blend_time", "ShapeCast2D", "CollisionShape2D", "y_sort_enabled", "shape", "Death", "AudioStreamPlayer", "stream", "pitch_scale"),
-"node_count": 9,
-"node_ids": PackedInt32Array(166037116, 723527212, 542101971, 1106378316, 29450177, 2057410270, 2112371104, 1092370231, 1728244227),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./SpriteOrigin"), NodePath("./SpriteOrigin/ShadowOrigin"), NodePath("./SpriteOrigin"), NodePath("."), NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 1073741831, 5, 0, 1073741824, 0, 9, 8, -1, 6, 10, 6, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 0, 1073741825, 0, 17, 16, -1, 1, 18, 12, 0, 1073741826, 0, 20, 19, -1, 1, 21, 13, 0, 1073741827, 0, 2147483647, 22, 14, 2, 23, 15, 24, 16, 0, 1073741828, 0, 26, 25, -1, 8, 27, 17, 28, 18, 29, 19, 30, 20, 31, 21, 32, 22, 33, 23, 34, 24, 0, 1073741829, 0, 36, 35, -1, 4, 37, 25, 38, 26, 39, 27, 40, 28, 0, 1073741830, 0, 42, 41, -1, 2, 43, 29, 44, 30, 0, 1073741831, 0, 46, 45, -1, 2, 47, 31, 48, 32, 0),
-"variants": [true, true, 5, 0.5, ExtResource("2_tipt5"), NodePath("EnemyController"), true, 20.0, 1.0, 300.0, true, ExtResource("3_ruga0"), true, ExtResource("4_rdx03"), ExtResource("5_6tkfw"), Vector2(0, 22), Vector2(0.7, 0.7), true, true, Vector2(0, -2), Vector2(0.7, 0.7), SubResource("SpriteFrames_fm6ei"), "default", 0.2224027, 2.0, true, NodePath("../SpriteOrigin/Sprite2D"), SubResource("AnimationLibrary_u3lwl"), 0.2, true, SubResource("CircleShape2D_hu5f4"), ExtResource("14_h83bd"), 1.5],
-"version": 3
-}
-
-[sub_resource type="Resource" id="Resource_5sq7h"]
+[sub_resource type="Resource" id="Resource_rarow"]
 script = ExtResource("15_vcjvl")
-scene = SubResource("PackedScene_j4te4")
-count = 8
-image = SubResource("CompressedTexture2D_8w8rs")
+scene = ExtResource("3_084k1")
+image = ExtResource("2_ua5qt")
 metadata/_custom_type_script = "uid://cx0degy3b2dww"
 
 [node name="WavePairUi" type="HBoxContainer" unique_id=803477554]
-offset_right = 152.0
-offset_bottom = 84.0
+offset_right = 159.0
+offset_bottom = 66.0
 size_flags_horizontal = 0
 script = ExtResource("1_d00rg")
-resource = SubResource("Resource_5sq7h")
+resource = SubResource("Resource_rarow")
 
 [node name="CountLabel" type="Label" parent="." unique_id=2116393752]
 layout_mode = 2
-text = "8 x"
+theme_type_variation = &"OutlineLabel"
+text = "0 x"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1899701722]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_8w8rs")
+size_flags_horizontal = 3
+texture = ExtResource("2_ua5qt")
+expand_mode = 3
+stretch_mode = 4

@@ -145,7 +145,10 @@ var next_level_exp_required: float:
 signal iframe_elapsed()
 signal iframe_triggered()
 @export var iframe_max = 0.5
-@export var iframe_current = 0.0
+@export var iframe_current = 0.0:
+	set(v):
+		iframe_current = v
+		emit_changed()
 func update_iframe(delta:float):
 	if iframe_current>0:
 		iframe_current-=delta
@@ -154,3 +157,4 @@ func update_iframe(delta:float):
 func iframe_trigger():
 	iframe_current = iframe_max
 	iframe_triggered.emit()
+	
