@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yr6yf2u3lxf0"]
 
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_aljkd"]
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/enemy.gd" id="1_aljkd"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_gtfyx"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_15di7"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_aljkd"]
@@ -126,7 +126,7 @@ damage = 2.0
 avoidance_enabled = true
 radius = 20.0
 time_horizon_obstacles = 0.18
-max_speed = 1000.0
+max_speed = 500.0
 debug_use_custom = true
 script = ExtResource("2_gtfyx")
 time_rate = 10.0
