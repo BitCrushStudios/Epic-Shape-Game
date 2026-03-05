@@ -9,14 +9,6 @@ class_name PlayerResource
 		inventory = v
 		emit_changed()
 		
-@export var weapons: Array[WeaponResource] = []:
-	get():
-		return weapons
-	set(v):
-		weapons = v
-		weapons_changed.emit()
-		emit_changed()
-signal weapons_changed()
 	
 @export_category("Stats")
 @export var stat_size = 1:
@@ -62,6 +54,8 @@ signal took_damage(damage:float)
 signal health_depleted()
 func reset_health():
 	health_current = health_max
+func deplete_health():
+	health_current = 0
 func take_damage(damage:float):
 	if iframe_current>0:
 		return

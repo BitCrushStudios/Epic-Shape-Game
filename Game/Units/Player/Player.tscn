@@ -6,15 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://c65lwc744dgwt" path="res://Assets/Art/Player/Player @.png" id="3_fd82q"]
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_i7tqw"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_mbpe7"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_jiict"]
-[ext_resource type="Resource" uid="uid://clky6g0bw3w53" path="res://Game/Weapons/CubeWeaponResource.tres" id="5_i7tqw"]
+[ext_resource type="Script" uid="uid://ejrfu2yqqgvb" path="res://Game/Units/GradualRotationNegate.gd" id="6_thx7d"]
+[ext_resource type="Script" uid="uid://df3dw2rgkl02f" path="res://Game/Units/Player/PlayerController.gd" id="7_thx7d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
 friction = 0.0
 
 [sub_resource type="Resource" id="Resource_wnw4f"]
 script = ExtResource("3_i7tqw")
-weapons = Array[ExtResource("4_jiict")]([ExtResource("5_i7tqw"), ExtResource("5_i7tqw"), ExtResource("5_i7tqw"), ExtResource("5_i7tqw")])
 health_max = 10.0
 health_current = 10.0
 speed = 600.0
@@ -74,6 +73,13 @@ contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
 resource = SubResource("Resource_wnw4f")
+
+[node name="GradualRotationNegate" type="Node" parent="." unique_id=950900652]
+script = ExtResource("6_thx7d")
+metadata/_custom_type_script = "uid://ejrfu2yqqgvb"
+
+[node name="PlayerController" type="Node" parent="." unique_id=2038294524]
+script = ExtResource("7_thx7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
 shape = SubResource("CircleShape2D_mbpe7")

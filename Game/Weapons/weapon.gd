@@ -2,15 +2,16 @@
 extends RigidBody2D
 class_name Weapon
 static var instances : Array[Weapon] = []
+signal resource_changed()
 @export var resource: WeaponResource:
 	get():
 		return resource
 	set(v):
 		if resource:
-			resource.changed.disconnect(_resource_changed)
+			resource.changed.disconnect(resource_changed.emit)
 		resource = v
 		if resource:
-			resource.changed.connect(_resource_changed)
+			resource.changed.connect(resource_changed.emit)
 var max_obstacle_radius = 30.0
 var activation_value = 0.0
 enum State{
@@ -25,6 +26,7 @@ func _resource_changed():
 	%ActivatedSprite.texture = resource.activated_texture
 	$CollisionShape2D.shape = resource.shape
 func _ready():
+	resource_changed.connect(_resource_changed)
 	body_entered.connect(_on_body_entered)
 	
 func _physics_process(_delta: float) -> void:

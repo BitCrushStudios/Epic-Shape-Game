@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxtr5yed3wi54"]
 
 [ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_fm6ei"]
+[ext_resource type="Script" uid="uid://ejrfu2yqqgvb" path="res://Game/Units/GradualRotationNegate.gd" id="2_fm6ei"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_llcvg"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_bccpk"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_hu5f4"]
@@ -153,6 +154,10 @@ max_contacts_reported = 5
 linear_damp = 0.5
 script = ExtResource("1_fm6ei")
 agent = NodePath("EnemyController")
+
+[node name="GradualRotationNegate" type="Node" parent="." unique_id=1239480688]
+script = ExtResource("2_fm6ei")
+metadata/_custom_type_script = "uid://ejrfu2yqqgvb"
 
 [node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=723527212]
 avoidance_enabled = true

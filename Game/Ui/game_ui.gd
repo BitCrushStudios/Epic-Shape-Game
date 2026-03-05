@@ -1,7 +1,7 @@
 @tool
 extends CanvasLayer
 class_name GameUi
-@export var player:Player:
+@export var player:Player=null:
 	set(v):
 		if player and player.resource_changed.is_connected(player_resource_changed):
 			player.resource_changed.disconnect(player_resource_changed)
@@ -9,7 +9,7 @@ class_name GameUi
 		if player:
 			player.resource_changed.connect(player_resource_changed)
 		player_resource_changed()
-@export var enemyManager:EnemyManager:
+@export var enemyManager:EnemyManager=null:
 	set(v):
 		if enemyManager and enemyManager.resource_changed.is_connected(enemy_manager_resource_changed):
 			enemyManager.resource_changed.disconnect(enemy_manager_resource_changed)
@@ -65,8 +65,9 @@ func player_resource_changed():
 	upgrade_star_count = player.resource.levels_gained
 	show_hurt_indicator = player.resource.iframe_current>0
 func enemy_manager_resource_changed():
-	wave_composition = enemyManager.active_wave.wave.pairs
-	time_remaining = enemyManager.active_wave.wave.time_max - enemyManager.active_wave.time_current
+	
+	wave_composition = enemyManager.active_wave.pairs
+	time_remaining = enemyManager.active_wave.time_max - enemyManager.active_wave.time_current
 	
 	
 func _ready():

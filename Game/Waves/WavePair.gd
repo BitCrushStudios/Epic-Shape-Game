@@ -15,9 +15,16 @@ class_name WavePair
 	set(v):
 		image = v
 		emit_changed()
-static func create(_scene:PackedScene, _count:int, _image:Texture2D=null):
+@export var interval_time = 0.0:
+	set(v):
+		interval_time = v
+		emit_changed()
+@export var interval_time_max:float
+@export var count_max = 0
+static func create(_scene:PackedScene, _count_max:int, _image:Texture2D, _interval_time_max=0.5):
 	var result = WavePair.new()
 	result.scene = _scene
-	result.count = _count
+	result.count_max = _count_max
 	result.image = _image
+	result.interval_time_max = _interval_time_max
 	return result

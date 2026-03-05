@@ -1,10 +1,11 @@
+@tool
 extends Node2D
 class_name SpawnPoint 
 
 @export var tscn:PackedScene
 @export var spawn_time = 2.2
 signal spawned(node:Node)
-
+@onready var manager:EnemyManager = get_parent()
 func _process(delta: float) -> void:
 	spawn_time -= delta
 	if spawn_time<=0:
@@ -14,10 +15,3 @@ func _process(delta: float) -> void:
 		spawned.emit(node)
 		await get_tree().create_timer(0.5)
 		queue_free()
-
-func _enter_tree() -> void:
-	if EnemyManager.instance:
-		EnemyManager.instance.register_spawner(self)
-func _exit_tree() -> void:
-	if EnemyManager.instance:
-		EnemyManager.instance.unregister_spawner(self)

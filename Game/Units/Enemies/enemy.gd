@@ -14,6 +14,7 @@ var update_target_position_time = 0.0
 	set(v):
 		health_current = v
 		health_changed.emit()
+
 signal took_damage(damage:float)
 signal health_depleted()
 signal health_changed()
@@ -26,13 +27,19 @@ func take_damage(damage:float):
 	
 
 func _ready():
-	health_depleted.connect(_on_death)
 	z_index = 0
 	took_damage.connect(_recieved_damage)
 	health_depleted.connect(_health_depleted)
+
+func _enter_tree() -> void:
+	get_tree().emit_signal("enemy_added",self)
 	
-func _on_death():
-	Player.instance.resource.exp_add(experience_on_death)
+func _exit_tree() -> void:
+	get_tree().emit_signal("enemy_removed",self)
+	
+#func _on_death():
+	#
+	#Player.instance.resource.exp_add(experience_on_death)
 
 func _body_entered(other:Node2D):
 	if other is Player:
@@ -64,11 +71,5 @@ func _particle_create(particles:GPUParticles2D):
 	await particles.finished
 	particles.queue_free()
 	
-func _enter_tree() -> void:
-	if EnemyManager.instance:
-		EnemyManager.instance.register(self)
-func _exit_tree() -> void:
-	if EnemyManager.instance:
-		EnemyManager.instance.unregister(self)
 		
 		

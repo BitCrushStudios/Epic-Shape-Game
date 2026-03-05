@@ -2,22 +2,32 @@
 extends RigidBody2D
 class_name Player
 static var instance:Player
-
+signal health_depleted()
 signal resource_changed()
-signal weapons_changed()
+signal iframe_triggered()
 @export var resource: PlayerResource:
 	set(v):
 		if resource and resource.changed.is_connected(resource_changed.emit):
-				resource.changed.disconnect(resource_changed.emit)
-		if resource and resource.weapons_changed.is_connected(weapons_changed.emit):
-				resource.weapons_changed.disconnect(weapons_changed.emit)
+			resource.changed.disconnect(resource_changed.emit)
+		if resource and resource.health_depleted.is_connected(health_depleted.emit):
+			resource.health_depleted.disconnect(health_depleted.emit)
+		if resource and resource.iframe_triggered.is_connected(iframe_triggered.emit):
+			resource.iframe_triggered.disconnect(iframe_triggered.emit)
 		resource = v
 		if resource:
 			resource.changed.connect(resource_changed.emit)
-			resource.weapons_changed.connect(weapons_changed.emit)
+			resource.health_depleted.connect(health_depleted.emit)
+			resource.iframe_triggered.connect(iframe_triggered.emit)
 		resource_changed.emit()
+signal weapons_changed()
+@export var weaponsManager:WeaponsManager:
+	set(v):
+		if weaponsManager and weaponsManager.weapons_changed.is_connected(weapons_changed.emit):
+			weaponsManager.weapons_changed.disconnect(weapons_changed.emit)
+		weaponsManager = v
+		if weaponsManager:
+			weaponsManager.weapons_changed.connect(weapons_changed.emit)
 		weapons_changed.emit()
-
 var size_tween:Tween
 
 func _update_size():
@@ -36,8 +46,10 @@ func _update_size():
 func _update_mass():
 	mass = resource.base_mass + (resource.base_mass_add * resource.stat_mass)
 func update_weapons():
+	if not weaponsManager:
+		return
 	var to_be_added = resource.weapons.duplicate()
-	for ins in Weapon.instances:
+	for ins in weaponsManager.get_children(true):
 		if resource.weapons.has(ins.resource):
 			to_be_added.erase(ins.resource)
 		else:
@@ -47,8 +59,8 @@ func update_weapons():
 		ins.resource = res
 		ins.top_level = true
 		ins.global_position = global_position + Vector2(randf_range(-20,20),randf_range(-20,20))
-		add_child(ins,true)
-			
+		weaponsManager.add_child(ins,true)
+
 func update_resource():
 	_update_size()
 	_update_mass()
@@ -61,14 +73,13 @@ func _iframe_triggered():
 	
 func _ready():
 	Player.instance = self
-	resource.iframe_triggered.connect(_iframe_triggered)
-	resource.reset_health()
-	weapons_changed.connect(update_weapons)
 	resource_changed.connect(update_resource)
-	for w in Weapon.instances:
-		resource.weapons.append(w.resource)
-	
-var mouse_origin
+	iframe_triggered.connect(_iframe_triggered)
+	health_depleted.connect(_health_depleted)
+	resource.reset_health()
+func _health_depleted():
+	if not is_queued_for_deletion():
+		queue_free()
 
 func show_upgrade_modal():
 	if resource.levels_gained>0:
@@ -98,29 +109,15 @@ func show_equip_modal():
 	await modal.modal()
 	modal.queue_free()
 	get_tree().paused=false
-
+	
+@export var move_towards_desired_velocity = true
+@export var desired_velocity = Vector2.ZERO
 func _physics_process(delta: float) -> void:
-	apply_torque(-rotation_degrees * 1000.0 * mass)
 	if Engine.is_editor_hint():
 		return
-	elif Input.is_action_just_pressed("dev_player_upgrade"):
-		show_upgrade_modal()
-	elif Input.is_action_just_pressed("dev_player_shop"):
-		show_shop_modal()
-	elif Input.is_action_just_pressed("dev_player_equip"):
-		show_equip_modal()
-	elif Input.is_action_just_pressed("dev_player_extra_weapon"):
-		var upgrade = ExtraWeaponUpgradeResource.new().apply(resource)
-	elif Input.is_action_just_pressed("dev_player_size_up"):
-		resource.stat_size += 1
-	elif Input.is_action_just_pressed("dev_player_size_down"):
-		resource.stat_size -= 1
-	resource.update_iframe(delta)
-			
-	var mvec = Input.get_vector("move_left","move_right","move_up","move_down")
-	var desired_velocity = mvec * resource.speed
-	desired_velocity = desired_velocity - linear_velocity
-	desired_velocity = desired_velocity.limit_length(resource.speed) / resource.speed
-	desired_velocity = desired_velocity * resource.speed * resource.accel_mult
+	if is_queued_for_deletion():
+		return
 	apply_central_force(desired_velocity * mass)
+	resource.update_iframe(delta)
+	
 	
