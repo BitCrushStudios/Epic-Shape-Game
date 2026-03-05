@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yr6yf2u3lxf0"]
 
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/enemy.gd" id="1_aljkd"]
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_aljkd"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_gtfyx"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_15di7"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_aljkd"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyaxvoy6xav4" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0008.png" id="13_qjo1e"]
 [ext_resource type="Texture2D" uid="uid://bjkaatv4wiui" path="res://Assets/Art/Enemies/Roller/Move Animation/frame0009.png" id="14_rjgth"]
 [ext_resource type="Script" uid="uid://nyio8wkess1t" path="res://Game/Units/Enemies/facing_velocity.gd" id="15_tkbb7"]
+[ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="16_7yhbt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0x2q"]
 animations = [{
@@ -113,7 +114,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtfyx"]
 radius = 20.880613
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jaoy"]
+radius = 53.037724
+
 [node name="EnemyRoller" type="RigidBody2D" unique_id=1524725432 node_paths=PackedStringArray("agent")]
+collision_layer = 4
+collision_mask = 13
 mass = 0.5
 contact_monitor = true
 max_contacts_reported = 5
@@ -164,3 +170,13 @@ shape = SubResource("CircleShape2D_gtfyx")
 [node name="Death" type="AudioStreamPlayer" parent="." unique_id=635201286]
 stream = ExtResource("7_g7c88")
 pitch_scale = 1.5
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1397160037]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("16_7yhbt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=375521116]
+shape = SubResource("CircleShape2D_8jaoy")
+debug_color = Color(0.91219205, 9.8379256e-05, 0.72580904, 0.41960785)

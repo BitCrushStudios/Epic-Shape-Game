@@ -9,6 +9,8 @@
 script = ExtResource("15_vcjvl")
 scene = ExtResource("3_084k1")
 image = ExtResource("2_ua5qt")
+interval_time = null
+interval_time_max = null
 metadata/_custom_type_script = "uid://cx0degy3b2dww"
 
 [node name="WavePairUi" type="HBoxContainer" unique_id=803477554]
@@ -21,7 +23,7 @@ resource = SubResource("Resource_rarow")
 [node name="CountLabel" type="Label" parent="." unique_id=2116393752]
 layout_mode = 2
 theme_type_variation = &"OutlineLabel"
-text = "0 x"
+text = "0/0"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1899701722]
 layout_mode = 2

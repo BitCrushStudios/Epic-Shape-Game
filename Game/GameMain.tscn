@@ -6,13 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="3_ytreg"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
-[ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="7_5s0eo"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="8_3jy75"]
-[ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="9_eihxa"]
-[ext_resource type="Texture2D" uid="uid://b26qrveirc2yy" path="res://Assets/Art/Enemies/Roller/Roller.png" id="10_t3b64"]
-[ext_resource type="PackedScene" uid="uid://yr6yf2u3lxf0" path="res://Game/Units/Enemies/EnemyRoller.tscn" id="11_v6h5u"]
-[ext_resource type="Texture2D" uid="uid://bbkglt5jwg3mv" path="res://Assets/Art/Enemies/Tank/Tank.png" id="12_aa4rq"]
-[ext_resource type="PackedScene" uid="uid://o3qjyg751wn3" path="res://Game/Units/Enemies/EnemyTank.tscn" id="13_rtxcr"]
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="16_wgwva"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="17_vmr23"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="18_52jib"]
@@ -22,27 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://brkfgcstrond8" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0001.png" id="24_ie25g"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="25_hes46"]
 [ext_resource type="Texture2D" uid="uid://bpgyi04fk4wrj" path="res://Assets/Art/Shadow/Effect2.png" id="26_cci3g"]
-
-[sub_resource type="Resource" id="Resource_paojk"]
-script = ExtResource("9_eihxa")
-scene = ExtResource("8_3jy75")
-image = ExtResource("7_5s0eo")
-interval_time = null
-count_max = null
-
-[sub_resource type="Resource" id="Resource_ccwv3"]
-script = ExtResource("9_eihxa")
-scene = ExtResource("11_v6h5u")
-image = ExtResource("10_t3b64")
-interval_time = null
-count_max = null
-
-[sub_resource type="Resource" id="Resource_3pgyt"]
-script = ExtResource("9_eihxa")
-scene = ExtResource("13_rtxcr")
-image = ExtResource("12_aa4rq")
-interval_time = null
-count_max = null
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_f77hp"]
 
@@ -277,12 +250,15 @@ weaponsManager = NodePath("../WeaponManager")
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("6_2wbff")
-enemy_basic_pair = SubResource("Resource_paojk")
-enemy_roller_pair = SubResource("Resource_ccwv3")
-enemy_tank_pair = SubResource("Resource_3pgyt")
 
-[node name="EnemyTriangle" parent="EnemyManager" unique_id=1870736647 instance=ExtResource("8_3jy75")]
-position = Vector2(587, 298)
+[node name="EnemyTriangle" parent="EnemyManager" unique_id=166037116 instance=ExtResource("8_3jy75")]
+position = Vector2(554, 659)
+
+[node name="EnemyTriangle2" parent="EnemyManager" unique_id=748767585 instance=ExtResource("8_3jy75")]
+position = Vector2(662, 799)
+
+[node name="EnemyTriangle3" parent="EnemyManager" unique_id=161799392 instance=ExtResource("8_3jy75")]
+position = Vector2(850, 816)
 
 [node name="Arena" type="TileMapLayer" parent="." unique_id=235472239]
 z_index = -3

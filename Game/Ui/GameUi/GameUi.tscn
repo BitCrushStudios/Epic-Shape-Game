@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmprloh75j06"]
 
-[ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Game/Ui/game_ui.gd" id="1_pjk1m"]
+[ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Game/Ui/GameUi/GameUi.gd" id="1_pjk1m"]
 [ext_resource type="Texture2D" uid="uid://cu532q23ccxui" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressUnder.png" id="2_47yhi"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="2_wlq61"]
 [ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="3_pcuml"]
@@ -18,18 +18,24 @@
 script = ExtResource("2_wlq61")
 scene = ExtResource("4_70m18")
 image = ExtResource("3_pcuml")
+interval_time = null
+count_max = null
 metadata/_custom_type_script = "uid://cx0degy3b2dww"
 
 [sub_resource type="Resource" id="Resource_xc7dv"]
 script = ExtResource("2_wlq61")
 scene = ExtResource("6_fi0kh")
 image = ExtResource("5_pp0kc")
+interval_time = null
+count_max = null
 metadata/_custom_type_script = "uid://cx0degy3b2dww"
 
 [sub_resource type="Resource" id="Resource_3gxc4"]
 script = ExtResource("2_wlq61")
 scene = ExtResource("8_g1dnx")
 image = ExtResource("7_ewu2f")
+interval_time = null
+count_max = null
 metadata/_custom_type_script = "uid://cx0degy3b2dww"
 
 [sub_resource type="Gradient" id="Gradient_3bj3t"]

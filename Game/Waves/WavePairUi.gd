@@ -18,4 +18,4 @@ func resource_changed():
 	if resource:
 		if resource.image:
 			$TextureRect.texture = resource.image
-		$CountLabel.text = "%d x" % resource.count
+		$CountLabel.text = "%d/%d" % [resource.count, resource.count_max]

@@ -3,6 +3,7 @@ extends RigidBody2D
 class_name Weapon
 static var instances : Array[Weapon] = []
 signal resource_changed()
+signal entered_hurtbox(node:Node)
 @export var resource: WeaponResource:
 	get():
 		return resource
@@ -27,7 +28,16 @@ func _resource_changed():
 	$CollisionShape2D.shape = resource.shape
 func _ready():
 	resource_changed.connect(_resource_changed)
-	body_entered.connect(_on_body_entered)
+	entered_hurtbox.connect(_entered_hurtbox)
+	
+func _entered_hurtbox(node:Node):
+	if state != State.Activated:
+		return
+	if node is Enemy:
+		node.take_damage(resource.damage)
+		$Hit.pitch_scale = randf_range(0.9, 1.3)
+		$Hit.play()
+
 	
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -47,13 +57,6 @@ func _physics_process(_delta: float) -> void:
 		
 func _on_body_entered(body:Node2D):
 	%ActivatedSprite.play("Hit")
-	if state != State.Activated:
-		return
-	if body is RigidBody2D:
-		if body is Enemy:
-			body.take_damage(resource.damage)
-	$Hit.pitch_scale = randf_range(0.9, 1.3)
-	$Hit.play()
 	
 func _enter_tree() -> void:
 	instances.append(self)

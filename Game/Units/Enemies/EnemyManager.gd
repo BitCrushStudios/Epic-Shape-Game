@@ -2,7 +2,6 @@
 extends Node
 class_name EnemyManager
 static var instance:EnemyManager
-					
 var wave_index = 0
 
 signal enemy_added(enemy:Enemy)
@@ -132,20 +131,26 @@ var waves = [
 	),
 ]
 	
-	
+
 func _process(delta:float):
 	if  Engine.is_editor_hint():
 		return
-	var basic_diff = (1 if Input.is_action_just_pressed("dev_enemy_basic_up") else 0 - 1 if Input.is_action_just_pressed("dev_enemy_basic_down") else 0)
+	var basic_diff = (
+		(1 if Input.is_action_just_pressed("dev_enemy_basic_up") else 0) - 
+		(1 if Input.is_action_just_pressed("dev_enemy_basic_down") else 0))
 	if basic_diff:
-		enemy_basic_pair.count = max(0, enemy_basic_pair.count+basic_diff)
-		print(enemy_basic_pair.count)
-	var roller_diff = (1 if Input.is_action_just_pressed("dev_enemy_roller_up") else 0 - 1 if Input.is_action_just_pressed("dev_enemy_roller_down") else 0)
+		enemy_basic_pair.count_max = max(0, enemy_basic_pair.count_max+basic_diff)
+		prints(enemy_basic_pair.count_max,active_wave.pairs[0].count_max)
+	var roller_diff = (
+		(1 if Input.is_action_just_pressed("dev_enemy_roller_up") else 0) - 
+		(1 if Input.is_action_just_pressed("dev_enemy_roller_down") else 0))
 	if roller_diff:
-		enemy_roller_pair.count = max(0, enemy_roller_pair.count+roller_diff)
-	var tank_diff = (1 if Input.is_action_just_pressed("dev_enemy_tank_up") else 0 - 1 if Input.is_action_just_pressed("dev_enemy_tank_down") else 0)
+		enemy_roller_pair.count_max = max(0, enemy_roller_pair.count_max+roller_diff)
+	var tank_diff = (
+		(1 if Input.is_action_just_pressed("dev_enemy_tank_up") else 0) - 
+		(1 if Input.is_action_just_pressed("dev_enemy_tank_down") else 0))
 	if tank_diff:
-		enemy_tank_pair.count = max(0, enemy_tank_pair.count+tank_diff)
+		enemy_tank_pair.count_max = max(0, enemy_tank_pair.count_max+tank_diff)
 	if active_wave:
 		active_wave.process(self,delta)
 	

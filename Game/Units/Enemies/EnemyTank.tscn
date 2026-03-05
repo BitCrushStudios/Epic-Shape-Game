@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o3qjyg751wn3"]
 
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/enemy.gd" id="1_2j44q"]
+[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/Enemy.gd" id="1_2j44q"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_sdms5"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_ub88h"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_nips6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ba3v0f2d27akl" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0005.png" id="10_yjol7"]
 [ext_resource type="Texture2D" uid="uid://bg6g077ak5d7u" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0006.png" id="11_4qcre"]
 [ext_resource type="Texture2D" uid="uid://cd2kbtjsyow6t" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0007.png" id="12_1uspc"]
+[ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="14_nrv21"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v16b6"]
 animations = [{
@@ -143,7 +144,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_2m6jk"]
 radius = 43.046486
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_r8v6j"]
+radius = 70.11419
+
 [node name="EnemyTank" type="RigidBody2D" unique_id=211797002 node_paths=PackedStringArray("agent")]
+collision_layer = 4
+collision_mask = 13
 mass = 50.0
 contact_monitor = true
 max_contacts_reported = 5
@@ -186,9 +192,16 @@ libraries/ = SubResource("AnimationLibrary_0t8mf")
 playback_default_blend_time = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=73121276]
-position = Vector2(-2, 12)
 shape = SubResource("CircleShape2D_2m6jk")
 
 [node name="Death" type="AudioStreamPlayer" parent="." unique_id=567472421]
 stream = ExtResource("6_sdms5")
 pitch_scale = 1.5
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1793624206]
+monitorable = false
+script = ExtResource("14_nrv21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1859447088]
+shape = SubResource("CircleShape2D_r8v6j")
+debug_color = Color(0.91219205, 9.8379256e-05, 0.72580904, 0.41960785)

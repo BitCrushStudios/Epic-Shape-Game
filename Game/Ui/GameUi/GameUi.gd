@@ -1,6 +1,7 @@
 @tool
 extends CanvasLayer
 class_name GameUi
+
 @export var player:Player=null:
 	set(v):
 		if player and player.resource_changed.is_connected(player_resource_changed):
@@ -9,6 +10,7 @@ class_name GameUi
 		if player:
 			player.resource_changed.connect(player_resource_changed)
 		player_resource_changed()
+		
 @export var enemyManager:EnemyManager=null:
 	set(v):
 		if enemyManager and enemyManager.resource_changed.is_connected(enemy_manager_resource_changed):
@@ -18,44 +20,53 @@ class_name GameUi
 		print(v)
 		if enemyManager:
 			enemyManager.resource_changed.connect(enemy_manager_resource_changed)
-		player_resource_changed()
-		
+		enemy_manager_resource_changed()
+
 @export var health_max = 1.0:
 	set(v):
 		health_max = v
 		update_all_ui()
+		
 @export var health_current = 1.0:
 	set(v):
 		health_current = v
 		update_all_ui()
+		
 @export var exp_max = 1.0:
 	set(v):
 		exp_max = v
 		update_all_ui()
+		
 @export var exp_current = 1.0:
 	set(v):
 		exp_current = v
 		update_all_ui()
+		
 @export var upgrade_star_count = 0:
 	set(v):
 		upgrade_star_count = v
 		update_all_ui()
+		
 @export var current_wave = 1:
 	set(v):
 		current_wave = v
 		update_all_ui()
+		
 @export var time_remaining = 30.0:
 	set(v):
 		time_remaining = v
 		update_all_ui()
+		
 @export var wave_composition: Array[WavePair]:
 	set(v):
 		wave_composition = v
 		update_all_ui()
+		
 @export var show_hurt_indicator = false:
 	set(v):
 		show_hurt_indicator = v
 		update_all_ui()
+		
 func player_resource_changed():
 	health_max = player.resource.health_max
 	health_current = player.resource.health_current
@@ -64,10 +75,13 @@ func player_resource_changed():
 	current_wave = player.resource.current_wave
 	upgrade_star_count = player.resource.levels_gained
 	show_hurt_indicator = player.resource.iframe_current>0
-func enemy_manager_resource_changed():
 	
+func enemy_manager_resource_changed():
 	wave_composition = enemyManager.active_wave.pairs
-	time_remaining = enemyManager.active_wave.time_max - enemyManager.active_wave.time_current
+	time_remaining = (
+		enemyManager.active_wave.time_max - 
+		enemyManager.active_wave.time
+	)
 	
 	
 func _ready():

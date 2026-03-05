@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bln07wgbqhiu" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0007.png" id="20_5th7d"]
 [ext_resource type="Texture2D" uid="uid://qfpw6pxxstdw" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0008.png" id="21_o5vmo"]
 [ext_resource type="Texture2D" uid="uid://btt3xnlr8tw8j" path="res://Assets/Art/Enemies/BasicTriangle/Death/frame0009.png" id="22_4sy75"]
+[ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="25_lonei"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fm6ei"]
 animations = [{
@@ -195,8 +196,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_hu5f4"]
 radius = 28.01785
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2gew"]
+radius = 44.04543
+
 [node name="EnemyTriangle" type="RigidBody2D" unique_id=166037116 node_paths=PackedStringArray("agent")]
 y_sort_enabled = true
+collision_layer = 4
+collision_mask = 13
 contact_monitor = true
 max_contacts_reported = 5
 linear_damp = 0.5
@@ -255,3 +261,13 @@ shape = SubResource("CircleShape2D_hu5f4")
 [node name="Death" type="AudioStreamPlayer" parent="." unique_id=1728244227]
 stream = ExtResource("14_fm6ei")
 pitch_scale = 1.5
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=657610489]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("25_lonei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=242031466]
+shape = SubResource("CircleShape2D_t2gew")
+debug_color = Color(0.91219205, 9.8379256e-05, 0.72580904, 0.41960785)

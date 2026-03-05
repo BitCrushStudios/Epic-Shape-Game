@@ -5,6 +5,7 @@ var player:Player:
 	set(v):
 		player=v
 		update_refs()
+
 var enemyManager: EnemyManager:
 	set(v):
 		enemyManager = v
@@ -38,8 +39,7 @@ func _ready() -> void:
 	child_exiting_tree.connect(_child_exiting_tree)
 	for c in get_children(true):
 		_child_entered_tree(c)
-	gameUi = preload("res://Game/Ui/GameUi.tscn").instantiate()
-	add_child(gameUi)
+	add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
 	
 func _child_entered_tree(node:Node):
 	if node is Player: 

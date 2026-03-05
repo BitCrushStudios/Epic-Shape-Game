@@ -26,10 +26,18 @@ func take_damage(damage:float):
 		health_depleted.emit()
 	
 
+signal entered_hurtbox(node:Node)
 func _ready():
 	z_index = 0
 	took_damage.connect(_recieved_damage)
 	health_depleted.connect(_health_depleted)
+	entered_hurtbox.connect(_entered_hurtbox)
+	
+func _entered_hurtbox(node:Node):
+	if node is Player:
+		node.resource.take_damage(damage)
+		#$Hit.pitch_scale = randf_range(0.9, 1.3)
+		#$Hit.play()
 
 func _enter_tree() -> void:
 	get_tree().emit_signal("enemy_added",self)

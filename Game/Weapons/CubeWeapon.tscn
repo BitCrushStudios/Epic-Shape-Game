@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbt0babfbxfde"]
 
-[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_x6q4i"]
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/Weapon.gd" id="1_x6q4i"]
 [ext_resource type="Resource" uid="uid://clky6g0bw3w53" path="res://Game/Weapons/CubeWeaponResource.tres" id="2_qg1ck"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_r617p"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_rdb24"]
@@ -113,6 +113,8 @@ _data = {
 
 [node name="Weapon" type="RigidBody2D" unique_id=1251268979]
 y_sort_enabled = true
+collision_layer = 8
+collision_mask = 15
 mass = 3.0
 physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
