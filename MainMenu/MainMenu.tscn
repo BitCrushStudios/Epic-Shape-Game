@@ -223,17 +223,20 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "Return"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="SettingContainer/MarginContainer/Control" unique_id=2145611179]
+[node name="SettingPanels" type="VBoxContainer" parent="SettingContainer/MarginContainer/Control" unique_id=888487849]
 layout_mode = 2
 
-[node name="VBoxContainer" type="GridContainer" parent="SettingContainer/MarginContainer/Control/VBoxContainer2" unique_id=1214939694]
+[node name="Visuals" type="VBoxContainer" parent="SettingContainer/MarginContainer/Control/SettingPanels" unique_id=2145611179]
+layout_mode = 2
+
+[node name="Visuals" type="GridContainer" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1214939694]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 2
 
-[node name="Label" type="Label" parent="SettingContainer/MarginContainer/Control/VBoxContainer2/VBoxContainer" unique_id=1143746820]
+[node name="Label" type="Label" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/Visuals" unique_id=1143746820]
 layout_mode = 2
 theme_type_variation = &"OutlineLabel"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -241,7 +244,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "Resolution"
 
-[node name="ResolutionScale" type="OptionButton" parent="SettingContainer/MarginContainer/Control/VBoxContainer2/VBoxContainer" unique_id=511400725]
+[node name="ResolutionScale" type="OptionButton" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/Visuals" unique_id=511400725]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -257,7 +260,7 @@ popup/item_2/id = 2
 popup/item_3/text = "x4"
 popup/item_3/id = 3
 
-[node name="FullScreen" type="CheckBox" parent="SettingContainer/MarginContainer/Control/VBoxContainer2" unique_id=1223253075]
+[node name="FullScreen" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1223253075]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_bsanu")
@@ -268,7 +271,7 @@ text = "FullScreen"
 flat = true
 alignment = 2
 
-[node name="Music" type="CheckBox" parent="SettingContainer/MarginContainer/Control/VBoxContainer2" unique_id=1502194138]
+[node name="Music" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1502194138]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_bsanu")
@@ -280,7 +283,7 @@ text = "Music"
 flat = true
 alignment = 2
 
-[node name="Sound" type="CheckBox" parent="SettingContainer/MarginContainer/Control/VBoxContainer2" unique_id=440931577]
+[node name="Sound" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=440931577]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_bsanu")
@@ -292,10 +295,163 @@ text = "Sound"
 flat = true
 alignment = 2
 
-[node name="Control" type="Control" parent="SettingContainer/MarginContainer/Control" unique_id=846451743]
+[node name="Controls" type="GridContainer" parent="SettingContainer/MarginContainer/Control" unique_id=1531657566]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.25
+size_flags_vertical = 0
+columns = 4
+
+[node name="LeftLabel" type="Label" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=815707291]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineLabelSmall"
+text = "Left"
+horizontal_alignment = 2
+
+[node name="LeftKeyButton1" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=1511884940]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="LeftKeyButton2" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=1183139251]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="LeftKeyButton3" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=286070839]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="RightLabel" type="Label" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=60712480]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineLabelSmall"
+text = "Right"
+horizontal_alignment = 2
+
+[node name="RightKeyButton1" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=763352532]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="RightKeyButton2" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=1628721996]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="RightKeyButton3" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=2069197040]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="UpLabel" type="Label" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=1564104478]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineLabelSmall"
+text = "Up"
+horizontal_alignment = 2
+
+[node name="UpKeyButton1" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=424126453]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="UpKeyButton2" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=543823772]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="UpKeyButton3" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=1997590339]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="DownLabel" type="Label" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=133988541]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineLabelSmall"
+text = "Down"
+horizontal_alignment = 2
+
+[node name="DownKeyButton1" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=581861851]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="DownKeyButton2" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=1683635695]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="DownKeyButton3" type="Button" parent="SettingContainer/MarginContainer/Control/Controls" unique_id=752926803]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OutlineButton"
+theme_override_font_sizes/font_size = 16
+text_overrun_behavior = 3
+clip_text = true
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1827895134]
 stream = ExtResource("3_621fb")
