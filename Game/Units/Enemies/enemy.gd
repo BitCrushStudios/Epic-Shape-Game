@@ -60,12 +60,16 @@ func _recieved_damage(_damage:float):
 	%Animation.play("damage")
 	_particle_create(preload("./DamageParticles.tscn").instantiate())
 	
-func _health_depleted():
+func spawn_coins():
+	await get_tree().process_frame
 	for i in range(10):
 		var gp:GoldPiece = preload("res://Game/Gold/GoldPiece.tscn").instantiate()
 		get_tree().current_scene.add_child(gp)
 		gp.global_position = global_position
-		gp.apply_central_impulse((Vector2.RIGHT*1000.0).rotated(TAU*randf()))
+		gp.apply_central_impulse((Vector2.RIGHT*300.0).rotated(TAU*randf()))
+		await get_tree().process_frame
+func _health_depleted():
+	spawn_coins()
 	collision_mask = 0
 	collision_layer = 0
 	z_index = -1
