@@ -69,23 +69,26 @@ func _process(delta: float) -> void:
 		return 
 	if OS.has_feature("standalone"):
 		return
-	if Input.is_action_just_pressed("dev_player_upgrade"):
-		player.show_upgrade_modal()
-	if Input.is_action_just_pressed("dev_player_shop"):
-		player.show_shop_modal()
-	if Input.is_action_just_pressed("dev_player_equip"):
-		player.show_equip_modal()
-	if Input.is_action_just_pressed("dev_player_size_up"):
-		player.resource.stat_size += 1
-	if Input.is_action_just_pressed("dev_player_size_down"):
-		player.resource.stat_size -= 1
+	if player:
+		if Input.is_action_just_pressed("dev_player_upgrade"):
+			player.show_upgrade_modal()
+		if Input.is_action_just_pressed("dev_player_shop"):
+			player.show_shop_modal()
+		if Input.is_action_just_pressed("dev_player_equip"):
+			player.show_equip_modal()
+		if Input.is_action_just_pressed("dev_player_size_up"):
+			player.resource.stat_size += 1
+		if Input.is_action_just_pressed("dev_player_size_down"):
+			player.resource.stat_size -= 1
+		if Input.is_action_just_pressed("dev_player_die"):
+			player.resource.deplete_health()
 	if weaponsManager:
 		if Input.is_action_just_pressed("dev_weapon_count_up"):
 			weaponsManager.dev_add_weapon()
 		if Input.is_action_just_pressed("dev_weapon_count_down"):
 			weaponsManager.dev_remove_weapon()
-	if Input.is_action_just_pressed("dev_player_die"):
-		player.resource.deplete_health()
+	if Input.is_action_just_pressed("dev_game_pause"):
+		get_tree().paused = not get_tree().paused
 	if Input.is_action_just_pressed("dev_player_respawn"):
 		if player:
 			player.queue_free()

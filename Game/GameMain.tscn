@@ -248,8 +248,9 @@ position = Vector2(876, 675)
 position = Vector2(911, 542)
 weaponsManager = NodePath("../WeaponManager")
 
-[node name="EnemyManager" type="Node" parent="." unique_id=578400424]
+[node name="EnemyManager" type="Node" parent="." unique_id=578400424 node_paths=PackedStringArray("enemies")]
 script = ExtResource("6_2wbff")
+enemies = [NodePath("EnemyTriangle"), NodePath("EnemyTriangle2"), NodePath("EnemyTriangle3")]
 
 [node name="EnemyTriangle" parent="EnemyManager" unique_id=166037116 instance=ExtResource("8_3jy75")]
 position = Vector2(554, 659)
