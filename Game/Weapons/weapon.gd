@@ -31,12 +31,11 @@ func _ready():
 	entered_hurtbox.connect(_entered_hurtbox)
 	
 func _entered_hurtbox(node:Node):
+	$Hit.play()
 	if state != State.Activated:
 		return
 	if node is Enemy:
 		node.take_damage(resource.damage)
-		$Hit.pitch_scale = randf_range(0.9, 1.3)
-		$Hit.play()
 
 	
 func _physics_process(_delta: float) -> void:

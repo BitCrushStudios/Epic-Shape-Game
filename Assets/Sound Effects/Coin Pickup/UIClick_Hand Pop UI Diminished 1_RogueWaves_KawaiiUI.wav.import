@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://05uillrebupl"
+path="res://.godot/imported/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav-4a0f5ac671ababade6a4d877366d2069.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Coin Pickup/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav"
+dest_files=["res://.godot/imported/UIClick_Hand Pop UI Diminished 1_RogueWaves_KawaiiUI.wav-4a0f5ac671ababade6a4d877366d2069.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

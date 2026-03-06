@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dy0hs47asksou"]
 
 [ext_resource type="Script" uid="uid://bvamtgso5d54y" path="res://Game/Gold/GoldPiece.gd" id="1_rgo6i"]
-[ext_resource type="Texture2D" uid="uid://dipq55cj25ihk" path="res://Assets/Art/Particles/Gold .png" id="1_wjgsl"]
+[ext_resource type="Texture2D" uid="uid://blqocut8c3138" path="res://Assets/Art/Gold/CoinT.png" id="2_rgo6i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1va8x"]
 
@@ -12,7 +12,9 @@ mass = 0.01
 script = ExtResource("1_rgo6i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649949279]
-texture = ExtResource("1_wjgsl")
+modulate = Color(1, 1, 1, 0.6862745)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_rgo6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1501964223]
 shape = SubResource("CircleShape2D_1va8x")

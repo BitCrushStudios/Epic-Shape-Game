@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjp2b5iomkei"]
 
-[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/Player.gd" id="1_ddoul"]
+[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/player.gd" id="1_ddoul"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_cvipf"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_tok1r"]
 [ext_resource type="Texture2D" uid="uid://c65lwc744dgwt" path="res://Assets/Art/Player/Player @.png" id="3_fd82q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://df3dw2rgkl02f" path="res://Game/Units/Player/PlayerController.gd" id="7_thx7d"]
 [ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="9_jiict"]
 [ext_resource type="Script" uid="uid://dx2vqd4gi3f7u" path="res://Game/Units/Player/GoldPickupBox.gd" id="10_wnw4f"]
+[ext_resource type="AudioStream" uid="uid://bdnmd5yugdp85" path="res://Assets/Sound Effects/Coin Pickup/Pickup3.wav" id="11_thx7d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
 friction = 0.0
@@ -134,3 +135,8 @@ script = ExtResource("10_wnw4f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoldPickupBox" unique_id=570573252]
 shape = SubResource("CircleShape2D_jiict")
 debug_color = Color(0.6495554, 0.52160746, 0, 0.41960785)
+
+[node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=35876572]
+stream = ExtResource("11_thx7d")
+volume_db = -10.0
+pitch_scale = 0.01
