@@ -199,6 +199,8 @@ stream = ExtResource("6_sdms5")
 pitch_scale = 1.5
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1793624206]
+collision_layer = 0
+collision_mask = 8
 monitorable = false
 script = ExtResource("14_nrv21")
 
