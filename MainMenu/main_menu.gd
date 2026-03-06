@@ -22,7 +22,7 @@ func _on_start_pressed() -> void:
 	.set_trans(Tween.TRANS_CUBIC))
 	await tween.finished
 	
-	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://Game/GameMain.tscn")
 
 
 func _on_quit_pressed() -> void:

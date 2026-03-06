@@ -26,7 +26,8 @@ var gameUi: GameUi:
 	set(v):
 		gameUi = v
 		update_refs()
-		
+var pause_menu: CanvasLayer
+
 func update_refs():
 	if gameUi:
 		gameUi.player = player
@@ -40,6 +41,9 @@ func _ready() -> void:
 	for c in get_children(true):
 		_child_entered_tree(c)
 	add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
+	pause_menu = preload("res://MainMenu/pause_menu.tscn").instantiate()
+	pause_menu.visible = false
+	add_child(pause_menu)
 	
 func _child_entered_tree(node:Node):
 	if node is Player: 
@@ -87,8 +91,7 @@ func _process(delta: float) -> void:
 			weaponsManager.dev_add_weapon()
 		if Input.is_action_just_pressed("dev_weapon_count_down"):
 			weaponsManager.dev_remove_weapon()
-	if Input.is_action_just_pressed("dev_game_pause"):
-		get_tree().paused = not get_tree().paused
+	
 	if Input.is_action_just_pressed("dev_player_respawn"):
 		if player:
 			player.queue_free()
