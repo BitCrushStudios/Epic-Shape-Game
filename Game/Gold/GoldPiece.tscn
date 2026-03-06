@@ -4,17 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://blqocut8c3138" path="res://Assets/Art/Gold/CoinT.png" id="2_rgo6i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1va8x"]
+radius = 14.529467
 
 [node name="GoldPiece" type="RigidBody2D" unique_id=230645189]
 collision_layer = 16
 collision_mask = 17
 mass = 0.01
+linear_damp = 2.0
 script = ExtResource("1_rgo6i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649949279]
-modulate = Color(1, 1, 1, 0.6862745)
-scale = Vector2(0.8, 0.8)
+modulate = Color(0.98039216, 0.73333335, 0.73333335, 1)
+position = Vector2(0, 0.41295305)
+scale = Vector2(0.5583189, 0.5583189)
 texture = ExtResource("2_rgo6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1501964223]
+scale = Vector2(0.8259079, 0.8259079)
 shape = SubResource("CircleShape2D_1va8x")
