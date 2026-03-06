@@ -170,7 +170,6 @@ _data = {
 script = ExtResource("1_tqfok")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
-process_mode = 3
 stream = ExtResource("2_052kc")
 volume_db = -23.0
 autoplay = true
