@@ -61,6 +61,11 @@ func _recieved_damage(_damage:float):
 	_particle_create(preload("./DamageParticles.tscn").instantiate())
 	
 func _health_depleted():
+	for i in range(10):
+		var gp:GoldPiece = preload("res://Game/Gold/GoldPiece.tscn").instantiate()
+		get_tree().current_scene.add_child(gp)
+		gp.global_position = global_position
+		gp.apply_central_impulse((Vector2.RIGHT*1000.0).rotated(TAU*randf()))
 	collision_mask = 0
 	collision_layer = 0
 	z_index = -1
@@ -72,6 +77,7 @@ func _health_depleted():
 	$Death.pitch_scale = randf_range(1.2,1.5)
 	await _particle_create(preload("./DeathParticles.tscn").instantiate())
 	queue_free()
+		
 	
 func _particle_create(particles:GPUParticles2D):
 	add_child(particles,true,INTERNAL_MODE_FRONT)

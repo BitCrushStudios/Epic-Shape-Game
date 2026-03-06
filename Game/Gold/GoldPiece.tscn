@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dy0hs47asksou"]
+
+[ext_resource type="Script" uid="uid://bvamtgso5d54y" path="res://Game/Gold/GoldPiece.gd" id="1_rgo6i"]
+[ext_resource type="Texture2D" uid="uid://dipq55cj25ihk" path="res://Assets/Art/Particles/Gold .png" id="1_wjgsl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1va8x"]
+
+[node name="GoldPiece" type="RigidBody2D" unique_id=230645189]
+collision_layer = 16
+collision_mask = 17
+mass = 0.01
+script = ExtResource("1_rgo6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=649949279]
+texture = ExtResource("1_wjgsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1501964223]
+shape = SubResource("CircleShape2D_1va8x")
