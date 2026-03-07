@@ -61,8 +61,9 @@ func _recieved_damage(_damage:float):
 	_particle_create(preload("./DamageParticles.tscn").instantiate())
 	
 func spawn_coins():
+	var amount  = randf_range(1,5)
 	await get_tree().process_frame
-	for i in range(10):
+	for i in range(amount):
 		var gp:GoldPiece = preload("res://Game/Gold/GoldPiece.tscn").instantiate()
 		get_tree().current_scene.add_child(gp)
 		gp.global_position = global_position

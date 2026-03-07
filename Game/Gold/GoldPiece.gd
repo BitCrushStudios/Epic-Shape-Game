@@ -2,7 +2,7 @@
 extends RigidBody2D
 class_name GoldPiece
 
-var random_size_range = [0.44, 0.55]
+var random_size_range = [0.5, 0.75]
 func randomize_size():
 	$Sprite2D.scale = (Vector2.ONE * randf_range(
 		random_size_range[0],
