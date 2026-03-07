@@ -83,3 +83,7 @@ func _on_settings_back_pressed() -> void:
 	var tween = create_tween()
 	tween.tween_property($Camera2D, 'global_position', $MainContainer.global_position, 1.0).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	
+
+
+func _on_wishlist_pressed() -> void:
+	OS.shell_open("https://store.steampowered.com/app/4458120/Squap/")

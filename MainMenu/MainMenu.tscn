@@ -40,7 +40,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3clmd"]
-bg_color = Color(1, 1, 1, 0.85490197)
+bg_color = Color(1, 1, 1, 0.53333336)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -463,5 +463,6 @@ libraries/ = SubResource("AnimationLibrary_jewuw")
 
 [connection signal="pressed" from="MainContainer/Control/BoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainContainer/Control/BoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainContainer/Control/BoxContainer/Wishlist" to="." method="_on_wishlist_pressed"]
 [connection signal="pressed" from="MainContainer/Control/BoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="SettingContainer/MarginContainer/Control/BoxContainer/SettingsBack" to="." method="_on_settings_back_pressed"]

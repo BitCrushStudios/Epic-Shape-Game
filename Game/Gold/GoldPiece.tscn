@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvamtgso5d54y" path="res://Game/Gold/GoldPiece.gd" id="1_rgo6i"]
 [ext_resource type="Texture2D" uid="uid://blqocut8c3138" path="res://Assets/Art/Gold/CoinT.png" id="2_rgo6i"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_v3p58"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1va8x"]
 radius = 14.529467
@@ -14,11 +15,17 @@ linear_damp = 2.0
 script = ExtResource("1_rgo6i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649949279]
-modulate = Color(0.98039216, 0.73333335, 0.73333335, 1)
+modulate = Color(0.9716097, 0.8376166, 0.8376166, 1)
 position = Vector2(0, 0.41295305)
-scale = Vector2(0.5583189, 0.5583189)
+scale = Vector2(0.51343346, 0.51343346)
 texture = ExtResource("2_rgo6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1501964223]
 scale = Vector2(0.8259079, 0.8259079)
 shape = SubResource("CircleShape2D_1va8x")
+
+[node name="ShadowOrigin" type="Node2D" parent="." unique_id=304216036]
+
+[node name="Shadow" parent="ShadowOrigin" unique_id=29450177 instance=ExtResource("3_v3p58")]
+position = Vector2(0, 12)
+scale = Vector2(0.5, 0.5)
