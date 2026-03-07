@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tpvjvvghrvyj"]
 
-[ext_resource type="Script" uid="uid://ceqekqfnu63qp" path="res://MainMenu/main_menu.gd" id="1_621fb"]
+[ext_resource type="Script" uid="uid://ceqekqfnu63qp" path="res://MainMenu/MainMenu.gd" id="1_621fb"]
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="1_mjkrb"]
 [ext_resource type="Texture2D" uid="uid://dl1jrog6joite" path="res://MainMenu/bg.png" id="3_430ii"]
 [ext_resource type="AudioStream" uid="uid://doa863v7u1ndm" path="res://Assets/Music/Background/geoffharvey-silly-jazz-quirky-427913.mp3" id="3_621fb"]
@@ -230,6 +230,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Visuals" type="GridContainer" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1214939694]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 16
@@ -271,27 +272,53 @@ text = "FullScreen"
 flat = true
 alignment = 2
 
-[node name="MusicToggle" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1502194138]
+[node name="GridContainer" type="GridContainer" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1782914916]
+layout_mode = 2
+columns = 3
+
+[node name="MusicLabel" type="Label" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=760566261]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicVolume" type="HSlider" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=925672930]
 unique_name_in_owner = true
 layout_mode = 2
-theme = SubResource("Theme_bsanu")
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.0
+value = 0.69
+
+[node name="MusicToggle" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=1502194138]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 button_pressed = true
-text = "Music"
 flat = true
 alignment = 2
 
-[node name="SoundToggle" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=440931577]
+[node name="SoundLabel" type="Label" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=1520632699]
+layout_mode = 2
+text = "Sound"
+
+[node name="SoundVolume" type="HSlider" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=305500979]
 unique_name_in_owner = true
 layout_mode = 2
-theme = SubResource("Theme_bsanu")
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.0
+value = 0.51
+
+[node name="SoundToggle" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=440931577]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 button_pressed = true
-text = "Sound"
 flat = true
 alignment = 2
 

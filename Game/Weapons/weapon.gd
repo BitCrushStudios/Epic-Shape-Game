@@ -35,6 +35,14 @@ func _entered_hurtbox(node:Node):
 	if state != State.Activated:
 		return
 	if node is Enemy:
+		apply_central_impulse(
+			node.global_position.direction_to(global_position) * 
+			(linear_velocity-node.linear_velocity).length()
+		)
+		node.apply_central_impulse(
+			global_position.direction_to(node.global_position) * 
+			(linear_velocity-node.linear_velocity).length()
+		)
 		node.take_damage(resource.damage)
 
 	

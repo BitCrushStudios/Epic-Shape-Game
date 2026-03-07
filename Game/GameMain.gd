@@ -41,9 +41,10 @@ func _ready() -> void:
 	for c in get_children(true):
 		_child_entered_tree(c)
 	add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
-	pause_menu = preload("res://MainMenu/pause_menu.tscn").instantiate()
+	pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()
 	pause_menu.visible = false
 	add_child(pause_menu)
+	
 	
 func _child_entered_tree(node:Node):
 	if node is Player: 
