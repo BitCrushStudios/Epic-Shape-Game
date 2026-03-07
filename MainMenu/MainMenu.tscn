@@ -260,7 +260,7 @@ popup/item_2/id = 2
 popup/item_3/text = "x4"
 popup/item_3/id = 3
 
-[node name="FullScreen" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1223253075]
+[node name="FullScreenToggle" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1223253075]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_bsanu")
@@ -271,7 +271,7 @@ text = "FullScreen"
 flat = true
 alignment = 2
 
-[node name="Music" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1502194138]
+[node name="MusicToggle" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1502194138]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_bsanu")
@@ -283,7 +283,7 @@ text = "Music"
 flat = true
 alignment = 2
 
-[node name="Sound" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=440931577]
+[node name="SoundToggle" type="CheckBox" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=440931577]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_bsanu")

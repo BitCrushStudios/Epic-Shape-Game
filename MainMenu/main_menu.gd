@@ -48,6 +48,19 @@ func _ready() -> void:
 	set_up_key_button(%DownKeyButton2, "move_down", 1)
 	set_up_key_button(%DownKeyButton3, "move_down", 2)
 	
+	%FullScreenToggle.toggled.connect(fullscreen_toggle)
+	
+func fullscreen_toggle(v:bool):
+	var winMode: DisplayServer.WindowMode = ProjectSettings.get_setting("display/window/size/mode")
+	winMode = (
+		DisplayServer.WindowMode.WINDOW_MODE_WINDOWED 
+		if winMode==DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN 
+		else DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN
+	)
+	DisplayServer.window_set_mode(winMode)
+	ProjectSettings.set_setting("display/window/size/mode",winMode)
+	ProjectSettings.save_custom("res://override.cfg")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
