@@ -17,7 +17,7 @@ config/icon="uid://biqn2bvx3o47v"
 
 [audio]
 
-buses/default_bus_layout="res://Common/default_bus_layout.tres"
+buses/default_bus_layout="uid://c80s0sww1hrbe"
 
 [display]
 

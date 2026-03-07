@@ -261,6 +261,7 @@ shape = SubResource("CircleShape2D_hu5f4")
 [node name="Death" type="AudioStreamPlayer" parent="." unique_id=1728244227]
 stream = ExtResource("14_fm6ei")
 pitch_scale = 1.5
+bus = &"Sound Effects"
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=657610489]
 collision_layer = 0

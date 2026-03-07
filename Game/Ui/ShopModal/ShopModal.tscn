@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="2_e7lec"]
 [ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="3_udy12"]
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="4_i3qng"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
 [ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
 [ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
@@ -38,6 +37,7 @@ name = "Soy"
 [sub_resource type="Resource" id="Resource_i3qng"]
 script = ExtResource("2_e7lec")
 inventory = Array[ExtResource("2_cpuug")]([SubResource("Resource_llh7c"), SubResource("Resource_0k88i"), SubResource("Resource_q3cp0")])
+health_max = 10.0
 money = 300
 speed = 600.0
 next_level_exp_required = 1.0

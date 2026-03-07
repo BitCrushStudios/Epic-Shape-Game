@@ -32,10 +32,10 @@ func set_up_key_button(btn:Button,input_name:String,index=0):
 	btn.text = e.as_text()
 	
 func _ready() -> void:
-	audio_toggle_prop(%SoundToggle, "game/audio/sound/enabled")
-	audio_volume_prop(%SoundVolume, "game/audio/sound/volume")
-	audio_toggle_prop(%MusicToggle, "game/audio/sound/enabled")
-	audio_volume_prop(%MusicVolume, "game/audio/music/volume")
+	audio_toggle_prop(%MusicToggle, "game/audio/sound/enabled", "Music")
+	audio_volume_prop(%MusicVolume, "game/audio/music/volume", "Music")
+	audio_toggle_prop(%SoundToggle, "game/audio/sound/enabled", "Sound Effects")
+	audio_volume_prop(%SoundVolume, "game/audio/sound/volume", "Sound Effects")
 	
 	set_up_key_button(%LeftKeyButton1, "move_left", 0)
 	set_up_key_button(%LeftKeyButton2, "move_left", 1)
@@ -56,18 +56,22 @@ func _ready() -> void:
 	%FullScreenToggle.button_pressed = ProjectSettings.get_setting("display/window/size/mode") == DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN 
 	%FullScreenToggle.toggled.connect(fullscreen_toggle)
 	
-func audio_volume_prop(node:Slider, key:String):
+func audio_volume_prop(node:Slider, key:String, bus:String):
 	node.value = ProjectSettings.get_setting(key)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(bus), node.value)
 	print(node.value)
 	node.value_changed.connect(func(v:float):
 		ProjectSettings.set_setting(key, v)
+		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(bus), v)
 		ProjectSettings.save_custom("res://override.cfg")
 	)
 	
-func audio_toggle_prop(node:CheckBox, key:String):
+func audio_toggle_prop(node:CheckBox, key:String, bus:String):
 	node.button_pressed = ProjectSettings.get_setting(key)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), not node.button_pressed)
 	node.toggled.connect(func(v:bool):
 		ProjectSettings.set_setting(key, v)
+		AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), not v)
 		ProjectSettings.save_custom("res://override.cfg")
 	)
 	

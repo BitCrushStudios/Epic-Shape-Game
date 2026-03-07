@@ -65,3 +65,4 @@ radius = 50.0
 stream = ExtResource("7_h3i4e")
 volume_db = -10.0
 pitch_scale = 1.2
+bus = &"Sound Effects"
