@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="2_052kc"]
 [ext_resource type="Script" uid="uid://k5cm3nqg7dpf" path="res://Game/WeaponsManager.gd" id="3_052kc"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
+[ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="5_auuae"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="16_wgwva"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="17_vmr23"]
@@ -173,13 +174,23 @@ script = ExtResource("1_tqfok")
 stream = ExtResource("2_052kc")
 volume_db = -23.0
 autoplay = true
-
-[node name="WeaponManager" type="Node" parent="." unique_id=81837248]
-script = ExtResource("3_052kc")
+bus = &"Music"
 
 [node name="Player" parent="." unique_id=299479533 node_paths=PackedStringArray("weaponsManager") instance=ExtResource("4_ojaob")]
 position = Vector2(911, 542)
 weaponsManager = NodePath("../WeaponManager")
+
+[node name="WeaponManager" type="Node" parent="." unique_id=81837248]
+script = ExtResource("3_052kc")
+
+[node name="Weapon" parent="WeaponManager" unique_id=1251268979 instance=ExtResource("5_auuae")]
+position = Vector2(900, 717)
+
+[node name="Weapon2" parent="WeaponManager" unique_id=586838350 instance=ExtResource("5_auuae")]
+position = Vector2(61, 992)
+
+[node name="Weapon3" parent="WeaponManager" unique_id=297638493 instance=ExtResource("5_auuae")]
+position = Vector2(1769, 162)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("6_2wbff")

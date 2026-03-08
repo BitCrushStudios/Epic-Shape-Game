@@ -12,35 +12,6 @@ signal resource_changed()
 signal wave_finished()
 signal enemy_health_depleted(enemy:Enemy)
 
-@onready var enemy_basic_pair = WavePair.create(
-	preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
-	0,
-	preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
-)
-@onready var enemy_roller_pair = WavePair.create(
-	preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
-	0,
-	preload("res://Assets/Art/Enemies/Roller/Roller.png")
-)
-@onready var enemy_tank_pair = WavePair.create(
-	preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
-	0,
-	preload("res://Assets/Art/Enemies/Tank/Tank.png")
-)
-@onready var active_wave = Wave.create([
-		enemy_basic_pair,
-		enemy_roller_pair,
-		enemy_tank_pair,
-	], 
-	30.0
-):
-	set(v):
-		if active_wave and active_wave.changed.is_connected(resource_changed.emit):
-			active_wave.changed.disconnect(resource_changed.emit)
-		active_wave = v
-		if active_wave:
-			active_wave.changed.connect(resource_changed.emit)
-		resource_changed.emit()
 var _enemies:Array[Enemy] = []
 @export var enemies:Array[Enemy]:
 	get():
@@ -130,27 +101,58 @@ var waves = [
 		0.5,
 	),
 ]
-	
-
+@onready var dev_enemy_basic_pair = WavePair.create(
+	preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+	0,
+	preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
+)
+@onready var dev_enemy_roller_pair = WavePair.create(
+	preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+	0,
+	preload("res://Assets/Art/Enemies/Roller/Roller.png")
+)
+@onready var dev_enemy_tank_pair = WavePair.create(
+	preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
+	0,
+	preload("res://Assets/Art/Enemies/Tank/Tank.png")
+)
+@onready var dev_wave = Wave.create([
+	dev_enemy_basic_pair,
+	dev_enemy_roller_pair,
+	dev_enemy_tank_pair,
+],30.0)
+enum WaveMode{
+	Normal, Dev
+}
+var wave_mode = WaveMode.Normal
+var active_wave: Wave:
+	get():
+		if wave_mode == WaveMode.Normal:
+			return waves[wave_index%waves.size()]
+		else:
+			return dev_wave
 func _process(delta:float):
 	if  Engine.is_editor_hint():
 		return
 	var basic_diff = (
 		(1 if Input.is_action_just_pressed("dev_enemy_basic_up") else 0) - 
-		(1 if Input.is_action_just_pressed("dev_enemy_basic_down") else 0))
+		(1 if Input.is_action_just_pressed("dev_enemy_basic_down") else 0)
+	)
 	if basic_diff:
-		enemy_basic_pair.count_max = max(0, enemy_basic_pair.count_max+basic_diff)
-		prints(enemy_basic_pair.count_max,active_wave.pairs[0].count_max)
+		dev_enemy_basic_pair.count_max = max(0, dev_enemy_basic_pair.count_max+basic_diff)
+		prints(dev_enemy_basic_pair.count_max,active_wave.pairs[0].count_max)
 	var roller_diff = (
-		(1 if Input.is_action_just_pressed("dev_enemy_roller_up") else 0) - 
-		(1 if Input.is_action_just_pressed("dev_enemy_roller_down") else 0))
+		(1 if Input.is_action_just_pressed("dev_enemy_roller_up") else 0) -
+		(1 if Input.is_action_just_pressed("dev_enemy_roller_down") else 0)
+	)
 	if roller_diff:
-		enemy_roller_pair.count_max = max(0, enemy_roller_pair.count_max+roller_diff)
+		dev_enemy_roller_pair.count_max = max(0, dev_enemy_roller_pair.count_max+roller_diff)
 	var tank_diff = (
-		(1 if Input.is_action_just_pressed("dev_enemy_tank_up") else 0) - 
-		(1 if Input.is_action_just_pressed("dev_enemy_tank_down") else 0))
+		( 1 if Input.is_action_just_pressed("dev_enemy_tank_up") else 0 ) - 
+		( 1 if Input.is_action_just_pressed("dev_enemy_tank_down") else 0 )
+	)
 	if tank_diff:
-		enemy_tank_pair.count_max = max(0, enemy_tank_pair.count_max+tank_diff)
+		dev_enemy_tank_pair.count_max = max(0, dev_enemy_tank_pair.count_max+tank_diff)
 	if active_wave:
 		active_wave.process(self,delta)
 	

@@ -77,11 +77,12 @@ func player_resource_changed():
 	show_hurt_indicator = player.resource.iframe_current>0
 	
 func enemy_manager_resource_changed():
-	wave_composition = enemyManager.active_wave.pairs
-	time_remaining = (
-		enemyManager.active_wave.time_max - 
-		enemyManager.active_wave.time
-	)
+	if enemyManager and enemyManager.active_wave:
+		wave_composition = enemyManager.active_wave.pairs
+		time_remaining = (
+			enemyManager.active_wave.time_max - 
+			enemyManager.active_wave.time
+		)
 	
 	
 func _ready():
@@ -151,7 +152,7 @@ func update_all_ui():
 	_update_hurt_indicator()
 
 func _process(_delta:float):
-	%WaveLabel.text = "Wave %d" % current_wave
+	%WaveLabel.text = "Wave %d" % (current_wave + 1)
 	%TimerLabel.text = "%0.2f" % (time_remaining)
 	
 	

@@ -10,7 +10,7 @@ class_name Wave
 		for p in pairs:
 			p.changed.connect(changed.emit)
 		emit_changed()
-@export var time_max = 30.0
+@export var time_max =  10
 static func create(_pairs: Array[WavePair], _time_max: float = 30.0):
 	var ob = Wave.new()
 	ob.pairs = _pairs
@@ -25,15 +25,17 @@ static func create(_pairs: Array[WavePair], _time_max: float = 30.0):
 	set(v):
 		interval_current = v
 		emit_changed()
-
+	
 func process(root:Node, delta:float):
 	time += delta
 	interval_current += delta
 	for p in pairs:
-		p.interval_time += delta
-		while p.interval_time>p.interval_time_max:
-			p.interval_time -= p.interval_time_max
-			if p.count<p.count_max:
+		if p.interval_time<p.interval_time_max:
+			p.interval_time = clamp(p.interval_time + delta, 0, p.interval_time_max)
+		var clump_target = max(1, (p.count_max if p.clump == -1 else p.clump) - 1)
+		if p.interval_time>=p.interval_time_max and p.count<(p.count_max-clump_target):
+			for i in range(clump_target):
+				p.interval_time -= p.interval_time_max
 				var spawnPoint: SpawnPoint = preload("res://Game/Units/Enemies/SpawnPoint.tscn").instantiate()
 				root.add_child(spawnPoint,true)
 				var map_rid = root.get_viewport().world_2d.navigation_map
@@ -42,10 +44,8 @@ func process(root:Node, delta:float):
 				spawnPoint.tscn = p.scene
 				p.count += 1
 				spawnPoint.spawned.connect(func(node:Node):
-					#nodes.append(node)
 					node.tree_exiting.connect(func():
 						p.count -= 1
-						#nodes.erase(node)
 					)
 				)
 	return time>=time_max
