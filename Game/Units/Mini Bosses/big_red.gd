@@ -57,9 +57,8 @@ func _physics_process(_delta: float) -> void:
 	for other in get_colliding_bodies():
 		_body_entered(other)
 func _recieved_damage(_damage:float):
-	if %Animation != null:
-		%Animation.play("damage")
-	_particle_create(preload("./DamageParticles.tscn").instantiate())
+	%Animation.play("damage")
+	_particle_create(preload("res://Game/Units/Enemies/DamageParticles.tscn").instantiate())
 	
 func spawn_coins():
 	var amount  = randf_range(1,5)
@@ -77,13 +76,11 @@ func _health_depleted():
 	z_index = -1
 	took_damage.disconnect(_recieved_damage)
 	health_depleted.disconnect(_health_depleted)
-	if %Animation != null:
-		%Animation.play("death")
-	if $Death != null:
-		$Death.play()
-		$Death.volume_db = randf_range(-2,0)
-		$Death.pitch_scale = randf_range(1.2,1.5)
-	await _particle_create(preload("./DeathParticles.tscn").instantiate())
+	%Animation.play("death")
+	$Death.play()
+	$Death.volume_db = randf_range(-2,0)
+	$Death.pitch_scale = randf_range(1.2,1.5)
+	await _particle_create(preload("res://Game/Units/Enemies/DamageParticles.tscn").instantiate())
 	queue_free()
 		
 	

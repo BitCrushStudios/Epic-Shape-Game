@@ -131,18 +131,17 @@ script = ExtResource("2_r617p")
 [node name="Shadow" parent="Origin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_rdb24")]
 unique_name_in_owner = true
 position = Vector2(0, 27.554012)
-scale = Vector2(0.888889, 0.8445679)
 
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
 unique_name_in_owner = true
 y_sort_enabled = true
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_6u5qs")
 
 [node name="ActivatedSprite" type="AnimatedSprite2D" parent="Origin" unique_id=709605317]
 unique_name_in_owner = true
 y_sort_enabled = true
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_jet8k")
 animation = &"Hit"
 frame = 8
@@ -162,6 +161,7 @@ length = 20
 metadata/_custom_type_script = "uid://onfsof0qcqtj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
+scale = Vector2(1.41, 1.41)
 shape = SubResource("RectangleShape2D_qg1ck")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="5_auuae"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
+[ext_resource type="PackedScene" uid="uid://0s15uuq23va" path="res://Game/Units/Mini Bosses/big_red.tscn" id="16_17wm5"]
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="16_wgwva"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="17_vmr23"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="18_52jib"]
@@ -253,3 +254,7 @@ texture = ExtResource("26_cci3g")
 
 [node name="HZ" type="AnimationPlayer" parent="ArenaMiddleSize" unique_id=653239098]
 libraries/ = SubResource("AnimationLibrary_ad1qv")
+
+[node name="BigRed" parent="." unique_id=1618506388 instance=ExtResource("16_17wm5")]
+position = Vector2(596, 284)
+contact_monitor = true
