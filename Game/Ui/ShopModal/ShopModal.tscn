@@ -287,7 +287,6 @@ disabled = true
 resource = null
 
 [node name="TextureRect" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control2" unique_id=444131488]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("11_decmg")
@@ -311,7 +310,6 @@ disabled = true
 resource = null
 
 [node name="TextureRect2" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control3" unique_id=1155977084]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("11_q3cp0")
@@ -333,7 +331,6 @@ disabled = true
 resource = null
 
 [node name="TextureRect3" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=406888666]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
@@ -357,7 +354,6 @@ disabled = true
 resource = SubResource("Resource_374k4")
 
 [node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control4" unique_id=1373859225]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("13_decmg")
@@ -380,7 +376,6 @@ disabled = true
 resource = SubResource("Resource_decmg")
 
 [node name="TextureRect5" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control5" unique_id=1697602729]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_cpuug")
@@ -403,7 +398,6 @@ offset_bottom = 66.00049
 
 [node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Accept"
