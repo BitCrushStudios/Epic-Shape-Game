@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/player.gd" id="1_ddoul"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_cvipf"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_tok1r"]
-[ext_resource type="Texture2D" uid="uid://c65lwc744dgwt" path="res://Assets/Art/Player/Player @.png" id="3_fd82q"]
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_i7tqw"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_mbpe7"]
 [ext_resource type="Script" uid="uid://ejrfu2yqqgvb" path="res://Game/Units/GradualRotationNegate.gd" id="6_thx7d"]
+[ext_resource type="Texture2D" uid="uid://bk2itsf61iyq7" path="res://Assets/Art/Player/PlayerTest.png" id="6_wfiu6"]
 [ext_resource type="Script" uid="uid://df3dw2rgkl02f" path="res://Game/Units/Player/PlayerController.gd" id="7_thx7d"]
 [ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="9_jiict"]
 [ext_resource type="Script" uid="uid://dx2vqd4gi3f7u" path="res://Game/Units/Player/GoldPickupBox.gd" id="10_wnw4f"]
@@ -101,15 +101,14 @@ show_behind_parent = true
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D/SpriteOrigin" unique_id=250217813]
-scale = Vector2(0.70838416, 0.70838416)
-texture = ExtResource("3_fd82q")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_wfiu6")
 
 [node name="ShadowOrigin" type="Node2D" parent="CollisionShape2D/SpriteOrigin" unique_id=1960482243]
 script = ExtResource("3_mbpe7")
 
 [node name="Shadow" parent="CollisionShape2D/SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("2_tok1r")]
-position = Vector2(0, 26.999998)
-scale = Vector2(0.6296514, 0.5596902)
+position = Vector2(0, 38)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1139761376]
 unique_name_in_owner = true

@@ -15,6 +15,7 @@ radius = 35.014282
 radius = 54.00926
 
 [node name="BigRed" type="RigidBody2D" unique_id=1618506388]
+contact_monitor = true
 script = ExtResource("1_5p3ux")
 
 [node name="GradualRotationNegate" type="Node" parent="." unique_id=2071620424]
