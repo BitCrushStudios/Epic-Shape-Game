@@ -92,14 +92,7 @@ func show_upgrade_modal():
 		get_tree().paused=false
 		resource.levels_gained = 0
 	
-func show_shop_modal():
-	get_tree().paused=true
-	var modal: ShopModal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
-	$CanvasLayer.add_child(modal)
-	modal.player = resource
-	await modal.modal()
-	modal.queue_free()
-	get_tree().paused=false
+	
 
 func show_equip_modal():
 	get_tree().paused=true

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="5_auuae"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
-[ext_resource type="PackedScene" uid="uid://dbvch1vqm1ay4" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
-[ext_resource type="PackedScene" uid="uid://cunk1470cwuhe" path="res://Game/Weapons/golf_ball.tscn" id="7_fyf1r"]
+[ext_resource type="PackedScene" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
+[ext_resource type="PackedScene" uid="uid://cunk1470cwuhe" path="res://Game/Weapons/GolfBallWeapon.tscn" id="7_fyf1r"]
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="16_wgwva"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="17_vmr23"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="18_52jib"]
@@ -196,6 +196,9 @@ _data = {
 [node name="Main" type="Node" unique_id=1855663093]
 script = ExtResource("1_tqfok")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=92160159]
+layer = 3
+
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
 stream = ExtResource("2_052kc")
 volume_db = -23.0
@@ -259,13 +262,11 @@ texture = ExtResource("22_56ne4")
 position = Vector2(960, 1083.0001)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("23_isxqs")
-offset = Vector2(0, -5.545711)
 
 [node name="BackgroundHorz2" type="Sprite2D" parent="ArenaMiddleSize" unique_id=694592446]
 position = Vector2(959.99994, -1.5258789e-05)
 scale = Vector2(1.3, -1.3)
 texture = ExtResource("24_ie25g")
-offset = Vector2(0, -5.545711)
 
 [node name="Dark" type="Sprite2D" parent="ArenaMiddleSize" unique_id=27556525]
 visible = false

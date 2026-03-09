@@ -34,12 +34,12 @@ func process(root:Node, delta:float):
 			p.interval_time = clamp(p.interval_time + delta, 0, p.interval_time_max)
 		var clump_target = max(1, (p.count_max if p.clump == -1 else p.clump) - 1)
 		if p.interval_time>=p.interval_time_max and p.count<(p.count_max-clump_target):
+			var map_rid = root.get_viewport().world_2d.navigation_map
+			var rand_point = NavigationServer2D.map_get_random_point(map_rid,1,false)
 			for i in range(clump_target):
 				p.interval_time -= p.interval_time_max
 				var spawnPoint: SpawnPoint = preload("res://Game/Units/Enemies/SpawnPoint.tscn").instantiate()
 				root.add_child(spawnPoint,true)
-				var map_rid = root.get_viewport().world_2d.navigation_map
-				var rand_point = NavigationServer2D.map_get_random_point(map_rid,1,false)
 				spawnPoint.global_position = rand_point
 				spawnPoint.tscn = p.scene
 				p.count += 1
