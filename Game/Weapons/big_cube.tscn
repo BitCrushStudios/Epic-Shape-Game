@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dbvch1vqm1ay4"]
+
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_w0p7r"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="1_x460x"]
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_3gs5p"]
+[ext_resource type="Texture2D" uid="uid://2d075q7qepcy" path="res://Assets/Art/Weapons/Big Cube/CubeBigDeactivated.png" id="2_ek2q2"]
+[ext_resource type="Texture2D" uid="uid://cef2cu2d322qq" path="res://Assets/Art/Weapons/Big Cube/CubeBig.png" id="3_5anff"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_qtgvb"]
+[ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="4_w0p7r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w0p7r"]
+bounce = 5.0
+
+[sub_resource type="Resource" id="Resource_l33jo"]
+script = ExtResource("3_qtgvb")
+damage = 2.0
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3gs5p"]
+radius = 66.27216
+
+[node name="BigCube" type="RigidBody2D" unique_id=1806346460]
+collision_layer = 8
+collision_mask = 15
+mass = 25.0
+physics_material_override = SubResource("PhysicsMaterial_w0p7r")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_w0p7r")
+resource = SubResource("Resource_l33jo")
+
+[node name="Origin" type="Node2D" parent="." unique_id=1689679530]
+
+[node name="ShadowOrigin" type="Node2D" parent="Origin" unique_id=769338698]
+
+[node name="Shadow" parent="Origin/ShadowOrigin" unique_id=29450177 instance=ExtResource("1_x460x")]
+
+[node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=677990040]
+unique_name_in_owner = true
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ek2q2")
+
+[node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=1749720425]
+unique_name_in_owner = true
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_5anff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=637096600]
+shape = SubResource("CircleShape2D_3gs5p")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=310723041]
+radius = 20.0
+
+[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=494035120]
+stream = ExtResource("4_w0p7r")

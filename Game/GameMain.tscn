@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="5_auuae"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
+[ext_resource type="PackedScene" uid="uid://dbvch1vqm1ay4" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
+[ext_resource type="PackedScene" uid="uid://cunk1470cwuhe" path="res://Game/Weapons/golf_ball.tscn" id="7_fyf1r"]
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="16_wgwva"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="17_vmr23"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="18_52jib"]
@@ -215,6 +217,12 @@ position = Vector2(61, 992)
 
 [node name="Weapon3" parent="WeaponManager" unique_id=297638493 instance=ExtResource("5_auuae")]
 position = Vector2(1769, 162)
+
+[node name="BigCube" parent="WeaponManager" unique_id=1806346460 instance=ExtResource("6_17wm5")]
+position = Vector2(752, 576)
+
+[node name="Golf Ball" parent="WeaponManager" unique_id=342556309 instance=ExtResource("7_fyf1r")]
+position = Vector2(1035, 587)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("6_2wbff")
