@@ -2,7 +2,7 @@
 extends Control
 class_name WavePairUi
 
-@export var resource: WavePair:
+@export var resource: ActivePair:
 	set(v):
 		if resource and resource.changed.is_connected(resource_changed):
 			resource.changed.disconnect(resource_changed)
@@ -15,7 +15,7 @@ func resource_changed():
 		await tree_entered
 	$TextureRect.texture = null
 	$CountLabel.text = ""
-	if resource:
-		if resource.image:
-			$TextureRect.texture = resource.image
-		$CountLabel.text = "%d/%d" % [resource.count, resource.count_max]
+	if resource and resource.pair:
+		if resource.pair.image:
+			$TextureRect.texture = resource.pair.image
+		$CountLabel.text = "%d/%d" % [resource.count, resource.pair.count_max]

@@ -78,10 +78,6 @@ func take_damage(damage:float):
 @export var base_size_add = 0.1
 @export var accel_mult = 10.0
 @export var exp_rate = 2.0
-@export var current_wave:int:
-	set(v):
-		current_wave = v
-		emit_changed()
 @export var money = 1000:
 	set(v):
 		money = v 

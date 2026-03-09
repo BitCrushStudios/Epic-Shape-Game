@@ -8,15 +8,110 @@
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
 [ext_resource type="PackedScene" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
 [ext_resource type="PackedScene" uid="uid://cunk1470cwuhe" path="res://Game/Weapons/GolfBallWeapon.tscn" id="7_fyf1r"]
+[ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="9_tju8d"]
+[ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="10_tqfok"]
+[ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="11_052kc"]
+[ext_resource type="Script" uid="uid://md6msurfapyu" path="res://Game/Waves/Wave.gd" id="12_ytreg"]
+[ext_resource type="Texture2D" uid="uid://b26qrveirc2yy" path="res://Assets/Art/Enemies/Roller/Roller.png" id="13_ojaob"]
+[ext_resource type="PackedScene" uid="uid://yr6yf2u3lxf0" path="res://Game/Units/Enemies/EnemyRoller.tscn" id="14_b8v6r"]
+[ext_resource type="Texture2D" uid="uid://bbkglt5jwg3mv" path="res://Assets/Art/Enemies/Tank/Tank.png" id="15_2wbff"]
+[ext_resource type="PackedScene" uid="uid://o3qjyg751wn3" path="res://Game/Units/Enemies/EnemyTank.tscn" id="16_5s0eo"]
 [ext_resource type="Texture2D" uid="uid://b0xq42qo0sch1" path="res://Assets/Art/Tilesets/ArenaWallsTileset.png" id="16_wgwva"]
+[ext_resource type="Script" uid="uid://gdw6xqygpa47" path="res://Game/Waves/ActivePair.gd" id="17_052kc"]
 [ext_resource type="Script" uid="uid://bik8abx6xsk8s" path="res://Game/Camera/player_harm_shake.gd" id="17_vmr23"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="18_52jib"]
+[ext_resource type="Script" uid="uid://ckvxvpybbhhas" path="res://Game/Waves/ActiveWave.gd" id="18_ytreg"]
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="19_wohd7"]
 [ext_resource type="Texture2D" uid="uid://cxcax73lk7h5d" path="res://Assets/Art/Backgrounds/Main Scene/Background Vert.png" id="22_56ne4"]
 [ext_resource type="Texture2D" uid="uid://dmomqi8ipwfd0" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0000.png" id="23_isxqs"]
 [ext_resource type="Texture2D" uid="uid://brkfgcstrond8" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0001.png" id="24_ie25g"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="25_hes46"]
 [ext_resource type="Texture2D" uid="uid://bpgyi04fk4wrj" path="res://Assets/Art/Shadow/Effect2.png" id="26_cci3g"]
+
+[sub_resource type="Resource" id="Resource_tju8d"]
+script = ExtResource("9_tju8d")
+scene = ExtResource("11_052kc")
+image = ExtResource("10_tqfok")
+time_max = 0.5
+count_max = 5
+clump = -1
+
+[sub_resource type="Resource" id="Resource_tqfok"]
+script = ExtResource("12_ytreg")
+pairs = Array[ExtResource("9_tju8d")]([SubResource("Resource_tju8d")])
+time_max = 30.0
+
+[sub_resource type="Resource" id="Resource_052kc"]
+script = ExtResource("9_tju8d")
+scene = ExtResource("11_052kc")
+image = ExtResource("10_tqfok")
+time_max = 0.5
+count_max = 20
+clump = -1
+
+[sub_resource type="Resource" id="Resource_ytreg"]
+script = ExtResource("12_ytreg")
+pairs = Array[ExtResource("9_tju8d")]([SubResource("Resource_052kc")])
+time_max = 30.0
+
+[sub_resource type="Resource" id="Resource_ojaob"]
+script = ExtResource("9_tju8d")
+scene = ExtResource("11_052kc")
+image = ExtResource("10_tqfok")
+time_max = 0.5
+count_max = 10
+clump = -1
+
+[sub_resource type="Resource" id="Resource_b8v6r"]
+script = ExtResource("9_tju8d")
+scene = ExtResource("14_b8v6r")
+image = ExtResource("13_ojaob")
+time_max = 0.5
+count_max = 3
+clump = -1
+
+[sub_resource type="Resource" id="Resource_2wbff"]
+script = ExtResource("12_ytreg")
+pairs = Array[ExtResource("9_tju8d")]([SubResource("Resource_ojaob"), SubResource("Resource_b8v6r")])
+time_max = 30.0
+
+[sub_resource type="Resource" id="Resource_5s0eo"]
+script = ExtResource("9_tju8d")
+scene = ExtResource("11_052kc")
+image = ExtResource("10_tqfok")
+time_max = 0.5
+count_max = 3
+clump = -1
+
+[sub_resource type="Resource" id="Resource_3jy75"]
+script = ExtResource("9_tju8d")
+scene = ExtResource("14_b8v6r")
+image = ExtResource("13_ojaob")
+time_max = 0.5
+count_max = 6
+clump = -1
+
+[sub_resource type="Resource" id="Resource_eihxa"]
+script = ExtResource("9_tju8d")
+scene = ExtResource("16_5s0eo")
+image = ExtResource("15_2wbff")
+time_max = 0.5
+count_max = 6
+clump = -1
+
+[sub_resource type="Resource" id="Resource_t3b64"]
+script = ExtResource("12_ytreg")
+pairs = Array[ExtResource("9_tju8d")]([SubResource("Resource_5s0eo"), SubResource("Resource_3jy75"), SubResource("Resource_eihxa")])
+time_max = 30.0
+
+[sub_resource type="Resource" id="Resource_v6h5u"]
+script = ExtResource("17_052kc")
+pair = SubResource("Resource_tju8d")
+
+[sub_resource type="Resource" id="Resource_aa4rq"]
+script = ExtResource("18_ytreg")
+wave = SubResource("Resource_tqfok")
+pairs = Array[ExtResource("17_052kc")]([SubResource("Resource_v6h5u")])
 
 [sub_resource type="Resource" id="Resource_17wm5"]
 script = ExtResource("19_wohd7")
@@ -229,6 +324,8 @@ position = Vector2(1035, 587)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("6_2wbff")
+waves = [SubResource("Resource_tqfok"), SubResource("Resource_ytreg"), SubResource("Resource_2wbff"), SubResource("Resource_t3b64")]
+resource = SubResource("Resource_aa4rq")
 
 [node name="ArenaMiddleSize" type="Node2D" parent="." unique_id=1160867511]
 

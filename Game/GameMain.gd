@@ -40,10 +40,11 @@ func _ready() -> void:
 	child_exiting_tree.connect(_child_exiting_tree)
 	for c in get_children(true):
 		_child_entered_tree(c)
-	add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
-	pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()
-	pause_menu.visible = false
-	add_child(pause_menu)
+	if not Engine.is_editor_hint():
+		add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
+		pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()
+		pause_menu.visible = false
+		add_child(pause_menu)
 	
 	
 func _child_entered_tree(node:Node):
@@ -86,6 +87,14 @@ func _process(delta: float) -> void:
 		return 
 	if OS.has_feature("standalone"):
 		return
+	if enemyManager:
+		var wave_diff = (
+			(1 if Input.is_action_just_pressed("dev_wave_up") else 0)-
+			(1 if Input.is_action_just_pressed("dev_wave_down") else 0)
+		)
+		if wave_diff:
+			enemyManager.wave_index+=wave_diff
+			
 	if player:
 		if Input.is_action_just_pressed("dev_player_upgrade"):
 			player.show_upgrade_modal()

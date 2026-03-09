@@ -57,7 +57,7 @@ class_name GameUi
 		time_remaining = v
 		update_all_ui()
 		
-@export var wave_composition: Array[WavePair]:
+@export var wave_composition: Array[ActivePair]:
 	set(v):
 		wave_composition = v
 		update_all_ui()
@@ -72,16 +72,16 @@ func player_resource_changed():
 	health_current = player.resource.health_current
 	exp_max = player.resource.next_level_exp_required - player.resource.current_level_exp_required
 	exp_current = player.resource.experience - player.resource.current_level_exp_required 
-	current_wave = player.resource.current_wave
 	upgrade_star_count = player.resource.levels_gained
 	show_hurt_indicator = player.resource.iframe_current>0
 	
 func enemy_manager_resource_changed():
-	if enemyManager and enemyManager.active_wave:
-		wave_composition = enemyManager.active_wave.pairs
+	if enemyManager and enemyManager.resource:
+		current_wave = enemyManager.wave_index
+		wave_composition = enemyManager.resource.pairs
 		time_remaining = (
-			enemyManager.active_wave.time_max - 
-			enemyManager.active_wave.time
+			enemyManager.resource.wave.time_max - 
+			enemyManager.resource.time
 		)
 	
 	
