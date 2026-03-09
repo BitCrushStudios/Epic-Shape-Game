@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://0s15uuq23va"]
 
-[ext_resource type="Script" uid="uid://vcu1ia088go4" path="res://Game/Units/Enemies/enemy.gd" id="1_5p3ux"]
-[ext_resource type="Script" uid="uid://ejrfu2yqqgvb" path="res://Game/Units/GradualRotationNegate.gd" id="1_smc48"]
-[ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_5p3ux"]
-[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_3ff8j"]
-[ext_resource type="Texture2D" uid="uid://d3i5umanrqrpv" path="res://Assets/Art/Enemies/Mini Bosses/Big Red/Big Red 2.png" id="5_5p3ux"]
-[ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="5_w6o77"]
-[ext_resource type="Texture2D" uid="uid://bxtwv1usjargr" path="res://Assets/Art/Enemies/Mini Bosses/Crowns/Bronze Crown.png" id="6_3ff8j"]
+[ext_resource type="Script" path="res://Game/Units/Enemies/enemy.gd" id="1_fqbop"]
+[ext_resource type="Script" uid="uid://ejrfu2yqqgvb" path="res://Game/Units/GradualRotationNegate.gd" id="2_rqt75"]
+[ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_q4jc5"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_e4tpy"]
+[ext_resource type="Texture2D" uid="uid://d3i5umanrqrpv" path="res://Assets/Art/Enemies/Mini Bosses/Big Red/Big Red 2.png" id="5_8urup"]
+[ext_resource type="Texture2D" uid="uid://bxtwv1usjargr" path="res://Assets/Art/Enemies/Mini Bosses/Crowns/Bronze Crown.png" id="6_j6l0o"]
+[ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="7_ptujm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wylef"]
 radius = 35.014282
@@ -16,10 +16,10 @@ radius = 54.00926
 
 [node name="BigRed" type="RigidBody2D" unique_id=1618506388]
 contact_monitor = true
-script = ExtResource("1_5p3ux")
+script = ExtResource("1_fqbop")
 
 [node name="GradualRotationNegate" type="Node" parent="." unique_id=2071620424]
-script = ExtResource("1_smc48")
+script = ExtResource("2_rqt75")
 metadata/_custom_type_script = "uid://ejrfu2yqqgvb"
 
 [node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=927005688]
@@ -28,22 +28,22 @@ radius = 20.0
 time_horizon_obstacles = 1.0
 max_speed = 150.0
 debug_use_custom = true
-script = ExtResource("2_5p3ux")
+script = ExtResource("3_q4jc5")
 
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=1100625470]
 
 [node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=1752932693]
 
-[node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_3ff8j")]
+[node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("4_e4tpy")]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteOrigin" unique_id=1872181376]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_5p3ux")
+texture = ExtResource("5_8urup")
 
 [node name="BronzeCrown" type="Sprite2D" parent="SpriteOrigin/Sprite2D" unique_id=1620539478]
 position = Vector2(-3.7499995, -113.75)
 scale = Vector2(0.8749999, 0.8749999)
-texture = ExtResource("6_3ff8j")
+texture = ExtResource("6_j6l0o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=49075163]
 
@@ -54,7 +54,7 @@ shape = SubResource("CircleShape2D_wylef")
 collision_layer = 0
 collision_mask = 8
 monitorable = false
-script = ExtResource("5_w6o77")
+script = ExtResource("7_ptujm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1947966242]
 shape = SubResource("CircleShape2D_pvrta")
