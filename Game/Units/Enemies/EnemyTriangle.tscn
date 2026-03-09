@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxtr5yed3wi54"]
 
-[ext_resource type="Script" path="res://Game/Units/Enemies/Enemy.gd" id="1_lonei"]
+[ext_resource type="Script" uid="uid://cmjmvugtkpsa8" path="res://Game/Units/Enemies/enemy.gd" id="1_lonei"]
 [ext_resource type="Script" uid="uid://ejrfu2yqqgvb" path="res://Game/Units/GradualRotationNegate.gd" id="2_fm6ei"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_llcvg"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_bccpk"]

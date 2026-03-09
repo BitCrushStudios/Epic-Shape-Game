@@ -15,8 +15,8 @@ signal btn_pressed(btn:EquipItemButton)
 func update_player_ui():
 	if not is_inside_tree():
 		await tree_entered
-	%WaveLabel.text = "Next Wave - %d" % (player.current_wave + 1)
-	%CashLabel.text = "$ %d" % (player.money)
+	#%WaveLabel.text = "Next Wave - %d" % (player.current_wave + 1)
+	#%CashLabel.text = "$ %d" % (player.money)
 @export var items:Array[ShopItemResource]:
 	set(v):
 		items = v
