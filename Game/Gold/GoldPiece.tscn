@@ -9,7 +9,7 @@ radius = 14.529467
 
 [sub_resource type="Animation" id="Animation_v3p58"]
 resource_name = "Hide"
-length = 1.5
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,10 +17,10 @@ tracks/0/path = NodePath("ShadowOrigin:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2666667, 0.76666665, 1.2333333, 1.7, 2, 2.2666667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.34509805), Color(1, 1, 1, 0.8627451), Color(1, 1, 1, 0.34509805), Color(1, 1, 1, 0.8627451), Color(1, 1, 1, 0.20392157), Color(1, 1, 1, 0.44313726), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -29,10 +29,10 @@ tracks/1/path = NodePath("Sprite2D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 0.8666667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.76666665, 1.2333333, 1.7, 2, 2.2666667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.9618118, 0.79942083, 0.79942083, 1), Color(0.9607843, 0.8, 0.8, 0)]
+"values": [Color(0.9618118, 0.79942083, 0.79942083, 1), Color(0.9607843, 0.8, 0.8, 0.14509805), Color(0.9607843, 0.8, 0.8, 0.7176471), Color(0.9607843, 0.8, 0.8, 0.15294118), Color(0.9607843, 0.8, 0.8, 0.5137255), Color(0.9607843, 0.8, 0.8, 0.1882353), Color(0.9607843, 0.8, 0.8, 0.29803923), Color(0.9607843, 0.8, 0.8, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_6cdf2"]
@@ -82,7 +82,7 @@ shape = SubResource("CircleShape2D_1va8x")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649949279]
 modulate = Color(0.9618118, 0.79942083, 0.79942083, 1)
 position = Vector2(0, 0.41295305)
-scale = Vector2(0.7321202, 0.7321202)
+scale = Vector2(0.5136939, 0.5136939)
 texture = ExtResource("2_rgo6i")
 
 [node name="ShadowOrigin" type="Node2D" parent="." unique_id=304216036]
