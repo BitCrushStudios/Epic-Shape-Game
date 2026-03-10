@@ -29,10 +29,10 @@ resource = SubResource("Resource_k1nkd")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=10406096]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 234.0
-offset_right = 180.0
-offset_bottom = 284.0
+offset_left = 46.0
+offset_top = 236.0
+offset_right = 190.0
+offset_bottom = 286.0
 texture = ExtResource("6_k1nkd")
 
 [node name="PriceLabel" type="Label" parent="TextureRect2" unique_id=2081087733]
