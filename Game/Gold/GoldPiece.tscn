@@ -14,7 +14,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("ShadowOrigin:modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2666667, 0.76666665, 1.2333333, 1.7, 2, 2.2666667, 2.5),
@@ -26,7 +26,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Sprite2D:modulate")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.76666665, 1.2333333, 1.7, 2, 2.2666667, 2.5),
@@ -95,7 +95,7 @@ scale = Vector2(0.5, 0.5)
 libraries/ = SubResource("AnimationLibrary_g2ys7")
 
 [node name="Timer" type="Timer" parent="." unique_id=1209972779]
-wait_time = 4.0
+wait_time = 6.0
 one_shot = true
 autostart = true
 

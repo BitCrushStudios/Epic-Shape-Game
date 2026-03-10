@@ -59,9 +59,9 @@ func setup_ui():
 	
 @export_tool_button("Randomize")
 var _random_items_action = setup_ui
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("player_shop"):
-		pre_close_modal.emit.call_deferred()
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("player_shop"):
+		#pre_close_modal.emit.call_deferred()
 signal pre_close_modal()
 func modal():
 	setup_ui()
