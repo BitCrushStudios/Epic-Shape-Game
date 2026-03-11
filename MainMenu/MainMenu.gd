@@ -124,4 +124,4 @@ func _on_settings_back_pressed() -> void:
 
 
 func _on_wishlist_pressed() -> void:
-	OS.shell_open("")
+	OS.shell_open("https://store.steampowered.com/app/4458120/Squap/")
