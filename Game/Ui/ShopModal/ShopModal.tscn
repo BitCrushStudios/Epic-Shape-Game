@@ -6,33 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
 [ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
+[ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="6_llh7c"]
 [ext_resource type="Texture2D" uid="uid://cqvwn2gjxeww8" path="res://Assets/Art/User Interface/Shop/Pannel Outline NEW.png" id="8_llh7c"]
 [ext_resource type="Texture2D" uid="uid://d0p78470dwaqc" path="res://Assets/Art/User Interface/Shop/Pannel Background NEW no gradient.png" id="9_llh7c"]
 [ext_resource type="Texture2D" uid="uid://cixu31hm1k6hy" path="res://Assets/Art/User Interface/Shop/Tinker Button.png" id="11_374k4"]
 [ext_resource type="Texture2D" uid="uid://44orhjt8ki74" path="res://Assets/Art/User Interface/Shop/Reroll Button NEW.png" id="12_374k4"]
 [ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
-
-[sub_resource type="Resource" id="Resource_5xt70"]
-script = ExtResource("3_udy12")
-texture = ExtResource("4_cpuug")
-name = "Coffee"
-
-[sub_resource type="Resource" id="Resource_n0hoh"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_5xt70")
-
-[sub_resource type="Resource" id="Resource_qit7n"]
-script = ExtResource("4_wy88y")
-texture = ExtResource("4_cpuug")
-name = "Soy"
-
-[sub_resource type="Resource" id="Resource_hitma"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_qit7n")
-
-[sub_resource type="Theme" id="Theme_q3cp0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
 
 [sub_resource type="Resource" id="Resource_q3cp0"]
 script = ExtResource("3_udy12")
@@ -52,11 +31,16 @@ name = "Soy"
 script = ExtResource("5_0k88i")
 item = SubResource("Resource_374k4")
 
+[sub_resource type="Theme" id="Theme_q3cp0"]
+default_font = ExtResource("6_llh7c")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
+
 [node name="ShopModal" type="CanvasLayer" unique_id=1905418868]
 process_mode = 3
 layer = 13
 script = ExtResource("1_oi6um")
-items = Array[ExtResource("5_0k88i")]([null, null, null, SubResource("Resource_n0hoh"), SubResource("Resource_hitma")])
+items = Array[ExtResource("5_0k88i")]([null, SubResource("Resource_llh7c"), null, SubResource("Resource_decmg"), null])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1493321986]
 anchors_preset = 15
@@ -125,15 +109,15 @@ theme_override_constants/separation = 32
 
 [node name="ShopButton2" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
-
-[node name="ShopButton3" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=476961851 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 resource = SubResource("Resource_llh7c")
+
+[node name="ShopButton3" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=476961851 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
+layout_mode = 2
 
 [node name="ShopButton1" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
@@ -163,10 +147,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -408.0
-offset_top = -111.0
-offset_right = 408.0
-offset_bottom = -11.0
+offset_left = -262.0
+offset_top = -113.0
+offset_right = 262.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
@@ -175,7 +159,6 @@ pivot_offset_ratio = Vector2(0.5, 1)
 [node name="TinkerButton" type="Button" parent="PanelContainer/Control/Control2/NavContainer" unique_id=12697971]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Tinker"
 icon = ExtResource("11_374k4")
 flat = true
 icon_alignment = 2
@@ -206,7 +189,5 @@ text = "Reroll"
 [node name="AcceptButton" type="Button" parent="PanelContainer/Control/Control2/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Accept"
 icon = ExtResource("13_decmg")
 flat = true

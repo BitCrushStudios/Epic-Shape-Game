@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjp2b5iomkei"]
 
-[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/Player.gd" id="1_ddoul"]
+[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/player.gd" id="1_ddoul"]
 [ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_cvipf"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_tok1r"]
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_i7tqw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="9_jiict"]
 [ext_resource type="Script" uid="uid://dx2vqd4gi3f7u" path="res://Game/Units/Player/GoldPickupBox.gd" id="10_wnw4f"]
 [ext_resource type="AudioStream" uid="uid://bdnmd5yugdp85" path="res://Assets/Sound Effects/Coin Pickup/Pickup3.wav" id="11_thx7d"]
+[ext_resource type="Texture2D" uid="uid://m7ljnh7u8j1q" path="res://Assets/TestArrow.png" id="12_wfiu6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
 friction = 0.0
@@ -24,6 +25,14 @@ speed = 650.0
 next_level_exp_required = 1.0
 exp_required = 1.0
 metadata/_custom_type_script = "uid://dfj50wg6u44xx"
+
+[sub_resource type="Curve" id="Curve_thx7d"]
+_data = [Vector2(1, 1), 0.19314462, 0.0, 1, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_wfiu6"]
+offsets = PackedFloat32Array(0, 0.15384616)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbpe7"]
 radius = 28.01785
@@ -73,13 +82,6 @@ radius = 15.132746
 [sub_resource type="CircleShape2D" id="CircleShape2D_jiict"]
 radius = 28.071337
 
-[sub_resource type="Curve" id="Curve_thx7d"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_wfiu6"]
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
-
 [node name="Player" type="RigidBody2D" unique_id=2019408090]
 y_sort_enabled = true
 collision_layer = 2
@@ -93,6 +95,15 @@ contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_ddoul")
 resource = SubResource("Resource_wnw4f")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=58811942]
+points = PackedVector2Array(287, -26, 491, -61)
+width = 100.0
+width_curve = SubResource("Curve_thx7d")
+gradient = SubResource("Gradient_wfiu6")
+texture = ExtResource("12_wfiu6")
+texture_mode = 2
+joint_mode = 2
 
 [node name="GradualRotationNegate" type="Node" parent="." unique_id=950900652]
 script = ExtResource("6_thx7d")
@@ -149,11 +160,3 @@ stream = ExtResource("11_thx7d")
 volume_db = -18.0
 pitch_scale = 0.01
 bus = &"Sound Effects"
-
-[node name="Line2D" type="Line2D" parent="." unique_id=58811942]
-points = PackedVector2Array(201, -12, 575, -73)
-width = 27.45
-width_curve = SubResource("Curve_thx7d")
-gradient = SubResource("Gradient_wfiu6")
-begin_cap_mode = 2
-end_cap_mode = 2
