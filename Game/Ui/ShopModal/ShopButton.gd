@@ -1,5 +1,5 @@
 @tool
-extends Button
+extends Control
 class_name ShopButton
 
 
@@ -20,16 +20,16 @@ func resource_changed():
 		%NameLabel.text = resource.item.name
 		%DescriptionLabel.text = resource.item.description
 		%PriceLabel.text = "$ %d" % resource.price
-		disabled = resource.quantity<=0
+		$Button.disabled = resource.quantity<=0
 	else:
 		%TextureRect.texture = null
 		%NameLabel.text = ""
 		%DescriptionLabel.text = ""
 		%PriceLabel.text = ""
-		disabled=true
-	modulate = Color.DIM_GRAY if disabled else Color.WHITE
+		$Button.disabled=true
+	modulate = Color.DIM_GRAY if $Button.disabled else Color.WHITE
 		
 func _pressed() -> void:
 	item_selected.emit(resource)
 
-@export_tool_button("Trigger") var _trigger = _pressed
+@export_tool_button("Randomize") var _trigger = _pressed
