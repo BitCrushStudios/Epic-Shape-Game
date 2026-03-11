@@ -34,7 +34,7 @@ func _entered_hurtbox(node:Node):
 	$Hit.play()
 	if state != State.Activated:
 		return
-	if node is Enemy:
+	if node is MarioKart:
 		var f1 = linear_velocity * mass
 		var f2 = node.linear_velocity * node.mass
 		var g1 = global_position
