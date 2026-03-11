@@ -1,16 +1,16 @@
 @tool
-extends Control
+extends CanvasLayer
 class_name ShopModal 
 
 signal item_selected(item:ItemResource)
 signal btn_pressed(btn:EquipItemButton)
-@export var player:PlayerResource = PlayerResource.new():
+@export var player:Player:
 	set(v):
-		if player and player.changed.is_connected(update_player_ui):
-			player.changed.disconnect(update_player_ui)
+		if player and player.resource_changed.is_connected(update_player_ui):
+			player.resource_changed.disconnect(update_player_ui)
 		player = v
 		if player:
-			player.changed.connect(update_player_ui)
+			player.resource_changed.connect(update_player_ui)
 		update_player_ui()
 func update_player_ui():
 	if not is_inside_tree():
@@ -59,17 +59,23 @@ func setup_ui():
 	
 @export_tool_button("Randomize")
 var _random_items_action = setup_ui
-#func _process(_delta: float) -> void:
-	#if Input.is_action_just_pressed("player_shop"):
-		#pre_close_modal.emit.call_deferred()
+func _process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+	if Input.is_action_just_pressed("player_shop"):
+		if not visible:
+			await modal()
+		else:
+			pre_close_modal.emit()
 signal pre_close_modal()
 func modal():
 	setup_ui()
-	#$AnimationPlayer.play("open")
+	get_tree().paused=true
+	visible = true
 	await pre_close_modal
-	#$AnimationPlayer.play("close")
-	#await $AnimationPlayer.animation_finished
-
+	visible = false
+	get_tree().paused=false
+	
 func _ready():
 	%AcceptButton.pressed.connect(pre_close_modal.emit)
 	for btn in get_buttons():
@@ -81,12 +87,12 @@ func _ready():
 		await modal()
 
 func _item_selected(shopItem:ShopItemResource):
-	if shopItem.quantity>0 and shopItem.price <= player.money:
-		player.money -= shopItem.price
+	if shopItem.quantity>0 and shopItem.price <= player.resource.money:
+		player.resource.money -= shopItem.price
 		shopItem.quantity -= 1
-		var arr = player.inventory.duplicate()
+		var arr = player.resource.inventory.duplicate()
 		arr.append(shopItem.item)
-		player.inventory = arr
+		player.resource.inventory = arr
 		#player.inventory = player.inventory
 	
 	

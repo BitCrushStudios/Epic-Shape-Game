@@ -27,11 +27,13 @@ var gameUi: GameUi:
 		gameUi = v
 		update_refs()
 var pause_menu: CanvasLayer
-
+	
 func update_refs():
 	if gameUi:
 		gameUi.player = player
 		gameUi.enemyManager = enemyManager
+	if shop_modal:
+		shop_modal.player = player
 	if player:
 		player.weaponsManager = weaponsManager
 	
@@ -42,6 +44,9 @@ func _ready() -> void:
 		_child_entered_tree(c)
 	if not Engine.is_editor_hint():
 		add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
+		shop_modal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
+		shop_modal.visible = false
+		add_child(shop_modal)
 		pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()
 		pause_menu.visible = false
 		add_child(pause_menu)
@@ -70,15 +75,6 @@ func _child_exiting_tree(node:Node):
 	if node is GameUi and gameUi == node: 
 		gameUi = node
 var shop_modal:ShopModal
-func show_shop_modal():
-	get_tree().paused=true
-	shop_modal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
-	$CanvasLayer.add_child(shop_modal)
-	shop_modal.player = player.resource
-	await shop_modal.modal()
-	shop_modal.queue_free()
-	get_tree().paused=false
-	
 	
 func _process(delta: float) -> void:
 	if get_tree().paused:
@@ -98,8 +94,6 @@ func _process(delta: float) -> void:
 	if player:
 		if Input.is_action_just_pressed("dev_player_upgrade"):
 			player.show_upgrade_modal()
-		if Input.is_action_just_pressed("player_shop") and not shop_modal:
-			show_shop_modal()
 		if Input.is_action_just_pressed("dev_player_equip"):
 			player.show_equip_modal()
 		if Input.is_action_just_pressed("dev_player_size_up"):
