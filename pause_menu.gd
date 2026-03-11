@@ -10,13 +10,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("dev_game_pause"):
 		visible = not visible
-		#get_tree().paused = not get_tree().paused
-	get_tree().paused = visible
+		get_tree().paused = visible
 
 
 
 func _on_resume_pressed() -> void:
 	visible = false
+	get_tree().paused = false
 
 
 
