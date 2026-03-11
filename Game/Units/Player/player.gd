@@ -102,9 +102,11 @@ func show_equip_modal():
 	await modal.modal()
 	modal.queue_free()
 	get_tree().paused=false
+var kick_force_max = 3000.0
+var kick_force = 0.0
 func trigger_kick():
 	var kick_vector = get_global_mouse_position() - global_position 
-	apply_central_impulse(kick_vector.normalized() * 3000.0 * mass)
+	apply_central_impulse(kick_vector.normalized() * kick_force * mass)
 	
 @export var move_towards_desired_velocity = true
 @export var desired_velocity = Vector2.ZERO
@@ -116,5 +118,11 @@ func _physics_process(delta: float) -> void:
 	apply_central_force(desired_velocity * mass)
 	resource.update_iframe(delta)
 	if Input.is_action_just_pressed("player_kick"):
+		kick_force = 0.0
+	elif Input.is_action_pressed("player_kick"):
+		kick_force = (kick_force / kick_force_max) 
+	elif Input.is_action_just_released("player_kick"):
 		trigger_kick()
-	
+		kick_force = 0.0
+	$Line2D.points[0] = Vector2.ZERO
+	$Line2D.points[1] = (get_global_mouse_position() - global_position).normalized().rotated(-$Line2D.global_rotation) * (kick_force/5.0)
