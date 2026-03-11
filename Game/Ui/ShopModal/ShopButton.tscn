@@ -20,72 +20,76 @@ metadata/_custom_type_script = "uid://cyj57dpj0ij47"
 
 [node name="ShopButton" type="Button" unique_id=866692791]
 offset_right = 200.0
-offset_bottom = 200.0
-icon = ExtResource("1_k1nkd")
+offset_bottom = 498.0
 flat = true
 icon_alignment = 1
 script = ExtResource("1_1tt3b")
 resource = SubResource("Resource_k1nkd")
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=10406096]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 230.0
-offset_right = 189.0
-offset_bottom = 280.0
-texture = ExtResource("6_k1nkd")
-
-[node name="PriceLabel" type="Label" parent="TextureRect2" unique_id=2081087733]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -27.000002
-offset_top = 9.0
-offset_right = 225.0
-offset_bottom = 42.0
-scale = Vector2(0.9, 0.9)
-theme_type_variation = &"OutlineLabelSmall"
-text = "$ 100"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=131644122]
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1749965105]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 92.00001
-offset_top = 41.0
-offset_right = -57.999985
-offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.7, 0.7)
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1931081603]
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer2" unique_id=449851077]
+layout_mode = 2
+texture = ExtResource("1_k1nkd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/TextureRect3" unique_id=322208739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 41.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/TextureRect3/VBoxContainer" unique_id=801848120]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=801848120]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 52.0
-offset_top = 55.0
-offset_right = 206.0
-offset_bottom = 209.0
-scale = Vector2(0.7, 0.7)
-size_flags_vertical = 3
 texture = ExtResource("4_k1nkd")
 expand_mode = 3
-stretch_mode = 5
+stretch_mode = 3
 
-[node name="NameLabel" type="Label" parent="." unique_id=856560911]
+[node name="NameLabel" type="Label" parent="VBoxContainer2/TextureRect3/VBoxContainer" unique_id=856560911]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 28.0
-offset_top = 156.0
-offset_right = 182.0
-offset_bottom = 222.0
+layout_mode = 2
+size_flags_vertical = 1
 theme_type_variation = &"OutlineLabelSmall"
 theme_override_font_sizes/font_size = 40
 text = "Coffee"
 horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer2" unique_id=10406096]
+layout_mode = 2
+texture = ExtResource("6_k1nkd")
+
+[node name="PriceLabel" type="Label" parent="VBoxContainer2/TextureRect2" unique_id=2081087733]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -16.5
+offset_right = 26.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_type_variation = &"OutlineLabelSmall"
+text = "$ 100"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxContainer2" unique_id=1931081603]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3

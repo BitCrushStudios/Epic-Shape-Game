@@ -139,6 +139,7 @@ layout_mode = 2
 theme = SubResource("Theme_bsanu")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Start"
 
 [node name="Settings" type="Button" parent="MainContainer/Control/BoxContainer" unique_id=1049970450]
@@ -146,6 +147,7 @@ layout_mode = 2
 theme = SubResource("Theme_bsanu")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Settings"
 
 [node name="Wishlist" type="Button" parent="MainContainer/Control/BoxContainer" unique_id=1119958316]
@@ -153,6 +155,7 @@ layout_mode = 2
 theme = SubResource("Theme_bsanu")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Wishlist!"
 
 [node name="Quit" type="Button" parent="MainContainer/Control/BoxContainer" unique_id=234137351]
@@ -160,6 +163,7 @@ layout_mode = 2
 theme = SubResource("Theme_bsanu")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="SettingContainer" type="ColorRect" parent="." unique_id=463885124]
@@ -204,6 +208,7 @@ theme = SubResource("Theme_bsanu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Apply"
 
 [node name="SettingsBack" type="Button" parent="SettingContainer/MarginContainer/Control/BoxContainer" unique_id=1662263661]
@@ -212,10 +217,12 @@ theme = SubResource("Theme_bsanu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
 text = "Return"
 
 [node name="SettingPanels" type="VBoxContainer" parent="SettingContainer/MarginContainer/Control" unique_id=888487849]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Visuals" type="VBoxContainer" parent="SettingContainer/MarginContainer/Control/SettingPanels" unique_id=2145611179]
 layout_mode = 2
@@ -258,10 +265,9 @@ layout_mode = 2
 theme = SubResource("Theme_bsanu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
 text = "FullScreen"
 flat = true
-alignment = 2
 
 [node name="GridContainer" type="GridContainer" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals" unique_id=1782914916]
 layout_mode = 2
@@ -269,6 +275,7 @@ columns = 3
 
 [node name="MusicLabel" type="Label" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=760566261]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Music"
 
 [node name="MusicVolume" type="HSlider" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=925672930]
@@ -286,13 +293,14 @@ layout_mode = 2
 theme = SubResource("Theme_bsanu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 0
 button_pressed = true
 flat = true
 alignment = 2
 
 [node name="SoundLabel" type="Label" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=1520632699]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Sound"
 
 [node name="SoundVolume" type="HSlider" parent="SettingContainer/MarginContainer/Control/SettingPanels/Visuals/GridContainer" unique_id=305500979]
@@ -310,7 +318,7 @@ layout_mode = 2
 theme = SubResource("Theme_bsanu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 0
 button_pressed = true
 flat = true
 alignment = 2

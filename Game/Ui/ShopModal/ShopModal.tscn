@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ojqs7tyhjare"]
 
+[ext_resource type="Script" uid="uid://cqmbl2lc6yrsn" path="res://Game/Ui/ShopModal/ShopModal.gd" id="1_oi6um"]
 [ext_resource type="PackedScene" uid="uid://csd1cwka8wio6" path="res://Game/Ui/ShopModal/ShopButton.tscn" id="2_a2r72"]
 [ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="3_udy12"]
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
@@ -11,154 +12,70 @@
 [ext_resource type="Texture2D" uid="uid://44orhjt8ki74" path="res://Assets/Art/User Interface/Shop/Reroll Button NEW.png" id="12_374k4"]
 [ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
-
 [sub_resource type="Resource" id="Resource_q3cp0"]
-script = ExtResource("4_wy88y")
-texture = ExtResource("4_cpuug")
-name = "Soy"
-
-[sub_resource type="Resource" id="Resource_374k4"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_q3cp0")
-quantity = 0
-
-[sub_resource type="Resource" id="Resource_0k88i"]
 script = ExtResource("3_udy12")
 texture = ExtResource("4_cpuug")
 name = "Coffee"
 
+[sub_resource type="Resource" id="Resource_llh7c"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_q3cp0")
+
+[sub_resource type="Resource" id="Resource_374k4"]
+script = ExtResource("4_wy88y")
+texture = ExtResource("4_cpuug")
+name = "Soy"
+
 [sub_resource type="Resource" id="Resource_decmg"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_0k88i")
-quantity = 0
+item = SubResource("Resource_374k4")
 
-[sub_resource type="Animation" id="Animation_1ngdt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
+[sub_resource type="Theme" id="Theme_q3cp0"]
 
-[sub_resource type="Animation" id="Animation_wjask"]
-resource_name = "close"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
 
-[sub_resource type="Animation" id="Animation_2q4av"]
-resource_name = "open"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjask"]
-_data = {
-&"RESET": SubResource("Animation_1ngdt"),
-&"close": SubResource("Animation_wjask"),
-&"open": SubResource("Animation_2q4av")
-}
-
-[node name="ShopModal" type="Control" unique_id=827339811]
+[node name="ShopModal" type="CanvasLayer" unique_id=1905418868]
 process_mode = 3
-layout_mode = 3
+layer = 13
+script = ExtResource("1_oi6um")
+items = Array[ExtResource("5_0k88i")]([null, SubResource("Resource_llh7c"), SubResource("Resource_decmg"), null, null])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1493321986]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.34780002, 0.47, 0.42519334, 0.6627451)
 
 [node name="Background" type="TextureRect" parent="." unique_id=759573773]
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_q3cp0")
 texture = ExtResource("9_llh7c")
 
 [node name="Outline" type="TextureRect" parent="." unique_id=1597882246]
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_q3cp0")
 texture = ExtResource("8_llh7c")
 
-[node name="HeaderContainerOffset" type="Control" parent="." unique_id=2078019511]
-modulate = Color(1, 1, 1, 0)
-z_index = 1
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 14.0
-offset_bottom = 14.0
-grow_horizontal = 2
-
-[node name="HeaderContainer" type="HBoxContainer" parent="HeaderContainerOffset" unique_id=1652707197]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 66.0
-grow_horizontal = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1561531254]
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="PanelContainer3" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1370799459]
-layout_mode = 2
-size_flags_horizontal = 6
-
-[node name="PanelContainer2" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1299552836]
-layout_mode = 2
-size_flags_horizontal = 10
-
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=131945444]
-layout_mode = 0
-offset_left = 200.0
+offset_left = 214.0
 offset_top = 113.0
-offset_right = 762.0
+offset_right = 748.0
 offset_bottom = 434.0
+theme = SubResource("Theme_q3cp0")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_374k4")
 
-[node name="Control" type="Control" parent="PanelContainer" unique_id=1468256278]
+[node name="Control" type="VBoxContainer" parent="PanelContainer" unique_id=1548209967]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/Control" unique_id=1748890116]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -281.0
-offset_right = 281.0
-offset_bottom = 40.0
-grow_horizontal = 2
+layout_mode = 2
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 11
@@ -167,128 +84,115 @@ text = "Shop!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonContainerOffset" type="Control" parent="PanelContainer/Control" unique_id=1911506529]
+[node name="Control" type="Control" parent="PanelContainer/Control" unique_id=782450081]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Control/Control" unique_id=1009510123]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 33.0
-offset_top = -218.5
-offset_right = 33.0
-offset_bottom = -218.5
+offset_left = -458.0
+offset_top = -125.0
+offset_right = 458.0
+offset_bottom = 276.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_constants/separation = 32
 
-[node name="ButtonContainer2" type="Control" parent="PanelContainer/Control/ButtonContainerOffset" unique_id=609931546]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = 170.0
-offset_right = -18.0
-offset_bottom = 693.9983
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2" unique_id=1009510123]
-layout_mode = 0
-offset_left = -10.0
-offset_top = 34.0
-offset_right = 1040.0
-offset_bottom = 284.0
-
-[node name="Control2" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=968915602]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ShopButton2" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
+[node name="ShopButton2" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-disabled = true
-resource = null
+resource = SubResource("Resource_llh7c")
 
-[node name="Control3" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=768994115]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ShopButton3" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
+[node name="ShopButton3" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-disabled = true
-resource = null
-
-[node name="Control1" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=1696070561]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ShopButton1" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
-disabled = true
-resource = null
-
-[node name="Control4" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=1717860420]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ShopButton4" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
-disabled = true
-resource = SubResource("Resource_374k4")
-
-[node name="Control5" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=458906006]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ShopButton5" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
-disabled = true
 resource = SubResource("Resource_decmg")
 
-[node name="NavContainerOffset" type="Control" parent="PanelContainer/Control" unique_id=1609302305]
-layout_mode = 1
-anchors_preset = 0
-pivot_offset = Vector2(-65, 63)
-metadata/_edit_use_anchors_ = true
-
-[node name="NavContainer" type="HBoxContainer" parent="PanelContainer/Control/NavContainerOffset" unique_id=1771758401]
-layout_mode = 1
-offset_left = 153.0
-offset_top = 261.0
-offset_right = 657.0
-offset_bottom = 361.0
-scale = Vector2(0.5, 0.5)
-
-[node name="TinkerButton" type="Button" parent="PanelContainer/Control/NavContainerOffset/NavContainer" unique_id=12697971]
+[node name="ShopButton1" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1734667001 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-icon = ExtResource("11_374k4")
+disabled = true
+resource = null
 
-[node name="RerollButton" type="Button" parent="PanelContainer/Control/NavContainerOffset/NavContainer" unique_id=1885202147]
+[node name="ShopButton4" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1411666123 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
+layout_mode = 2
+disabled = true
+resource = null
+
+[node name="ShopButton5" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1040789750 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
+layout_mode = 2
+disabled = true
+resource = null
+
+[node name="Control2" type="Control" parent="PanelContainer/Control" unique_id=1723206551]
+layout_mode = 2
+
+[node name="NavContainer" type="HBoxContainer" parent="PanelContainer/Control/Control2" unique_id=1771758401]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -408.0
+offset_top = -111.0
+offset_right = 408.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 1)
+
+[node name="TinkerButton" type="Button" parent="PanelContainer/Control/Control2/NavContainer" unique_id=12697971]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tinker"
+icon = ExtResource("11_374k4")
+flat = true
+icon_alignment = 2
+
+[node name="RerollButton" type="Button" parent="PanelContainer/Control/Control2/NavContainer" unique_id=1885202147]
+unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("12_374k4")
+flat = true
 
-[node name="AcceptButton" type="Button" parent="PanelContainer/Control/NavContainerOffset/NavContainer" unique_id=2077783062]
+[node name="Label" type="Label" parent="PanelContainer/Control/Control2/NavContainer/RerollButton" unique_id=1155817703]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -33.0
+offset_right = 63.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reroll"
+
+[node name="AcceptButton" type="Button" parent="PanelContainer/Control/Control2/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "
-"
+text = "Accept"
 icon = ExtResource("13_decmg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
-libraries/ = SubResource("AnimationLibrary_wjask")
+flat = true

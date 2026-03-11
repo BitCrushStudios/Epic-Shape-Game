@@ -1,9 +1,10 @@
 @tool
-extends Control
+extends CanvasLayer
 class_name ShopModal 
 
 signal item_selected(item:ItemResource)
 signal btn_pressed(btn:EquipItemButton)
+
 @export var player:Player:
 	set(v):
 		if player and player.resource_changed.is_connected(update_player_ui):
@@ -17,10 +18,14 @@ func update_player_ui():
 		await tree_entered
 	#%WaveLabel.text = "Next Wave - %d" % (player.current_wave + 1)
 	#%CashLabel.text = "$ %d" % (player.money)
+@export var money:int = 1000:
+	set(v):
+		money = v
+		_changed()
 @export var items:Array[ShopItemResource]:
 	set(v):
 		items = v
-		items_changed()
+		_changed()
 
 func get_buttons() -> Array[ShopButton]:
 	return [
@@ -31,7 +36,7 @@ func get_buttons() -> Array[ShopButton]:
 		%ShopButton5,
 	]
 
-func items_changed():
+func _changed():
 	if not is_inside_tree():
 		await tree_entered
 	var buttons = get_buttons()
@@ -69,7 +74,6 @@ func _process(_delta: float) -> void:
 			pre_close_modal.emit()
 signal pre_close_modal()
 func modal():
-	setup_ui()
 	get_tree().paused=true
 	visible = true
 	await pre_close_modal
@@ -77,6 +81,8 @@ func modal():
 	get_tree().paused=false
 	
 func _ready():
+	setup_ui()
+	%RerollButton.pressed.connect(_reroll)
 	%AcceptButton.pressed.connect(pre_close_modal.emit)
 	for btn in get_buttons():
 		btn.item_selected.connect(item_selected.emit)
@@ -85,14 +91,12 @@ func _ready():
 		Player.instance = Player.new()
 		Player.instance.resource = PlayerResource.new()
 		await modal()
-
+func _reroll():
+	setup_ui()
 func _item_selected(shopItem:ShopItemResource):
-	if shopItem.quantity>0 and shopItem.price <= player.resource.money:
-		player.resource.money -= shopItem.price
+	if shopItem.quantity>0 and shopItem.price <= money:
+		money -= shopItem.price
 		shopItem.quantity -= 1
-		var arr = player.resource.inventory.duplicate()
-		arr.append(shopItem.item)
-		player.resource.inventory = arr
 		#player.inventory = player.inventory
 	
 	

@@ -21,13 +21,13 @@ func resource_changed():
 		%DescriptionLabel.text = resource.item.description
 		%PriceLabel.text = "$ %d" % resource.price
 		disabled = resource.quantity<=0
-		modulate = Color.DIM_GRAY if disabled else Color.WHITE
 	else:
 		%TextureRect.texture = null
 		%NameLabel.text = ""
 		%DescriptionLabel.text = ""
 		%PriceLabel.text = ""
 		disabled=true
+	modulate = Color.DIM_GRAY if disabled else Color.WHITE
 		
 func _pressed() -> void:
 	item_selected.emit(resource)
