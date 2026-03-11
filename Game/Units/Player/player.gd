@@ -118,9 +118,10 @@ func _physics_process(delta: float) -> void:
 	apply_central_force(desired_velocity * mass)
 	resource.update_iframe(delta)
 	if Input.is_action_just_pressed("player_kick"):
-		kick_force = 0.0
+		kick_force = kick_force_max * 0.2
 	elif Input.is_action_pressed("player_kick"):
-		kick_force = (kick_force / kick_force_max) 
+		kick_force = clampf(kick_force + kick_force_max * delta * 6.0,0.0,kick_force_max)
+		
 	elif Input.is_action_just_released("player_kick"):
 		trigger_kick()
 		kick_force = 0.0
