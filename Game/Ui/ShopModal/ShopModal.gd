@@ -1,5 +1,5 @@
 @tool
-extends CanvasLayer
+extends Control
 class_name ShopModal 
 
 signal item_selected(item:ItemResource)

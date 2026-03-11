@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://ojqs7tyhjare"]
 
-[ext_resource type="Script" uid="uid://cqmbl2lc6yrsn" path="res://Game/Ui/ShopModal/ShopModal.gd" id="1_oi6um"]
 [ext_resource type="PackedScene" uid="uid://csd1cwka8wio6" path="res://Game/Ui/ShopModal/ShopButton.tscn" id="2_a2r72"]
-[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_cpuug"]
-[ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="2_e7lec"]
 [ext_resource type="Script" uid="uid://dkimhnvplapun" path="res://Game/Items/ItemCoffee.gd" id="3_udy12"]
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
@@ -14,42 +11,27 @@
 [ext_resource type="Texture2D" uid="uid://44orhjt8ki74" path="res://Assets/Art/User Interface/Shop/Reroll Button NEW.png" id="12_374k4"]
 [ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
 
-[sub_resource type="Resource" id="Resource_llh7c"]
-script = ExtResource("3_udy12")
-texture = ExtResource("4_cpuug")
-name = "Coffee"
-
-[sub_resource type="Resource" id="Resource_0k88i"]
-script = ExtResource("3_udy12")
-texture = ExtResource("4_cpuug")
-name = "Coffee"
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
 
 [sub_resource type="Resource" id="Resource_q3cp0"]
 script = ExtResource("4_wy88y")
 texture = ExtResource("4_cpuug")
 name = "Soy"
 
-[sub_resource type="Resource" id="Resource_i3qng"]
-script = ExtResource("2_e7lec")
-inventory = Array[ExtResource("2_cpuug")]([SubResource("Resource_llh7c"), SubResource("Resource_0k88i"), SubResource("Resource_q3cp0")])
-health_max = 10.0
-money = 300
-speed = 600.0
-next_level_exp_required = 1.0
-exp_required = 1.0
-metadata/_custom_type_script = "uid://dfj50wg6u44xx"
-
 [sub_resource type="Resource" id="Resource_374k4"]
 script = ExtResource("5_0k88i")
 item = SubResource("Resource_q3cp0")
 quantity = 0
 
+[sub_resource type="Resource" id="Resource_0k88i"]
+script = ExtResource("3_udy12")
+texture = ExtResource("4_cpuug")
+name = "Coffee"
+
 [sub_resource type="Resource" id="Resource_decmg"]
 script = ExtResource("5_0k88i")
 item = SubResource("Resource_0k88i")
 quantity = 0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
@@ -113,9 +95,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_oi6um")
-player = SubResource("Resource_i3qng")
-items = Array[ExtResource("5_0k88i")]([null, null, null, SubResource("Resource_374k4"), SubResource("Resource_decmg")])
 
 [node name="Background" type="TextureRect" parent="." unique_id=759573773]
 layout_mode = 0
