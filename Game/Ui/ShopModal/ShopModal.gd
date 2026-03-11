@@ -65,10 +65,10 @@ func _process(_delta: float) -> void:
 signal pre_close_modal()
 func modal():
 	setup_ui()
-	$AnimationPlayer.play("open")
+	#$AnimationPlayer.play("open")
 	await pre_close_modal
-	$AnimationPlayer.play("close")
-	await $AnimationPlayer.animation_finished
+	#$AnimationPlayer.play("close")
+	#await $AnimationPlayer.animation_finished
 
 func _ready():
 	%AcceptButton.pressed.connect(pre_close_modal.emit)

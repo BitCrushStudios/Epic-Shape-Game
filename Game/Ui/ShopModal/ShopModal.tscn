@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
 [ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
-[ext_resource type="Texture2D" uid="uid://5xryv7rl5vyt" path="res://Assets/Art/User Interface/Shop/Podium test.png" id="5_cpuug"]
 [ext_resource type="Texture2D" uid="uid://bg6v1wsvgqafk" path="res://Assets/Art/User Interface/Shop/Background Shop.png" id="9_374k4"]
 [ext_resource type="Texture2D" uid="uid://b8cgbuno7xeia" path="res://Assets/Art/User Interface/Shop/Background Spice Shop.png" id="10_0edsf"]
 [ext_resource type="Texture2D" uid="uid://dhjobbrc3aj56" path="res://Assets/Art/User Interface/Shop/Pillars/Pillar 1 .png" id="11_decmg"]
@@ -54,167 +53,6 @@ script = ExtResource("5_0k88i")
 item = SubResource("Resource_0k88i")
 quantity = 0
 
-[sub_resource type="Animation" id="Animation_1ngdt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HeaderContainerOffset:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ButtonContainerOffset:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_wjask"]
-resource_name = "close"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ButtonContainerOffset/ButtonContainer2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.3666667, 0.6666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 60), Vector2(0, -60), Vector2(0, 655)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HeaderContainerOffset/HeaderContainer:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.36666667, 0.6666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 16.789), Vector2(0, -2.78), Vector2(0, -136)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NavContainerOffset/NavContainer:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.06666666, 0.16666669, 0.43333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 20), Vector2(0, -20), Vector2(0, 600)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("HeaderContainerOffset:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.96666664),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ButtonContainerOffset:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2q4av"]
-resource_name = "open"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ButtonContainerOffset/ButtonContainer2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03333335, 0.05999999, 0.09333334, 0.12666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 655), Vector2(0, 655), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HeaderContainerOffset/HeaderContainer:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.026666665, 0.05333333, 0.08),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -136), Vector2(0, 16.789), Vector2(0, -2.78), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NavContainerOffset/NavContainer:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.11333332, 0.13333333, 0.15333334, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 600), Vector2(0, -20), Vector2(0, 20), Vector2(0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("HeaderContainerOffset:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ButtonContainerOffset:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjask"]
-_data = {
-&"RESET": SubResource("Animation_1ngdt"),
-&"close": SubResource("Animation_wjask"),
-&"open": SubResource("Animation_2q4av")
-}
-
 [node name="ShopModal" type="Control" unique_id=827339811]
 process_mode = 3
 layout_mode = 3
@@ -228,6 +66,7 @@ player = SubResource("Resource_i3qng")
 items = Array[ExtResource("5_0k88i")]([null, null, null, SubResource("Resource_374k4"), SubResource("Resource_decmg")])
 
 [node name="HeaderContainerOffset" type="Control" parent="." unique_id=2078019511]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = 10
@@ -240,7 +79,8 @@ grow_horizontal = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 66.0
+offset_top = -136.0
+offset_bottom = -70.0
 grow_horizontal = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderContainerOffset/HeaderContainer" unique_id=1561531254]
@@ -325,6 +165,7 @@ theme_override_font_sizes/font_size = 20
 text = "~Shop~"
 
 [node name="ButtonContainerOffset" type="Control" parent="." unique_id=1911506529]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -335,131 +176,64 @@ offset_bottom = -270.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ButtonContainer2" type="Control" parent="ButtonContainerOffset" unique_id=609931546]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_bottom = 523.9983
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control2" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=968915602]
+[node name="ShopButton2" parent="ButtonContainerOffset" unique_id=866692791 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 0
 offset_left = 6.0
 offset_top = 220.0
 offset_right = 194.0
-offset_bottom = 744.0
-size_flags_horizontal = 3
-
-[node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer2/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
+offset_bottom = 470.0
 disabled = true
 resource = null
 
-[node name="TextureRect" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control2" unique_id=444131488]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("11_decmg")
-expand_mode = 5
-
-[node name="Control3" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=768994115]
+[node name="ShopButton3" parent="ButtonContainerOffset" unique_id=476961851 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 0
 offset_left = 198.0
 offset_top = 223.0
 offset_right = 387.0
-offset_bottom = 747.0
-scale = Vector2(0.7, 0.7)
-size_flags_horizontal = 3
-
-[node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer2/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
+offset_bottom = 473.0
 disabled = true
 resource = null
 
-[node name="TextureRect2" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control3" unique_id=1155977084]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("11_q3cp0")
-expand_mode = 5
-
-[node name="Control1" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=1696070561]
+[node name="ShopButton1" parent="ButtonContainerOffset" unique_id=1734667001 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 0
 offset_left = 385.0
 offset_right = 574.0
-offset_bottom = 524.0
-size_flags_horizontal = 3
-
-[node name="ShopButton1" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
+offset_bottom = 250.0
 disabled = true
 resource = null
 
-[node name="TextureRect3" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control1" unique_id=406888666]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_cpuug")
-expand_mode = 5
-
-[node name="Control4" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=1717860420]
+[node name="ShopButton4" parent="ButtonContainerOffset" unique_id=1411666123 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 0
 offset_left = 618.00006
 offset_top = 236.99998
 offset_right = 807.00006
-offset_bottom = 761.0
-scale = Vector2(0.7, 0.7)
-size_flags_horizontal = 3
-
-[node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer2/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
+offset_bottom = 487.0
 disabled = true
 resource = SubResource("Resource_374k4")
 
-[node name="TextureRect4" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control4" unique_id=1373859225]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("13_decmg")
-expand_mode = 5
-
-[node name="Control5" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=458906006]
+[node name="ShopButton5" parent="ButtonContainerOffset" unique_id=1040789750 instance=ExtResource("2_a2r72")]
+unique_name_in_owner = true
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 0
 offset_left = 771.0
 offset_top = 223.0
 offset_right = 960.0
-offset_bottom = 747.0
-size_flags_horizontal = 3
-
-[node name="ShopButton5" parent="ButtonContainerOffset/ButtonContainer2/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
-unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
-custom_minimum_size = Vector2(180, 250)
-layout_mode = 2
+offset_bottom = 473.0
 disabled = true
 resource = SubResource("Resource_decmg")
-
-[node name="TextureRect5" type="TextureRect" parent="ButtonContainerOffset/ButtonContainer2/Control5" unique_id=1697602729]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_cpuug")
-expand_mode = 5
 
 [node name="NavContainerOffset" type="Control" parent="." unique_id=1609302305]
 layout_mode = 1
@@ -473,8 +247,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NavContainer" type="HBoxContainer" parent="NavContainerOffset" unique_id=1771758401]
 layout_mode = 1
+offset_top = 600.0
 offset_right = 171.00006
-offset_bottom = 66.00049
+offset_bottom = 666.0005
 
 [node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
@@ -482,9 +257,6 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Accept"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
-libraries/ = SubResource("AnimationLibrary_wjask")
 
 [node name="Art" type="Control" parent="." unique_id=114313069]
 anchors_preset = 0
