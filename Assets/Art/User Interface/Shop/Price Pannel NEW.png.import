@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rxco1iypmd4h"
-path="res://.godot/imported/Item Pannel.png-18498a5c1e8f38d4754b385bd374f233.ctex"
+uid="uid://pgm52ye2tpxq"
+path="res://.godot/imported/Price Pannel NEW.png-175baac776a72cd0dc737ec0320a4b55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Item Pannel.png"
-dest_files=["res://.godot/imported/Item Pannel.png-18498a5c1e8f38d4754b385bd374f233.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Price Pannel NEW.png"
+dest_files=["res://.godot/imported/Price Pannel NEW.png-175baac776a72cd0dc737ec0320a4b55.ctex"]
 
 [params]
 

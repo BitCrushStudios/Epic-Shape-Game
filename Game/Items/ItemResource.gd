@@ -30,6 +30,6 @@ static func get_available_items():
 	]
 	
 func _init():
-	texture = preload("res://Assets/Art/User Interface/Shop/Item Size Test.png")
+	texture = preload("res://Assets/Art/User Interface/Shop/Temp/Item Size Test.png")
 	name = "Item Name"
 	description = ""

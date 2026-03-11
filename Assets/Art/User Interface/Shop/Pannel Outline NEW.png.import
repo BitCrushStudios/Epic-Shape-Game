@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdilxwowhi4yq"
-path="res://.godot/imported/Item Size Test.png-e7873b69cf5b934c2e265a817f9a1fda.ctex"
+uid="uid://cqvwn2gjxeww8"
+path="res://.godot/imported/Pannel Outline NEW.png-00f0c0df4c4f5eaec2acdc6bc4ecbd67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Item Size Test.png"
-dest_files=["res://.godot/imported/Item Size Test.png-e7873b69cf5b934c2e265a817f9a1fda.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Pannel Outline NEW.png"
+dest_files=["res://.godot/imported/Pannel Outline NEW.png-00f0c0df4c4f5eaec2acdc6bc4ecbd67.ctex"]
 
 [params]
 

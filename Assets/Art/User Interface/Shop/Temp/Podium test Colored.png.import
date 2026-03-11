@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://phc54uhfttsa"
-path="res://.godot/imported/Small Button.png-16c6d8f50edfbdac9aad3f16cb4206c3.ctex"
+uid="uid://c080rld6mk4o8"
+path="res://.godot/imported/Podium test Colored.png-25667c0963b8ac954782b99b13f97d78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Small Button.png"
-dest_files=["res://.godot/imported/Small Button.png-16c6d8f50edfbdac9aad3f16cb4206c3.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Temp/Podium test Colored.png"
+dest_files=["res://.godot/imported/Podium test Colored.png-25667c0963b8ac954782b99b13f97d78.ctex"]
 
 [params]
 

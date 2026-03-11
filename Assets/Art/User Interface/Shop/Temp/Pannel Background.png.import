@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crr6j2ppai8cf"
-path="res://.godot/imported/Pannel Outline.png-b466e820e8a5ad06f28eae6336efa565.ctex"
+uid="uid://co6627cau7gu8"
+path="res://.godot/imported/Pannel Background.png-12f6b2de0a517653fb7c7e25fa9a3221.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Pannel Outline.png"
-dest_files=["res://.godot/imported/Pannel Outline.png-b466e820e8a5ad06f28eae6336efa565.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Temp/Pannel Background.png"
+dest_files=["res://.godot/imported/Pannel Background.png-12f6b2de0a517653fb7c7e25fa9a3221.ctex"]
 
 [params]
 

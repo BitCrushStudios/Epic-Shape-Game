@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5xryv7rl5vyt"
-path="res://.godot/imported/Podium test.png-7e8b5610bfd1fe9a0ecc9e95183fadf4.ctex"
+uid="uid://cixu31hm1k6hy"
+path="res://.godot/imported/Tinker Button.png-e5996de41f3fc2b2b96900ce54fa96b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Podium test.png"
-dest_files=["res://.godot/imported/Podium test.png-7e8b5610bfd1fe9a0ecc9e95183fadf4.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Tinker Button.png"
+dest_files=["res://.godot/imported/Tinker Button.png-e5996de41f3fc2b2b96900ce54fa96b6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg6v1wsvgqafk"
-path="res://.godot/imported/Background Shop.png-cd711250c1527c633980103f317950ea.ctex"
+uid="uid://b1jk0bd3qwgcf"
+path="res://.godot/imported/Pannel Background NEW.png-8cdc7333e3552d7893e206b3ab60581a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Background Shop.png"
-dest_files=["res://.godot/imported/Background Shop.png-cd711250c1527c633980103f317950ea.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Pannel Background NEW.png"
+dest_files=["res://.godot/imported/Pannel Background NEW.png-8cdc7333e3552d7893e206b3ab60581a.ctex"]
 
 [params]
 

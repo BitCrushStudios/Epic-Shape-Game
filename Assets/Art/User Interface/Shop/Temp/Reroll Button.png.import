@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c080rld6mk4o8"
-path="res://.godot/imported/Podium test Colored.png-4cea7ad53fe1e61bc2b3954d9f6e41a2.ctex"
+uid="uid://1t0hwxnea651"
+path="res://.godot/imported/Reroll Button.png-70f4a7a8ba41f4d50334ad83f62db374.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Podium test Colored.png"
-dest_files=["res://.godot/imported/Podium test Colored.png-4cea7ad53fe1e61bc2b3954d9f6e41a2.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Temp/Reroll Button.png"
+dest_files=["res://.godot/imported/Reroll Button.png-70f4a7a8ba41f4d50334ad83f62db374.ctex"]
 
 [params]
 

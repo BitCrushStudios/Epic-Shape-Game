@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1t0hwxnea651"
-path="res://.godot/imported/Reroll Button.png-ae8fd1c6844fa2af9cc6011221752ce4.ctex"
+uid="uid://cdilxwowhi4yq"
+path="res://.godot/imported/Item Size Test.png-04077e431430093c824dd7e5ee605194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Reroll Button.png"
-dest_files=["res://.godot/imported/Reroll Button.png-ae8fd1c6844fa2af9cc6011221752ce4.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Temp/Item Size Test.png"
+dest_files=["res://.godot/imported/Item Size Test.png-04077e431430093c824dd7e5ee605194.ctex"]
 
 [params]
 

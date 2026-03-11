@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_cpuug"]
 [ext_resource type="Script" uid="uid://ulp6xxm5no4l" path="res://Game/Items/ItemSoy.gd" id="4_wy88y"]
 [ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
-[ext_resource type="Texture2D" uid="uid://crr6j2ppai8cf" path="res://Assets/Art/User Interface/Shop/Pannel Outline.png" id="8_q3cp0"]
-[ext_resource type="Texture2D" uid="uid://rxco1iypmd4h" path="res://Assets/Art/User Interface/Shop/Item Pannel.png" id="9_i3qng"]
-[ext_resource type="Texture2D" uid="uid://co6627cau7gu8" path="res://Assets/Art/User Interface/Shop/Pannel Background.png" id="9_llh7c"]
-[ext_resource type="Texture2D" uid="uid://phc54uhfttsa" path="res://Assets/Art/User Interface/Shop/Small Button.png" id="12_llh7c"]
-[ext_resource type="Texture2D" uid="uid://1t0hwxnea651" path="res://Assets/Art/User Interface/Shop/Reroll Button.png" id="13_374k4"]
+[ext_resource type="Texture2D" uid="uid://cqvwn2gjxeww8" path="res://Assets/Art/User Interface/Shop/Pannel Outline NEW.png" id="8_llh7c"]
+[ext_resource type="Texture2D" uid="uid://d0p78470dwaqc" path="res://Assets/Art/User Interface/Shop/Pannel Background NEW no gradient.png" id="9_llh7c"]
+[ext_resource type="Texture2D" uid="uid://cixu31hm1k6hy" path="res://Assets/Art/User Interface/Shop/Tinker Button.png" id="11_374k4"]
+[ext_resource type="Texture2D" uid="uid://44orhjt8ki74" path="res://Assets/Art/User Interface/Shop/Reroll Button NEW.png" id="12_374k4"]
+[ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
 
 [sub_resource type="Resource" id="Resource_llh7c"]
 script = ExtResource("3_udy12")
@@ -48,6 +48,8 @@ quantity = 0
 script = ExtResource("5_0k88i")
 item = SubResource("Resource_0k88i")
 quantity = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
 
 [sub_resource type="Animation" id="Animation_1ngdt"]
 length = 0.001
@@ -115,19 +117,19 @@ script = ExtResource("1_oi6um")
 player = SubResource("Resource_i3qng")
 items = Array[ExtResource("5_0k88i")]([null, null, null, SubResource("Resource_374k4"), SubResource("Resource_decmg")])
 
-[node name="Outline" type="TextureRect" parent="." unique_id=1597882246]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_q3cp0")
-
 [node name="Background" type="TextureRect" parent="." unique_id=759573773]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_llh7c")
+
+[node name="Outline" type="TextureRect" parent="." unique_id=1597882246]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_llh7c")
 
 [node name="HeaderContainerOffset" type="Control" parent="." unique_id=2078019511]
 modulate = Color(1, 1, 1, 0)
@@ -158,142 +160,156 @@ size_flags_horizontal = 6
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="ButtonContainerOffset" type="Control" parent="." unique_id=1911506529]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=131945444]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 113.0
+offset_right = 762.0
+offset_bottom = 434.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_374k4")
+
+[node name="Control" type="Control" parent="PanelContainer" unique_id=1468256278]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Control" unique_id=1748890116]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -281.0
+offset_right = 281.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 30
+text = "Shop!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainerOffset" type="Control" parent="PanelContainer/Control" unique_id=1911506529]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 233.0
-offset_top = -215.0
-offset_right = 233.0
-offset_bottom = -215.0
+offset_left = 33.0
+offset_top = -218.5
+offset_right = 33.0
+offset_bottom = -218.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 
-[node name="ButtonContainer2" type="Control" parent="ButtonContainerOffset" unique_id=609931546]
+[node name="ButtonContainer2" type="Control" parent="PanelContainer/Control/ButtonContainerOffset" unique_id=609931546]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 168.0
-offset_right = 20.0
-offset_bottom = 691.9983
+offset_left = -18.0
+offset_top = 170.0
+offset_right = -18.0
+offset_bottom = 693.9983
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ButtonContainerOffset/ButtonContainer2" unique_id=1009510123]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2" unique_id=1009510123]
 layout_mode = 0
-offset_left = -48.0
+offset_left = -10.0
 offset_top = 34.0
-offset_right = 1002.0
+offset_right = 1040.0
 offset_bottom = 284.0
 
-[node name="Control2" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=968915602]
+[node name="Control2" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=968915602]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShopButton2" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
+[node name="ShopButton2" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control2" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
-icon = ExtResource("9_i3qng")
-icon_alignment = 1
 resource = null
 
-[node name="Control3" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=768994115]
+[node name="Control3" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=768994115]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShopButton3" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
+[node name="ShopButton3" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control3" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
-icon = ExtResource("9_i3qng")
-icon_alignment = 1
 resource = null
 
-[node name="Control1" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=1696070561]
+[node name="Control1" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=1696070561]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShopButton1" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
+[node name="ShopButton1" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control1" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
-icon = ExtResource("9_i3qng")
-icon_alignment = 1
 resource = null
 
-[node name="Control4" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=1717860420]
+[node name="Control4" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=1717860420]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShopButton4" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
+[node name="ShopButton4" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control4" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
-icon = ExtResource("9_i3qng")
-icon_alignment = 1
 resource = SubResource("Resource_374k4")
 
-[node name="Control5" type="VBoxContainer" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=458906006]
+[node name="Control5" type="VBoxContainer" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer" unique_id=458906006]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShopButton5" parent="ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
+[node name="ShopButton5" parent="PanelContainer/Control/ButtonContainerOffset/ButtonContainer2/HBoxContainer/Control5" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 disabled = true
-icon = ExtResource("9_i3qng")
-icon_alignment = 1
 resource = SubResource("Resource_decmg")
 
-[node name="NavContainerOffset" type="Control" parent="." unique_id=1609302305]
+[node name="NavContainerOffset" type="Control" parent="PanelContainer/Control" unique_id=1609302305]
 layout_mode = 1
-anchor_left = 0.56145835
-anchor_top = 0.62222224
-anchor_right = 0.775
-anchor_bottom = 0.78518516
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+pivot_offset = Vector2(-65, 63)
 metadata/_edit_use_anchors_ = true
 
-[node name="NavContainer" type="HBoxContainer" parent="NavContainerOffset" unique_id=1771758401]
+[node name="NavContainer" type="HBoxContainer" parent="PanelContainer/Control/NavContainerOffset" unique_id=1771758401]
 layout_mode = 1
-offset_left = -151.0
-offset_top = 51.0
-offset_right = 221.0
-offset_bottom = 117.0
+offset_left = 153.0
+offset_top = 261.0
+offset_right = 657.0
+offset_bottom = 361.0
 scale = Vector2(0.5, 0.5)
 
-[node name="TinkerButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=12697971]
+[node name="TinkerButton" type="Button" parent="PanelContainer/Control/NavContainerOffset/NavContainer" unique_id=12697971]
 layout_mode = 2
-icon = ExtResource("12_llh7c")
+icon = ExtResource("11_374k4")
 
-[node name="RerollButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=1885202147]
+[node name="RerollButton" type="Button" parent="PanelContainer/Control/NavContainerOffset/NavContainer" unique_id=1885202147]
 layout_mode = 2
-icon = ExtResource("13_374k4")
+icon = ExtResource("12_374k4")
 
-[node name="AcceptButton" type="Button" parent="NavContainerOffset/NavContainer" unique_id=2077783062]
+[node name="AcceptButton" type="Button" parent="PanelContainer/Control/NavContainerOffset/NavContainer" unique_id=2077783062]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "
 "
-icon = ExtResource("12_llh7c")
+icon = ExtResource("13_decmg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=589180736]
 libraries/ = SubResource("AnimationLibrary_wjask")

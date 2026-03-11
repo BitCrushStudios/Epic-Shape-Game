@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwsadjm447ujs"
-path="res://.godot/imported/Price Button.png-9d6bf110672bba3e76087abccd6a8cab.ctex"
+uid="uid://5xryv7rl5vyt"
+path="res://.godot/imported/Podium test.png-70ab0f86218f9add076acfae4643cc32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Shop/Price Button.png"
-dest_files=["res://.godot/imported/Price Button.png-9d6bf110672bba3e76087abccd6a8cab.ctex"]
+source_file="res://Assets/Art/User Interface/Shop/Temp/Podium test.png"
+dest_files=["res://.godot/imported/Podium test.png-70ab0f86218f9add076acfae4643cc32.ctex"]
 
 [params]
 
