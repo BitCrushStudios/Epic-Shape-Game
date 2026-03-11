@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o3qjyg751wn3"]
 
-[ext_resource type="Script" uid="uid://cmjmvugtkpsa8" path="res://Game/Units/Enemies/Enemy.gd" id="1_2j44q"]
+[ext_resource type="Script" uid="uid://bamxdyqob0ljx" path="res://Game/Units/Enemies/Enemy.gd" id="1_2j44q"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="2_sdms5"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_ub88h"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_nips6"]

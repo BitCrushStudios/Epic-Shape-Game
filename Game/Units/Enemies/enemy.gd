@@ -90,6 +90,7 @@ func _health_depleted():
 	
 func _particle_create(particles:GPUParticles2D):
 	add_child(particles,true,INTERNAL_MODE_FRONT)
+	particles.one_shot = true
 	particles.emitting = true
 	await particles.finished
 	particles.queue_free()
