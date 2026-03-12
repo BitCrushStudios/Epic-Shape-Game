@@ -6,12 +6,19 @@
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_i7tqw"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_mbpe7"]
 [ext_resource type="Script" uid="uid://ejrfu2yqqgvb" path="res://Game/Units/GradualRotationNegate.gd" id="6_thx7d"]
-[ext_resource type="Texture2D" uid="uid://bk2itsf61iyq7" path="res://Assets/Art/Player/PlayerTest.png" id="6_wfiu6"]
+[ext_resource type="Texture2D" uid="uid://7mvmistl4ceg" path="res://Assets/Art/Player/Animations/Run/frame0000.png" id="7_pvmtt"]
 [ext_resource type="Script" uid="uid://df3dw2rgkl02f" path="res://Game/Units/Player/PlayerController.gd" id="7_thx7d"]
+[ext_resource type="Texture2D" uid="uid://t7j0j3j25hxg" path="res://Assets/Art/Player/Animations/Run/frame0001.png" id="8_t6t5l"]
+[ext_resource type="Texture2D" uid="uid://xdmh0ctyaf4u" path="res://Assets/Art/Player/Animations/Run/frame0002.png" id="9_2j7ji"]
 [ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="9_jiict"]
+[ext_resource type="Texture2D" uid="uid://syoi1xls7bq8" path="res://Assets/Art/Player/Animations/Run/frame0003.png" id="10_6rjw0"]
 [ext_resource type="Script" uid="uid://dx2vqd4gi3f7u" path="res://Game/Units/Player/GoldPickupBox.gd" id="10_wnw4f"]
+[ext_resource type="Texture2D" uid="uid://dabenlilos5x" path="res://Assets/Art/Player/Animations/Run/frame0004.png" id="11_itp12"]
 [ext_resource type="AudioStream" uid="uid://bdnmd5yugdp85" path="res://Assets/Sound Effects/Coin Pickup/Pickup3.wav" id="11_thx7d"]
+[ext_resource type="Texture2D" uid="uid://eckdd5eo7w2p" path="res://Assets/Art/Player/Animations/Run/frame0005.png" id="12_3w622"]
 [ext_resource type="Texture2D" uid="uid://m7ljnh7u8j1q" path="res://Assets/TestArrow.png" id="12_wfiu6"]
+[ext_resource type="Texture2D" uid="uid://8grc2iaovqtp" path="res://Assets/Art/Player/Animations/Run/frame0006.png" id="13_rixr6"]
+[ext_resource type="Texture2D" uid="uid://dtvxs0cudek3p" path="res://Assets/Art/Player/Animations/Run/frame0007.png" id="14_sd8eo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
 friction = 0.0
@@ -36,6 +43,38 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbpe7"]
 radius = 28.01785
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0cqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_pvmtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t6t5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2j7ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6rjw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_itp12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3w622")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rixr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sd8eo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
 
 [sub_resource type="Animation" id="Animation_tok1r"]
 length = 0.001
@@ -119,9 +158,11 @@ shape = SubResource("CircleShape2D_mbpe7")
 show_behind_parent = true
 y_sort_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D/SpriteOrigin" unique_id=250217813]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionShape2D/SpriteOrigin" unique_id=67637521]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_wfiu6")
+sprite_frames = SubResource("SpriteFrames_y0cqt")
+autoplay = "default"
+frame_progress = 0.5414588
 
 [node name="ShadowOrigin" type="Node2D" parent="CollisionShape2D/SpriteOrigin" unique_id=1960482243]
 script = ExtResource("3_mbpe7")
