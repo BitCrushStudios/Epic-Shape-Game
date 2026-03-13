@@ -5,6 +5,7 @@ class_name ItemExtraSizeUpgradeResource
 func _init():
 	super()
 	name ="Extra Size"
+	texture = preload("res://Assets/Art/Items/Size Icon.png")
 
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_size += 1

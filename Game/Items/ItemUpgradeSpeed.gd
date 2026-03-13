@@ -5,6 +5,7 @@ class_name ItemExtraSpeedUpgradeResource
 func _init():
 	super()
 	name ="Extra Speed"
+	texture = preload("res://Assets/Art/Items/Speed Icon.png")
 
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_speed += 1

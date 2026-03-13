@@ -8,39 +8,59 @@
 [ext_resource type="Script" uid="uid://dygx86pgiite1" path="res://Game/Items/ItemUpgradeMass.gd" id="5_hitma"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="6_374k4"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="6_llh7c"]
+[ext_resource type="Script" uid="uid://ca78xcglhqlpw" path="res://Game/Items/ItemUpgradeWeapon.gd" id="7_n0hoh"]
 [ext_resource type="Script" uid="uid://bt1jfudin4ru3" path="res://Game/Items/ItemUpgradeSize.gd" id="8_8jv2k"]
 [ext_resource type="Texture2D" uid="uid://cqvwn2gjxeww8" path="res://Assets/Art/User Interface/Shop/Pannel Outline NEW.png" id="8_llh7c"]
+[ext_resource type="Script" uid="uid://cw5ty8hoe5h46" path="res://Game/Items/ItemUpgradeHealth.gd" id="8_qit7n"]
 [ext_resource type="Texture2D" uid="uid://d0p78470dwaqc" path="res://Assets/Art/User Interface/Shop/Pannel Background NEW no gradient.png" id="9_llh7c"]
 [ext_resource type="Texture2D" uid="uid://cixu31hm1k6hy" path="res://Assets/Art/User Interface/Shop/Tinker Button.png" id="11_374k4"]
 [ext_resource type="Texture2D" uid="uid://44orhjt8ki74" path="res://Assets/Art/User Interface/Shop/Reroll Button NEW.png" id="12_374k4"]
 [ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
 
-[sub_resource type="Resource" id="Resource_decmg"]
-script = ExtResource("5_hitma")
-texture = ExtResource("4_qit7n")
-name = "Extra Strength"
-
-[sub_resource type="Resource" id="Resource_5xt70"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_decmg")
-
-[sub_resource type="Resource" id="Resource_n0hoh"]
+[sub_resource type="Resource" id="Resource_hitma"]
 script = ExtResource("8_8jv2k")
 texture = ExtResource("4_qit7n")
 name = "Extra Size"
 
-[sub_resource type="Resource" id="Resource_qit7n"]
+[sub_resource type="Resource" id="Resource_0edsf"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_n0hoh")
+item = SubResource("Resource_hitma")
 
-[sub_resource type="Resource" id="Resource_hitma"]
+[sub_resource type="Resource" id="Resource_saik7"]
 script = ExtResource("3_n0hoh")
 texture = ExtResource("4_qit7n")
 name = "Extra Speed"
 
-[sub_resource type="Resource" id="Resource_0edsf"]
+[sub_resource type="Resource" id="Resource_8jv2k"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_hitma")
+item = SubResource("Resource_saik7")
+
+[sub_resource type="Resource" id="Resource_tkbig"]
+script = ExtResource("5_hitma")
+texture = ExtResource("4_qit7n")
+name = "Extra Strength"
+
+[sub_resource type="Resource" id="Resource_fbx22"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_tkbig")
+
+[sub_resource type="Resource" id="Resource_f3ldj"]
+script = ExtResource("7_n0hoh")
+texture = ExtResource("4_qit7n")
+name = "Extra Weapon"
+
+[sub_resource type="Resource" id="Resource_ox38h"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_f3ldj")
+
+[sub_resource type="Resource" id="Resource_avslj"]
+script = ExtResource("8_qit7n")
+texture = ExtResource("4_qit7n")
+name = "Extra Health"
+
+[sub_resource type="Resource" id="Resource_hvp1p"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_avslj")
 
 [sub_resource type="Theme" id="Theme_q3cp0"]
 default_font = ExtResource("6_llh7c")
@@ -51,7 +71,7 @@ default_font = ExtResource("6_llh7c")
 process_mode = 3
 layer = 13
 script = ExtResource("1_oi6um")
-items = Array[ExtResource("5_0k88i")]([SubResource("Resource_5xt70"), SubResource("Resource_qit7n"), SubResource("Resource_0edsf"), null, null])
+items = Array[ExtResource("5_0k88i")]([SubResource("Resource_0edsf"), SubResource("Resource_8jv2k"), SubResource("Resource_fbx22"), SubResource("Resource_ox38h"), SubResource("Resource_hvp1p")])
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=778254187]
 anchors_preset = 15
@@ -109,7 +129,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 11
 theme_override_font_sizes/font_size = 30
-text = "Shop!"
+text = "  Shop!"
 vertical_alignment = 1
 
 [node name="MoneyLabel" type="Label" parent="PanelContainer/Control/HBoxContainer" unique_id=484176009]
@@ -147,43 +167,33 @@ theme_override_constants/separation = 32
 
 [node name="ShopButton2" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=866692791 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-disabled = true
-resource = null
+resource = SubResource("Resource_8jv2k")
 
 [node name="ShopButton3" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-disabled = true
-resource = null
+resource = SubResource("Resource_fbx22")
 
 [node name="ShopButton1" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-disabled = true
-resource = null
+resource = SubResource("Resource_0edsf")
 
 [node name="ShopButton4" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-disabled = true
-resource = null
+resource = SubResource("Resource_ox38h")
 
 [node name="ShopButton5" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
-modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-disabled = true
-resource = null
+resource = SubResource("Resource_hvp1p")
 
 [node name="Control2" type="Control" parent="PanelContainer/Control" unique_id=1723206551]
 layout_mode = 2

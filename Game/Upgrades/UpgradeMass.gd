@@ -5,6 +5,7 @@ class_name ExtraMassUpgradeResource
 func _init():
 	super()
 	name ="Extra Strength"
+	
 
 func apply(player:PlayerResource):
 	player.stat_mass += 1
