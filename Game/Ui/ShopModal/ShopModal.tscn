@@ -3,75 +3,264 @@
 [ext_resource type="Script" uid="uid://cqmbl2lc6yrsn" path="res://Game/Ui/ShopModal/ShopModal.gd" id="1_oi6um"]
 [ext_resource type="PackedScene" uid="uid://csd1cwka8wio6" path="res://Game/Ui/ShopModal/ShopButton.tscn" id="2_a2r72"]
 [ext_resource type="Script" uid="uid://buaalf1n3h68s" path="res://Game/Items/ItemUpgradeSpeed.gd" id="3_n0hoh"]
-[ext_resource type="Texture2D" uid="uid://cdilxwowhi4yq" path="res://Assets/Art/User Interface/Shop/Temp/Item Size Test.png" id="4_qit7n"]
+[ext_resource type="Texture2D" uid="uid://b6g7q3kqkln57" path="res://Assets/Art/User Interface/Shop/Temp/Icon Test 2.png" id="4_saik7"]
 [ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="5_0k88i"]
 [ext_resource type="Script" uid="uid://dygx86pgiite1" path="res://Game/Items/ItemUpgradeMass.gd" id="5_hitma"]
+[ext_resource type="Texture2D" uid="uid://br63spr8iui3e" path="res://Assets/Art/Items/Cube Icon.png" id="6_8jv2k"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="6_374k4"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="6_llh7c"]
 [ext_resource type="Script" uid="uid://ca78xcglhqlpw" path="res://Game/Items/ItemUpgradeWeapon.gd" id="7_n0hoh"]
 [ext_resource type="Script" uid="uid://bt1jfudin4ru3" path="res://Game/Items/ItemUpgradeSize.gd" id="8_8jv2k"]
 [ext_resource type="Texture2D" uid="uid://cqvwn2gjxeww8" path="res://Assets/Art/User Interface/Shop/Pannel Outline NEW.png" id="8_llh7c"]
 [ext_resource type="Script" uid="uid://cw5ty8hoe5h46" path="res://Game/Items/ItemUpgradeHealth.gd" id="8_qit7n"]
+[ext_resource type="Texture2D" uid="uid://cmiod5nqc6c2e" path="res://Assets/Art/Items/Speed Icon.png" id="8_tkbig"]
 [ext_resource type="Texture2D" uid="uid://d0p78470dwaqc" path="res://Assets/Art/User Interface/Shop/Pannel Background NEW no gradient.png" id="9_llh7c"]
+[ext_resource type="Texture2D" uid="uid://cx8ltrfxk1m5p" path="res://Assets/Art/Items/Size Icon.png" id="10_fbx22"]
 [ext_resource type="Texture2D" uid="uid://cixu31hm1k6hy" path="res://Assets/Art/User Interface/Shop/Tinker Button.png" id="11_374k4"]
 [ext_resource type="Texture2D" uid="uid://44orhjt8ki74" path="res://Assets/Art/User Interface/Shop/Reroll Button NEW.png" id="12_374k4"]
+[ext_resource type="Texture2D" uid="uid://b1mi61r36c3j1" path="res://Assets/Art/Items/Strength Icon.png" id="12_f3ldj"]
 [ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
 
-[sub_resource type="Resource" id="Resource_hitma"]
-script = ExtResource("8_8jv2k")
-texture = ExtResource("4_qit7n")
-name = "Extra Size"
-
-[sub_resource type="Resource" id="Resource_0edsf"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_hitma")
-
-[sub_resource type="Resource" id="Resource_saik7"]
-script = ExtResource("3_n0hoh")
-texture = ExtResource("4_qit7n")
-name = "Extra Speed"
-
-[sub_resource type="Resource" id="Resource_8jv2k"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_saik7")
-
-[sub_resource type="Resource" id="Resource_tkbig"]
-script = ExtResource("5_hitma")
-texture = ExtResource("4_qit7n")
-name = "Extra Strength"
-
-[sub_resource type="Resource" id="Resource_fbx22"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_tkbig")
-
-[sub_resource type="Resource" id="Resource_f3ldj"]
-script = ExtResource("7_n0hoh")
-texture = ExtResource("4_qit7n")
-name = "Extra Weapon"
-
 [sub_resource type="Resource" id="Resource_ox38h"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_f3ldj")
-
-[sub_resource type="Resource" id="Resource_avslj"]
 script = ExtResource("8_qit7n")
-texture = ExtResource("4_qit7n")
+texture = ExtResource("4_saik7")
 name = "Extra Health"
 
-[sub_resource type="Resource" id="Resource_hvp1p"]
+[sub_resource type="Resource" id="Resource_avslj"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_avslj")
+item = SubResource("Resource_ox38h")
+
+[sub_resource type="Resource" id="Resource_hvp1p"]
+script = ExtResource("7_n0hoh")
+texture = ExtResource("6_8jv2k")
+name = "Extra Weapon"
+
+[sub_resource type="Resource" id="Resource_q45wr"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_hvp1p")
+
+[sub_resource type="Resource" id="Resource_u6hvn"]
+script = ExtResource("3_n0hoh")
+texture = ExtResource("8_tkbig")
+name = "Extra Speed"
+
+[sub_resource type="Resource" id="Resource_j18rr"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_u6hvn")
+
+[sub_resource type="Resource" id="Resource_e7njq"]
+script = ExtResource("8_8jv2k")
+texture = ExtResource("10_fbx22")
+name = "Extra Size"
+
+[sub_resource type="Resource" id="Resource_2krtt"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_e7njq")
+
+[sub_resource type="Resource" id="Resource_ou14g"]
+script = ExtResource("5_hitma")
+texture = ExtResource("12_f3ldj")
+name = "Extra Strength"
+
+[sub_resource type="Resource" id="Resource_iovks"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_ou14g")
 
 [sub_resource type="Theme" id="Theme_q3cp0"]
 default_font = ExtResource("6_llh7c")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_374k4"]
 
+[sub_resource type="Animation" id="Animation_8jv2k"]
+resource_name = "Fly Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(214, 113), Vector2(700, 100), Vector2(1000, 600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.8726646259971648, 6.283185307179586]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n55xg"]
+resource_name = "Fly in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-600, 575), Vector2(230, 90), Vector2(214, 113)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.6981317007977318, 6.283185307179586]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.9, 0.9), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666666, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_saik7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(214, 113)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PanelContainer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2520d"]
+_data = {
+&"Fly Out": SubResource("Animation_8jv2k"),
+&"Fly in": SubResource("Animation_n55xg"),
+&"RESET": SubResource("Animation_saik7")
+}
+
 [node name="ShopModal" type="CanvasLayer" unique_id=1905418868]
 process_mode = 3
 layer = 13
+visible = false
 script = ExtResource("1_oi6um")
-items = Array[ExtResource("5_0k88i")]([SubResource("Resource_0edsf"), SubResource("Resource_8jv2k"), SubResource("Resource_fbx22"), SubResource("Resource_ox38h"), SubResource("Resource_hvp1p")])
+items = Array[ExtResource("5_0k88i")]([SubResource("Resource_avslj"), SubResource("Resource_q45wr"), SubResource("Resource_j18rr"), SubResource("Resource_2krtt"), SubResource("Resource_iovks")])
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=778254187]
 anchors_preset = 15
@@ -93,27 +282,44 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_374k4")
 
-[node name="Background" type="TextureRect" parent="." unique_id=759573773]
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=131945444]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -157.0
+offset_right = 267.99487
+offset_bottom = 163.99658
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(267.34427, 150.5411)
+theme = SubResource("Theme_q3cp0")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_374k4")
+
+[node name="Control2" type="Control" parent="PanelContainer" unique_id=1274049071]
+layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="PanelContainer/Control2" unique_id=759573773]
+layout_mode = 0
+offset_left = -214.0
+offset_top = -113.0
+offset_right = 1706.0
+offset_bottom = 967.0
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_q3cp0")
 texture = ExtResource("9_llh7c")
 
-[node name="Outline" type="TextureRect" parent="." unique_id=1597882246]
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="Outline" type="TextureRect" parent="PanelContainer/Control2" unique_id=1597882246]
+layout_mode = 0
+offset_left = -214.0
+offset_top = -113.0
+offset_right = 1706.0
+offset_bottom = 967.0
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_q3cp0")
 texture = ExtResource("8_llh7c")
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=131945444]
-offset_left = 214.0
-offset_top = 113.0
-offset_right = 748.0
-offset_bottom = 434.0
-theme = SubResource("Theme_q3cp0")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_374k4")
 
 [node name="Control" type="VBoxContainer" parent="PanelContainer" unique_id=1548209967]
 layout_mode = 2
@@ -169,31 +375,31 @@ theme_override_constants/separation = 32
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_8jv2k")
+resource = SubResource("Resource_q45wr")
 
 [node name="ShopButton3" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_fbx22")
+resource = SubResource("Resource_j18rr")
 
 [node name="ShopButton1" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_0edsf")
+resource = SubResource("Resource_avslj")
 
 [node name="ShopButton4" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_ox38h")
+resource = SubResource("Resource_2krtt")
 
 [node name="ShopButton5" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_hvp1p")
+resource = SubResource("Resource_iovks")
 
 [node name="Control2" type="Control" parent="PanelContainer/Control" unique_id=1723206551]
 layout_mode = 2
@@ -249,3 +455,6 @@ unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("13_decmg")
 flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1905950517]
+libraries/ = SubResource("AnimationLibrary_2520d")

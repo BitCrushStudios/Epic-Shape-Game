@@ -4,6 +4,8 @@ class_name ShopModal
 
 signal item_selected(item:ItemResource)
 signal btn_pressed(btn:EquipItemButton)
+@export var animation_player : AnimationPlayer
+
 
 @export var player:Player:
 	set(v):
