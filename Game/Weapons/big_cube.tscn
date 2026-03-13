@@ -14,7 +14,7 @@ bounce = 5.0
 
 [sub_resource type="Resource" id="Resource_l33jo"]
 script = ExtResource("3_qtgvb")
-damage = 2.0
+damage = 10.0
 metadata/_custom_type_script = "uid://bvtjy2mkl872g"
 
 [sub_resource type="Curve" id="Curve_qtgvb"]
@@ -31,13 +31,13 @@ colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
 gradient = SubResource("Gradient_5pe0l")
 width = 100
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3gs5p"]
-radius = 66.27216
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gs5p"]
+size = Vector2(95, 95)
 
 [node name="BigCube" type="RigidBody2D" unique_id=1806346460]
 collision_layer = 8
 collision_mask = 15
-mass = 50.0
+mass = 35.0
 physics_material_override = SubResource("PhysicsMaterial_w0p7r")
 gravity_scale = 0.0
 contact_monitor = true
@@ -62,21 +62,22 @@ metadata/_custom_type_script = "uid://onfsof0qcqtj"
 [node name="ShadowOrigin" type="Node2D" parent="Origin" unique_id=769338698]
 
 [node name="Shadow" parent="Origin/ShadowOrigin" unique_id=29450177 instance=ExtResource("1_x460x")]
-position = Vector2(0, 62)
-scale = Vector2(2, 2)
+position = Vector2(0, 45)
+scale = Vector2(1.5, 1.5)
 
 [node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=677990040]
 unique_name_in_owner = true
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_ek2q2")
 
 [node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=1749720425]
 unique_name_in_owner = true
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("3_5anff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=637096600]
-shape = SubResource("CircleShape2D_3gs5p")
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_3gs5p")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=310723041]
 radius = 20.0

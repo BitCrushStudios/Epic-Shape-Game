@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kt8wv30pjxok"
-path="res://.godot/imported/Bar Progress.png-288506205ee5c0b10c11bd97ecfdd6d1.ctex"
+uid="uid://c7tmjjlqgnv2h"
+path="res://.godot/imported/frame0000.png-de382cc14a3b0f28a96ceec7dd8aedb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Health Bar/Bar Progress.png"
-dest_files=["res://.godot/imported/Bar Progress.png-288506205ee5c0b10c11bd97ecfdd6d1.ctex"]
+source_file="res://Assets/Art/Player/Animations/Idle 2/frame0000.png"
+dest_files=["res://.godot/imported/frame0000.png-de382cc14a3b0f28a96ceec7dd8aedb3.ctex"]
 
 [params]
 

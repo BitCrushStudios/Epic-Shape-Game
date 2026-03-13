@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqpqo0jh0t0q4"
-path="res://.godot/imported/Bar Size Test.png-445e5f9bef66fe0c7841725ad1506dcc.ctex"
+uid="uid://eckdd5eo7w2p"
+path="res://.godot/imported/frame0005.png-4278506d5f1ac9f87aa90bdb9b406126.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Health Bar/Bar Size Test.png"
-dest_files=["res://.godot/imported/Bar Size Test.png-445e5f9bef66fe0c7841725ad1506dcc.ctex"]
+source_file="res://Assets/Art/Player/Animations/Run/frame0005.png"
+dest_files=["res://.godot/imported/frame0005.png-4278506d5f1ac9f87aa90bdb9b406126.ctex"]
 
 [params]
 

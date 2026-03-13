@@ -207,6 +207,7 @@ contact_monitor = true
 max_contacts_reported = 5
 linear_damp = 0.5
 script = ExtResource("1_lonei")
+health_max = 20.0
 
 [node name="GradualRotationNegate" type="Node" parent="." unique_id=1239480688]
 script = ExtResource("2_fm6ei")

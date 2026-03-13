@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csshl1lnth7lp"
-path="res://.godot/imported/Bar Over.png-d5f46b287f59527070297096e9b60167.ctex"
+uid="uid://b4lot44ims348"
+path="res://.godot/imported/New Progress.png-01b47de0a6ec9f7b247cd5bccffdec67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Health Bar/Bar Over.png"
-dest_files=["res://.godot/imported/Bar Over.png-d5f46b287f59527070297096e9b60167.ctex"]
+source_file="res://Assets/Art/User Interface/Health Bar/New/New Progress.png"
+dest_files=["res://.godot/imported/New Progress.png-01b47de0a6ec9f7b247cd5bccffdec67.ctex"]
 
 [params]
 

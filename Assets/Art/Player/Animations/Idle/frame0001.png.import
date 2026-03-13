@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmja61nsqk6gp"
-path="res://.godot/imported/Bar Under.png-133cddad274a26f9518ffc3483c58bc3.ctex"
+uid="uid://7ktu703qw7u"
+path="res://.godot/imported/frame0001.png-e46a77991a566315cc64bb3d36dc5cd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/User Interface/Health Bar/Bar Under.png"
-dest_files=["res://.godot/imported/Bar Under.png-133cddad274a26f9518ffc3483c58bc3.ctex"]
+source_file="res://Assets/Art/Player/Animations/Idle/frame0001.png"
+dest_files=["res://.godot/imported/frame0001.png-e46a77991a566315cc64bb3d36dc5cd7.ctex"]
 
 [params]
 

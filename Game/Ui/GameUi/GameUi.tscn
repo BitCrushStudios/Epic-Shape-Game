@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bmprloh75j06"]
 
 [ext_resource type="Script" uid="uid://cfwf100fmea46" path="res://Game/Ui/GameUi/GameUi.gd" id="1_pjk1m"]
+[ext_resource type="Texture2D" uid="uid://dqjm30lt6d7od" path="res://Assets/Art/User Interface/Health Bar/New/New Under.png" id="2_1rjcc"]
 [ext_resource type="Texture2D" uid="uid://cu532q23ccxui" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressUnder.png" id="2_47yhi"]
+[ext_resource type="Texture2D" uid="uid://dlsvjd63w88b1" path="res://Assets/Art/User Interface/Health Bar/New/New Over.png" id="3_plfxc"]
 [ext_resource type="Texture2D" uid="uid://b40cu08tbu7o" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressOver.png" id="3_wlq61"]
-[ext_resource type="Texture2D" uid="uid://voek72lu102g" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressRed.png" id="4_vtlts"]
+[ext_resource type="Texture2D" uid="uid://b4lot44ims348" path="res://Assets/Art/User Interface/Health Bar/New/New Progress.png" id="4_byell"]
 [ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="5_3bj3t"]
+[ext_resource type="Texture2D" uid="uid://7nmv7mr2bdq" path="res://Assets/Art/User Interface/Health Bar/New/Heart2.png" id="6_1rjcc"]
 [ext_resource type="Texture2D" uid="uid://7jhfanvregga" path="res://Assets/ProgrammerArt/ProgrammerArt__ProgressGreen.png" id="6_dhkw6"]
 [ext_resource type="Texture2D" uid="uid://bmjmoq22aitd8" path="res://Assets/Art/User Interface/Money Icon.png" id="7_vrvhy"]
 
@@ -22,27 +25,23 @@ fill_to = Vector2(1, 0.5)
 script = ExtResource("1_pjk1m")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=591781538]
-offset_left = 13.0
-offset_top = 8.0
-offset_right = 281.0
-offset_bottom = 76.0
+offset_left = 40.0
+offset_top = 19.0
+offset_right = 308.0
+offset_bottom = 57.0
 scale = Vector2(0.9, 0.9)
 
 [node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer2" unique_id=1993686910]
 unique_name_in_owner = true
-texture_filter = 2
 layout_mode = 2
 size_flags_vertical = 3
 max_value = 1.0
 value = 1.0
 nine_patch_stretch = true
-stretch_margin_left = 10
-stretch_margin_top = 15
-stretch_margin_right = 10
-stretch_margin_bottom = 15
-texture_under = ExtResource("2_47yhi")
-texture_over = ExtResource("3_wlq61")
-texture_progress = ExtResource("4_vtlts")
+texture_under = ExtResource("2_1rjcc")
+texture_over = ExtResource("3_plfxc")
+texture_progress = ExtResource("4_byell")
+texture_progress_offset = Vector2(-1.225, 0)
 
 [node name="HealthLabel" type="Label" parent="VBoxContainer2/HealthBar" unique_id=864519401]
 unique_name_in_owner = true
@@ -60,53 +59,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("5_3bj3t")
 theme_override_font_sizes/font_size = 22
 text = "1 / 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ExpBar" type="TextureProgressBar" parent="VBoxContainer2" unique_id=513338522]
-unique_name_in_owner = true
-texture_filter = 2
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-size_flags_vertical = 3
-max_value = 1.0
-value = 1.0
-nine_patch_stretch = true
-stretch_margin_left = 10
-stretch_margin_top = 15
-stretch_margin_right = 10
-stretch_margin_bottom = 15
-texture_under = ExtResource("2_47yhi")
-texture_over = ExtResource("3_wlq61")
-texture_progress = ExtResource("6_dhkw6")
-
-[node name="ExpLabel" type="Label" parent="VBoxContainer2/ExpBar" unique_id=2093757014]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.5
-offset_top = -15.0
-offset_right = 24.5
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"ProgressLabel"
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_constants/shadow_outline_size = 17
-theme_override_font_sizes/font_size = 22
-text = "1 / 1"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/HealthBar" unique_id=1829215365]
+layout_mode = 0
+offset_left = -43.333336
+offset_top = -24.444447
+offset_right = 56.666664
+offset_bottom = 75.55556
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_1rjcc")
 
 [node name="LevelsGained" type="HBoxContainer" parent="." unique_id=938525333]
 unique_name_in_owner = true
@@ -209,3 +176,48 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 50
 text = "100 "
+
+[node name="ExpBar" type="TextureProgressBar" parent="." unique_id=513338522]
+unique_name_in_owner = true
+visible = false
+texture_filter = 2
+custom_minimum_size = Vector2(0, 20)
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 281.0
+offset_bottom = 76.0
+size_flags_vertical = 3
+max_value = 1.0
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 15
+stretch_margin_right = 10
+stretch_margin_bottom = 15
+texture_under = ExtResource("2_47yhi")
+texture_over = ExtResource("3_wlq61")
+texture_progress = ExtResource("6_dhkw6")
+
+[node name="ExpLabel" type="Label" parent="ExpBar" unique_id=2093757014]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -15.0
+offset_right = 24.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ProgressLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 22
+text = "1 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1
