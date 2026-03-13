@@ -54,7 +54,6 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
 		shop_modal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
-		shop_modal.animation_player.play("Fly Out")
 		add_child(shop_modal)
 		
 		pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()

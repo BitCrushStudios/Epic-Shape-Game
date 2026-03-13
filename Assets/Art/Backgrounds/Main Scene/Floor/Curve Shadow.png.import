@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxftk7q2mljp"
-path="res://.godot/imported/Controls Icons.png-02398856d2b9bf27747bc550b7c91c64.ctex"
+uid="uid://dbni1vjfsywn1"
+path="res://.godot/imported/Curve Shadow.png-47b047c33f9adde6fcdd2912f9a41679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Backgrounds/Main Scene/Floor Controls/Controls Icons.png"
-dest_files=["res://.godot/imported/Controls Icons.png-02398856d2b9bf27747bc550b7c91c64.ctex"]
+source_file="res://Assets/Art/Backgrounds/Main Scene/Floor/Curve Shadow.png"
+dest_files=["res://.godot/imported/Curve Shadow.png-47b047c33f9adde6fcdd2912f9a41679.ctex"]
 
 [params]
 
