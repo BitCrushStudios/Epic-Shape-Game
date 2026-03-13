@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_ub88h"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_nips6"]
 [ext_resource type="Texture2D" uid="uid://xpskem8jlost" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0000.png" id="5_eibic"]
-[ext_resource type="Shader" uid="uid://buqefn5codfh6" path="res://Game/Units/Enemies/EnemyTank.tres" id="5_r8v6j"]
 [ext_resource type="Texture2D" uid="uid://ddba3yjvlb2xw" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0001.png" id="6_nrv21"]
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="6_sdms5"]
 [ext_resource type="Texture2D" uid="uid://cr8t20y3gpptd" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0002.png" id="7_r8v6j"]
@@ -15,9 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bg6g077ak5d7u" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0006.png" id="11_4qcre"]
 [ext_resource type="Texture2D" uid="uid://cd2kbtjsyow6t" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0007.png" id="12_1uspc"]
 [ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="14_nrv21"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vpu8"]
-shader = ExtResource("5_r8v6j")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v16b6"]
 animations = [{
@@ -183,7 +179,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.95),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:instance_shader_parameters/FullModulateEnabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0t8mf"]
@@ -230,9 +250,6 @@ scale = Vector2(1.5, 1.3)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=761628496]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_3vpu8")
-instance_shader_parameters/FullModulate = Color(1, 1, 1, 0.58431375)
-instance_shader_parameters/FullModulateEnabled = true
 position = Vector2(3.0000005, -12)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_v16b6")
@@ -246,7 +263,6 @@ libraries/ = SubResource("AnimationLibrary_0t8mf")
 playback_default_blend_time = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=73121276]
-visible = false
 shape = SubResource("CircleShape2D_2m6jk")
 
 [node name="Death" type="AudioStreamPlayer" parent="." unique_id=567472421]
@@ -261,6 +277,5 @@ monitorable = false
 script = ExtResource("14_nrv21")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1859447088]
-visible = false
 shape = SubResource("CircleShape2D_r8v6j")
 debug_color = Color(0.91219205, 9.8379256e-05, 0.72580904, 0.41960785)
