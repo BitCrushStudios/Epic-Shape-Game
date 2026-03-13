@@ -31,13 +31,13 @@ colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
 gradient = SubResource("Gradient_5pe0l")
 width = 100
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gs5p"]
-size = Vector2(95, 95)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3gs5p"]
+radius = 54.187176
 
 [node name="BigCube" type="RigidBody2D" unique_id=1806346460]
 collision_layer = 8
 collision_mask = 15
-mass = 35.0
+mass = 30.0
 physics_material_override = SubResource("PhysicsMaterial_w0p7r")
 gravity_scale = 0.0
 contact_monitor = true
@@ -77,7 +77,7 @@ texture = ExtResource("3_5anff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=637096600]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_3gs5p")
+shape = SubResource("CircleShape2D_3gs5p")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=310723041]
 radius = 20.0
