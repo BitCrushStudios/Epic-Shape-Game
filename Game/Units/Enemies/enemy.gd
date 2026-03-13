@@ -33,10 +33,14 @@ func _ready():
 	took_damage.connect(_recieved_damage)
 	health_depleted.connect(_health_depleted)
 	entered_hurtbox.connect(_entered_hurtbox)
-	
+var iframe = 0.0
+var iframe_max = 0.5
 func _entered_hurtbox(node:Node):
+	if iframe>0.0:
+		return
 	if node is Player:
 		node.resource.take_damage(damage)
+		iframe = iframe_max
 		#$Hit.pitch_scale = randf_range(0.9, 1.3)
 		#$Hit.play()
 
@@ -94,6 +98,9 @@ func _particle_create(particles:GPUParticles2D):
 	particles.emitting = true
 	await particles.finished
 	particles.queue_free()
+
+func _process(delta: float) -> void:
+	iframe = max(iframe-delta, 0.0)
 	
 		
 		

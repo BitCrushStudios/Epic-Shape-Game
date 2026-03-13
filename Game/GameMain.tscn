@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://k5cm3nqg7dpf" path="res://Game/WeaponsManager.gd" id="3_052kc"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
-[ext_resource type="PackedScene" uid="uid://dbvch1vqm1ay4" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
+[ext_resource type="PackedScene" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="9_tju8d"]
 [ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="10_tqfok"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="11_052kc"]
@@ -319,7 +319,7 @@ position = Vector2(752, 576)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424 node_paths=PackedStringArray("enemies")]
 script = ExtResource("6_2wbff")
-enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank")]
+enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank")]
 waves = [SubResource("Resource_tqfok"), SubResource("Resource_ytreg"), SubResource("Resource_2wbff"), SubResource("Resource_t3b64")]
 resource = SubResource("Resource_aa4rq")
 
