@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmcvrnalipuc2" path="res://Game/GameMain.gd" id="1_tqfok"]
 [ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="2_052kc"]
+[ext_resource type="Texture2D" uid="uid://dmxftk7q2mljp" path="res://Assets/Art/Backgrounds/Main Scene/Floor Controls/Controls Icons.png" id="2_tqfok"]
 [ext_resource type="Script" uid="uid://k5cm3nqg7dpf" path="res://Game/WeaponsManager.gd" id="3_052kc"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
@@ -290,6 +291,13 @@ _data = {
 process_mode = 1
 script = ExtResource("1_tqfok")
 
+[node name="TestControls" type="Sprite2D" parent="." unique_id=1767057593]
+modulate = Color(1, 1, 1, 0.6745098)
+z_index = -3
+position = Vector2(960, 595)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_tqfok")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=92160159]
 layer = 3
 
@@ -311,7 +319,7 @@ position = Vector2(752, 576)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424 node_paths=PackedStringArray("enemies")]
 script = ExtResource("6_2wbff")
-enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank")]
+enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank")]
 waves = [SubResource("Resource_tqfok"), SubResource("Resource_ytreg"), SubResource("Resource_2wbff"), SubResource("Resource_t3b64")]
 resource = SubResource("Resource_aa4rq")
 
