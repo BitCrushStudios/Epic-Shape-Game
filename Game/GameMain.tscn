@@ -317,11 +317,53 @@ position = Vector2(752, 576)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424 node_paths=PackedStringArray("enemies")]
 script = ExtResource("6_2wbff")
-enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank")]
+enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank2"), NodePath("EnemyTank3"), NodePath("EnemyTank4"), NodePath("EnemyTank5"), NodePath("EnemyTank6"), NodePath("EnemyTank7"), NodePath("EnemyTank8"), NodePath("EnemyTank9"), NodePath("EnemyTank10"), NodePath("EnemyTank11"), NodePath("EnemyTank12"), NodePath("EnemyTank13"), NodePath("EnemyTank14"), NodePath("EnemyTank15")]
 waves = [SubResource("Resource_tqfok"), SubResource("Resource_ytreg"), SubResource("Resource_2wbff"), SubResource("Resource_t3b64")]
 resource = SubResource("Resource_aa4rq")
 
 [node name="EnemyTank" parent="EnemyManager" unique_id=211797002 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank2" parent="EnemyManager" unique_id=324796389 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank3" parent="EnemyManager" unique_id=30504251 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank4" parent="EnemyManager" unique_id=1234210303 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank5" parent="EnemyManager" unique_id=1251704509 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank6" parent="EnemyManager" unique_id=2058957883 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank7" parent="EnemyManager" unique_id=703431583 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank8" parent="EnemyManager" unique_id=421474715 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank9" parent="EnemyManager" unique_id=1839723399 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank10" parent="EnemyManager" unique_id=1842506826 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank11" parent="EnemyManager" unique_id=401195331 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank12" parent="EnemyManager" unique_id=2001156515 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank13" parent="EnemyManager" unique_id=1698814130 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank14" parent="EnemyManager" unique_id=506563813 instance=ExtResource("16_5s0eo")]
+position = Vector2(1480, 344)
+
+[node name="EnemyTank15" parent="EnemyManager" unique_id=2110990339 instance=ExtResource("16_5s0eo")]
 position = Vector2(1480, 344)
 
 [node name="ArenaMiddleSize" type="Node2D" parent="." unique_id=1160867511]

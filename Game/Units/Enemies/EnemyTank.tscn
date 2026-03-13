@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_ub88h"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="4_nips6"]
 [ext_resource type="Texture2D" uid="uid://xpskem8jlost" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0000.png" id="5_eibic"]
+[ext_resource type="Shader" uid="uid://dmgy8dm7vpbus" path="res://Game/Units/Enemies/EnemyTank.gdshader" id="5_r8v6j"]
 [ext_resource type="Texture2D" uid="uid://ddba3yjvlb2xw" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0001.png" id="6_nrv21"]
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="6_sdms5"]
 [ext_resource type="Texture2D" uid="uid://cr8t20y3gpptd" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0002.png" id="7_r8v6j"]
@@ -14,6 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://bg6g077ak5d7u" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0006.png" id="11_4qcre"]
 [ext_resource type="Texture2D" uid="uid://cd2kbtjsyow6t" path="res://Assets/Art/Enemies/Tank/Tank Shuffle Animation/frame0007.png" id="12_1uspc"]
 [ext_resource type="Script" uid="uid://cm8xm034opy5x" path="res://Game/Units/HurtBox.gd" id="14_nrv21"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vpu8"]
+resource_local_to_scene = true
+shader = ExtResource("5_r8v6j")
+shader_parameter/active = false
+shader_parameter/tint = Color(1, 1, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v16b6"]
 animations = [{
@@ -112,6 +119,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0.58431375)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:material:shader_parameter/active")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ucwfl"]
 resource_name = "damage"
@@ -164,6 +183,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:material:shader_parameter/active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_bccpk"]
@@ -229,6 +260,7 @@ script = ExtResource("1_2j44q")
 agent = NodePath("EnemyController")
 experience_on_death = 50.0
 damage = 2.0
+health_max = 30.0
 
 [node name="EnemyController" type="NavigationAgent2D" parent="." unique_id=278399034]
 avoidance_enabled = true
@@ -250,6 +282,7 @@ scale = Vector2(1.5, 1.3)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=761628496]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_3vpu8")
 position = Vector2(3.0000005, -12)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_v16b6")
