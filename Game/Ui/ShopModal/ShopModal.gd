@@ -45,22 +45,28 @@ func _changed():
 	for i in range(buttons.size()):
 		if i<items.size() and items[i]:
 			buttons[i].resource = items[i]
-			
-			
-func setup_ui():
+	%MoneyLabel.text = "$ %d" % money
+func swapEmpty():
 	var available_items = ItemResource.get_available_items()
 	var count =  get_buttons().size()
 	var arr_indices = range(count)
 	arr_indices.shuffle()
-	var vs:Array[ShopItemResource] = []
+	var vs:Array[ShopItemResource] = items
 	vs.resize(count)
 	for i in arr_indices:
-		if available_items.size()>0:
+		if not vs[i] or vs[i].quantity==0:
+			vs[i] = null
+		if vs[i]==null and available_items.size()>0:
 			var item: ItemResource = available_items.pop_at(randi_range(0, available_items.size()-1)).new()
 			var shopItem = ShopItemResource.new()
 			shopItem.item = item
 			vs.set(i,shopItem)
 	items = vs
+	
+	
+func setup_ui():
+	items = []
+	swapEmpty()
 	
 @export_tool_button("Randomize")
 var _random_items_action = setup_ui
@@ -88,15 +94,17 @@ func _ready():
 		btn.item_selected.connect(item_selected.emit)
 	item_selected.connect(_item_selected)
 	if get_tree().current_scene == self:
-		Player.instance = Player.new()
-		Player.instance.resource = PlayerResource.new()
+		player = Player.new()
+		player.resource = PlayerResource.new()
 		await modal()
 func _reroll():
 	setup_ui()
 func _item_selected(shopItem:ShopItemResource):
-	if shopItem.quantity>0 and shopItem.price <= money:
-		money -= shopItem.price
-		shopItem.quantity -= 1
-		#player.inventory = player.inventory
+	if get_parent():
+		shopItem.item.apply(get_parent())
+	shopItem.quantity -= 1
+	money -= shopItem.price
+	if shopItem.quantity<=0:
+		swapEmpty()
 	
 	

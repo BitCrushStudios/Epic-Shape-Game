@@ -2,15 +2,27 @@
 
 [ext_resource type="Script" uid="uid://ijwqv1ttjeih" path="res://Game/Ui/ShopModal/ShopButton.gd" id="1_1tt3b"]
 [ext_resource type="Texture2D" uid="uid://paqyjwxsq0sb" path="res://Assets/Art/User Interface/Shop/Item Pannel NEW.png" id="1_k1nkd"]
-[ext_resource type="Texture2D" uid="uid://c1c4asjgmeo43" path="res://Assets/Art/Spawn Icon/SpawnIcon!.png" id="4_k1nkd"]
+[ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="1_yswop"]
+[ext_resource type="Script" uid="uid://dygx86pgiite1" path="res://Game/Items/ItemUpgradeMass.gd" id="2_k1nkd"]
+[ext_resource type="Texture2D" uid="uid://cdilxwowhi4yq" path="res://Assets/Art/User Interface/Shop/Temp/Item Size Test.png" id="3_yswop"]
+[ext_resource type="Script" uid="uid://cyj57dpj0ij47" path="res://Game/Ui/ShopModal/ShopItemResource.gd" id="4_yswop"]
 [ext_resource type="Texture2D" uid="uid://pgm52ye2tpxq" path="res://Assets/Art/User Interface/Shop/Price Pannel NEW.png" id="6_k1nkd"]
 
-[node name="ShopButton" type="Control" unique_id=1870871997]
-layout_mode = 3
-anchors_preset = 0
+[sub_resource type="Resource" id="Resource_ofh7d"]
+script = ExtResource("2_k1nkd")
+texture = ExtResource("3_yswop")
+name = "Extra Strength"
+
+[sub_resource type="Resource" id="Resource_2bmuq"]
+script = ExtResource("4_yswop")
+item = SubResource("Resource_ofh7d")
+
+[node name="ShopButton" type="Button" unique_id=237816123]
 offset_right = 200.0
 offset_bottom = 498.0
+theme = ExtResource("1_yswop")
 script = ExtResource("1_1tt3b")
+resource = SubResource("Resource_2bmuq")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1749965105]
 layout_mode = 1
@@ -29,7 +41,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 41.0
+offset_left = 30.0
+offset_top = 28.0
+offset_right = -30.0
 offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -38,7 +52,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("4_k1nkd")
+texture = ExtResource("3_yswop")
 expand_mode = 3
 stretch_mode = 3
 
@@ -48,8 +62,8 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_type_variation = &"OutlineLabelSmall"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Coffee"
+theme_override_font_sizes/font_size = 24
+text = "Extra Strength"
 horizontal_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer2" unique_id=10406096]
@@ -76,7 +90,7 @@ theme_type_variation = &"OutlineLabelSmall"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 35
-text = "$100"
+text = "$ 100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -88,13 +102,3 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 30
-text = "Test"
-
-[node name="Button" type="Button" parent="." unique_id=457246676]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true

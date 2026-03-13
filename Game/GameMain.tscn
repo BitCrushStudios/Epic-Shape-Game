@@ -298,9 +298,6 @@ position = Vector2(960, 595)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_tqfok")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=92160159]
-layer = 3
-
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
 stream = ExtResource("2_052kc")
 volume_db = -23.0
@@ -319,7 +316,7 @@ position = Vector2(752, 576)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424 node_paths=PackedStringArray("enemies")]
 script = ExtResource("6_2wbff")
-enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank")]
+enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank")]
 waves = [SubResource("Resource_tqfok"), SubResource("Resource_ytreg"), SubResource("Resource_2wbff"), SubResource("Resource_t3b64")]
 resource = SubResource("Resource_aa4rq")
 

@@ -56,6 +56,7 @@ func _ready() -> void:
 		shop_modal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
 		shop_modal.visible = false
 		add_child(shop_modal)
+		
 		pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()
 		pause_menu.visible = false
 		add_child(pause_menu)

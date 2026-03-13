@@ -94,14 +94,6 @@ func show_upgrade_modal():
 	
 	
 
-func show_equip_modal():
-	get_tree().paused=true
-	var modal: EquipModal = preload("res://Game/Ui/EquipModal/EquipModal.tscn").instantiate()
-	$CanvasLayer.add_child(modal)
-	modal.player = resource
-	await modal.modal()
-	modal.queue_free()
-	get_tree().paused=false
 var kick_force_max = 3000.0
 var kick_force = 0.0
 func trigger_kick():

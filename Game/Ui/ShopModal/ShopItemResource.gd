@@ -11,6 +11,7 @@ class_name ShopItemResource
 			item.changed.connect(changed.emit)
 		emit_changed()
 		
+
 @export var quantity = 1:
 	set(v):
 		quantity = v

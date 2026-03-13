@@ -22,11 +22,17 @@ func register(_weapon:Weapon):
 	
 func unregister(_weapon:Weapon):
 	pass
-	
+func apply(gameMain:GameMain):
+	pass
+static func poll(gameMain:GameMain):
+	return true
 static func get_available_items():
 	return [
-		ItemSoy,
-		ItemCoffee,
+		ItemExtraMassUpgradeResource,
+		ItemExtraHealthUpgradeResource,
+		ItemExtraSizeUpgradeResource,
+		ItemExtraSpeedUpgradeResource,
+		ItemExtraWeaponUpgradeResource,
 	]
 	
 func _init():
