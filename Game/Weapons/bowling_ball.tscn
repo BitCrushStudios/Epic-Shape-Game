@@ -72,11 +72,11 @@ shape = SubResource("CapsuleShape2D_i4e2e")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=179139107]
 radius = 50.0
 
-[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1540142201]
+[node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1540142201]
 stream = ExtResource("8_ceqr3")
 volume_db = -10.0
 pitch_scale = 1.2
 bus = &"Sound Effects"
 
-[node name="Basic Hit" type="AudioStreamPlayer" parent="." unique_id=1782661033]
+[node name="BasicHit" type="AudioStreamPlayer" parent="." unique_id=1782661033]
 stream = ExtResource("9_g6h13")
