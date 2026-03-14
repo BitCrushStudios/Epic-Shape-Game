@@ -341,6 +341,303 @@ tile_set = SubResource("TileSet_1va8x")
 [node name="Art" type="Node2D" parent="ArenaMiddleSize" unique_id=1814735531]
 scale = Vector2(0.99999994, 0.99999994)
 
+[node name="FloorSpecs" type="Node2D" parent="ArenaMiddleSize/Art" unique_id=294772598]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bubblebig" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1097793629]
+z_index = -3
+position = Vector2(-34, 500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig8" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1162263774]
+z_index = -3
+position = Vector2(-9, 520)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig9" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1918720491]
+z_index = -3
+position = Vector2(-7, 478)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig2" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1272690198]
+z_index = -3
+position = Vector2(-33, 749)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig3" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=10408419]
+z_index = -3
+position = Vector2(395.99997, 1052)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig10" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1622003736]
+z_index = -3
+position = Vector2(416, 1037)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig4" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=881437086]
+z_index = -3
+position = Vector2(417, 1063)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig5" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1998559098]
+z_index = -3
+position = Vector2(1605, 1050)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig11" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1311549249]
+z_index = -3
+position = Vector2(1559, 1036)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig12" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1485583839]
+z_index = -3
+position = Vector2(1550, 1024)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig13" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=890999798]
+z_index = -3
+position = Vector2(1938, 865)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig14" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=39990748]
+z_index = -3
+position = Vector2(1938, 865)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig15" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=218842914]
+z_index = -3
+position = Vector2(1940, 860)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig16" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1188652589]
+z_index = -3
+position = Vector2(1946, 883)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig17" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1894639928]
+z_index = -3
+position = Vector2(1926, 868)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig18" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=416194756]
+z_index = -3
+position = Vector2(1941, 785)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig19" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1459466368]
+z_index = -3
+position = Vector2(1938, 779)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig20" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=874171545]
+z_index = -3
+position = Vector2(1941, 696)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig21" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=104526391]
+z_index = -3
+position = Vector2(1938, 679)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig22" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=618334763]
+z_index = -3
+position = Vector2(1938, 679)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig23" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1191686057]
+z_index = -3
+position = Vector2(1926.9999, 685.99994)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig24" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=362862639]
+z_index = -3
+position = Vector2(1939, 632)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig25" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=663067376]
+z_index = -3
+position = Vector2(1940, 627)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig26" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=569039714]
+z_index = -3
+position = Vector2(1939, 564)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig27" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=890785992]
+z_index = -3
+position = Vector2(1935, 558)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig28" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=467278936]
+z_index = -3
+position = Vector2(1939, 537)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig29" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=613936406]
+z_index = -3
+position = Vector2(1957, 373)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig30" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=334886014]
+z_index = -3
+position = Vector2(1938.0001, 350)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig31" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=2094029847]
+z_index = -3
+position = Vector2(1938.0001, 350)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig32" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1225679262]
+z_index = -3
+position = Vector2(1918.9999, 362)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig33" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=160067525]
+z_index = -3
+position = Vector2(1918.9999, 362)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig34" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=198434930]
+z_index = -3
+position = Vector2(1500, 70.99997)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig35" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1362937747]
+z_index = -3
+position = Vector2(1516, 64)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig36" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1318703167]
+z_index = -3
+position = Vector2(1211, 66)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig37" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=2033694177]
+z_index = -3
+position = Vector2(706, 70)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig38" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=262956285]
+z_index = -3
+position = Vector2(1235, 67)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig39" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1740086275]
+z_index = -3
+position = Vector2(723, 85)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig40" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1656434601]
+z_index = -3
+position = Vector2(401.00003, 71)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig41" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1560846958]
+z_index = -3
+position = Vector2(408, 68)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig42" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=2073675208]
+z_index = -3
+position = Vector2(545, 71)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig43" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1188213110]
+z_index = -3
+position = Vector2(555, 79)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig44" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1165509142]
+z_index = -3
+position = Vector2(1179, 91)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig45" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=694556200]
+z_index = -3
+position = Vector2(1532, 88)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig46" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=271607836]
+z_index = -3
+position = Vector2(1845, 131)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig47" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=885654726]
+z_index = -3
+position = Vector2(1224, 87)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig48" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1373967183]
+z_index = -3
+position = Vector2(1497, 87)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig49" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=1447556203]
+z_index = -3
+position = Vector2(1476, 79.99999)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig6" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=825636159]
+z_index = -3
+position = Vector2(1585, 1062)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig7" type="Sprite2D" parent="ArenaMiddleSize/Art/FloorSpecs" unique_id=777150273]
+z_index = -3
+position = Vector2(1585, 1062)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
+
 [node name="Controls" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=1767057593]
 modulate = Color(1, 1, 1, 0.6745098)
 z_index = -3
@@ -418,299 +715,3 @@ texture = ExtResource("27_052kc")
 
 [node name="HZ" type="AnimationPlayer" parent="ArenaMiddleSize" unique_id=653239098]
 libraries/ = SubResource("AnimationLibrary_ad1qv")
-
-[node name="FloorSpecs" type="Node2D" parent="." unique_id=294772598]
-
-[node name="Bubblebig" type="Sprite2D" parent="FloorSpecs" unique_id=1097793629]
-z_index = -3
-position = Vector2(-34, 500)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig8" type="Sprite2D" parent="FloorSpecs" unique_id=1162263774]
-z_index = -3
-position = Vector2(-9, 520)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig9" type="Sprite2D" parent="FloorSpecs" unique_id=1918720491]
-z_index = -3
-position = Vector2(-7, 478)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig2" type="Sprite2D" parent="FloorSpecs" unique_id=1272690198]
-z_index = -3
-position = Vector2(-33, 749)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig3" type="Sprite2D" parent="FloorSpecs" unique_id=10408419]
-z_index = -3
-position = Vector2(395.99997, 1052)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig10" type="Sprite2D" parent="FloorSpecs" unique_id=1622003736]
-z_index = -3
-position = Vector2(416, 1037)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig4" type="Sprite2D" parent="FloorSpecs" unique_id=881437086]
-z_index = -3
-position = Vector2(417, 1063)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig5" type="Sprite2D" parent="FloorSpecs" unique_id=1998559098]
-z_index = -3
-position = Vector2(1605, 1050)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig11" type="Sprite2D" parent="FloorSpecs" unique_id=1311549249]
-z_index = -3
-position = Vector2(1559, 1036)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig12" type="Sprite2D" parent="FloorSpecs" unique_id=1485583839]
-z_index = -3
-position = Vector2(1550, 1024)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig13" type="Sprite2D" parent="FloorSpecs" unique_id=890999798]
-z_index = -3
-position = Vector2(1938, 865)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig14" type="Sprite2D" parent="FloorSpecs" unique_id=39990748]
-z_index = -3
-position = Vector2(1938, 865)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig15" type="Sprite2D" parent="FloorSpecs" unique_id=218842914]
-z_index = -3
-position = Vector2(1940, 860)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig16" type="Sprite2D" parent="FloorSpecs" unique_id=1188652589]
-z_index = -3
-position = Vector2(1946, 883)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig17" type="Sprite2D" parent="FloorSpecs" unique_id=1894639928]
-z_index = -3
-position = Vector2(1926, 868)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig18" type="Sprite2D" parent="FloorSpecs" unique_id=416194756]
-z_index = -3
-position = Vector2(1941, 785)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig19" type="Sprite2D" parent="FloorSpecs" unique_id=1459466368]
-z_index = -3
-position = Vector2(1938, 779)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig20" type="Sprite2D" parent="FloorSpecs" unique_id=874171545]
-z_index = -3
-position = Vector2(1941, 696)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig21" type="Sprite2D" parent="FloorSpecs" unique_id=104526391]
-z_index = -3
-position = Vector2(1938, 679)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig22" type="Sprite2D" parent="FloorSpecs" unique_id=618334763]
-z_index = -3
-position = Vector2(1938, 679)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig23" type="Sprite2D" parent="FloorSpecs" unique_id=1191686057]
-z_index = -3
-position = Vector2(1926.9999, 685.99994)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig24" type="Sprite2D" parent="FloorSpecs" unique_id=362862639]
-z_index = -3
-position = Vector2(1939, 632)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig25" type="Sprite2D" parent="FloorSpecs" unique_id=663067376]
-z_index = -3
-position = Vector2(1940, 627)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig26" type="Sprite2D" parent="FloorSpecs" unique_id=569039714]
-z_index = -3
-position = Vector2(1939, 564)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig27" type="Sprite2D" parent="FloorSpecs" unique_id=890785992]
-z_index = -3
-position = Vector2(1935, 558)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig28" type="Sprite2D" parent="FloorSpecs" unique_id=467278936]
-z_index = -3
-position = Vector2(1939, 537)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig29" type="Sprite2D" parent="FloorSpecs" unique_id=613936406]
-z_index = -3
-position = Vector2(1957, 373)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig30" type="Sprite2D" parent="FloorSpecs" unique_id=334886014]
-z_index = -3
-position = Vector2(1938.0001, 350)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig31" type="Sprite2D" parent="FloorSpecs" unique_id=2094029847]
-z_index = -3
-position = Vector2(1938.0001, 350)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig32" type="Sprite2D" parent="FloorSpecs" unique_id=1225679262]
-z_index = -3
-position = Vector2(1918.9999, 362)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig33" type="Sprite2D" parent="FloorSpecs" unique_id=160067525]
-z_index = -3
-position = Vector2(1918.9999, 362)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig34" type="Sprite2D" parent="FloorSpecs" unique_id=198434930]
-z_index = -3
-position = Vector2(1500, 70.99997)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig35" type="Sprite2D" parent="FloorSpecs" unique_id=1362937747]
-z_index = -3
-position = Vector2(1516, 64)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig36" type="Sprite2D" parent="FloorSpecs" unique_id=1318703167]
-z_index = -3
-position = Vector2(1211, 66)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig37" type="Sprite2D" parent="FloorSpecs" unique_id=2033694177]
-z_index = -3
-position = Vector2(706, 70)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig38" type="Sprite2D" parent="FloorSpecs" unique_id=262956285]
-z_index = -3
-position = Vector2(1235, 67)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig39" type="Sprite2D" parent="FloorSpecs" unique_id=1740086275]
-z_index = -3
-position = Vector2(723, 85)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig40" type="Sprite2D" parent="FloorSpecs" unique_id=1656434601]
-z_index = -3
-position = Vector2(401.00003, 71)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig41" type="Sprite2D" parent="FloorSpecs" unique_id=1560846958]
-z_index = -3
-position = Vector2(408, 68)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig42" type="Sprite2D" parent="FloorSpecs" unique_id=2073675208]
-z_index = -3
-position = Vector2(545, 71)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig43" type="Sprite2D" parent="FloorSpecs" unique_id=1188213110]
-z_index = -3
-position = Vector2(555, 79)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig44" type="Sprite2D" parent="FloorSpecs" unique_id=1165509142]
-z_index = -3
-position = Vector2(1179, 91)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig45" type="Sprite2D" parent="FloorSpecs" unique_id=694556200]
-z_index = -3
-position = Vector2(1532, 88)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig46" type="Sprite2D" parent="FloorSpecs" unique_id=271607836]
-z_index = -3
-position = Vector2(1845, 131)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig47" type="Sprite2D" parent="FloorSpecs" unique_id=885654726]
-z_index = -3
-position = Vector2(1224, 87)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig48" type="Sprite2D" parent="FloorSpecs" unique_id=1373967183]
-z_index = -3
-position = Vector2(1497, 87)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig49" type="Sprite2D" parent="FloorSpecs" unique_id=1447556203]
-z_index = -3
-position = Vector2(1476, 79.99999)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig6" type="Sprite2D" parent="FloorSpecs" unique_id=825636159]
-z_index = -3
-position = Vector2(1585, 1062)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("29_ojaob")
-
-[node name="Bubblebig7" type="Sprite2D" parent="FloorSpecs" unique_id=777150273]
-z_index = -3
-position = Vector2(1585, 1062)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("29_ojaob")
