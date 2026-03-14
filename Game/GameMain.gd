@@ -99,7 +99,13 @@ func _process(delta: float) -> void:
 		)
 		if wave_diff:
 			enemyManager.wave_index+=wave_diff
-			
+	if Input.is_action_just_pressed("dev_money_spawn"):
+		var node:GoldPiece = preload("res://Game/Gold/GoldPiece.tscn").instantiate()
+		add_child(node)
+		var map_rid = get_viewport().world_2d.navigation_map
+		var rand_point = NavigationServer2D.map_get_random_point(map_rid,1,false)
+		node.global_position = rand_point
+		
 	if player:
 		if Input.is_action_just_pressed("dev_player_upgrade"):
 			player.show_upgrade_modal()
