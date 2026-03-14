@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://t8okmboocwvk"]
 
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_ceqr3"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_ceqr3"]
+[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_g6h13"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_g6h13"]
+[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_sjvgc"]
 [ext_resource type="Texture2D" uid="uid://b2bbruv8lcm8s" path="res://Assets/Art/Weapons/Bowling Ball/Bowling Ball.png" id="4_intmm"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="6_5oxer"]
-[ext_resource type="AudioStream" uid="uid://rf7jq4otctx2" path="res://Assets/Sound Effects/Cube Hit/Hit.wav" id="7_h3i4e"]
+[ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="8_ceqr3"]
+[ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="9_g6h13"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ceqr3"]
-friction = 0.0
 bounce = 1.0
+
+[sub_resource type="Resource" id="Resource_87kv1"]
+script = ExtResource("3_sjvgc")
+metadata/_custom_type_script = "uid://bvtjy2mkl872g"
 
 [sub_resource type="Curve" id="Curve_xw14b"]
 _data = [Vector2(0, 0.3595506), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -19,8 +26,12 @@ radius = 48.0
 height = 130.0
 
 [node name="Bowling Ball" type="RigidBody2D" unique_id=174184491]
+collision_layer = 8
+collision_mask = 15
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_ceqr3")
+script = ExtResource("1_ceqr3")
+resource = SubResource("Resource_87kv1")
 
 [node name="Origin" type="Node2D" parent="." unique_id=945874266]
 y_sort_enabled = true
@@ -62,7 +73,10 @@ shape = SubResource("CapsuleShape2D_i4e2e")
 radius = 50.0
 
 [node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1540142201]
-stream = ExtResource("7_h3i4e")
+stream = ExtResource("8_ceqr3")
 volume_db = -10.0
 pitch_scale = 1.2
 bus = &"Sound Effects"
+
+[node name="Basic Hit" type="AudioStreamPlayer" parent="." unique_id=1782661033]
+stream = ExtResource("9_g6h13")

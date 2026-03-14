@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
 [ext_resource type="PackedScene" uid="uid://dbvch1vqm1ay4" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
 [ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="7_b8v6r"]
+[ext_resource type="PackedScene" uid="uid://t8okmboocwvk" path="res://Game/Weapons/bowling_ball.tscn" id="8_3jy75"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="9_tju8d"]
+[ext_resource type="PackedScene" uid="uid://cunk1470cwuhe" path="res://Game/Weapons/GolfBallWeapon.tscn" id="10_t3b64"]
 [ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="10_tqfok"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="11_052kc"]
 [ext_resource type="Script" uid="uid://md6msurfapyu" path="res://Game/Waves/Wave.gd" id="12_ytreg"]
@@ -330,6 +332,12 @@ position = Vector2(1192, 410)
 
 [node name="Weapon4" parent="WeaponManager" unique_id=2045516696 instance=ExtResource("7_b8v6r")]
 position = Vector2(864, 254)
+
+[node name="Golf Ball" parent="WeaponManager" unique_id=342556309 instance=ExtResource("10_t3b64")]
+position = Vector2(632, 451)
+
+[node name="Bowling Ball" parent="WeaponManager" unique_id=174184491 instance=ExtResource("8_3jy75")]
+position = Vector2(545, 275)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424 node_paths=PackedStringArray("enemies")]
 script = ExtResource("6_2wbff")

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_qtgvb"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="4_3gs5p"]
 [ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="4_w0p7r"]
+[ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="8_3gs5p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w0p7r"]
 bounce = 5.0
@@ -83,4 +84,7 @@ shape = SubResource("CircleShape2D_3gs5p")
 radius = 20.0
 
 [node name="Hit" type="AudioStreamPlayer" parent="." unique_id=494035120]
+stream = ExtResource("8_3gs5p")
+
+[node name="Basic Hit" type="AudioStreamPlayer" parent="." unique_id=392951350]
 stream = ExtResource("4_w0p7r")

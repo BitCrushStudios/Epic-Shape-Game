@@ -15,8 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://eguwph4baa4e" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0008.png" id="14_5pe0l"]
 [ext_resource type="Texture2D" uid="uid://c8papk51mxa54" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0006.png" id="14_fywxt"]
 [ext_resource type="Texture2D" uid="uid://jxfi475epduf" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0007.png" id="15_ggmsm"]
-[ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="16_5pe0l"]
+[ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="16_5pe0l"]
 [ext_resource type="Texture2D" uid="uid://ofbpyov6dv04" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0000.png" id="16_bhfdh"]
+[ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="17_jet8k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
 friction = 0.0
@@ -172,6 +173,9 @@ stream = ExtResource("16_5pe0l")
 volume_db = -7.0
 pitch_scale = 1.2
 bus = &"Sound Effects"
+
+[node name="Basic Hit" type="AudioStreamPlayer" parent="." unique_id=204397964]
+stream = ExtResource("17_jet8k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294832071]
 libraries/ = SubResource("AnimationLibrary_rmfvw")
