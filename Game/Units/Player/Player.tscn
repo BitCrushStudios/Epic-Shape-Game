@@ -141,7 +141,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.53, 0.53, 0.53, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.3665946, 0.3665946, 0.36659458, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tok1r"]

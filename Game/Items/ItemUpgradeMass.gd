@@ -5,6 +5,7 @@ class_name ItemExtraMassUpgradeResource
 func _init():
 	super()
 	name ="Extra Strength"
+	texture = preload("res://Assets/Art/Items/Strength Icon.png")
 
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_mass += 1

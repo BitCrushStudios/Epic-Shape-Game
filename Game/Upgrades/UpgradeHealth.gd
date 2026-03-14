@@ -6,6 +6,7 @@ func _init():
 	super()
 	name ="Extra Health"
 	
+	
 func apply(player:PlayerResource):
 	player.stat_health_max += 1
 

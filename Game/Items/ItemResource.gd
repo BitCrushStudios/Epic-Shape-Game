@@ -39,3 +39,4 @@ func _init():
 	texture = preload("res://Assets/Art/User Interface/Shop/Temp/Item Size Test.png")
 	name = "Item Name"
 	description = ""
+	

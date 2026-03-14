@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://tgx3wa77if6y"]
 
 [ext_resource type="Script" uid="uid://bmcvrnalipuc2" path="res://Game/GameMain.gd" id="1_tqfok"]
-[ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/hitslab-comic-silly-humor-background-music-288430.mp3" id="2_052kc"]
-[ext_resource type="Texture2D" uid="uid://dmxftk7q2mljp" path="res://Assets/Art/Backgrounds/Main Scene/Floor Controls/Controls Icons.png" id="2_tqfok"]
+[ext_resource type="AudioStream" uid="uid://bgjbyt2pohhp1" path="res://Assets/Music/Background/Main.mp3" id="2_052kc"]
+[ext_resource type="Texture2D" uid="uid://dmxftk7q2mljp" path="res://Assets/Art/Backgrounds/Main Scene/Floor/Floor Controls/Controls Icons.png" id="2_tqfok"]
 [ext_resource type="Script" uid="uid://k5cm3nqg7dpf" path="res://Game/WeaponsManager.gd" id="3_052kc"]
+[ext_resource type="AudioStream" uid="uid://cyb2odoopxere" path="res://Assets/Music/Background/Shop.mp3" id="3_ytreg"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ojaob"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
-[ext_resource type="PackedScene" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
+[ext_resource type="PackedScene" uid="uid://dbvch1vqm1ay4" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="9_tju8d"]
 [ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="10_tqfok"]
 [ext_resource type="PackedScene" uid="uid://dxtr5yed3wi54" path="res://Game/Units/Enemies/EnemyTriangle.tscn" id="11_052kc"]
@@ -26,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://brkfgcstrond8" path="res://Assets/Art/Backgrounds/Main Scene/HZ Animation/frame0001.png" id="24_ie25g"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="25_hes46"]
 [ext_resource type="Texture2D" uid="uid://bpgyi04fk4wrj" path="res://Assets/Art/Shadow/Effect2.png" id="26_cci3g"]
+[ext_resource type="Texture2D" uid="uid://dbni1vjfsywn1" path="res://Assets/Art/Backgrounds/Main Scene/Floor/Curve Shadow.png" id="27_052kc"]
+[ext_resource type="Texture2D" uid="uid://dysvuu5mn5dnt" path="res://Assets/Art/Backgrounds/Main Scene/Floor/Bubblebig.png" id="29_ojaob"]
 
 [sub_resource type="Resource" id="Resource_tju8d"]
 script = ExtResource("9_tju8d")
@@ -184,7 +187,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BackgroundHorz2:offset")
+tracks/0/path = NodePath("Art/BackgroundHorz2:offset")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -196,7 +199,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BackgroundHorz:offset")
+tracks/1/path = NodePath("Art/BackgroundHorz:offset")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -208,7 +211,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BackgroundTest2:offset")
+tracks/2/path = NodePath("Art/BackgroundTest2:offset")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -220,7 +223,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BackgroundTest:offset")
+tracks/3/path = NodePath("Art/BackgroundTest:offset")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -232,7 +235,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Dark:modulate")
+tracks/4/path = NodePath("Art/Dark:modulate")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -247,7 +250,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Dark:modulate")
+tracks/0/path = NodePath("Art/Dark:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -259,7 +262,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BackgroundTest:offset")
+tracks/1/path = NodePath("Art/BackgroundTest:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -271,7 +274,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BackgroundTest2:offset")
+tracks/2/path = NodePath("Art/BackgroundTest2:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -291,17 +294,15 @@ _data = {
 process_mode = 1
 script = ExtResource("1_tqfok")
 
-[node name="TestControls" type="Sprite2D" parent="." unique_id=1767057593]
-modulate = Color(1, 1, 1, 0.6745098)
-z_index = -3
-position = Vector2(960, 595)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_tqfok")
-
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
+[node name="Main Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
 stream = ExtResource("2_052kc")
-volume_db = -23.0
+volume_db = -28.0
 autoplay = true
+bus = &"Music"
+
+[node name="Shop Music" type="AudioStreamPlayer" parent="." unique_id=2078368608]
+stream = ExtResource("3_ytreg")
+volume_db = -20.0
 bus = &"Music"
 
 [node name="Player" parent="." unique_id=299479533 node_paths=PackedStringArray("weaponsManager") instance=ExtResource("4_ojaob")]
@@ -316,12 +317,9 @@ position = Vector2(752, 576)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424 node_paths=PackedStringArray("enemies")]
 script = ExtResource("6_2wbff")
-enemies = [null, NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank"), NodePath("EnemyTank")]
+enemies = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 waves = [SubResource("Resource_tqfok"), SubResource("Resource_ytreg"), SubResource("Resource_2wbff"), SubResource("Resource_t3b64")]
 resource = SubResource("Resource_aa4rq")
-
-[node name="EnemyTank" parent="EnemyManager" unique_id=211797002 instance=ExtResource("16_5s0eo")]
-position = Vector2(1480, 344)
 
 [node name="ArenaMiddleSize" type="Node2D" parent="." unique_id=1160867511]
 
@@ -340,45 +338,379 @@ scale = Vector2(0.7, 0.7)
 tile_map_data = PackedByteArray("AAD8//3/AAABAAIAAAD8//7/AAABAAIAAAD8////AAABAAIAAAD8/wAAAAABAAIAAAD8/wEAAAABAAIAAAD8/wIAAAABAAIAAAD8/wMAAAABAAIAAAD8/wQAAAABAAIAAAD8/wUAAAABAAIAAAD8/wYAAAABAAIAAAD8/wcAAAABAAIAAAD8/wgAAAABAAIAAAD8/wkAAAABAAIAAAD8/woAAAABAAIAAAD8/wsAAAABAAIAAAD8/wwAAAABAAIAAAD8/w0AAAABAAIAAAD8/w4AAAABAAIAAAD8/w8AAAABAAIAAAD8/xAAAAABAAIAAAD8/xEAAAABAAIAAAD9//3/AAABAAIAAAD9//7/AAABAAIAAAD9////AAABAAIAAAD9/wAAAAABAAIAAAD9/wEAAAABAAIAAAD9/wIAAAABAAIAAAD9/wMAAAABAAIAAAD9/wQAAAABAAIAAAD9/wUAAAABAAIAAAD9/wYAAAABAAIAAAD9/wcAAAABAAIAAAD9/wgAAAABAAIAAAD9/wkAAAABAAIAAAD9/woAAAABAAIAAAD9/wsAAAABAAIAAAD9/wwAAAABAAIAAAD9/w0AAAABAAIAAAD9/w4AAAABAAIAAAD9/w8AAAABAAIAAAD9/xAAAAABAAIAAAD9/xEAAAABAAIAAAD+//3/AAABAAIAAAD+//7/AAABAAIAAAD+////AAABAAIAAAD+/wAAAAABAAIAAAD+/wIAAAABAAIAAAD+/wMAAAABAAIAAAD+/wQAAAABAAIAAAD+/wUAAAABAAIAAAD+/wYAAAABAAIAAAD+/wcAAAABAAIAAAD+/wgAAAABAAIAAAD+/wkAAAABAAIAAAD+/woAAAABAAIAAAD+/wsAAAABAAIAAAD+/wwAAAABAAIAAAD+/w0AAAABAAIAAAD+/w8AAAABAAIAAAD+/xAAAAABAAIAAAD+/xEAAAABAAIAAAD///3/AAABAAIAAAD///7/AAABAAIAAAD/////AAABAAIAAAD//wAAAAADAAEAAAD//wIAAAAAAAEAAAD//wMAAAAAAAEAAAD//wQAAAAAAAEAAAD//wUAAAAAAAEAAAD//wYAAAAAAAEAAAD//wcAAAAAAAEAAAD//wgAAAAAAAEAAAD//wkAAAAAAAEAAAD//woAAAAAAAEAAAD//wsAAAAAAAEAAAD//wwAAAAAAAEAAAD//w0AAAAAAAEAAAD//w8AAAADAAAAAAD//xAAAAABAAIAAAD//xEAAAABAAIAAAAAAP3/AAABAAIAAAAAAP7/AAABAAIAAAAAAP//AAABAAIAAAAAAAAAAAABAAAAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAIAAAAAAAQAAAAAAAIAAAAAAAUAAAAAAAIAAAAAAAYAAAAAAAIAAAAAAAcAAAAAAAIAAAAAAAgAAAAAAAIAAAAAAAkAAAAAAAIAAAAAAAoAAAAAAAIAAAAAAAsAAAAAAAIAAAAAAAwAAAAAAAIAAAAAAA0AAAAAAAIAAAAAAA8AAAABAAEAAAAAABAAAAABAAIAAAAAABEAAAABAAIAAAABAP3/AAABAAIAAAABAP7/AAABAAIAAAABAP//AAABAAIAAAABAAAAAAABAAAAAAABAAIAAAAAAAIAAAABAAMAAAAAAAIAAAABAAQAAAAAAAIAAAABAAUAAAAAAAIAAAABAAYAAAAAAAIAAAABAAcAAAAAAAIAAAABAAgAAAAAAAIAAAABAAkAAAAAAAIAAAABAAoAAAAAAAIAAAABAAsAAAAAAAIAAAABAAwAAAAAAAIAAAABAA0AAAAAAAIAAAABAA8AAAABAAEAAAABABAAAAABAAIAAAABABEAAAABAAIAAAACAP3/AAABAAIAAAACAP7/AAABAAIAAAACAP//AAABAAIAAAACAAAAAAABAAAAAAACAAIAAAAAAAIAAAACAAMAAAAAAAIAAAACAAQAAAAAAAIAAAACAAUAAAAAAAIAAAACAAYAAAAAAAIAAAACAAcAAAAAAAIAAAACAAgAAAAAAAIAAAACAAkAAAAAAAIAAAACAAoAAAAAAAIAAAACAAsAAAAAAAIAAAACAAwAAAAAAAIAAAACAA0AAAAAAAIAAAACAA8AAAABAAEAAAACABAAAAABAAIAAAACABEAAAABAAIAAAADAP3/AAABAAIAAAADAP7/AAABAAIAAAADAP//AAABAAIAAAADAAAAAAABAAAAAAADAAIAAAAAAAIAAAADAAMAAAAAAAIAAAADAAQAAAAAAAIAAAADAAUAAAAAAAIAAAADAAYAAAAAAAIAAAADAAcAAAAAAAIAAAADAAgAAAAAAAIAAAADAAkAAAAAAAIAAAADAAoAAAAAAAIAAAADAAsAAAAAAAIAAAADAAwAAAAAAAIAAAADAA0AAAAAAAIAAAADAA8AAAABAAEAAAADABAAAAABAAIAAAADABEAAAABAAIAAAAEAP3/AAABAAIAAAAEAP7/AAABAAIAAAAEAP//AAABAAIAAAAEAAAAAAABAAAAAAAEAAIAAAAAAAIAAAAEAAMAAAAAAAIAAAAEAAQAAAAAAAIAAAAEAAUAAAAAAAIAAAAEAAYAAAAAAAIAAAAEAAcAAAAAAAIAAAAEAAgAAAAAAAIAAAAEAAkAAAAAAAIAAAAEAAoAAAAAAAIAAAAEAAsAAAAAAAIAAAAEAAwAAAAAAAIAAAAEAA0AAAAAAAIAAAAEAA8AAAABAAEAAAAEABAAAAABAAIAAAAEABEAAAABAAIAAAAFAP3/AAABAAIAAAAFAP7/AAABAAIAAAAFAP//AAABAAIAAAAFAAAAAAABAAAAAAAFAAIAAAAAAAIAAAAFAAMAAAAAAAIAAAAFAAQAAAAAAAIAAAAFAAUAAAAAAAIAAAAFAAYAAAAAAAIAAAAFAAcAAAAAAAIAAAAFAAgAAAAAAAIAAAAFAAkAAAAAAAIAAAAFAAoAAAAAAAIAAAAFAAsAAAAAAAIAAAAFAAwAAAAAAAIAAAAFAA0AAAAAAAIAAAAFAA8AAAABAAEAAAAFABAAAAABAAIAAAAFABEAAAABAAIAAAAGAP3/AAABAAIAAAAGAP7/AAABAAIAAAAGAP//AAABAAIAAAAGAAAAAAABAAAAAAAGAAIAAAAAAAIAAAAGAAMAAAAAAAIAAAAGAAQAAAAAAAIAAAAGAAUAAAAAAAIAAAAGAAYAAAAAAAIAAAAGAAcAAAAAAAIAAAAGAAgAAAAAAAIAAAAGAAkAAAAAAAIAAAAGAAoAAAAAAAIAAAAGAAsAAAAAAAIAAAAGAAwAAAAAAAIAAAAGAA0AAAAAAAIAAAAGAA8AAAABAAEAAAAGABAAAAABAAIAAAAGABEAAAABAAIAAAAHAP3/AAABAAIAAAAHAP7/AAABAAIAAAAHAP//AAABAAIAAAAHAAAAAAABAAAAAAAHAAIAAAAAAAIAAAAHAAMAAAAAAAIAAAAHAAQAAAAAAAIAAAAHAAUAAAAAAAIAAAAHAAYAAAAAAAIAAAAHAAcAAAAAAAIAAAAHAAgAAAAAAAIAAAAHAAkAAAAAAAIAAAAHAAoAAAAAAAIAAAAHAAsAAAAAAAIAAAAHAAwAAAAAAAIAAAAHAA0AAAAAAAIAAAAHAA8AAAABAAEAAAAHABAAAAABAAIAAAAHABEAAAABAAIAAAAIAP3/AAABAAIAAAAIAP7/AAABAAIAAAAIAP//AAABAAIAAAAIAAAAAAABAAAAAAAIAAIAAAAAAAIAAAAIAAMAAAAAAAIAAAAIAAQAAAAAAAIAAAAIAAUAAAAAAAIAAAAIAAYAAAAAAAIAAAAIAAcAAAAAAAIAAAAIAAgAAAAAAAIAAAAIAAkAAAAAAAIAAAAIAAoAAAAAAAIAAAAIAAsAAAAAAAIAAAAIAAwAAAAAAAIAAAAIAA0AAAAAAAIAAAAIAA8AAAABAAEAAAAIABAAAAABAAIAAAAIABEAAAABAAIAAAAJAP3/AAABAAIAAAAJAP7/AAABAAIAAAAJAP//AAABAAIAAAAJAAAAAAABAAAAAAAJAAIAAAAAAAIAAAAJAAMAAAAAAAIAAAAJAAQAAAAAAAIAAAAJAAUAAAAAAAIAAAAJAAYAAAAAAAIAAAAJAAcAAAAAAAIAAAAJAAgAAAAAAAIAAAAJAAkAAAAAAAIAAAAJAAoAAAAAAAIAAAAJAAsAAAAAAAIAAAAJAAwAAAAAAAIAAAAJAA0AAAAAAAIAAAAJAA8AAAABAAEAAAAJABAAAAABAAIAAAAJABEAAAABAAIAAAAKAP3/AAABAAIAAAAKAP7/AAABAAIAAAAKAP//AAABAAIAAAAKAAAAAAABAAAAAAAKAAIAAAAAAAIAAAAKAAMAAAAAAAIAAAAKAAQAAAAAAAIAAAAKAAUAAAAAAAIAAAAKAAYAAAAAAAIAAAAKAAcAAAAAAAIAAAAKAAgAAAAAAAIAAAAKAAkAAAAAAAIAAAAKAAoAAAAAAAIAAAAKAAsAAAAAAAIAAAAKAAwAAAAAAAIAAAAKAA0AAAAAAAIAAAAKAA8AAAABAAEAAAAKABAAAAABAAIAAAAKABEAAAABAAIAAAALAP3/AAABAAIAAAALAP7/AAABAAIAAAALAP//AAABAAIAAAALAAAAAAABAAAAAAALAAIAAAAAAAIAAAALAAMAAAAAAAIAAAALAAQAAAAAAAIAAAALAAUAAAAAAAIAAAALAAYAAAAAAAIAAAALAAcAAAAAAAIAAAALAAgAAAAAAAIAAAALAAkAAAAAAAIAAAALAAoAAAAAAAIAAAALAAsAAAAAAAIAAAALAAwAAAAAAAIAAAALAA0AAAAAAAIAAAALAA8AAAABAAEAAAALABAAAAABAAIAAAALABEAAAABAAIAAAAMAP3/AAABAAIAAAAMAP7/AAABAAIAAAAMAP//AAABAAIAAAAMAAAAAAABAAAAAAAMAAIAAAAAAAIAAAAMAAMAAAAAAAIAAAAMAAQAAAAAAAIAAAAMAAUAAAAAAAIAAAAMAAYAAAAAAAIAAAAMAAcAAAAAAAIAAAAMAAgAAAAAAAIAAAAMAAkAAAAAAAIAAAAMAAoAAAAAAAIAAAAMAAsAAAAAAAIAAAAMAAwAAAAAAAIAAAAMAA0AAAAAAAIAAAAMAA8AAAABAAEAAAAMABAAAAABAAIAAAAMABEAAAABAAIAAAANAP3/AAABAAIAAAANAP7/AAABAAIAAAANAP//AAABAAIAAAANAAAAAAABAAAAAAANAAIAAAAAAAIAAAANAAMAAAAAAAIAAAANAAQAAAAAAAIAAAANAAUAAAAAAAIAAAANAAYAAAAAAAIAAAANAAcAAAAAAAIAAAANAAgAAAAAAAIAAAANAAkAAAAAAAIAAAANAAoAAAAAAAIAAAANAAsAAAAAAAIAAAANAAwAAAAAAAIAAAANAA0AAAAAAAIAAAANAA8AAAABAAEAAAANABAAAAABAAIAAAANABEAAAABAAIAAAAOAP3/AAABAAIAAAAOAP7/AAABAAIAAAAOAP//AAABAAIAAAAOAAAAAAABAAAAAAAOAAIAAAAAAAIAAAAOAAMAAAAAAAIAAAAOAAQAAAAAAAIAAAAOAAUAAAAAAAIAAAAOAAYAAAAAAAIAAAAOAAcAAAAAAAIAAAAOAAgAAAAAAAIAAAAOAAkAAAAAAAIAAAAOAAoAAAAAAAIAAAAOAAsAAAAAAAIAAAAOAAwAAAAAAAIAAAAOAA0AAAAAAAIAAAAOAA8AAAABAAEAAAAOABAAAAABAAIAAAAOABEAAAABAAIAAAAPAP3/AAABAAIAAAAPAP7/AAABAAIAAAAPAP//AAABAAIAAAAPAAAAAAABAAAAAAAPAAIAAAAAAAIAAAAPAAMAAAAAAAIAAAAPAAQAAAAAAAIAAAAPAAUAAAAAAAIAAAAPAAYAAAAAAAIAAAAPAAcAAAAAAAIAAAAPAAgAAAAAAAIAAAAPAAkAAAAAAAIAAAAPAAoAAAAAAAIAAAAPAAsAAAAAAAIAAAAPAAwAAAAAAAIAAAAPAA0AAAAAAAIAAAAPAA8AAAABAAEAAAAPABAAAAABAAIAAAAPABEAAAABAAIAAAAQAP3/AAABAAIAAAAQAP7/AAABAAIAAAAQAP//AAABAAIAAAAQAAAAAAABAAAAAAAQAAIAAAAAAAIAAAAQAAMAAAAAAAIAAAAQAAQAAAAAAAIAAAAQAAUAAAAAAAIAAAAQAAYAAAAAAAIAAAAQAAcAAAAAAAIAAAAQAAgAAAAAAAIAAAAQAAkAAAAAAAIAAAAQAAoAAAAAAAIAAAAQAAsAAAAAAAIAAAAQAAwAAAAAAAIAAAAQAA0AAAAAAAIAAAAQAA8AAAABAAEAAAAQABAAAAABAAIAAAAQABEAAAABAAIAAAARAP3/AAABAAIAAAARAP7/AAABAAIAAAARAP//AAABAAIAAAARAAAAAAABAAAAAAARAAIAAAAAAAIAAAARAAMAAAAAAAIAAAARAAQAAAAAAAIAAAARAAUAAAAAAAIAAAARAAYAAAAAAAIAAAARAAcAAAAAAAIAAAARAAgAAAAAAAIAAAARAAkAAAAAAAIAAAARAAoAAAAAAAIAAAARAAsAAAAAAAIAAAARAAwAAAAAAAIAAAARAA0AAAAAAAIAAAARAA8AAAABAAEAAAARABAAAAABAAIAAAARABEAAAABAAIAAAASAP3/AAABAAIAAAASAP7/AAABAAIAAAASAP//AAABAAIAAAASAAAAAAABAAAAAAASAAIAAAAAAAIAAAASAAMAAAAAAAIAAAASAAQAAAAAAAIAAAASAAUAAAAAAAIAAAASAAYAAAAAAAIAAAASAAcAAAAAAAIAAAASAAgAAAAAAAIAAAASAAkAAAAAAAIAAAASAAoAAAAAAAIAAAASAAsAAAAAAAIAAAASAAwAAAAAAAIAAAASAA0AAAAAAAIAAAASAA8AAAABAAEAAAASABAAAAABAAIAAAASABEAAAABAAIAAAATAP3/AAABAAIAAAATAP7/AAABAAIAAAATAP//AAABAAIAAAATAAAAAAABAAAAAAATAAIAAAAAAAIAAAATAAMAAAAAAAIAAAATAAQAAAAAAAIAAAATAAUAAAAAAAIAAAATAAYAAAAAAAIAAAATAAcAAAAAAAIAAAATAAgAAAAAAAIAAAATAAkAAAAAAAIAAAATAAoAAAAAAAIAAAATAAsAAAAAAAIAAAATAAwAAAAAAAIAAAATAA0AAAAAAAIAAAATAA8AAAABAAEAAAATABAAAAABAAIAAAATABEAAAABAAIAAAAUAP3/AAABAAIAAAAUAP7/AAABAAIAAAAUAP//AAABAAIAAAAUAAAAAAABAAAAAAAUAAIAAAAAAAIAAAAUAAMAAAAAAAIAAAAUAAQAAAAAAAIAAAAUAAUAAAAAAAIAAAAUAAYAAAAAAAIAAAAUAAcAAAAAAAIAAAAUAAgAAAAAAAIAAAAUAAkAAAAAAAIAAAAUAAoAAAAAAAIAAAAUAAsAAAAAAAIAAAAUAAwAAAAAAAIAAAAUAA0AAAAAAAIAAAAUAA8AAAABAAEAAAAUABAAAAABAAIAAAAUABEAAAABAAIAAAAVAP3/AAABAAIAAAAVAP7/AAABAAIAAAAVAP//AAABAAIAAAAVAAAAAAABAAAAAAAVAAIAAAAAAAIAAAAVAAMAAAAAAAIAAAAVAAQAAAAAAAIAAAAVAAUAAAAAAAIAAAAVAAYAAAAAAAIAAAAVAAcAAAAAAAIAAAAVAAgAAAAAAAIAAAAVAAkAAAAAAAIAAAAVAAoAAAAAAAIAAAAVAAsAAAAAAAIAAAAVAAwAAAAAAAIAAAAVAA0AAAAAAAIAAAAVAA8AAAABAAEAAAAVABAAAAABAAIAAAAVABEAAAABAAIAAAAWAP3/AAABAAIAAAAWAP7/AAABAAIAAAAWAP//AAABAAIAAAAWAAAAAAABAAAAAAAWAAIAAAAAAAIAAAAWAAMAAAAAAAIAAAAWAAQAAAAAAAIAAAAWAAUAAAAAAAIAAAAWAAYAAAAAAAIAAAAWAAcAAAAAAAIAAAAWAAgAAAAAAAIAAAAWAAkAAAAAAAIAAAAWAAoAAAAAAAIAAAAWAAsAAAAAAAIAAAAWAAwAAAAAAAIAAAAWAA0AAAAAAAIAAAAWAA8AAAABAAEAAAAWABAAAAABAAIAAAAWABEAAAABAAIAAAAXAP3/AAABAAIAAAAXAP7/AAABAAIAAAAXAP//AAABAAIAAAAXAAAAAAABAAAAAAAXAAIAAAAAAAIAAAAXAAMAAAAAAAIAAAAXAAQAAAAAAAIAAAAXAAUAAAAAAAIAAAAXAAYAAAAAAAIAAAAXAAcAAAAAAAIAAAAXAAgAAAAAAAIAAAAXAAkAAAAAAAIAAAAXAAoAAAAAAAIAAAAXAAsAAAAAAAIAAAAXAAwAAAAAAAIAAAAXAA0AAAAAAAIAAAAXAA8AAAABAAEAAAAXABAAAAABAAIAAAAXABEAAAABAAIAAAAYAP3/AAABAAIAAAAYAP7/AAABAAIAAAAYAP//AAABAAIAAAAYAAAAAAABAAAAAAAYAAIAAAAAAAIAAAAYAAMAAAAAAAIAAAAYAAQAAAAAAAIAAAAYAAUAAAAAAAIAAAAYAAYAAAAAAAIAAAAYAAcAAAAAAAIAAAAYAAgAAAAAAAIAAAAYAAkAAAAAAAIAAAAYAAoAAAAAAAIAAAAYAAsAAAAAAAIAAAAYAAwAAAAAAAIAAAAYAA0AAAAAAAIAAAAYAA8AAAABAAEAAAAYABAAAAABAAIAAAAYABEAAAABAAIAAAAZAP3/AAABAAIAAAAZAP7/AAABAAIAAAAZAP//AAABAAIAAAAZAAAAAAABAAAAAAAZAAIAAAAAAAIAAAAZAAMAAAAAAAIAAAAZAAQAAAAAAAIAAAAZAAUAAAAAAAIAAAAZAAYAAAAAAAIAAAAZAAcAAAAAAAIAAAAZAAgAAAAAAAIAAAAZAAkAAAAAAAIAAAAZAAoAAAAAAAIAAAAZAAsAAAAAAAIAAAAZAAwAAAAAAAIAAAAZAA0AAAAAAAIAAAAZAA8AAAABAAEAAAAZABAAAAABAAIAAAAZABEAAAABAAIAAAAaAP3/AAABAAIAAAAaAP7/AAABAAIAAAAaAP//AAABAAIAAAAaAAAAAAABAAAAAAAaAAIAAAAAAAIAAAAaAAMAAAAAAAIAAAAaAAQAAAAAAAIAAAAaAAUAAAAAAAIAAAAaAAYAAAAAAAIAAAAaAAcAAAAAAAIAAAAaAAgAAAAAAAIAAAAaAAkAAAAAAAIAAAAaAAoAAAAAAAIAAAAaAAsAAAAAAAIAAAAaAAwAAAAAAAIAAAAaAA0AAAAAAAIAAAAaAA8AAAABAAEAAAAaABAAAAABAAIAAAAaABEAAAABAAIAAAAbAP3/AAABAAIAAAAbAP7/AAABAAIAAAAbAP//AAABAAIAAAAbAAAAAAABAAAAAAAbAAIAAAAAAAIAAAAbAAMAAAAAAAIAAAAbAAQAAAAAAAIAAAAbAAUAAAAAAAIAAAAbAAYAAAAAAAIAAAAbAAcAAAAAAAIAAAAbAAgAAAAAAAIAAAAbAAkAAAAAAAIAAAAbAAoAAAAAAAIAAAAbAAsAAAAAAAIAAAAbAAwAAAAAAAIAAAAbAA0AAAAAAAIAAAAbAA8AAAABAAEAAAAbABAAAAABAAIAAAAbABEAAAABAAIAAAAcAP3/AAABAAIAAAAcAP7/AAABAAIAAAAcAP//AAABAAIAAAAcAAAAAAACAAEAAAAcAAIAAAAAAAAAAAAcAAMAAAAAAAAAAAAcAAQAAAAAAAAAAAAcAAUAAAAAAAAAAAAcAAYAAAAAAAAAAAAcAAcAAAAAAAAAAAAcAAgAAAAAAAAAAAAcAAkAAAAAAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAcAA8AAAACAAAAAAAcABAAAAABAAIAAAAcABEAAAABAAIAAAAdAP3/AAABAAIAAAAdAP7/AAABAAIAAAAdAP//AAABAAIAAAAdAAAAAAABAAIAAAAdAAEAAAABAAIAAAAdAAIAAAABAAIAAAAdAAMAAAABAAIAAAAdAAQAAAABAAIAAAAdAAUAAAABAAIAAAAdAAYAAAABAAIAAAAdAAcAAAABAAIAAAAdAAgAAAABAAIAAAAdAAkAAAABAAIAAAAdAAoAAAABAAIAAAAdAAsAAAABAAIAAAAdAAwAAAABAAIAAAAdAA0AAAABAAIAAAAdAA8AAAABAAIAAAAdABAAAAABAAIAAAAdABEAAAABAAIAAAAeAP3/AAABAAIAAAAeAP7/AAABAAIAAAAeAP//AAABAAIAAAAeAAAAAAABAAIAAAAeAAEAAAABAAIAAAAeAAIAAAABAAIAAAAeAAMAAAABAAIAAAAeAAQAAAABAAIAAAAeAAUAAAABAAIAAAAeAAYAAAABAAIAAAAeAAcAAAABAAIAAAAeAAgAAAABAAIAAAAeAAkAAAABAAIAAAAeAAoAAAABAAIAAAAeAAsAAAABAAIAAAAeAAwAAAABAAIAAAAeAA0AAAABAAIAAAAeAA4AAAABAAIAAAAeAA8AAAABAAIAAAAeABAAAAABAAIAAAAeABEAAAABAAIAAAAfAP3/AAABAAIAAAAfAP7/AAABAAIAAAAfAP//AAABAAIAAAAfAAAAAAABAAIAAAAfAAEAAAABAAIAAAAfAAIAAAABAAIAAAAfAAMAAAABAAIAAAAfAAQAAAABAAIAAAAfAAUAAAABAAIAAAAfAAYAAAABAAIAAAAfAAcAAAABAAIAAAAfAAgAAAABAAIAAAAfAAkAAAABAAIAAAAfAAoAAAABAAIAAAAfAAsAAAABAAIAAAAfAAwAAAABAAIAAAAfAA0AAAABAAIAAAAfAA4AAAABAAIAAAAfAA8AAAABAAIAAAAfABAAAAABAAIAAAAfABEAAAABAAIAAAD//w4AAAAAAAEAAAAcAA4AAAAAAAAAAAAcAAEAAAAAAAAAAAD//wEAAAAAAAEAAAAAAAEAAAAAAAIAAAABAAEAAAAAAAIAAAACAAEAAAAAAAIAAAADAAEAAAAAAAIAAAAEAAEAAAAAAAIAAAAFAAEAAAAAAAIAAAAGAAEAAAAAAAIAAAAHAAEAAAAAAAIAAAAIAAEAAAAAAAIAAAAJAAEAAAAAAAIAAAAKAAEAAAAAAAIAAAALAAEAAAAAAAIAAAAMAAEAAAAAAAIAAAANAAEAAAAAAAIAAAAOAAEAAAAAAAIAAAAPAAEAAAAAAAIAAAAQAAEAAAAAAAIAAAARAAEAAAAAAAIAAAASAAEAAAAAAAIAAAATAAEAAAAAAAIAAAAUAAEAAAAAAAIAAAAVAAEAAAAAAAIAAAAWAAEAAAAAAAIAAAAXAAEAAAAAAAIAAAAYAAEAAAAAAAIAAAAZAAEAAAAAAAIAAAAaAAEAAAAAAAIAAAAbAAEAAAAAAAIAAAAAAA4AAAAAAAIAAAABAA4AAAAAAAIAAAACAA4AAAAAAAIAAAADAA4AAAAAAAIAAAAEAA4AAAAAAAIAAAAFAA4AAAAAAAIAAAAGAA4AAAAAAAIAAAAHAA4AAAAAAAIAAAAIAA4AAAAAAAIAAAAJAA4AAAAAAAIAAAAKAA4AAAAAAAIAAAALAA4AAAAAAAIAAAAMAA4AAAAAAAIAAAANAA4AAAAAAAIAAAAOAA4AAAAAAAIAAAAPAA4AAAAAAAIAAAAQAA4AAAAAAAIAAAARAA4AAAAAAAIAAAASAA4AAAAAAAIAAAATAA4AAAAAAAIAAAAUAA4AAAAAAAIAAAAVAA4AAAAAAAIAAAAWAA4AAAAAAAIAAAAXAA4AAAAAAAIAAAAYAA4AAAAAAAIAAAAZAA4AAAAAAAIAAAAaAA4AAAAAAAIAAAAbAA4AAAAAAAIAAAD+/w4AAAABAAIAAAD+/wEAAAABAAIAAAAdAA4AAAABAAIAAAA=")
 tile_set = SubResource("TileSet_1va8x")
 
-[node name="BackgroundTest" type="Sprite2D" parent="ArenaMiddleSize" unique_id=1571477365]
+[node name="Art" type="Node2D" parent="ArenaMiddleSize" unique_id=1814735531]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Controls" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=1767057593]
+modulate = Color(1, 1, 1, 0.6745098)
+z_index = -3
+position = Vector2(959.99994, 594.99994)
+scale = Vector2(0.6999999, 0.6999999)
+texture = ExtResource("2_tqfok")
+
+[node name="BackgroundTest" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=1571477365]
 position = Vector2(-99.00003, 540)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("22_56ne4")
 
-[node name="BackgroundTest2" type="Sprite2D" parent="ArenaMiddleSize" unique_id=2061730660]
+[node name="BackgroundTest2" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=2061730660]
 position = Vector2(2013, 542)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(1.3, -1.3)
 texture = ExtResource("22_56ne4")
 
-[node name="BackgroundHorz" type="Sprite2D" parent="ArenaMiddleSize" unique_id=289662827]
+[node name="BackgroundHorz" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=289662827]
 position = Vector2(960, 1083.0001)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("23_isxqs")
 
-[node name="BackgroundHorz2" type="Sprite2D" parent="ArenaMiddleSize" unique_id=694592446]
+[node name="BackgroundHorz2" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=694592446]
 position = Vector2(959.99994, -1.5258789e-05)
 scale = Vector2(1.3, -1.3)
 texture = ExtResource("24_ie25g")
 
-[node name="Dark" type="Sprite2D" parent="ArenaMiddleSize" unique_id=27556525]
+[node name="Dark" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=27556525]
 visible = false
 modulate = Color(1, 1, 1, 0.39607844)
 position = Vector2(960, 539)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("25_hes46")
 
-[node name="Dark2" type="Sprite2D" parent="ArenaMiddleSize" unique_id=696397798]
+[node name="Dark2" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=696397798]
+visible = false
 modulate = Color(1, 1, 1, 0.4509804)
 position = Vector2(960, 539)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("25_hes46")
 
-[node name="White" type="Sprite2D" parent="ArenaMiddleSize" unique_id=1556879339]
+[node name="White" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=1556879339]
 visible = false
 modulate = Color(1, 1, 1, 0.33333334)
 position = Vector2(961, 543)
 texture = ExtResource("26_cci3g")
 
+[node name="CurveShadow" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=2138129817]
+z_index = -3
+position = Vector2(34.999996, 127.000015)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_052kc")
+
+[node name="CurveShadow2" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=1240792171]
+z_index = -3
+position = Vector2(1884, 125.00001)
+rotation = 1.5707964
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_052kc")
+
+[node name="CurveShadow3" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=84490102]
+z_index = -3
+position = Vector2(1884.0001, 994.00006)
+rotation = 3.1415927
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_052kc")
+
+[node name="CurveShadow4" type="Sprite2D" parent="ArenaMiddleSize/Art" unique_id=685844709]
+z_index = -3
+position = Vector2(37.000004, 995.0001)
+rotation = -1.5707964
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_052kc")
+
 [node name="HZ" type="AnimationPlayer" parent="ArenaMiddleSize" unique_id=653239098]
 libraries/ = SubResource("AnimationLibrary_ad1qv")
+
+[node name="FloorSpecs" type="Node2D" parent="." unique_id=294772598]
+
+[node name="Bubblebig" type="Sprite2D" parent="FloorSpecs" unique_id=1097793629]
+z_index = -3
+position = Vector2(-34, 500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig8" type="Sprite2D" parent="FloorSpecs" unique_id=1162263774]
+z_index = -3
+position = Vector2(-9, 520)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig9" type="Sprite2D" parent="FloorSpecs" unique_id=1918720491]
+z_index = -3
+position = Vector2(-7, 478)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig2" type="Sprite2D" parent="FloorSpecs" unique_id=1272690198]
+z_index = -3
+position = Vector2(-33, 749)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig3" type="Sprite2D" parent="FloorSpecs" unique_id=10408419]
+z_index = -3
+position = Vector2(395.99997, 1052)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig10" type="Sprite2D" parent="FloorSpecs" unique_id=1622003736]
+z_index = -3
+position = Vector2(416, 1037)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig4" type="Sprite2D" parent="FloorSpecs" unique_id=881437086]
+z_index = -3
+position = Vector2(417, 1063)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig5" type="Sprite2D" parent="FloorSpecs" unique_id=1998559098]
+z_index = -3
+position = Vector2(1605, 1050)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig11" type="Sprite2D" parent="FloorSpecs" unique_id=1311549249]
+z_index = -3
+position = Vector2(1559, 1036)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig12" type="Sprite2D" parent="FloorSpecs" unique_id=1485583839]
+z_index = -3
+position = Vector2(1550, 1024)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig13" type="Sprite2D" parent="FloorSpecs" unique_id=890999798]
+z_index = -3
+position = Vector2(1938, 865)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig14" type="Sprite2D" parent="FloorSpecs" unique_id=39990748]
+z_index = -3
+position = Vector2(1938, 865)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig15" type="Sprite2D" parent="FloorSpecs" unique_id=218842914]
+z_index = -3
+position = Vector2(1940, 860)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig16" type="Sprite2D" parent="FloorSpecs" unique_id=1188652589]
+z_index = -3
+position = Vector2(1946, 883)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig17" type="Sprite2D" parent="FloorSpecs" unique_id=1894639928]
+z_index = -3
+position = Vector2(1926, 868)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig18" type="Sprite2D" parent="FloorSpecs" unique_id=416194756]
+z_index = -3
+position = Vector2(1941, 785)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig19" type="Sprite2D" parent="FloorSpecs" unique_id=1459466368]
+z_index = -3
+position = Vector2(1938, 779)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig20" type="Sprite2D" parent="FloorSpecs" unique_id=874171545]
+z_index = -3
+position = Vector2(1941, 696)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig21" type="Sprite2D" parent="FloorSpecs" unique_id=104526391]
+z_index = -3
+position = Vector2(1938, 679)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig22" type="Sprite2D" parent="FloorSpecs" unique_id=618334763]
+z_index = -3
+position = Vector2(1938, 679)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig23" type="Sprite2D" parent="FloorSpecs" unique_id=1191686057]
+z_index = -3
+position = Vector2(1926.9999, 685.99994)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig24" type="Sprite2D" parent="FloorSpecs" unique_id=362862639]
+z_index = -3
+position = Vector2(1939, 632)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig25" type="Sprite2D" parent="FloorSpecs" unique_id=663067376]
+z_index = -3
+position = Vector2(1940, 627)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig26" type="Sprite2D" parent="FloorSpecs" unique_id=569039714]
+z_index = -3
+position = Vector2(1939, 564)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig27" type="Sprite2D" parent="FloorSpecs" unique_id=890785992]
+z_index = -3
+position = Vector2(1935, 558)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig28" type="Sprite2D" parent="FloorSpecs" unique_id=467278936]
+z_index = -3
+position = Vector2(1939, 537)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig29" type="Sprite2D" parent="FloorSpecs" unique_id=613936406]
+z_index = -3
+position = Vector2(1957, 373)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig30" type="Sprite2D" parent="FloorSpecs" unique_id=334886014]
+z_index = -3
+position = Vector2(1938.0001, 350)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig31" type="Sprite2D" parent="FloorSpecs" unique_id=2094029847]
+z_index = -3
+position = Vector2(1938.0001, 350)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig32" type="Sprite2D" parent="FloorSpecs" unique_id=1225679262]
+z_index = -3
+position = Vector2(1918.9999, 362)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig33" type="Sprite2D" parent="FloorSpecs" unique_id=160067525]
+z_index = -3
+position = Vector2(1918.9999, 362)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig34" type="Sprite2D" parent="FloorSpecs" unique_id=198434930]
+z_index = -3
+position = Vector2(1500, 70.99997)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig35" type="Sprite2D" parent="FloorSpecs" unique_id=1362937747]
+z_index = -3
+position = Vector2(1516, 64)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig36" type="Sprite2D" parent="FloorSpecs" unique_id=1318703167]
+z_index = -3
+position = Vector2(1211, 66)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig37" type="Sprite2D" parent="FloorSpecs" unique_id=2033694177]
+z_index = -3
+position = Vector2(706, 70)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig38" type="Sprite2D" parent="FloorSpecs" unique_id=262956285]
+z_index = -3
+position = Vector2(1235, 67)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig39" type="Sprite2D" parent="FloorSpecs" unique_id=1740086275]
+z_index = -3
+position = Vector2(723, 85)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig40" type="Sprite2D" parent="FloorSpecs" unique_id=1656434601]
+z_index = -3
+position = Vector2(401.00003, 71)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig41" type="Sprite2D" parent="FloorSpecs" unique_id=1560846958]
+z_index = -3
+position = Vector2(408, 68)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig42" type="Sprite2D" parent="FloorSpecs" unique_id=2073675208]
+z_index = -3
+position = Vector2(545, 71)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig43" type="Sprite2D" parent="FloorSpecs" unique_id=1188213110]
+z_index = -3
+position = Vector2(555, 79)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig44" type="Sprite2D" parent="FloorSpecs" unique_id=1165509142]
+z_index = -3
+position = Vector2(1179, 91)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig45" type="Sprite2D" parent="FloorSpecs" unique_id=694556200]
+z_index = -3
+position = Vector2(1532, 88)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig46" type="Sprite2D" parent="FloorSpecs" unique_id=271607836]
+z_index = -3
+position = Vector2(1845, 131)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig47" type="Sprite2D" parent="FloorSpecs" unique_id=885654726]
+z_index = -3
+position = Vector2(1224, 87)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig48" type="Sprite2D" parent="FloorSpecs" unique_id=1373967183]
+z_index = -3
+position = Vector2(1497, 87)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig49" type="Sprite2D" parent="FloorSpecs" unique_id=1447556203]
+z_index = -3
+position = Vector2(1476, 79.99999)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig6" type="Sprite2D" parent="FloorSpecs" unique_id=825636159]
+z_index = -3
+position = Vector2(1585, 1062)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
+
+[node name="Bubblebig7" type="Sprite2D" parent="FloorSpecs" unique_id=777150273]
+z_index = -3
+position = Vector2(1585, 1062)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_ojaob")
