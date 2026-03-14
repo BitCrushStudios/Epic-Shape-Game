@@ -4,6 +4,13 @@ class_name Enemy
 
 
 
+var iframe = 0.0
+var iframe_max = 0.5
+signal entered_hurtbox(node:Node)
+signal took_damage(damage:float)
+signal health_depleted()
+signal health_changed()
+
 @export var agent:NavigationAgent2D
 @onready var target_position = global_position 
 var update_target_position_rate = 2.0
@@ -16,10 +23,6 @@ var update_target_position_time = 0.0
 		health_current = v
 		health_changed.emit()
 
-signal took_damage(damage:float)
-signal health_depleted()
-signal health_changed()
-
 func take_damage(damage:float):
 	health_current -= damage
 	took_damage.emit(damage)
@@ -27,14 +30,11 @@ func take_damage(damage:float):
 		health_depleted.emit()
 	
 
-signal entered_hurtbox(node:Node)
 func _ready():
 	z_index = 0
 	took_damage.connect(_recieved_damage)
 	health_depleted.connect(_health_depleted)
 	entered_hurtbox.connect(_entered_hurtbox)
-var iframe = 0.0
-var iframe_max = 0.5
 func _entered_hurtbox(node:Node):
 	if iframe>0.0:
 		return
@@ -51,7 +51,6 @@ func _exit_tree() -> void:
 	get_tree().emit_signal("enemy_removed",self)
 	
 #func _on_death():
-	#
 	#Player.instance.resource.exp_add(experience_on_death)
 
 func _body_entered(other:Node2D):
@@ -75,6 +74,7 @@ func spawn_coins():
 		gp.global_position = global_position
 		gp.apply_central_impulse((Vector2.RIGHT*300.0).rotated(TAU*randf()))
 		await get_tree().process_frame
+		
 func _health_depleted():
 	spawn_coins()
 	collision_mask = 0

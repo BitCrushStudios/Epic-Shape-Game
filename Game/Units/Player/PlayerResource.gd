@@ -62,33 +62,59 @@ func take_damage(damage:float):
 	health_current -= damage
 	took_damage.emit(damage)
 	iframe_trigger()
+	
 @export_category("Stats Base")
 @export var base_mass = 10.0:
 	set(v):
 		base_mass = v
 		emit_changed()
+		
 @export var base_mass_add = 1.0:
 	set(v):
 		base_mass_add = v
 		emit_changed()
 		
-@export var base_speed = 500.0
-@export var base_speed_add = 100.0
-@export var base_size = 1.0
-@export var base_size_add = 0.1
-@export var accel_mult = 10.0
-@export var exp_rate = 2.0
+@export var base_speed = 500.0:
+	set(v):
+		base_speed = v
+		emit_changed()
+		
+@export var base_speed_add = 100.0:
+	set(v):
+		base_speed_add = v
+		emit_changed()
+		
+@export var base_size = 1.0:
+	set(v):
+		base_size = v
+		emit_changed()
+		
+@export var base_size_add = 0.1:
+	set(v):
+		base_size_add = v
+		emit_changed()
+		
+@export var accel_mult = 10.0:
+	set(v):
+		accel_mult = v
+		emit_changed()
+		
+@export var exp_rate = 2.0:
+	set(v):
+		exp_rate = v
+		emit_changed()
+		
 @export var money = 1000:
 	set(v):
 		money = v 
 		emit_changed()
-
+		
 @export_category("Stat Result")
 @export
 var speed: float:
 	get():
 		return base_speed + (base_speed_add * stat_speed)
-
+		
 @export_category("Experience")
 signal level_changed()
 func calc_level_from_exp(v:float):
@@ -118,13 +144,11 @@ func clear_levels_gained():
 	set(v):
 		experience = calc_exp_from_level(v+0.001)
 	
-@export
-var current_level_exp_required: float:
+@export var current_level_exp_required: float:
 	get():
 		return calc_exp_from_level(current_level)
 		
-@export
-var next_level_exp_required: float:
+@export var next_level_exp_required: float:
 	get():
 		return calc_exp_from_level(current_level+1)
 

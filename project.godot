@@ -40,6 +40,7 @@ audio/sound/volume=1.0
 
 [gui]
 
+theme/custom="uid://byedsphmsdra5"
 theme/custom_font="uid://3rv7pk32ilcw"
 
 [input]

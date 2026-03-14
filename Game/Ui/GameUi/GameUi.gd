@@ -57,6 +57,11 @@ class_name GameUi
 		time_remaining = v
 		update_all_ui()
 		
+@export var money = 1000:
+	set(v):
+		money = v
+		update_all_ui()
+		
 @export var wave_composition: Array[ActivePair]:
 	set(v):
 		wave_composition = v
@@ -74,6 +79,8 @@ func player_resource_changed():
 	exp_current = player.resource.experience - player.resource.current_level_exp_required 
 	upgrade_star_count = player.resource.levels_gained
 	show_hurt_indicator = player.resource.iframe_current>0
+	money = player.resource.money
+	
 	
 func enemy_manager_resource_changed():
 	if enemyManager and enemyManager.resource:
@@ -83,7 +90,6 @@ func enemy_manager_resource_changed():
 			enemyManager.resource.wave.time_max - 
 			enemyManager.resource.time
 		)
-	
 	
 func _ready():
 	%HurtOverlay.modulate = Color.TRANSPARENT
@@ -108,6 +114,7 @@ func _update_exp_ui():
 		exp_current, 
 		exp_max 
 	]
+	%MoneyLabel.text = "%d" % money
 func _update_level_ui():
 	var diff = upgrade_star_count - %LevelsGained.get_child_count(true)
 	if diff<0:
