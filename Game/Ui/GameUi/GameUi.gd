@@ -57,7 +57,7 @@ class_name GameUi
 		time_remaining = v
 		update_all_ui()
 		
-@export var money = 1000:
+@export var money = 1:
 	set(v):
 		money = v
 		update_all_ui()

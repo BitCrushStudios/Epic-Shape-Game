@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bb511sh203tco"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qted"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbqne"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_430ii"]
+bg_color = Color(0.73333335, 0.73333335, 0.73333335, 0.62352943)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p42x"]
+bg_color = Color(0.6, 0.6, 0.6, 0.43529412)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3clmd"]
+bg_color = Color(1, 1, 1, 0.85490197)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_e2n2e"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_b76km")
+Button/styles/focus = SubResource("StyleBoxFlat_lbqne")
+Button/styles/hover = SubResource("StyleBoxFlat_430ii")
+Button/styles/normal = SubResource("StyleBoxFlat_3p42x")
+Button/styles/pressed = SubResource("StyleBoxFlat_3clmd")
+CheckBox/colors/checkbox_checked_color = Color(0, 0, 0, 0.76862746)
+CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
+
+[sub_resource type="Theme" id="Theme_ae6q6"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_b76km")
+Button/styles/focus = SubResource("StyleBoxFlat_lbqne")
+Button/styles/hover = SubResource("StyleBoxFlat_430ii")
+Button/styles/normal = SubResource("StyleBoxFlat_3p42x")
+Button/styles/pressed = SubResource("StyleBoxFlat_3clmd")
+CheckBox/colors/checkbox_checked_color = Color(0, 0, 0, 0.76862746)
+CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
+
+[node name="GameOverMenu" type="CanvasLayer" unique_id=2130672635]
+process_mode = 3
+layer = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1043463268]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7qted")
+
+[node name="Control" type="Control" parent="PanelContainer" unique_id=204458380]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Control" unique_id=1743584834]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -103.0
+offset_right = 129.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="PanelContainer/Control/VBoxContainer" unique_id=165322371]
+layout_mode = 2
+theme = SubResource("Theme_e2n2e")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 70
+text = "Game Over!"
+
+[node name="Restart" type="Button" parent="PanelContainer/Control/VBoxContainer" unique_id=371431428]
+layout_mode = 2
+theme = SubResource("Theme_ae6q6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
+[node name="Menu" type="Button" parent="PanelContainer/Control/VBoxContainer" unique_id=111373690]
+layout_mode = 2
+theme = SubResource("Theme_ae6q6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Menu"
