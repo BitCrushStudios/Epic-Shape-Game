@@ -104,7 +104,7 @@ func take_damage(damage:float):
 		exp_rate = v
 		emit_changed()
 		
-@export var money = 1000:
+@export var money = 0:
 	set(v):
 		money = v 
 		emit_changed()

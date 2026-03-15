@@ -9,6 +9,7 @@ func _init():
 	
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_health += 1
+	gameMain.player.resource.health_current = gameMain.player.resource.health_max
 
 static func poll(gameMain:GameMain):
 	if gameMain.player.resource.stat_health>=gameMain.player.resource.stat_health_max:
