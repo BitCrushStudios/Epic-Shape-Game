@@ -21,50 +21,50 @@
 [ext_resource type="Texture2D" uid="uid://b1mi61r36c3j1" path="res://Assets/Art/Items/Strength Icon.png" id="12_f3ldj"]
 [ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
 
-[sub_resource type="Resource" id="Resource_ox38h"]
-script = ExtResource("8_qit7n")
-texture = ExtResource("4_saik7")
-name = "Extra Health"
-
-[sub_resource type="Resource" id="Resource_avslj"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_ox38h")
-
-[sub_resource type="Resource" id="Resource_hvp1p"]
-script = ExtResource("7_n0hoh")
-texture = ExtResource("6_8jv2k")
-name = "Extra Weapon"
-
-[sub_resource type="Resource" id="Resource_q45wr"]
-script = ExtResource("5_0k88i")
-item = SubResource("Resource_hvp1p")
-
-[sub_resource type="Resource" id="Resource_u6hvn"]
+[sub_resource type="Resource" id="Resource_saik7"]
 script = ExtResource("3_n0hoh")
 texture = ExtResource("8_tkbig")
 name = "Extra Speed"
 
-[sub_resource type="Resource" id="Resource_j18rr"]
+[sub_resource type="Resource" id="Resource_8jv2k"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_u6hvn")
+item = SubResource("Resource_saik7")
 
-[sub_resource type="Resource" id="Resource_e7njq"]
+[sub_resource type="Resource" id="Resource_tkbig"]
+script = ExtResource("8_qit7n")
+texture = ExtResource("4_saik7")
+name = "Extra Health"
+
+[sub_resource type="Resource" id="Resource_fbx22"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_tkbig")
+
+[sub_resource type="Resource" id="Resource_f3ldj"]
+script = ExtResource("7_n0hoh")
+texture = ExtResource("6_8jv2k")
+name = "Extra Weapon"
+
+[sub_resource type="Resource" id="Resource_ox38h"]
+script = ExtResource("5_0k88i")
+item = SubResource("Resource_f3ldj")
+
+[sub_resource type="Resource" id="Resource_avslj"]
 script = ExtResource("8_8jv2k")
 texture = ExtResource("10_fbx22")
 name = "Extra Size"
 
-[sub_resource type="Resource" id="Resource_2krtt"]
+[sub_resource type="Resource" id="Resource_hvp1p"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_e7njq")
+item = SubResource("Resource_avslj")
 
-[sub_resource type="Resource" id="Resource_ou14g"]
+[sub_resource type="Resource" id="Resource_q45wr"]
 script = ExtResource("5_hitma")
 texture = ExtResource("12_f3ldj")
 name = "Extra Strength"
 
-[sub_resource type="Resource" id="Resource_iovks"]
+[sub_resource type="Resource" id="Resource_u6hvn"]
 script = ExtResource("5_0k88i")
-item = SubResource("Resource_ou14g")
+item = SubResource("Resource_q45wr")
 
 [sub_resource type="Theme" id="Theme_q3cp0"]
 default_font = ExtResource("6_llh7c")
@@ -260,7 +260,7 @@ process_mode = 3
 layer = 13
 visible = false
 script = ExtResource("1_oi6um")
-items = Array[ExtResource("5_0k88i")]([SubResource("Resource_avslj"), SubResource("Resource_q45wr"), SubResource("Resource_j18rr"), SubResource("Resource_2krtt"), SubResource("Resource_iovks")])
+items = Array[ExtResource("5_0k88i")]([SubResource("Resource_8jv2k"), SubResource("Resource_fbx22"), SubResource("Resource_ox38h"), SubResource("Resource_hvp1p"), SubResource("Resource_u6hvn")])
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=778254187]
 anchors_preset = 15
@@ -375,31 +375,31 @@ theme_override_constants/separation = 32
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_q45wr")
+resource = SubResource("Resource_fbx22")
 
 [node name="ShopButton3" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=476961851 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_j18rr")
+resource = SubResource("Resource_ox38h")
 
 [node name="ShopButton1" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1734667001 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_avslj")
+resource = SubResource("Resource_8jv2k")
 
 [node name="ShopButton4" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1411666123 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_2krtt")
+resource = SubResource("Resource_hvp1p")
 
 [node name="ShopButton5" parent="PanelContainer/Control/Control/HBoxContainer" unique_id=1040789750 instance=ExtResource("2_a2r72")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-resource = SubResource("Resource_iovks")
+resource = SubResource("Resource_u6hvn")
 
 [node name="Control2" type="Control" parent="PanelContainer/Control" unique_id=1723206551]
 layout_mode = 2

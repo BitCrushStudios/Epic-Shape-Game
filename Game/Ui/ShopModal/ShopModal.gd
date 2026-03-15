@@ -49,6 +49,7 @@ func _changed():
 	for i in range(buttons.size()):
 		if i<items.size() and items[i]:
 			buttons[i].resource = items[i]
+			buttons[i].disabled = items[i].price>money
 	%MoneyLabel.text = "$ %d" % money
 func swapEmpty():
 	var available_items = ItemResource.get_available_items()

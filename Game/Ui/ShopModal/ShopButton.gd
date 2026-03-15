@@ -29,7 +29,8 @@ func _changed():
 		%PriceLabel.text = ""
 		disabled=true
 	modulate = Color.DIM_GRAY if disabled else Color.WHITE
-		
+func _process(_delta: float) -> void:
+	modulate = Color.GRAY if disabled else Color.WHITE
 func _pressed() -> void:
 	print("Selected")
 	item_selected.emit(resource)
