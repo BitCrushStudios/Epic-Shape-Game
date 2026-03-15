@@ -24,8 +24,8 @@ initial_velocity_max = 180.68
 gravity = Vector3(0, 0, 0)
 linear_accel_min = -100.0
 linear_accel_max = -100.0
-scale_min = 0.39999998
-scale_max = 0.79999995
+scale_min = 0.7
+scale_max = 1.1
 scale_curve = SubResource("CurveTexture_iahi3")
 alpha_curve = SubResource("CurveTexture_csjge")
 
