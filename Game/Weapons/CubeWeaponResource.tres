@@ -14,5 +14,4 @@ normal_texture = ExtResource("3_21gk6")
 activated_texture = ExtResource("1_hin20")
 shape = SubResource("RectangleShape2D_qg1ck")
 name = "Cube Weapon"
-damage = 5.0
 metadata/_custom_type_script = "uid://bvtjy2mkl872g"

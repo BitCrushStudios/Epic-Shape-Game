@@ -31,7 +31,8 @@ func _ready():
 	entered_hurtbox.connect(_entered_hurtbox)
 	
 func _entered_hurtbox(node:Node):
-	$Hit.play()
+	$EnemyHit.pitch_scale = randf_range(0.9,1.3)
+	$EnemyHit.play()
 	if state != State.Activated:
 		return
 	if node is Enemy:

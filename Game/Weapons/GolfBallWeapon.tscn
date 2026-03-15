@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="6_usxxg"]
 [ext_resource type="Script" uid="uid://7ycqd3p1ul76" path="res://Game/Weapons/RotateWithVelocity.gd" id="7_ll0bf"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="8_b2esk"]
+[ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="9_ac4bj"]
 [ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="9_yxfes"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kkb65"]
@@ -77,5 +78,11 @@ script = ExtResource("8_b2esk")
 length = 30
 metadata/_custom_type_script = "uid://onfsof0qcqtj"
 
-[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1710730506]
+[node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1485955602]
 stream = ExtResource("9_yxfes")
+volume_db = -10.0
+pitch_scale = 1.2
+bus = &"Sound Effects"
+
+[node name="BasicHit" type="AudioStreamPlayer" parent="." unique_id=1765510559]
+stream = ExtResource("9_ac4bj")

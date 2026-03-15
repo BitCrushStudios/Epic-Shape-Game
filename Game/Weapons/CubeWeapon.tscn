@@ -168,14 +168,14 @@ shape = SubResource("RectangleShape2D_qg1ck")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 20.0
 
-[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=627194202]
-stream = ExtResource("16_5pe0l")
-volume_db = -7.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294832071]
+libraries/ = SubResource("AnimationLibrary_rmfvw")
+
+[node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1810944046]
+stream = ExtResource("17_jet8k")
+volume_db = -10.0
 pitch_scale = 1.2
 bus = &"Sound Effects"
 
-[node name="Basic Hit" type="AudioStreamPlayer" parent="." unique_id=204397964]
-stream = ExtResource("17_jet8k")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294832071]
-libraries/ = SubResource("AnimationLibrary_rmfvw")
+[node name="BasicHit" type="AudioStreamPlayer" parent="." unique_id=674658053]
+stream = ExtResource("16_5pe0l")

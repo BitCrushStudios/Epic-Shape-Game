@@ -73,10 +73,10 @@ shape = SubResource("CapsuleShape2D_i4e2e")
 radius = 50.0
 
 [node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1540142201]
-stream = ExtResource("8_ceqr3")
+stream = ExtResource("9_g6h13")
 volume_db = -10.0
 pitch_scale = 1.2
 bus = &"Sound Effects"
 
 [node name="BasicHit" type="AudioStreamPlayer" parent="." unique_id=1782661033]
-stream = ExtResource("9_g6h13")
+stream = ExtResource("8_ceqr3")

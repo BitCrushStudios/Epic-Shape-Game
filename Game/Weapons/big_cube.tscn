@@ -83,8 +83,11 @@ shape = SubResource("CircleShape2D_3gs5p")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=310723041]
 radius = 20.0
 
-[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=494035120]
-stream = ExtResource("8_3gs5p")
-
-[node name="Basic Hit" type="AudioStreamPlayer" parent="." unique_id=392951350]
+[node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=399457561]
 stream = ExtResource("4_w0p7r")
+volume_db = -10.0
+pitch_scale = 1.2
+bus = &"Sound Effects"
+
+[node name="BasicHit" type="AudioStreamPlayer" parent="." unique_id=1695472864]
+stream = ExtResource("8_3gs5p")
