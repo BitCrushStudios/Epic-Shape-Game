@@ -31,6 +31,24 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5uv1"]
+bg_color = Color(0.36862746, 0.5137255, 0.7529412, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghqyj"]
 content_margin_left = 8.0
 content_margin_top = 8.0
@@ -117,6 +135,7 @@ OutlineLabelSmall/base_type = &"Label"
 OutlineLabelSmall/colors/font_outline_color = Color(1, 1, 1, 1)
 OutlineLabelSmall/constants/outline_size = 8
 OutlineLabelSmall/font_sizes/font_size = 24
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_o5uv1")
 PopupMenu/font_sizes/font_size = 50
 ProgressBar/styles/background = SubResource("StyleBoxFlat_ghqyj")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_xpkmd")

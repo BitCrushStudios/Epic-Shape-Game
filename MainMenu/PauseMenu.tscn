@@ -50,17 +50,75 @@ Button/styles/pressed = SubResource("StyleBoxFlat_3clmd")
 CheckBox/colors/checkbox_checked_color = Color(0, 0, 0, 0.76862746)
 CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
 
-[sub_resource type="Theme" id="Theme_l4314"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qted"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2n2e"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae6q6"]
+bg_color = Color(0.73333335, 0.73333335, 0.73333335, 0.62352943)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7icf0"]
+bg_color = Color(0.6, 0.6, 0.6, 0.43529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csn5n"]
+bg_color = Color(1, 1, 1, 0.53333336)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_5f6hy"]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_focus_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/styles/disabled = SubResource("StyleBoxFlat_b76km")
-Button/styles/focus = SubResource("StyleBoxFlat_lbqne")
-Button/styles/hover = SubResource("StyleBoxFlat_430ii")
-Button/styles/normal = SubResource("StyleBoxFlat_3p42x")
-Button/styles/pressed = SubResource("StyleBoxFlat_3clmd")
+Button/styles/disabled = SubResource("StyleBoxFlat_7qted")
+Button/styles/focus = SubResource("StyleBoxFlat_e2n2e")
+Button/styles/hover = SubResource("StyleBoxFlat_ae6q6")
+Button/styles/normal = SubResource("StyleBoxFlat_7icf0")
+Button/styles/pressed = SubResource("StyleBoxFlat_csn5n")
 CheckBox/colors/checkbox_checked_color = Color(0, 0, 0, 0.76862746)
 CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
 
@@ -75,10 +133,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -185.0
-offset_right = 185.0
-offset_bottom = 185.0
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_5f6hy")
@@ -106,12 +164,13 @@ theme = SubResource("Theme_n0ir5")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
 text = "Paused!"
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="PanelContainer/Control/BoxContainer2" unique_id=371810104]
 layout_mode = 2
-theme = SubResource("Theme_l4314")
+theme = SubResource("Theme_5f6hy")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -119,7 +178,7 @@ text = "Resume"
 
 [node name="Return" type="Button" parent="PanelContainer/Control/BoxContainer2" unique_id=769235874]
 layout_mode = 2
-theme = SubResource("Theme_l4314")
+theme = SubResource("Theme_5f6hy")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
