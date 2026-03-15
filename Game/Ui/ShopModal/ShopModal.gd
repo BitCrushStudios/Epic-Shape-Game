@@ -18,6 +18,7 @@ signal btn_pressed(btn:EquipItemButton)
 func update_player_ui():
 	if not is_inside_tree():
 		await tree_entered
+	money = player.resource.money
 	#%WaveLabel.text = "Next Wave - %d" % (player.current_wave + 1)
 	#%CashLabel.text = "$ %d" % (player.money)
 @export var money:int = 1000:
@@ -105,7 +106,10 @@ func _item_selected(shopItem:ShopItemResource):
 	if get_parent():
 		shopItem.item.apply(get_parent())
 	shopItem.quantity -= 1
-	money -= shopItem.price
+	if player:
+		player.resource.money -= shopItem.price
+	else:
+		money -= shopItem.price
 	if shopItem.quantity<=0:
 		swapEmpty()
 	
