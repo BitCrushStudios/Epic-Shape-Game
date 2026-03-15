@@ -8,9 +8,15 @@ var shop_modal:ShopModal:
 
 var player:Player:
 	set(v):
+		if player and player.health_depleted.is_connected(_player_health_depleted):
+			player.health_depleted.disconnect(_player_health_depleted)
 		player=v
+		if player:
+			player.health_depleted.connect(_player_health_depleted)
 		update_refs()
-
+func _player_health_depleted():
+	get_tree().paused=true
+	game_over_menu.visible=true
 var enemyManager: EnemyManager:
 	set(v):
 		enemyManager = v
@@ -36,6 +42,11 @@ var pause_menu: CanvasLayer:
 		pause_menu = v
 		update_refs()
 
+var game_over_menu: CanvasLayer:
+	set(v):
+		game_over_menu = v
+		update_refs()
+
 
 func update_refs():
 	if gameUi:
@@ -59,6 +70,10 @@ func _ready() -> void:
 		pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()
 		pause_menu.visible = false
 		add_child(pause_menu)
+		
+		game_over_menu = preload("res://Game/Ui/Gameover/game_over_menu.tscn").instantiate()
+		game_over_menu.visible = false
+		add_child(game_over_menu)
 	
 	
 func _child_entered_tree(node:Node):
@@ -74,15 +89,15 @@ func _child_entered_tree(node:Node):
 		gameUi = node
 func _child_exiting_tree(node:Node):
 	if node is Player and player == node: 
-		player = node
+		player = null
 	if node is EnemyManager and enemyManager == node: 
-		enemyManager = node
+		enemyManager = null
 	if node is WeaponsManager and weaponsManager == node: 
-		weaponsManager = node
+		weaponsManager = null
 	if node is Camera2D and camera == node: 
-		camera = node
+		camera = null
 	if node is GameUi and gameUi == node: 
-		gameUi = node
+		gameUi = null
 	
 	
 func _process(delta: float) -> void:

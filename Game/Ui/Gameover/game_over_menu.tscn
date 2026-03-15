@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bb511sh203tco"]
 
+[ext_resource type="Script" uid="uid://dhn3pavi6pq2w" path="res://Game/Ui/Gameover/game_over_menu.gd" id="1_ae6q6"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="1_e2n2e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
@@ -124,6 +125,7 @@ CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
 [node name="GameOverMenu" type="CanvasLayer" unique_id=2130672635]
 process_mode = 3
 layer = 10
+script = ExtResource("1_ae6q6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1342239166]
 modulate = Color(1, 1, 1, 0.27058825)
@@ -173,6 +175,7 @@ theme_override_font_sizes/font_size = 70
 text = "Game Over!"
 
 [node name="Restart" type="Button" parent="PanelContainer/Control/VBoxContainer" unique_id=371431428]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_7l2ks")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -182,6 +185,7 @@ theme_override_font_sizes/font_size = 50
 text = "Restart"
 
 [node name="Menu" type="Button" parent="PanelContainer/Control/VBoxContainer" unique_id=111373690]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_7l2ks")
 theme_override_colors/font_color = Color(1, 1, 1, 1)

@@ -73,13 +73,14 @@ class_name GameUi
 		update_all_ui()
 		
 func player_resource_changed():
-	health_max = player.resource.health_max
-	health_current = player.resource.health_current
-	exp_max = player.resource.next_level_exp_required - player.resource.current_level_exp_required
-	exp_current = player.resource.experience - player.resource.current_level_exp_required 
-	upgrade_star_count = player.resource.levels_gained
-	show_hurt_indicator = player.resource.iframe_current>0
-	money = player.resource.money
+	if player:
+		health_max = player.resource.health_max
+		health_current = player.resource.health_current
+		exp_max = player.resource.next_level_exp_required - player.resource.current_level_exp_required
+		exp_current = player.resource.experience - player.resource.current_level_exp_required 
+		upgrade_star_count = player.resource.levels_gained
+		show_hurt_indicator = player.resource.iframe_current>0
+		money = player.resource.money
 	
 	
 func enemy_manager_resource_changed():
