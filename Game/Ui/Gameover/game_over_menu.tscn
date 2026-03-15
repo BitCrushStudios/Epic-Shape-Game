@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://bb511sh203tco"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qted"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -126,12 +124,18 @@ process_mode = 3
 layer = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1043463268]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_7qted")
+pivot_offset = Vector2(200, 150)
 
 [node name="Control" type="Control" parent="PanelContainer" unique_id=204458380]
 layout_mode = 2
