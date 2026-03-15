@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bb511sh203tco"]
 
+[ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="1_e2n2e"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -122,6 +124,13 @@ CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
 [node name="GameOverMenu" type="CanvasLayer" unique_id=2130672635]
 process_mode = 3
 layer = 10
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1342239166]
+modulate = Color(1, 1, 1, 0.27058825)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_e2n2e")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1043463268]
 anchors_preset = 8
