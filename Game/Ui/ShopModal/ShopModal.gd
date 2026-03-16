@@ -20,9 +20,6 @@ func update_player_ui():
 		await tree_entered
 	if player:
 		money = player.resource.money
-	if get_parent():
-		for btn in get_buttons():
-			btn.disabled =not btn.resource.item.poll(get_parent())
 	#%WaveLabel.text = "Next Wave - %d" % (player.current_wave + 1)
 	#%CashLabel.text = "$ %d" % (player.money)
 @export var money:int = 1000:
@@ -54,6 +51,7 @@ func _changed():
 			buttons[i].resource = items[i]
 			buttons[i].disabled = items[i].price>money
 	%MoneyLabel.text = "$ %d" % money
+	
 func swapEmpty():
 	var available_items = ItemResource.get_available_items()
 	var count =  get_buttons().size()
@@ -71,11 +69,10 @@ func swapEmpty():
 			vs.set(i,shopItem)
 	items = vs
 	
-	
 func setup_ui():
 	items = []
 	swapEmpty()
-	
+
 @export_tool_button("Randomize")
 var _random_items_action = setup_ui
 func _process(_delta: float) -> void:
@@ -102,8 +99,6 @@ func _ready():
 		btn.item_selected.connect(item_selected.emit)
 	item_selected.connect(_item_selected)
 	if get_tree().current_scene == self:
-		player = Player.new()
-		player.resource = PlayerResource.new()
 		await modal()
 func _reroll():
 	setup_ui()
