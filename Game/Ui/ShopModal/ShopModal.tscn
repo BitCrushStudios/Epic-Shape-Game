@@ -22,9 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://db16m133i0xoh" path="res://Assets/Art/User Interface/Shop/Return Button.png" id="13_decmg"]
 
 [sub_resource type="Resource" id="Resource_saik7"]
-script = ExtResource("3_n0hoh")
-texture = ExtResource("8_tkbig")
-name = "Extra Speed"
+script = ExtResource("8_8jv2k")
+texture = ExtResource("10_fbx22")
+name = "Extra Size"
+base_price = 20
 
 [sub_resource type="Resource" id="Resource_8jv2k"]
 script = ExtResource("5_0k88i")
@@ -34,33 +35,37 @@ item = SubResource("Resource_saik7")
 script = ExtResource("8_qit7n")
 texture = ExtResource("4_saik7")
 name = "Extra Health"
+base_price = 85
 
 [sub_resource type="Resource" id="Resource_fbx22"]
 script = ExtResource("5_0k88i")
 item = SubResource("Resource_tkbig")
 
 [sub_resource type="Resource" id="Resource_f3ldj"]
-script = ExtResource("7_n0hoh")
-texture = ExtResource("6_8jv2k")
-name = "Extra Weapon"
+script = ExtResource("5_hitma")
+texture = ExtResource("12_f3ldj")
+name = "Extra Strength"
+base_price = 70
 
 [sub_resource type="Resource" id="Resource_ox38h"]
 script = ExtResource("5_0k88i")
 item = SubResource("Resource_f3ldj")
 
 [sub_resource type="Resource" id="Resource_avslj"]
-script = ExtResource("8_8jv2k")
-texture = ExtResource("10_fbx22")
-name = "Extra Size"
+script = ExtResource("7_n0hoh")
+texture = ExtResource("6_8jv2k")
+name = "Extra Weapon"
+base_price = 120
 
 [sub_resource type="Resource" id="Resource_hvp1p"]
 script = ExtResource("5_0k88i")
 item = SubResource("Resource_avslj")
 
 [sub_resource type="Resource" id="Resource_q45wr"]
-script = ExtResource("5_hitma")
-texture = ExtResource("12_f3ldj")
-name = "Extra Strength"
+script = ExtResource("3_n0hoh")
+texture = ExtResource("8_tkbig")
+name = "Extra Speed"
+base_price = 40
 
 [sub_resource type="Resource" id="Resource_u6hvn"]
 script = ExtResource("5_0k88i")

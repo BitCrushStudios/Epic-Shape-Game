@@ -16,7 +16,7 @@ class_name ItemResource
 	set(v):
 		description = v
 		emit_changed()
-
+@export var base_price = 100
 func register(_weapon:Weapon):
 	pass
 	

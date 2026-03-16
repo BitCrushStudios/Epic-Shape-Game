@@ -32,7 +32,7 @@ class_name PlayerResource
 		stat_mass = clampi(v, 0, stat_mass_max)
 		emit_changed()
 @export var stat_mass_max = 10
-
+@export var stat_weapon_max = 10
 @export var stat_health = 1:
 	set(v):
 		stat_health = clampi(v, 0, stat_health_max)

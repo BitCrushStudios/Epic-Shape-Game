@@ -6,9 +6,11 @@ func _init():
 	super()
 	name ="Extra Size"
 	texture = preload("res://Assets/Art/Items/Size Icon.png")
+	base_price = 5
 
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_size += 1
+	prints("Size", gameMain.player.resource.stat_size, "/", gameMain.player.resource.stat_size_max)
 
 static func poll(gameMain:GameMain):
 	if gameMain.player.resource.stat_size>=gameMain.player.resource.stat_size_max:

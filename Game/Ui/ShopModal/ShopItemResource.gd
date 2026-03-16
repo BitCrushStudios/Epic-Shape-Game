@@ -8,6 +8,7 @@ class_name ShopItemResource
 			item.changed.disconnect(changed.emit)
 		item = v
 		if item:
+			price = item.base_price
 			item.changed.connect(changed.emit)
 		emit_changed()
 		

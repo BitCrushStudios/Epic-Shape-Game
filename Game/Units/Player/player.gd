@@ -35,13 +35,13 @@ func _update_size():
 		size_tween.kill()
 	if not is_inside_tree():
 		await tree_entered
-	size_tween = create_tween()
-	size_tween.tween_property(
-		$CollisionShape2D, 
-		"scale", 
-		Vector2.ONE * (resource.base_size + (resource.base_size_add * (resource.stat_size-1))), 
-		2.0
-	).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT_IN)
+	size_tween = create_tween().set_parallel(true)
+	var target_size = Vector2.ONE * (resource.base_size + (resource.base_size_add * (resource.stat_size-1)))
+	size_tween.tween_property($CollisionShape2D,"scale",target_size, 2.0).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
+	size_tween.tween_property($HurtBox,"scale",target_size, 2.0).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
+	size_tween.tween_property($GoldPickupBox,"scale",target_size, 2.0).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
+	
+	
 	
 func _update_mass():
 	mass = resource.base_mass + (resource.base_mass_add * resource.stat_mass)

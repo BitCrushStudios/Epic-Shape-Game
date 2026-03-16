@@ -6,7 +6,7 @@ func _init():
 	super()
 	name ="Extra Strength"
 	texture = preload("res://Assets/Art/Items/Strength Icon.png")
-
+	base_price = 40
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_mass += 1
 

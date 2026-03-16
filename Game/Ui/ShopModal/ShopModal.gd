@@ -20,6 +20,9 @@ func update_player_ui():
 		await tree_entered
 	if player:
 		money = player.resource.money
+	if get_parent():
+		for btn in get_buttons():
+			btn.disabled =not btn.resource.item.poll(get_parent())
 	#%WaveLabel.text = "Next Wave - %d" % (player.current_wave + 1)
 	#%CashLabel.text = "$ %d" % (player.money)
 @export var money:int = 1000:
