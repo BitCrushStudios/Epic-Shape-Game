@@ -31,11 +31,12 @@ friction = 0.0
 
 [sub_resource type="Resource" id="Resource_wnw4f"]
 script = ExtResource("3_i7tqw")
+stat_size = 9
 stat_weapon_max = null
 health_max = 10.0
 health_current = 10.0
 base_speed = 550.0
-money = 0
+money = 10
 speed = 650.0
 next_level_exp_required = 1.0
 exp_required = 1.0
@@ -189,6 +190,7 @@ metadata/_custom_type_script = "uid://ejrfu2yqqgvb"
 script = ExtResource("7_thx7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014983718]
+scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_mbpe7")
 
 [node name="SpriteOrigin" type="Node2D" parent="CollisionShape2D" unique_id=1318647114]
@@ -217,6 +219,7 @@ process_mode = 3
 layer = 5
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1305064148]
+scale = Vector2(1.8, 1.8)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("9_jiict")
@@ -226,6 +229,7 @@ shape = SubResource("CircleShape2D_wnw4f")
 debug_color = Color(0.91219205, 9.8379256e-05, 0.72580904, 0.41960785)
 
 [node name="GoldPickupBox" type="Area2D" parent="." unique_id=1694773575]
+scale = Vector2(1.8, 1.8)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("10_wnw4f")

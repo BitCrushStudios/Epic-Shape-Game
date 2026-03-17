@@ -49,7 +49,11 @@ func _changed():
 	for i in range(buttons.size()):
 		if i<items.size() and items[i]:
 			buttons[i].resource = items[i]
-			buttons[i].disabled = items[i].price>money
+			buttons[i].disabled = items[i].price>money 
+			if not buttons[i].disabled and get_parent():
+				var gameMain:GameMain = get_parent()
+				buttons[i].disabled = items[i].item.poll(gameMain)<=0
+				
 	%MoneyLabel.text = "$ %d" % money
 	
 func swapEmpty():
