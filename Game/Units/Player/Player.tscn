@@ -35,7 +35,6 @@ stat_weapon_max = null
 health_max = 10.0
 health_current = 10.0
 base_speed = 550.0
-money = 200
 speed = 650.0
 next_level_exp_required = 1.0
 exp_required = 1.0
