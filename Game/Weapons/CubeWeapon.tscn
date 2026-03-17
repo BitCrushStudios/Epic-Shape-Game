@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cbt0babfbxfde"]
 
 [ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_x6q4i"]
-[ext_resource type="Resource" uid="uid://clky6g0bw3w53" path="res://Game/Weapons/CubeWeaponResource.tres" id="2_qg1ck"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_r617p"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_rdb24"]
 [ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="4_6u5qs"]
@@ -72,8 +71,8 @@ colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
 gradient = SubResource("Gradient_5pe0l")
 width = 100
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ck"]
-size = Vector2(60, 60)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggmsm"]
+size = Vector2(46, 46)
 
 [sub_resource type="Animation" id="Animation_eov6p"]
 resource_name = "Hit"
@@ -121,7 +120,6 @@ physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_x6q4i")
-resource = ExtResource("2_qg1ck")
 
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]
 y_sort_enabled = true
@@ -163,7 +161,7 @@ metadata/_custom_type_script = "uid://onfsof0qcqtj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
 scale = Vector2(1.41, 1.41)
-shape = SubResource("RectangleShape2D_qg1ck")
+shape = SubResource("RectangleShape2D_ggmsm")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 20.0

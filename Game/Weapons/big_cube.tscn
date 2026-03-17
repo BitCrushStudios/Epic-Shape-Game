@@ -2,21 +2,14 @@
 
 [ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_w0p7r"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="1_x460x"]
-[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="2_3gs5p"]
 [ext_resource type="Texture2D" uid="uid://2d075q7qepcy" path="res://Assets/Art/Weapons/Big Cube/CubeBigDeactivated.png" id="2_ek2q2"]
 [ext_resource type="Texture2D" uid="uid://cef2cu2d322qq" path="res://Assets/Art/Weapons/Big Cube/CubeBig.png" id="3_5anff"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="3_qtgvb"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="4_3gs5p"]
 [ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="4_w0p7r"]
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="8_3gs5p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w0p7r"]
 bounce = 5.0
-
-[sub_resource type="Resource" id="Resource_l33jo"]
-script = ExtResource("3_qtgvb")
-damage = 10.0
-metadata/_custom_type_script = "uid://bvtjy2mkl872g"
 
 [sub_resource type="Curve" id="Curve_qtgvb"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
@@ -32,8 +25,8 @@ colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
 gradient = SubResource("Gradient_5pe0l")
 width = 100
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3gs5p"]
-radius = 54.187176
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtgvb"]
+size = Vector2(100, 100)
 
 [node name="BigCube" type="RigidBody2D" unique_id=1806346460]
 collision_layer = 8
@@ -44,7 +37,7 @@ gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_w0p7r")
-resource = SubResource("Resource_l33jo")
+damage = 10.0
 
 [node name="Trail2D" type="Line2D" parent="." unique_id=1951368273]
 z_index = -1
@@ -78,7 +71,7 @@ texture = ExtResource("3_5anff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=637096600]
 position = Vector2(0, -0.5)
-shape = SubResource("CircleShape2D_3gs5p")
+shape = SubResource("RectangleShape2D_qtgvb")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=310723041]
 radius = 20.0

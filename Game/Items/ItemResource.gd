@@ -33,7 +33,7 @@ static func get_available_items():
 		ItemExtraSizeUpgradeResource,
 		ItemExtraSpeedUpgradeResource,
 		ItemExtraWeaponUpgradeResource,
-		#ItemExtraBigCubeUpgradeResource,
+		ItemExtraBigCubeUpgradeResource,
 	]
 	
 func _init():
