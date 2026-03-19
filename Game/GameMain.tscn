@@ -126,8 +126,9 @@ pairs = Array[ExtResource("17_052kc")]([SubResource("Resource_ojaob")])
 
 [sub_resource type="Resource" id="Resource_17wm5"]
 script = ExtResource("19_wohd7")
-health_max = 10.0
 health_current = 10.0
+base_heath = null
+base_health_add = null
 speed = 600.0
 next_level_exp_required = 1.0
 exp_required = 1.0

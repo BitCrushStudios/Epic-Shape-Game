@@ -97,11 +97,12 @@ func show_upgrade_modal():
 var kick_force_max = 3000.0
 var kick_force = 0.0
 func trigger_kick():
-	var kick_vector = get_global_mouse_position() - global_position 
-	apply_central_impulse(kick_vector.normalized() * kick_force * mass)
+	var kick_vec =  (get_global_mouse_position() - global_position).normalized()
+	apply_central_impulse(kick_vec * kick_force * mass)
 	
 @export var move_towards_desired_velocity = true
 @export var desired_velocity = Vector2.ZERO
+
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
@@ -113,7 +114,6 @@ func _physics_process(delta: float) -> void:
 		kick_force = kick_force_max * 0.05
 	elif Input.is_action_pressed("player_kick"):
 		kick_force = clampf(kick_force + kick_force_max * delta * 6.0,0.0,kick_force_max)
-		
 	elif Input.is_action_just_released("player_kick"):
 		trigger_kick()
 		kick_force = 0.0

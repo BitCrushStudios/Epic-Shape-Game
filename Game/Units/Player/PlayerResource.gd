@@ -40,7 +40,7 @@ class_name PlayerResource
 @export var stat_health_max = 10
 @export var health_max:float:
 	get():
-		return stat_health * 10.0
+		return base_heath + max(0,stat_health-1) * base_health_add
 @export var health_current: float = 1.0:
 	set(v):
 		if v<=0:
@@ -78,7 +78,14 @@ func take_damage(damage:float):
 	set(v):
 		base_speed = v
 		emit_changed()
-		
+@export var base_heath = 10.0:
+	set(v):
+		base_heath = v
+		emit_changed()
+@export var base_health_add = 1.0:
+	set(v):
+		base_health_add = v
+		emit_changed()
 @export var base_speed_add = 100.0:
 	set(v):
 		base_speed_add = v
