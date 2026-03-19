@@ -23,9 +23,10 @@ func update_ui():
 	var cur_t = 0
 	for w in waves:
 		var c = VBoxContainer.new()
-		c.size.x = 64
+		c.size.x = 32
 		c.size.y = 64
 		c.position.x -= c.size.x
+		c.alignment = BoxContainer.ALIGNMENT_END
 		add_child(c, true, Node.INTERNAL_MODE_FRONT)
 		c.z_index = 4
 		if w:
@@ -33,14 +34,14 @@ func update_ui():
 			for p in w.pairs:
 				var t = TextureRect.new()
 				t.texture = p.image
+				t.size.y = 32
+				t.size.x = 32
 				t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 				t.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
 				c.add_child(t)
-				t.size.y = 64
-				t.size.x = 64
-				t.pivot_offset_ratio = Vector2(0.5,0.5)
 			cur_t += w.condition.time
 				
+		c.position.y = get_end().y - c.size.y
 		_wave_indicators.append(c)
 	if max_t:
 		var ratio = time / max_t

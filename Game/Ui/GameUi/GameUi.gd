@@ -91,6 +91,13 @@ func enemy_manager_resource_changed():
 			enemyManager.resource.wave.condition.time - 
 			enemyManager.resource.time
 		)
+		$ProgressIndicator.waves = enemyManager.waves
+		var cur_t = 0.0 
+		for i in range(0, min(enemyManager.waves.size(), enemyManager.wave_index)):
+			cur_t += enemyManager.waves[i].condition.time
+			
+		cur_t += enemyManager.resource.time
+		$ProgressIndicator.time = cur_t
 	
 func _ready():
 	%HurtOverlay.modulate = Color.TRANSPARENT

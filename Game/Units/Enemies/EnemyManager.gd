@@ -54,7 +54,7 @@ func _child_exiting_tree(node:Node):
 		spawners_chanced.emit()
 	
 	
-@export var waves = [
+@export var waves:Array[Wave] = [
 	Wave.create([
 			WavePair.create(
 				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
