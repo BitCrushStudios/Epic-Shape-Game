@@ -2,7 +2,8 @@
 extends Resource
 class_name PlayerResource
 
-@export var inventory: Array[ItemResource] = []:
+#@export 
+var inventory: Array[ItemResource] = []:
 	get():
 		return inventory
 	set(v):
@@ -11,37 +12,50 @@ class_name PlayerResource
 		
 	
 @export_category("Stats")
-@export var stat_size = 1:
+#@export 
+var stat_size = 1:
 	set(v):
 		stat_size = clampi(v, 1, stat_size_max)
 		emit_changed()
-@export var stat_size_max = 10
+#@export 
+var stat_size_max = 10
 
-@export var stat_speed = 1:
+#@export 
+var stat_speed = 1:
 	set(v):
 		stat_speed = clampi(v, 0, stat_speed_max)
-@export var stat_speed_max = 10
+#@export 
+var stat_speed_max = 10
 
-@export var stat_iframe = 1:
+#@export 
+var stat_iframe = 1:
 	set(v):
 		stat_iframe = clampi(v, 0, stat_iframe_max)
-@export var stat_iframe_max = 10
+#@export 
+var stat_iframe_max = 10
 
-@export var stat_mass = 1:
+#@export 
+var stat_mass = 1:
 	set(v):
 		stat_mass = clampi(v, 0, stat_mass_max)
 		emit_changed()
-@export var stat_mass_max = 10
-@export var stat_weapon_max = 10
-@export var stat_health = 1:
+#@export 
+var stat_mass_max = 10
+#@export 
+var stat_weapon_max = 10
+#@export 
+var stat_health = 1:
 	set(v):
 		stat_health = clampi(v, 0, stat_health_max)
 		emit_changed()
-@export var stat_health_max = 10
-@export var health_max:float:
+#@export 
+var stat_health_max = 10
+#@export 
+var health_max:float:
 	get():
 		return base_heath + max(0,stat_health-1) * base_health_add
-@export var health_current: float = 1.0:
+#@export 
+var health_current: float = 1.0:
 	set(v):
 		if v<=0:
 			health_depleted.emit()
@@ -64,54 +78,66 @@ func take_damage(damage:float):
 	iframe_trigger()
 	
 @export_category("Stats Base")
-@export var base_mass = 10.0:
+#@export 
+var base_mass = 10.0:
 	set(v):
 		base_mass = v
 		emit_changed()
 		
-@export var base_mass_add = 1.0:
+#@export 
+var base_mass_add = 1.0:
 	set(v):
 		base_mass_add = v
 		emit_changed()
 		
-@export var base_speed = 500.0:
+#@export 
+var base_speed = 500.0:
 	set(v):
 		base_speed = v
 		emit_changed()
-@export var base_heath = 10.0:
+#@export 
+var base_heath = 10.0:
 	set(v):
 		base_heath = v
 		emit_changed()
-@export var base_health_add = 1.0:
+##@export 
+
+var base_health_add = 1.0:
 	set(v):
 		base_health_add = v
 		emit_changed()
-@export var base_speed_add = 100.0:
+#@export 
+var base_speed_add = 100.0:
 	set(v):
 		base_speed_add = v
 		emit_changed()
 		
-@export var base_size = 1.0:
+#@export 
+var base_size = 1.0:
 	set(v):
 		base_size = v
 		emit_changed()
 		
-@export var base_size_add = 0.1:
+#@export 
+var base_size_add = 0.1:
 	set(v):
 		base_size_add = v
 		emit_changed()
 		
-@export var accel_mult = 10.0:
+#@export 
+var accel_mult = 10.0:
 	set(v):
 		accel_mult = v
 		emit_changed()
 		
-@export var exp_rate = 2.0:
+#@export 
+var exp_rate = 2.0:
 	set(v):
 		exp_rate = v
 		emit_changed()
 		
-@export var money = 0:
+#@export 
+var money = 0:
 	set(v):
 		money = v 
 		emit_changed()
@@ -135,38 +161,46 @@ func exp_add(v:float):
 	if level_diff!=0:
 		levels_gained += level_diff
 		level_changed.emit()
-@export var levels_gained = 0:
+#@export 
+var levels_gained = 0:
 	set(v):
 		levels_gained = v 
 		emit_changed()
 func clear_levels_gained():
 	levels_gained = 0
-@export var experience = 0.0:
+#@export 
+var experience = 0.0:
 	set(v):
 		experience = v
 		emit_changed()
-@export var current_level: int:
+#@export 
+var current_level: int:
 	get():
 		return calc_level_from_exp(experience)
 	set(v):
 		experience = calc_exp_from_level(v+0.001)
 	
-@export var current_level_exp_required: float:
+#@export 
+var current_level_exp_required: float:
 	get():
 		return calc_exp_from_level(current_level)
 		
-@export var next_level_exp_required: float:
+#@export 
+var next_level_exp_required: float:
 	get():
 		return calc_exp_from_level(current_level+1)
 
-@export var exp_required:float:
+#@export 
+var exp_required:float:
 	get():
 		return next_level_exp_required - current_level_exp_required
 
 signal iframe_elapsed()
 signal iframe_triggered()
-@export var iframe_max = 0.5
-@export var iframe_current = 0.0:
+#@export 
+var iframe_max = 0.5
+#@export 
+var iframe_current = 0.0:
 	set(v):
 		iframe_current = v
 		emit_changed()

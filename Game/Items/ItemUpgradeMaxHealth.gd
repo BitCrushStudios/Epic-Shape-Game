@@ -1,4 +1,4 @@
-extends Node
+extends ItemResource
 class_name ItemUpgradeMaxHealthResource
 
 func _init():
