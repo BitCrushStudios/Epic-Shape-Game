@@ -19,8 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="17_jet8k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
-friction = 0.0
-bounce = 200.0
+bounce = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jet8k"]
 animations = [{
@@ -120,6 +119,8 @@ physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_x6q4i")
+damage = 2.0
+activation_max = 5.0
 
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]
 y_sort_enabled = true
