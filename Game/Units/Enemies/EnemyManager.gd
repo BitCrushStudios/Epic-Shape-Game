@@ -97,13 +97,98 @@ func _child_exiting_tree(node:Node):
 	),
 	Wave.create([
 		WavePair.create(
+			preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+			40,
+			preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
+			8
+		),
+		WavePair.create(
 			preload("res://Game/Units/Mini Bosses/BigRed.tscn"), 
 			1,
 			preload("res://Assets/Art/Enemies/Mini Bosses/Big Red/Big Red.png"),
 		),
 		],
 		WaveTime.create(140.0)
-	)
+	),
+	Wave.create([
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+				80,
+				preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
+				20
+			),
+		],
+		WaveTime.create(40.0)
+	),
+	Wave.create([
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+				80,
+				preload("res://Assets/Art/Enemies/Roller/Move Animation/frame0000.png"),
+				20
+			),
+		],
+		WaveTime.create(100.0)
+	),
+	Wave.create([
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+				80,
+				preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
+				20
+			),
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+				80,
+				preload("res://Assets/Art/Enemies/Roller/Move Animation/frame0000.png"),
+				20
+			),
+		],
+		WaveTime.create(40.0)
+	),
+	Wave.create([
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+				80,
+				preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
+				20
+			),
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+				80,
+				preload("res://Assets/Art/Enemies/Roller/Move Animation/frame0000.png"),
+				20
+			),
+			WavePair.create(
+				preload("res://Game/Units/Mini Bosses/BigRed.tscn"), 
+				1,
+				preload("res://Assets/Art/Enemies/Mini Bosses/Big Red/Big Red.png"),
+			),
+		],
+		WaveTime.create(140.0)
+	),
+	Wave.create([
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
+				40,
+				preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
+				9
+			),
+			WavePair.create(
+				preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
+				40,
+				preload("res://Assets/Art/Enemies/Roller/Move Animation/frame0000.png"),
+				9
+			),
+			WavePair.create(
+				preload("res://Game/Units/Mini Bosses/BigRed.tscn"), 
+				2,
+				preload("res://Assets/Art/Enemies/Mini Bosses/Big Red/Big Red.png"),
+				1
+			),
+		],
+		WaveTime.create(140.0)
+	),
 ]:
 	get():
 		return waves
