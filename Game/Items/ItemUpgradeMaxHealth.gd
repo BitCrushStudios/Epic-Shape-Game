@@ -8,6 +8,7 @@ func _init():
 	base_price = 30
 
 func apply(gameMain:GameMain):
+	gameMain.player.resource.health_current += 3
 	gameMain.player.resource.stat_health += 1
 
 

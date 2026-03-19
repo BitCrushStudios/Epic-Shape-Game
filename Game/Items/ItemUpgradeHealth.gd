@@ -4,7 +4,7 @@ class_name ItemRefillHealthUpgradeResource
 
 func _init():
 	super()
-	name ="Extra Health"
+	name ="Refill Health"
 	texture = preload("res://Assets/Art/User Interface/Shop/Temp/Icon Test 2.png")
 	base_price = 0
 func apply(gameMain:GameMain):
