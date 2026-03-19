@@ -5,8 +5,8 @@ class_name ItemRefillHealthUpgradeResource
 func _init():
 	super()
 	name ="Med Kit"
-	texture = preload("res://Assets/Art/Items/Med Kit Item Icon.png")
-	base_price = 10
+	texture = preload("res://Assets/Art/User Interface/Shop/Temp/Icon Test 2.png")
+	base_price = 0
 func apply(gameMain:GameMain):
 	gameMain.player.resource.health_current += 5
 	# prints("Health", gameMain.player.resource.stat_health, "/", gameMain.player.resource.stat_health_max)
