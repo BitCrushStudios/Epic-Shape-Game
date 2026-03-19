@@ -138,7 +138,6 @@ func _process(delta:float):
 					spawnPoint.tscn = p.pair.scene
 					p.count += 1
 					spawnPoint.spawned.connect(func(node:Node):
-						
 						node.tree_exiting.connect(func():
 							p.count -= 1
 						)

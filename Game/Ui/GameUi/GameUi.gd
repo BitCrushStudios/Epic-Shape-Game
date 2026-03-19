@@ -148,7 +148,6 @@ func _update_enemy_wave_ui():
 		var pair = wave_composition[i]
 		pair_ui.resource = pair
 
-
 	
 func update_all_ui():
 	if not is_inside_tree():
