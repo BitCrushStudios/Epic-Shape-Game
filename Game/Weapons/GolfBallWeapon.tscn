@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_vyif0"]
 [ext_resource type="Texture2D" uid="uid://beoc88dltqqp8" path="res://Assets/Art/Weapons/Golf Ball/GolfBallFire.png" id="2_ac4bj"]
-[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="3_5nqlx"]
 [ext_resource type="Texture2D" uid="uid://bl18eu3hy061e" path="res://Assets/Art/Weapons/Golf Ball/GolfBall.png" id="4_qlfap"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="5_2qip3"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="6_usxxg"]
 [ext_resource type="Script" uid="uid://7ycqd3p1ul76" path="res://Game/Weapons/RotateWithVelocity.gd" id="7_ll0bf"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="8_b2esk"]
@@ -16,13 +14,6 @@ bounce = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_005hu"]
 radius = 33.41
-
-[sub_resource type="Resource" id="Resource_mwcvu"]
-script = ExtResource("5_2qip3")
-normal_texture = ExtResource("4_qlfap")
-activated_texture = ExtResource("2_ac4bj")
-shape = SubResource("CircleShape2D_005hu")
-metadata/_custom_type_script = "uid://bvtjy2mkl872g"
 
 [sub_resource type="Curve" id="Curve_6ua4x"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -38,7 +29,6 @@ continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_vyif0")
-resource = SubResource("Resource_mwcvu")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=878910894]
 radius = 20.0
