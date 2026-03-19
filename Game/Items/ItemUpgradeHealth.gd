@@ -6,10 +6,10 @@ func _init():
 	super()
 	name ="Extra Health"
 	texture = preload("res://Assets/Art/User Interface/Shop/Temp/Icon Test 2.png")
-	base_price = 30
+	base_price = 0
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_health += 1
-	gameMain.player.resource.health_current = gameMain.player.resource.health_max
+	gameMain.player.resource.health_current += 3
 	prints("Health", gameMain.player.resource.stat_health, "/", gameMain.player.resource.stat_health_max)
 
 static func poll(gameMain:GameMain):
