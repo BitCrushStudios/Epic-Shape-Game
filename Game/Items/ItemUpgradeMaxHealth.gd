@@ -1,11 +1,18 @@
 extends Node
+class_name ItemUpgradeMaxHealthResource
+
+func _init():
+	super()
+	name ="Extra Max Health"
+	texture = preload("res://Assets/Art/User Interface/Shop/Temp/Icon Test 2.png")
+	base_price = 30
+
+func apply(gameMain:GameMain):
+	gameMain.player.resource.stat_health += 1
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+static func poll(gameMain:GameMain):
+	if gameMain.player.resource.stat_health>=gameMain.player.resource.stat_health_max:
+		return 0.0
+	return float(gameMain.player.resource.stat_health) / float(gameMain.player.resource.stat_health_max)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
