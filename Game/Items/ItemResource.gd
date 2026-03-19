@@ -30,11 +30,12 @@ static func get_available_items():
 	return [
 		ItemExtraMassUpgradeResource,
 		ItemRefillHealthUpgradeResource,
-		ItemUpgradeMaxHealthResource,
 		ItemExtraSizeUpgradeResource,
 		ItemExtraSpeedUpgradeResource,
 		ItemExtraWeaponUpgradeResource,
 		ItemExtraBigCubeUpgradeResource,
+		ItemArmorPlatingResource,
+		ItemTinyManUpgradeResource,
 	]
 	
 func _init():

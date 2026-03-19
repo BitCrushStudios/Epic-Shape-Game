@@ -1,15 +1,15 @@
 @tool
 extends ItemResource
-class_name ItemRefillHealthUpgradeResource
+class_name ItemArmorPlatingResource
 
 func _init():
 	super()
-	name ="Med Kit"
-	texture = preload("res://Assets/Art/Items/Med Kit Item Icon.png")
-	base_price = 10
+	name ="Armor Plating"
+	texture = preload("res://Assets/Art/Items/Armor plating Icon.png")
+	base_price = 15
 func apply(gameMain:GameMain):
-	gameMain.player.resource.stat_health += 1
-	gameMain.player.resource.health_current += 3
+	gameMain.player.resource.stat_health += 5
+	#gameMain.player.resource.health_current += 0
 	# prints("Health", gameMain.player.resource.stat_health, "/", gameMain.player.resource.stat_health_max)
 
 static func poll(gameMain:GameMain):
