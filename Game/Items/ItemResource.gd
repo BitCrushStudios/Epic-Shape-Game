@@ -29,7 +29,7 @@ static func poll(gameMain:GameMain):
 static func get_available_items():
 	return [
 		ItemExtraMassUpgradeResource,
-		ItemExtraHealthUpgradeResource,
+		ItemRefillHealthUpgradeResource,
 		ItemExtraSizeUpgradeResource,
 		ItemExtraSpeedUpgradeResource,
 		ItemExtraWeaponUpgradeResource,

@@ -16,4 +16,3 @@ static func poll(gameMain:GameMain):
 	if gameMain.player.resource.stat_health>=gameMain.player.resource.stat_health_max:
 		return 0.0
 	return float(gameMain.player.resource.stat_health) / float(gameMain.player.resource.stat_health_max)
-
