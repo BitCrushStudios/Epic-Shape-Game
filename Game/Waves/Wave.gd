@@ -10,9 +10,9 @@ class_name Wave
 		for p in pairs:
 			p.changed.connect(changed.emit)
 		emit_changed()
-@export var time_max =  10
-static func create(_pairs: Array[WavePair], _time_max: float = 30.0):
+@export var condition:WaveTime
+static func create(_pairs: Array[WavePair], _condition:WaveTime):
 	var ob = Wave.new()
 	ob.pairs = _pairs
-	ob.time_max = _time_max
+	ob.condition = _condition
 	return ob

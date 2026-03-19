@@ -88,7 +88,7 @@ func enemy_manager_resource_changed():
 		current_wave = enemyManager.wave_index
 		wave_composition = enemyManager.resource.pairs
 		time_remaining = (
-			enemyManager.resource.wave.time_max - 
+			enemyManager.resource.wave.condition.time - 
 			enemyManager.resource.time
 		)
 	

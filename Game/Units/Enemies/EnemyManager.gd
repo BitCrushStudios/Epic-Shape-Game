@@ -21,7 +21,9 @@ signal resource_changed()
 signal wave_finished()
 signal enemy_health_depleted(enemy:Enemy)
 
-@export var enemies: Array[Enemy] = []
+@export var enemies: Array[Enemy] = []:
+	get():
+		return enemies
 var spawners: Array[SpawnPoint] = []
 func _ready():
 	child_entered_tree.connect(_child_entered_tree)
@@ -56,11 +58,12 @@ func _child_exiting_tree(node:Node):
 	Wave.create([
 			WavePair.create(
 				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
-				8,
+				10,
 				preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
-				5
+				8
 			)
 		],
+		WaveTime.create(10.0)
 	),
 	Wave.create([
 			WavePair.create(
@@ -70,68 +73,40 @@ func _child_exiting_tree(node:Node):
 				8
 			)
 		],
+		WaveTime.create(20.0)
 	),
 	Wave.create([
 			WavePair.create(
 				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
-				10,
+				30,
 				preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
 				8
 			),
-			WavePair.create(
-				preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
-				3,
-				preload("res://Assets/Art/Enemies/Roller/Roller.png"),
-				2
-			)
 		],
+		WaveTime.create(40.0)
 	),
 	Wave.create([
 			WavePair.create(
 				preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
-				3,
+				40,
 				preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png"),
-				2
+				8
 			),
-			WavePair.create(
-				preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
-				6,
-				preload("res://Assets/Art/Enemies/Roller/Roller.png"),
-				3
-			),
-			WavePair.create(
-				preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
-				6,
-				preload("res://Assets/Art/Enemies/Tank/Tank.png"),
-				2
-			)
 		],
+		WaveTime.create(80.0)
 	),
-]
-@onready var dev_enemy_basic_pair = WavePair.create(
-	preload("res://Game/Units/Enemies/EnemyTriangle.tscn"), 
-	0,
-	preload("res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png")
-)
-@onready var dev_enemy_roller_pair = WavePair.create(
-	preload("res://Game/Units/Enemies/EnemyRoller.tscn"), 
-	0,
-	preload("res://Assets/Art/Enemies/Roller/Roller.png")
-)
-@onready var dev_enemy_tank_pair = WavePair.create(
-	preload("res://Game/Units/Enemies/EnemyTank.tscn"), 
-	0,
-	preload("res://Assets/Art/Enemies/Tank/Tank.png")
-)
-@onready var dev_wave = Wave.create([
-	dev_enemy_basic_pair,
-	dev_enemy_roller_pair,
-	dev_enemy_tank_pair,
-],30.0)
-enum WaveMode{
-	Normal, Dev
-}
-@export var wave_mode = WaveMode.Normal
+	Wave.create([
+		WavePair.create(
+			preload("res://Game/Units/Mini Bosses/BigRed.tscn"), 
+			1,
+			preload("res://Assets/Art/Enemies/Mini Bosses/Big Red/Big Red.png"),
+		),
+		],
+		WaveTime.create(140.0)
+	)
+]:
+	get():
+		return waves
 @export var resource: ActiveWave:
 	set(v):
 		if resource and resource.changed.is_connected(resource_changed.emit):
@@ -144,25 +119,6 @@ enum WaveMode{
 func _process(delta:float):
 	if  Engine.is_editor_hint():
 		return
-	if resource and dev_wave == resource.wave:
-		var basic_diff = (
-			(1 if Input.is_action_just_pressed("dev_enemy_basic_up") else 0) - 
-			(1 if Input.is_action_just_pressed("dev_enemy_basic_down") else 0)
-		)
-		if basic_diff:
-			dev_enemy_basic_pair.count_max = max(0, dev_enemy_basic_pair.count_max+basic_diff)
-		var roller_diff = (
-			(1 if Input.is_action_just_pressed("dev_enemy_roller_up") else 0) -
-			(1 if Input.is_action_just_pressed("dev_enemy_roller_down") else 0)
-		)
-		if roller_diff:
-			dev_enemy_roller_pair.count_max = max(0, dev_enemy_roller_pair.count_max+roller_diff)
-		var tank_diff = (
-			( 1 if Input.is_action_just_pressed("dev_enemy_tank_up") else 0 ) - 
-			( 1 if Input.is_action_just_pressed("dev_enemy_tank_down") else 0 )
-		)
-		if tank_diff:
-			dev_enemy_tank_pair.count_max = max(0, dev_enemy_tank_pair.count_max+tank_diff)
 	if resource:
 		resource.time += delta
 		for p in resource.pairs:
@@ -187,7 +143,7 @@ func _process(delta:float):
 							p.count -= 1
 						)
 					)
-		if resource.time >= resource.wave.time_max:
+		if resource.time >= resource.wave.condition.time:
 			wave_index+=1
 	
 	

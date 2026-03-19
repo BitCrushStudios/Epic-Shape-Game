@@ -14,9 +14,12 @@ radius = 35.014282
 [sub_resource type="CircleShape2D" id="CircleShape2D_pvrta"]
 radius = 54.00926
 
-[node name="BigRed" type="RigidBody2D" unique_id=1618506388]
+[node name="BigRed" type="RigidBody2D" unique_id=1618506388 node_paths=PackedStringArray("agent")]
 contact_monitor = true
 script = ExtResource("1_fqbop")
+agent = NodePath("EnemyController")
+experience_on_death = 60.0
+health_max = 30.0
 
 [node name="GradualRotationNegate" type="Node" parent="." unique_id=2071620424]
 script = ExtResource("2_rqt75")
