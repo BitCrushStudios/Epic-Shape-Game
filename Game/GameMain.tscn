@@ -332,7 +332,7 @@ position = Vector2(1133, 542)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("6_2wbff")
-waves = [SubResource("Resource_eihxa"), SubResource("Resource_aa4rq"), SubResource("Resource_vgc8n"), SubResource("Resource_52jib"), SubResource("Resource_0vmkl")]
+waves = Array[ExtResource("12_ytreg")]([SubResource("Resource_eihxa"), SubResource("Resource_aa4rq"), SubResource("Resource_vgc8n"), SubResource("Resource_52jib"), SubResource("Resource_0vmkl")])
 resource = SubResource("Resource_b8v6r")
 
 [node name="ArenaMiddleSize" type="Node2D" parent="." unique_id=1160867511]

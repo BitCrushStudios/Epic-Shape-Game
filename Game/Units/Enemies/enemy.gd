@@ -35,6 +35,7 @@ func _ready():
 	took_damage.connect(_recieved_damage)
 	health_depleted.connect(_health_depleted)
 	entered_hurtbox.connect(_entered_hurtbox)
+	assert(max_contacts_reported==5)
 func _entered_hurtbox(node:Node):
 	if iframe>0.0:
 		return
@@ -61,8 +62,7 @@ func _physics_process(_delta: float) -> void:
 	for other in get_colliding_bodies():
 		_body_entered(other)
 func _recieved_damage(_damage:float):
-	if %Animation != null:
-		%Animation.play("damage")
+	%Animation.play("damage")
 	_particle_create(preload("./DamageParticles.tscn").instantiate())
 	
 func spawn_coins():
@@ -82,8 +82,8 @@ func _health_depleted():
 	z_index = -1
 	took_damage.disconnect(_recieved_damage)
 	health_depleted.disconnect(_health_depleted)
-	if %Animation != null:
-		%Animation.play("death")
+	
+	%Animation.play("death")
 	if $Death != null:
 		$Death.play()
 		$Death.volume_db = randf_range(-2,0)

@@ -122,10 +122,12 @@ func _process(delta:float):
 	if resource:
 		resource.time += delta
 		for p in resource.pairs:
-			if p.time<p.pair.time_max:
-				p.time = clamp(p.time + delta, 0, p.pair.time_max)
 			var clump_target = max(1, (p.pair.count_max if p.pair.clump == -1 else p.pair.clump) - 1)
-			if p.time>=p.pair.time_max and p.count<(p.pair.count_max-clump_target):
+			if p.time<p.pair.time_max:
+				p.time = clamp(p.time + delta, 0, p.pair.time_max*clump_target)
+			prints(p.time,p.count,p.pair.count_max, clump_target,p.time>=p.pair.time_max,p.count<(p.pair.count_max-clump_target))
+			if p.time>=p.pair.time_max and p.count<(p.pair.count_max-(clump_target-1)):
+				print("spawn")
 				var map_rid = get_viewport().world_2d.navigation_map
 				var rand_point = NavigationServer2D.map_get_random_point(map_rid,1,false)
 				
