@@ -1,11 +1,14 @@
-extends Node
+@tool
+extends ItemResource
+class_name ItemExtraFistUpgradeResource
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _init():
+	super()
+	name = "Fist"
+	texture = preload("res://Assets/Art/Items/Fist Item Icon.png")
+	base_price = 20
+func apply(gameMain:GameMain):
+	gameMain.weaponsManager.add_weapon(preload("res://Game/Weapons/CubeWeapon.tscn").instantiate())
+	prints("Weapon", gameMain.weaponsManager.weapons.size(), "/", gameMain.player.resource.stat_weapon_max)
+static func poll(gameMain:GameMain):
+	return 1.0 / float(max(1,gameMain.weaponsManager.weapons.size()))

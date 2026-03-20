@@ -4,9 +4,9 @@ class_name ItemExtraWeaponUpgradeResource
 
 func _init():
 	super()
-	name = "Extra Weapon"
+	name = "Tiny Cube"
 	texture = preload("res://Assets/Art/Items/Cube Icon.png")
-	base_price = 50
+	base_price = 25
 func apply(gameMain:GameMain):
 	gameMain.weaponsManager.add_weapon(preload("res://Game/Weapons/CubeWeapon.tscn").instantiate())
 	prints("Weapon", gameMain.weaponsManager.weapons.size(), "/", gameMain.player.resource.stat_weapon_max)

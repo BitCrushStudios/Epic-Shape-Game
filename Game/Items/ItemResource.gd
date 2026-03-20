@@ -36,6 +36,10 @@ static func get_available_items():
 		ItemExtraBigCubeUpgradeResource,
 		ItemArmorPlatingResource,
 		ItemTinyManUpgradeResource,
+		ItemExtraBowlingBallUpgradeResource,
+		ItemExtraFistUpgradeResource,
+		ItemExtraGolfBallUpgradeResource,
+		ItemExtraDvdLogoUpgradeResource,
 	]
 	
 func _init():
