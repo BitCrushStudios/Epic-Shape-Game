@@ -4,7 +4,7 @@ class_name ItemExtraBigCubeUpgradeResource
 
 func _init():
 	super()
-	name = "Extra Weapon"
+	name = "Big Cube"
 	texture = preload("res://Assets/Art/Items/Cube Icon.png")
 	base_price = 100
 func apply(gameMain:GameMain):
