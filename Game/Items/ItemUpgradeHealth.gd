@@ -8,8 +8,7 @@ func _init():
 	texture = preload("res://Assets/Art/Items/Med Kit Item Icon.png")
 	base_price = 10
 func apply(gameMain:GameMain):
-	gameMain.player.resource.stat_health += 1
-	gameMain.player.resource.health_current += 3
+	gameMain.player.resource.health_current += 5
 	# prints("Health", gameMain.player.resource.stat_health, "/", gameMain.player.resource.stat_health_max)
 
 static func poll(gameMain:GameMain):

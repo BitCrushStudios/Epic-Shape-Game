@@ -114,17 +114,14 @@ script = ExtResource("12_ytreg")
 pairs = Array[ExtResource("9_tju8d")]([SubResource("Resource_eaylc")])
 condition = SubResource("Resource_wohd7")
 
-[sub_resource type="Resource" id="Resource_ojaob"]
-[sub_resource type="Resource" id="Resource_ojaob"]
+[sub_resource type="Resource" id="Resource_ytreg"]
 script = ExtResource("17_052kc")
 pair = SubResource("Resource_3jy75")
 
-[sub_resource type="Resource" id="Resource_b8v6r"]
-[sub_resource type="Resource" id="Resource_b8v6r"]
+[sub_resource type="Resource" id="Resource_ojaob"]
 script = ExtResource("18_ytreg")
 wave = SubResource("Resource_eihxa")
-pairs = Array[ExtResource("17_052kc")]([SubResource("Resource_ojaob")])
-pairs = Array[ExtResource("17_052kc")]([SubResource("Resource_ojaob")])
+pairs = Array[ExtResource("17_052kc")]([SubResource("Resource_ytreg")])
 
 [sub_resource type="Resource" id="Resource_17wm5"]
 script = ExtResource("19_wohd7")
@@ -302,6 +299,7 @@ process_mode = 1
 script = ExtResource("1_tqfok")
 
 [node name="Main Music" type="AudioStreamPlayer" parent="." unique_id=1033457239]
+process_mode = 3
 stream = ExtResource("2_052kc")
 volume_db = -28.0
 autoplay = true
@@ -331,8 +329,7 @@ position = Vector2(1133, 542)
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("6_2wbff")
 waves = Array[ExtResource("12_ytreg")]([SubResource("Resource_eihxa"), SubResource("Resource_aa4rq"), SubResource("Resource_vgc8n"), SubResource("Resource_52jib"), SubResource("Resource_0vmkl")])
-resource = SubResource("Resource_b8v6r")
-resource = SubResource("Resource_b8v6r")
+resource = SubResource("Resource_ojaob")
 
 [node name="ArenaMiddleSize" type="Node2D" parent="." unique_id=1160867511]
 
