@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvamtgso5d54y" path="res://Game/Gold/GoldPiece.gd" id="1_rgo6i"]
 [ext_resource type="Texture2D" uid="uid://blqocut8c3138" path="res://Assets/Art/Gold/CoinT.png" id="2_rgo6i"]
+[ext_resource type="Texture2D" uid="uid://rkxtr46wcadn" path="res://Assets/Art/Gold/Dot.png" id="3_6cdf2"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_v3p58"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1va8x"]
@@ -82,8 +83,14 @@ shape = SubResource("CircleShape2D_1va8x")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649949279]
 modulate = Color(0.9618118, 0.79942083, 0.79942083, 1)
 position = Vector2(0, 0.41295305)
-scale = Vector2(0.6420174, 0.6420174)
+scale = Vector2(0.6073875, 0.6073875)
 texture = ExtResource("2_rgo6i")
+
+[node name="Dot" type="Sprite2D" parent="Sprite2D" unique_id=1830011373]
+modulate = Color(1, 1, 1, 0.6784314)
+z_index = -1
+position = Vector2(0, -0.67988396)
+texture = ExtResource("3_6cdf2")
 
 [node name="ShadowOrigin" type="Node2D" parent="." unique_id=304216036]
 
