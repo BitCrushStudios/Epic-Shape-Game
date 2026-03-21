@@ -104,9 +104,7 @@ func modal():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$AnimationPlayer.play("Fly In")
 	get_tree().paused=true
-	visible = true
 	await modal_closing
-	visible = false
 	$AnimationPlayer.play("Fly Out")
 	get_tree().paused=false
 	if OS.has_feature("standalone"):
