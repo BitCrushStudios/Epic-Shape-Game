@@ -43,10 +43,11 @@ func _randomize():
 @export_tool_button("Randomize") var _trigger = _randomize
 
 func _show_description():
+	$AnimationPlayer.play("Show")
 	%DescControl.show()
 	
 func _hide_description():
-	%DescControl.hide()
+	$AnimationPlayer.play("Hide")
 	
 func _ready():
 	mouse_entered.connect(_show_description)
