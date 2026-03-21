@@ -31,6 +31,8 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://cctfa8rtom3cv"
+mouse_cursor/custom_image_hotspot=Vector2(22, 16)
+mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 
 [editor_plugins]
 
