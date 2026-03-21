@@ -6,6 +6,7 @@ func _init():
 	super()
 	name = "Golf Ball"
 	texture = preload("res://Assets/Art/Weapons/Golf Ball/GolfBall.png")
+	description = "Spawns one golf ball"
 	base_price = 10
 func apply(gameMain:GameMain):
 	gameMain.weaponsManager.add_weapon(preload("res://Game/Weapons/GolfBallWeapon.tscn").instantiate())

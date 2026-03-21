@@ -6,6 +6,7 @@ func _init():
 	super()
 	name = "DVD Logo"
 	texture = preload("res://Assets/Art/Items/Dvd Logo item Icon.png")
+	description = "Spawns one DVD logo"
 	base_price = 30
 func apply(gameMain:GameMain):
 	gameMain.weaponsManager.add_weapon(preload("res://Game/Weapons/DvdLogoWeapon.tscn").instantiate())

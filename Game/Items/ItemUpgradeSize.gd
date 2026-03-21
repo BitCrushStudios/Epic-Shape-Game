@@ -6,6 +6,7 @@ func _init():
 	super()
 	name ="Extra Size"
 	texture = preload("res://Assets/Art/Items/Size Icon.png")
+	description = "Increases player size"
 	base_price = 5
 
 func apply(gameMain:GameMain):

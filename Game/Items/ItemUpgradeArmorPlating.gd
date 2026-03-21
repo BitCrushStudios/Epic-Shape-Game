@@ -6,6 +6,7 @@ func _init():
 	super()
 	name ="Armor Plating"
 	texture = preload("res://Assets/Art/Items/Armor plating Icon.png")
+	description = "Increases max hp by 5"
 	base_price = 15
 func apply(gameMain:GameMain):
 	gameMain.player.resource.stat_health += 5

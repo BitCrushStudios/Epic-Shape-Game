@@ -5,7 +5,8 @@ class_name ItemExtraSpeedUpgradeResource
 func _init():
 	super()
 	name ="Extra Speed"
-	texture = preload("res://Assets/Art/Items/Speed Icon.png"	)
+	texture = preload("res://Assets/Art/Items/Speed Icon.png")
+	description = "Increases speed"
 	base_price = 10
 
 func apply(gameMain:GameMain):

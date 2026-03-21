@@ -6,6 +6,7 @@ func _init():
 	super()
 	name ="Tiny Man"
 	texture = preload("res://Assets/Art/Items/Tiny Man Item.png")
+	description = "Decreases size and greatly increases speed"
 	base_price = 10
 
 func apply(gameMain:GameMain):

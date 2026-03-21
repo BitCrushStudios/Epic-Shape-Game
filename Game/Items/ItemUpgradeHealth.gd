@@ -6,6 +6,7 @@ func _init():
 	super()
 	name ="Med Kit"
 	texture = preload("res://Assets/Art/Items/Med Kit Item Icon.png")
+	description = "Heals 5 hp"
 	base_price = 10
 func apply(gameMain:GameMain):
 	gameMain.player.resource.health_current += 5
