@@ -57,9 +57,9 @@ var health_max:float:
 
 var health_current: float = 1.0:
 	set(v):
-		if v<=0:
+		health_current = clampf(v,0.0,health_max)
+		if health_current == 0.0:
 			health_depleted.emit()
-		health_current = v
 		emit_changed()
 		health_changed.emit()
 

@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 @export var target: RigidBody2D
 func _physics_process(delta: float) -> void:

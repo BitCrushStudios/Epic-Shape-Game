@@ -82,7 +82,7 @@ var _random_items_action = setup_ui
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-	if not get_tree().paused and Input.is_action_just_pressed("player_shop"):
+	if (not get_tree().paused or visible) and Input.is_action_just_pressed("player_shop"):
 		if not visible:
 			await modal()
 		else:

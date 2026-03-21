@@ -35,8 +35,9 @@ colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
 gradient = SubResource("Gradient_5pe0l")
 width = 100
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggmsm"]
-size = Vector2(46, 46)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o76kj"]
+radius = 25.531916
+height = 121.98582
 
 [sub_resource type="Animation" id="Animation_eov6p"]
 resource_name = "Hit"
@@ -124,8 +125,9 @@ length = 20
 metadata/_custom_type_script = "uid://onfsof0qcqtj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
+rotation = -1.5707964
 scale = Vector2(1.41, 1.41)
-shape = SubResource("RectangleShape2D_ggmsm")
+shape = SubResource("CapsuleShape2D_o76kj")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 20.0
