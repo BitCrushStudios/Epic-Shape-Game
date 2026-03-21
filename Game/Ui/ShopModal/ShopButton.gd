@@ -41,3 +41,16 @@ func _randomize():
 	resource.quantity = 1
 	resource.price = randi_range(1, 10) * 10
 @export_tool_button("Randomize") var _trigger = _randomize
+
+func _show_description():
+	%DescControl.show()
+	
+func _hide_description():
+	%DescControl.hide()
+	
+func _ready():
+	mouse_entered.connect(_show_description)
+	mouse_exited.connect(_hide_description)
+	_hide_description()
+	
+	
