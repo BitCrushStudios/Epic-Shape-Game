@@ -87,6 +87,7 @@ func _health_depleted():
 var kick_str_max = 2000.0
 var kick_str = 0.0
 func trigger_kick():
+	$Dash.emitting = true
 	var kick_vec =  (get_global_mouse_position() - global_position).normalized()
 	apply_central_impulse(kick_vec * kick_str * mass)
 	
