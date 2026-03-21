@@ -6,6 +6,7 @@ signal resource_changed()
 signal entered_hurtbox(node:Node)
 @export var damage = 1.0
 @export var activation_max = 1.0
+var speed_damage_mult = 0.01
 var max_obstacle_radius = 30.0
 var activation_value = 0.0
 enum State{
@@ -28,9 +29,10 @@ func _entered_hurtbox(node:Node):
 		var g2 = node.global_position
 		var d1 = (g1 - g2).normalized() * 200.0 
 		var d2 = -d1
-		apply_central_impulse(d1 * mass)
-		node.apply_central_impulse(d2 * node.mass)
-		node.take_damage(damage)
+		node.take_damage(damage + linear_velocity.length() * speed_damage_mult)
+		var other_velocity = node.linear_velocity
+		apply_central_impulse(d1.project(linear_velocity) * mass)
+		node.apply_central_impulse(d2.project(other_velocity) * node.mass)
 
 	
 func _physics_process(_delta: float) -> void:

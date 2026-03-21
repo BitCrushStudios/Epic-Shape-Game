@@ -82,7 +82,7 @@ var _random_items_action = setup_ui
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-	if Input.is_action_just_pressed("player_shop"):
+	if not get_tree().paused and Input.is_action_just_pressed("player_shop"):
 		if not visible:
 			await modal()
 		else:
@@ -90,10 +90,12 @@ func _process(_delta: float) -> void:
 signal pre_close_modal()
 func modal():
 	get_tree().paused=true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	visible = true
 	await pre_close_modal
 	visible = false
 	get_tree().paused=false
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
 func _ready():
 	setup_ui()

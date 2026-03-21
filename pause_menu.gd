@@ -5,18 +5,25 @@ extends CanvasLayer
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+func update_mouse_mode():
+	if visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("dev_game_pause"):
+	if not get_tree().paused and Input.is_action_just_pressed("dev_game_pause"):
 		visible = not visible
 		get_tree().paused = visible
+		update_mouse_mode()
 
 
 
 func _on_resume_pressed() -> void:
 	visible = false
 	get_tree().paused = false
+	update_mouse_mode()
 
 
 

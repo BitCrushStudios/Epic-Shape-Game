@@ -17,6 +17,7 @@ var player:Player:
 func _player_health_depleted():
 	get_tree().paused=true
 	game_over_menu.visible=true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 var enemyManager: EnemyManager:
 	set(v):
 		enemyManager = v
@@ -58,6 +59,7 @@ func update_refs():
 		player.weaponsManager = weaponsManager
 	
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	child_entered_tree.connect(_child_entered_tree)
 	child_exiting_tree.connect(_child_exiting_tree)
 	for c in get_children(true):
