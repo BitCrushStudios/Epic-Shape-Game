@@ -83,7 +83,7 @@ shape = SubResource("CircleShape2D_1va8x")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649949279]
 modulate = Color(0.9618118, 0.79942083, 0.79942083, 1)
 position = Vector2(0, 0.41295305)
-scale = Vector2(0.6073875, 0.6073875)
+scale = Vector2(0.6683379, 0.6683379)
 texture = ExtResource("2_rgo6i")
 
 [node name="Dot" type="Sprite2D" parent="Sprite2D" unique_id=1830011373]
@@ -102,7 +102,7 @@ scale = Vector2(0.5, 0.5)
 libraries/ = SubResource("AnimationLibrary_g2ys7")
 
 [node name="Timer" type="Timer" parent="." unique_id=1209972779]
-wait_time = 7.5
+wait_time = 15.0
 one_shot = true
 autostart = true
 
