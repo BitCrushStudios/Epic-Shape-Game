@@ -17,7 +17,6 @@ class_name GameUi
 			enemyManager.resource_changed.disconnect(enemy_manager_resource_changed)
 		
 		enemyManager = v
-		print(v)
 		if enemyManager:
 			enemyManager.resource_changed.connect(enemy_manager_resource_changed)
 		enemy_manager_resource_changed()

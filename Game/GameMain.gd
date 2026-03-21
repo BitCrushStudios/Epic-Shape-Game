@@ -67,6 +67,7 @@ func _ready() -> void:
 	for c in get_children(true):
 		_child_entered_tree(c)
 	if not Engine.is_editor_hint():
+		await get_tree().process_frame
 		add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
 		shop_modal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
 		add_child(shop_modal)

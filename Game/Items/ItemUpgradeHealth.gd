@@ -14,4 +14,10 @@ func apply(gameMain:GameMain):
 static func poll(gameMain:GameMain):
 	#if gameMain.player.resource.health_current>=gameMain.player.resource.health_max:
 		#return 0.0
-	return 1 - clamp(float(gameMain.player.resource.health_current) / float(gameMain.player.resource.health_max), 0, 1)
+	if gameMain.player:
+		var a = float(gameMain.player.resource.health_current)
+		var b = float(gameMain.player.resource.health_max)
+		var c = clamp(a / b, 0, 1)
+		return 1 - c
+	else:
+		return 1.0

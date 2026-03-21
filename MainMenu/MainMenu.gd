@@ -60,7 +60,6 @@ func _ready() -> void:
 func audio_volume_prop(node:Slider, key:String, bus:String):
 	node.value = ProjectSettings.get_setting(key)
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(bus), node.value)
-	print(node.value)
 	node.value_changed.connect(func(v:float):
 		ProjectSettings.set_setting(key, v)
 		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(bus), v)

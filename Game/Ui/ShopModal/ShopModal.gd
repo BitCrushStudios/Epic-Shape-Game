@@ -58,6 +58,11 @@ func _changed():
 	
 func swapEmpty():
 	var available_items = ItemResource.get_available_items()
+	var p = get_parent()
+	if p:
+		available_items = available_items.filter(func(x):
+			return x.poll(p)>0
+		)
 	var count =  get_buttons().size()
 	var arr_indices = range(count)
 	arr_indices.shuffle()
@@ -67,7 +72,9 @@ func swapEmpty():
 		if not vs[i] or vs[i].quantity==0:
 			vs[i] = null
 		if vs[i]==null and available_items.size()>0:
-			var item: ItemResource = available_items.pop_at(randi_range(0, available_items.size()-1)).new()
+			var Item: GDScript = available_items.pop_at(randi_range(0, available_items.size()-1))
+			var item: ItemResource = Item.new()
+			print(item, Item.poll(get_parent()))
 			var shopItem = ShopItemResource.new()
 			shopItem.item = item
 			vs.set(i,shopItem)
@@ -95,7 +102,8 @@ func modal():
 	await pre_close_modal
 	visible = false
 	get_tree().paused=false
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	if OS.has_feature("standalone"):
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
 func _ready():
 	setup_ui()

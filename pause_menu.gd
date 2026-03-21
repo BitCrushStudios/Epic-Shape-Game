@@ -8,8 +8,8 @@ func _ready() -> void:
 func update_mouse_mode():
 	if visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	elif OS.has_feature("standalone"):
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
