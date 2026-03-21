@@ -32,12 +32,12 @@ func close():
 	modal_closing.emit()
 	await modal_closed
 func modal():
-	$Anm
+	$AnimationPlayer.play("Fly In")
 	get_tree().paused = true
-	visible = true
 	if OS.has_feature("standalone"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE 
 	await modal_closing
+	$AnimationPlayer.play("Fly Out")
 	get_tree().paused = false
 	visible = false
 	if OS.has_feature("standalone"):

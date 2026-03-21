@@ -185,14 +185,12 @@ CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
 [node name="PauseMenu" type="CanvasLayer" unique_id=1737094870]
 process_mode = 3
 layer = 10
-visible = false
 script = ExtResource("1_e26lu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=848833024]
 libraries/ = SubResource("AnimationLibrary_i51h6")
 
 [node name="Control" type="Control" parent="." unique_id=649531949]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
