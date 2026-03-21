@@ -17,7 +17,9 @@ var player:Player:
 func _player_health_depleted():
 	get_tree().paused=true
 	game_over_menu.visible=true
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if OS.has_feature("standalone"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	game_over_menu.modal()
 var enemyManager: EnemyManager:
 	set(v):
 		enemyManager = v
@@ -61,7 +63,8 @@ func update_refs():
 func _ready() -> void:
 	if  Engine.is_editor_hint():
 		return
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	if OS.has_feature("standalone"):
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	child_entered_tree.connect(_child_entered_tree)
 	child_exiting_tree.connect(_child_exiting_tree)
 	for c in get_children(true):
@@ -70,6 +73,7 @@ func _ready() -> void:
 		await get_tree().process_frame
 		add_child(preload("res://Game/Ui/GameUi/GameUi.tscn").instantiate())
 		shop_modal = preload("res://Game/Ui/ShopModal/ShopModal.tscn").instantiate()
+		shop_modal.visible=false
 		add_child(shop_modal)
 		
 		pause_menu = preload("res://MainMenu/PauseMenu.tscn").instantiate()

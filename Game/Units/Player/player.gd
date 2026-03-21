@@ -81,16 +81,6 @@ func _health_depleted():
 	if not is_queued_for_deletion():
 		queue_free()
 
-func show_upgrade_modal():
-	if resource.levels_gained>0:
-		get_tree().paused=true
-		var modal: UpgradeModal = preload("res://Game/Ui/UpgradeModal/UpgradeModal.tscn").instantiate()
-		$CanvasLayer.add_child(modal)
-		modal.player = resource
-		await modal.modal(resource.levels_gained)
-		modal.queue_free()
-		get_tree().paused=false
-		resource.levels_gained = 0
 	
 	
 

@@ -3,6 +3,66 @@
 [ext_resource type="Script" uid="uid://dhn3pavi6pq2w" path="res://Game/Ui/Gameover/game_over_menu.gd" id="1_ae6q6"]
 [ext_resource type="Texture2D" uid="uid://7xby2f0tbq1n" path="res://Assets/Art/Shadow/Effect.png" id="1_e2n2e"]
 
+[sub_resource type="Animation" id="Animation_ae6q6"]
+resource_name = "Fly In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_7icf0"]
+resource_name = "Fly Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7l2ks"]
+_data = {
+&"Fly In": SubResource("Animation_ae6q6"),
+&"Fly Out": SubResource("Animation_7icf0")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -127,31 +187,42 @@ process_mode = 3
 layer = 10
 script = ExtResource("1_ae6q6")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1342239166]
-modulate = Color(1, 1, 1, 0.27058825)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2137414851]
+libraries/ = SubResource("AnimationLibrary_7l2ks")
+
+[node name="Control" type="Control" parent="." unique_id=1573849082]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1342239166]
+modulate = Color(1, 1, 1, 0.27058825)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_e2n2e")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1043463268]
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1043463268]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
+offset_left = 260.0
+offset_top = 100.0
+offset_right = 660.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(200, 150)
 
-[node name="Control" type="Control" parent="PanelContainer" unique_id=204458380]
+[node name="Control" type="Control" parent="Control/PanelContainer" unique_id=204458380]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Control" unique_id=1743584834]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/Control" unique_id=1743584834]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -165,7 +236,7 @@ offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameOver" type="Label" parent="PanelContainer/Control/VBoxContainer" unique_id=165322371]
+[node name="GameOver" type="Label" parent="Control/PanelContainer/Control/VBoxContainer" unique_id=165322371]
 layout_mode = 2
 theme = SubResource("Theme_e2n2e")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -174,7 +245,7 @@ theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 70
 text = "Game Over!"
 
-[node name="Restart" type="Button" parent="PanelContainer/Control/VBoxContainer" unique_id=371431428]
+[node name="Restart" type="Button" parent="Control/PanelContainer/Control/VBoxContainer" unique_id=371431428]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_7l2ks")
@@ -184,7 +255,7 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "Restart"
 
-[node name="Menu" type="Button" parent="PanelContainer/Control/VBoxContainer" unique_id=111373690]
+[node name="Menu" type="Button" parent="Control/PanelContainer/Control/VBoxContainer" unique_id=111373690]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_7l2ks")

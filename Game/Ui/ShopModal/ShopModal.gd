@@ -53,7 +53,8 @@ func _changed():
 			if not buttons[i].disabled and get_parent():
 				var gameMain:GameMain = get_parent()
 				buttons[i].disabled = items[i].item.poll(gameMain)<=0
-				
+	
+	%RerollButton.disabled = money<10
 	%MoneyLabel.text = "$ %d" % money
 	
 func swapEmpty():
@@ -79,7 +80,6 @@ func swapEmpty():
 			shopItem.item = item
 			vs.set(i,shopItem)
 	items = vs
-	
 func setup_ui():
 	items = []
 	swapEmpty()
@@ -93,28 +93,37 @@ func _process(_delta: float) -> void:
 		if not visible:
 			await modal()
 		else:
-			pre_close_modal.emit()
-signal pre_close_modal()
+			modal_closing.emit()
+signal modal_closing()
+signal modal_closed()
+func close():
+	modal_closing.emit()
+	await modal_closed
 func modal():
+	if OS.has_feature("standalone"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$AnimationPlayer.play("Fly In")
 	get_tree().paused=true
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	visible = true
-	await pre_close_modal
+	await modal_closing
 	visible = false
+	$AnimationPlayer.play("Fly Out")
 	get_tree().paused=false
 	if OS.has_feature("standalone"):
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-	
+	modal_closed.emit()
+
 func _ready():
 	setup_ui()
 	%RerollButton.pressed.connect(_reroll)
-	%AcceptButton.pressed.connect(pre_close_modal.emit)
+	%AcceptButton.pressed.connect(close)
 	for btn in get_buttons():
 		btn.item_selected.connect(item_selected.emit)
 	item_selected.connect(_item_selected)
 	if get_tree().current_scene == self:
 		await modal()
 func _reroll():
+	money -= 10
 	setup_ui()
 func _item_selected(shopItem:ShopItemResource):
 	if get_parent():

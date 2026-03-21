@@ -3,6 +3,66 @@
 [ext_resource type="Script" uid="uid://dsqtu6db2v1nk" path="res://pause_menu.gd" id="1_e26lu"]
 [ext_resource type="Theme" uid="uid://byedsphmsdra5" path="res://Assets/Themes/the_theme.tres" id="2_5f6hy"]
 
+[sub_resource type="Animation" id="Animation_5f6hy"]
+resource_name = "Fly In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wf0wa"]
+resource_name = "Fly Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i51h6"]
+_data = {
+&"Fly In": SubResource("Animation_5f6hy"),
+&"Fly Out": SubResource("Animation_wf0wa")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -125,9 +185,23 @@ CheckBox/colors/checkbox_unchecked_color = Color(0, 0, 0, 0.20784314)
 [node name="PauseMenu" type="CanvasLayer" unique_id=1737094870]
 process_mode = 3
 layer = 10
+visible = false
 script = ExtResource("1_e26lu")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=803901024]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=848833024]
+libraries/ = SubResource("AnimationLibrary_i51h6")
+
+[node name="Control" type="Control" parent="." unique_id=649531949]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=803901024]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -141,10 +215,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_5f6hy")
 
-[node name="Control" type="Control" parent="PanelContainer" unique_id=591394149]
+[node name="Control" type="Control" parent="Control/PanelContainer" unique_id=591394149]
 layout_mode = 2
 
-[node name="BoxContainer2" type="VBoxContainer" parent="PanelContainer/Control" unique_id=23344381]
+[node name="BoxContainer2" type="VBoxContainer" parent="Control/PanelContainer/Control" unique_id=23344381]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -158,7 +232,7 @@ offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="PanelContainer/Control/BoxContainer2" unique_id=1413815982]
+[node name="Label" type="Label" parent="Control/PanelContainer/Control/BoxContainer2" unique_id=1413815982]
 layout_mode = 2
 theme = SubResource("Theme_n0ir5")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -168,7 +242,7 @@ theme_override_font_sizes/font_size = 70
 text = "Paused!"
 horizontal_alignment = 1
 
-[node name="Resume" type="Button" parent="PanelContainer/Control/BoxContainer2" unique_id=371810104]
+[node name="Resume" type="Button" parent="Control/PanelContainer/Control/BoxContainer2" unique_id=371810104]
 layout_mode = 2
 theme = SubResource("Theme_5f6hy")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -176,7 +250,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "Resume"
 
-[node name="Return" type="Button" parent="PanelContainer/Control/BoxContainer2" unique_id=769235874]
+[node name="Return" type="Button" parent="Control/PanelContainer/Control/BoxContainer2" unique_id=769235874]
 layout_mode = 2
 theme = SubResource("Theme_5f6hy")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -184,5 +258,5 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "Return"
 
-[connection signal="pressed" from="PanelContainer/Control/BoxContainer2/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/Control/BoxContainer2/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/Control/BoxContainer2/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/Control/BoxContainer2/Return" to="." method="_on_return_pressed"]

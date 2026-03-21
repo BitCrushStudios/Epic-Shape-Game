@@ -32,7 +32,8 @@ func set_up_key_button(btn:Button,input_name:String,index=0):
 	btn.text = e.as_text()
 	
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if OS.has_feature("standalone"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	audio_toggle_prop(%MusicToggle, "game/audio/sound/enabled", "Music")
 	audio_volume_prop(%MusicVolume, "game/audio/music/volume", "Music")
 	audio_toggle_prop(%SoundToggle, "game/audio/sound/enabled", "Sound Effects")
