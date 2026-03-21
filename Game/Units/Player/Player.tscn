@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjp2b5iomkei"]
 
-[ext_resource type="Script" uid="uid://d3jrqlu874g1d" path="res://Game/Units/Player/player.gd" id="1_ddoul"]
+[ext_resource type="Script" uid="uid://di4v4aw8y4q66" path="res://Game/Units/Player/Player.gd" id="1_ddoul"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_tok1r"]
 [ext_resource type="Script" uid="uid://dfj50wg6u44xx" path="res://Game/Units/Player/PlayerResource.gd" id="3_i7tqw"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_mbpe7"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://m7ljnh7u8j1q" path="res://Assets/TestArrow.png" id="12_wfiu6"]
 [ext_resource type="Texture2D" uid="uid://8grc2iaovqtp" path="res://Assets/Art/Player/Animations/Run/frame0006.png" id="13_rixr6"]
 [ext_resource type="Texture2D" uid="uid://dtvxs0cudek3p" path="res://Assets/Art/Player/Animations/Run/frame0007.png" id="14_sd8eo"]
-[ext_resource type="Texture2D" uid="uid://dtgx5q0ur8r8x" path="res://Assets/Art/Particles/DashParticle.png" id="25_rixr6"]
+[ext_resource type="PackedScene" uid="uid://dwguxlrdyindw" path="res://Game/Units/Player/dash.tscn" id="25_rixr6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
 friction = 0.0
@@ -151,34 +151,6 @@ radius = 15.132746
 [sub_resource type="CircleShape2D" id="CircleShape2D_jiict"]
 radius = 42.047592
 
-[sub_resource type="Curve" id="Curve_sd8eo"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1690141, 0.3595506), 0.0, 0.0, 0, 0, Vector2(0.33098593, 1), 0.0, 0.0, 0, 0, Vector2(0.41549298, 0.79775286), -5.3183503, -5.3183503, 0, 0, Vector2(0.47887328, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 6
-
-[sub_resource type="CurveTexture" id="CurveTexture_y0cqt"]
-curve = SubResource("Curve_sd8eo")
-
-[sub_resource type="Curve" id="Curve_rixr6"]
-_data = [Vector2(0, 1), 0.0, -2.1031663, 0, 0, Vector2(0.1971831, 0.48314613), 0.0, 0.0, 0, 0, Vector2(0.40845075, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.61267614, 0.41573036), 0.0, 0.0, 0, 0, Vector2(0.887324, 0.24719107), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.9636997, 0.0, 0, 0]
-point_count = 6
-
-[sub_resource type="CurveTexture" id="CurveTexture_sd8eo"]
-curve = SubResource("Curve_rixr6")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rixr6"]
-particle_flag_disable_z = true
-angle_min = -360.0
-angle_max = 360.00003
-direction = Vector3(0, 0, 0)
-spread = 180.0
-initial_velocity_min = 100.0
-initial_velocity_max = 300.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.7
-scale_curve = SubResource("CurveTexture_sd8eo")
-alpha_curve = SubResource("CurveTexture_y0cqt")
-turbulence_enabled = true
-
 [node name="Player" type="RigidBody2D" unique_id=2019408090]
 y_sort_enabled = true
 collision_layer = 2
@@ -261,14 +233,5 @@ volume_db = -18.0
 pitch_scale = 0.01
 bus = &"Sound Effects"
 
-[node name="Dash" type="GPUParticles2D" parent="." unique_id=1576547450]
-z_index = -1
+[node name="Dash" parent="." unique_id=804639178 instance=ExtResource("25_rixr6")]
 position = Vector2(-2, -1)
-emitting = false
-amount = 25
-texture = ExtResource("25_rixr6")
-lifetime = 0.6
-one_shot = true
-randomness = 1.0
-trail_sections = 14
-process_material = SubResource("ParticleProcessMaterial_rixr6")
