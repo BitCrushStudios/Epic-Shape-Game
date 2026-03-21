@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://c80s0sww1hrbe"
 [autoload]
 
 Music="*uid://umlyaukquxis"
+ParticlePreload="*uid://c4t20womu4yvq"
 
 [display]
 

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c4t20womu4yvq"]
+
+[ext_resource type="PackedScene" uid="uid://b010pf6ffj3tl" path="res://Game/Units/Enemies/DeathParticles.tscn" id="1_0tb2p"]
+[ext_resource type="Script" uid="uid://csdy40xnqs6ys" path="res://Game/Preload/particle_preload.gd" id="1_em5gm"]
+[ext_resource type="PackedScene" uid="uid://ddh7d3mjwfw00" path="res://Game/Units/Enemies/DamageParticles.tscn" id="2_em5gm"]
+
+[node name="Node2D" type="Node2D" unique_id=1195328536]
+script = ExtResource("1_em5gm")
+
+[node name="Death" parent="." unique_id=755023520 instance=ExtResource("1_0tb2p")]
+position = Vector2(569, 212)
+amount = 44
+
+[node name="Damage" parent="." unique_id=345883373 instance=ExtResource("2_em5gm")]
+position = Vector2(239, 201)
