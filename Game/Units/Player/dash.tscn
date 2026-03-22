@@ -10,7 +10,7 @@ point_count = 6
 curve = SubResource("Curve_sd8eo")
 
 [sub_resource type="Curve" id="Curve_rixr6"]
-_data = [Vector2(0, 1), 0.0, -2.1031663, 0, 0, Vector2(0.1971831, 0.48314613), 0.0, 0.0, 0, 0, Vector2(0.40845075, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.61267614, 0.41573036), 0.0, 0.0, 0, 0, Vector2(0.887324, 0.24719107), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.9636997, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, -2.1031663, 0, 0, Vector2(0.15492958, 0.70786524), 0.0, 0.0, 0, 0, Vector2(0.2746479, 0.8651686), 0.0, 0.0, 0, 0, Vector2(0.61267614, 0.41573036), 0.0, 0.0, 0, 0, Vector2(0.887324, 0.24719107), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.9636997, 0.0, 0, 0]
 point_count = 6
 
 [sub_resource type="CurveTexture" id="CurveTexture_sd8eo"]
@@ -23,20 +23,23 @@ angle_max = 360.00003
 direction = Vector3(0, 0, 0)
 spread = 180.0
 initial_velocity_min = 100.0
-initial_velocity_max = 300.0
+initial_velocity_max = 200.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.7
+scale_min = 0.39999998
+scale_max = 1.1
 scale_curve = SubResource("CurveTexture_sd8eo")
 alpha_curve = SubResource("CurveTexture_y0cqt")
 turbulence_enabled = true
+turbulence_noise_strength = 5.35
 
 [node name="Dash" type="GPUParticles2D" unique_id=804639178]
 z_index = -1
 emitting = false
-amount = 25
+amount = 50
 texture = ExtResource("1_wdmwk")
 lifetime = 0.6
 one_shot = true
+speed_scale = 1.9
 randomness = 1.0
 trail_sections = 14
 process_material = SubResource("ParticleProcessMaterial_rixr6")
