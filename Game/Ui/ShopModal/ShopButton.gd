@@ -43,10 +43,12 @@ func _randomize():
 @export_tool_button("Randomize") var _trigger = _randomize
 
 func _show_description():
+	$Hover.play("Hover")
 	$AnimationPlayer.play("Show")
 	%DescControl.show()
 	
 func _hide_description():
+	$Hover.play("Hover out")
 	$AnimationPlayer.play("Hide")
 	
 func _ready():

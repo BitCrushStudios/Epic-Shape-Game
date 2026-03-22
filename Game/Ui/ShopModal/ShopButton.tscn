@@ -25,7 +25,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer2/DescControl/Panel:scale")
+tracks/0/path = NodePath("DescControl/Panel:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -35,15 +35,43 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_x0bnd"]
+resource_name = "Hover Over"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer2:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ofh7d"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer2/DescControl/Panel:scale")
+tracks/0/path = NodePath("DescControl/Panel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -56,7 +84,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer2/DescControl/Panel:scale")
+tracks/0/path = NodePath("DescControl/Panel:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,8 +97,63 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x0bnd"]
 _data = {
 &"Hide": SubResource("Animation_yswop"),
+&"Hover Over": SubResource("Animation_x0bnd"),
 &"RESET": SubResource("Animation_ofh7d"),
 &"Show": SubResource("Animation_2bmuq")
+}
+
+[sub_resource type="Animation" id="Animation_ceole"]
+resource_name = "Hover"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer2:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_6tyqc"]
+resource_name = "Hover out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lmj72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6tyqc"]
+_data = {
+&"Hover": SubResource("Animation_ceole"),
+&"Hover out": SubResource("Animation_6tyqc"),
+&"RESET": SubResource("Animation_lmj72")
 }
 
 [node name="ShopButton" type="Button" unique_id=237816123]
@@ -80,20 +163,13 @@ theme = ExtResource("1_yswop")
 script = ExtResource("1_1tt3b")
 resource = SubResource("Resource_2bmuq")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1749965105]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="DescControl" type="Control" parent="VBoxContainer2" unique_id=371593927]
+[node name="DescControl" type="Control" parent="." unique_id=371593927]
 unique_name_in_owner = true
-layout_mode = 2
+anchors_preset = 0
+offset_right = 200.0
 mouse_filter = 2
 
-[node name="Panel" type="PanelContainer" parent="VBoxContainer2/DescControl" unique_id=713135597]
+[node name="Panel" type="PanelContainer" parent="DescControl" unique_id=713135597]
 layout_mode = 0
 offset_left = -50.0
 offset_top = -222.0
@@ -103,12 +179,12 @@ pivot_offset = Vector2(150, 98)
 mouse_filter = 2
 theme = ExtResource("1_yswop")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/DescControl/Panel" unique_id=445352552]
+[node name="MarginContainer" type="MarginContainer" parent="DescControl/Panel" unique_id=445352552]
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_yswop")
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxContainer2/DescControl/Panel/MarginContainer" unique_id=1931081603]
+[node name="DescriptionLabel" type="RichTextLabel" parent="DescControl/Panel/MarginContainer" unique_id=1931081603]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -118,6 +194,15 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 text = "eats one cheese "
 horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1749965105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 130)
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer2" unique_id=449851077]
 layout_mode = 2
@@ -183,3 +268,6 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1905372105]
 libraries/ = SubResource("AnimationLibrary_x0bnd")
+
+[node name="Hover" type="AnimationPlayer" parent="." unique_id=1059317516]
+libraries/ = SubResource("AnimationLibrary_6tyqc")
