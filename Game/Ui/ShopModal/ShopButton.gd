@@ -32,6 +32,7 @@ func _changed():
 func _process(_delta: float) -> void:
 	modulate = Color.GRAY if disabled else Color.WHITE
 func _pressed() -> void:
+	$Hover.play("Bought ")
 	print("Selected")
 	item_selected.emit(resource)
 func _randomize():
