@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ci4vvgqkeex5n"]
+
+[ext_resource type="Texture2D" uid="uid://dpbcknsq5kbj3" path="res://Assets/Art/Particles/Shard particle.png" id="1_f37ka"]
+
+[sub_resource type="Curve" id="Curve_reswv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13380283, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.19101131), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7qplk"]
+curve = SubResource("Curve_reswv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wxelh"]
+particle_flag_disable_z = true
+angle_min = 84.70001
+angle_max = 169.40001
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angular_velocity_min = -360.0
+angular_velocity_max = 359.99997
+gravity = Vector3(0, 0, 0)
+scale_min = 0.7
+scale_curve = SubResource("CurveTexture_7qplk")
+
+[node name="CubeHit" type="GPUParticles2D" unique_id=2047332593]
+emitting = false
+amount = 20
+texture = ExtResource("1_f37ka")
+lifetime = 0.8
+one_shot = true
+speed_scale = 1.2
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wxelh")
