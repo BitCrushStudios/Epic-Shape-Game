@@ -124,7 +124,7 @@ func _process(delta: float) -> void:
 		if wave_diff:
 			enemyManager.wave_index+=wave_diff
 	if Input.is_action_just_pressed("dev_money_spawn"):
-		for i in range(1000):
+		for i in range(100):
 			var node:GoldPiece = preload("res://Game/Gold/GoldPiece.tscn").instantiate()
 			add_child(node)
 			var map_rid = get_viewport().world_2d.navigation_map
