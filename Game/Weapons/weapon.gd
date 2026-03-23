@@ -27,12 +27,13 @@ func _entered_hurtbox(node:Node):
 	if node is Enemy:
 		var g1 = global_position
 		var g2 = node.global_position
-		var d1 = (g1 - g2).normalized() * 200.0 
+		var c = (g1 + g2)/2.0
+		var d1 = (g1 - g2).normalized()
 		var d2 = -d1
 		node.take_damage(damage + linear_velocity.length() * speed_damage_mult)
 		var other_velocity = node.linear_velocity
-		apply_central_impulse(d1.project(linear_velocity) * mass)
-		node.apply_central_impulse(d2.project(other_velocity) * node.mass)
+		apply_impulse(d1.project(other_velocity) * mass, c)
+		node.apply_impulse(d2.project(linear_velocity) * node.mass, c)
 
 	
 func _physics_process(_delta: float) -> void:
