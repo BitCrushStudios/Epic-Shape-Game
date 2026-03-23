@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://8grc2iaovqtp" path="res://Assets/Art/Player/Animations/Run/frame0006.png" id="13_rixr6"]
 [ext_resource type="Texture2D" uid="uid://dtvxs0cudek3p" path="res://Assets/Art/Player/Animations/Run/frame0007.png" id="14_sd8eo"]
 [ext_resource type="PackedScene" uid="uid://dwguxlrdyindw" path="res://Game/Units/Player/dash.tscn" id="25_rixr6"]
+[ext_resource type="Texture2D" uid="uid://c3ww6sqgygm88" path="res://Assets/Art/Particles/Walk/WalkDustParticle.png" id="27_y0cqt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bd17y"]
 friction = 0.0
@@ -152,6 +153,42 @@ radius = 15.132746
 [sub_resource type="CircleShape2D" id="CircleShape2D_jiict"]
 radius = 42.047592
 
+[sub_resource type="Curve" id="Curve_lbo4s"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3vg2l"]
+curve = SubResource("Curve_lbo4s")
+
+[sub_resource type="Gradient" id="Gradient_y0cqt"]
+offsets = PackedFloat32Array(0.04310345, 1)
+colors = PackedColorArray(0.9384497, 0.9384497, 0.9384497, 1, 1, 1, 1, 0.63529414)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lbo4s"]
+gradient = SubResource("Gradient_y0cqt")
+
+[sub_resource type="Curve" id="Curve_y0cqt"]
+_data = [Vector2(0, 0.23595512), 0.0, 0.0, 0, 0, Vector2(0.11971831, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lbo4s"]
+curve = SubResource("Curve_y0cqt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lbo4s"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 42.907
+initial_velocity_max = 20.0
+gravity = Vector3(0, 500, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_lbo4s")
+color_ramp = SubResource("GradientTexture1D_lbo4s")
+alpha_curve = SubResource("CurveTexture_3vg2l")
+turbulence_enabled = true
+
 [node name="Player" type="RigidBody2D" unique_id=2019408090]
 y_sort_enabled = true
 collision_layer = 2
@@ -243,3 +280,12 @@ bus = &"Sound Effects"
 
 [node name="Dash" parent="." unique_id=804639178 instance=ExtResource("25_rixr6")]
 position = Vector2(-2, -1)
+
+[node name="Walk" type="GPUParticles2D" parent="." unique_id=152016542]
+z_index = -1
+position = Vector2(0, 27)
+amount = 50
+texture = ExtResource("27_y0cqt")
+lifetime = 0.5
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_lbo4s")

@@ -12,3 +12,7 @@ func _physics_process(delta: float) -> void:
 	desired = desired * resource.speed * resource.accel_mult
 	player.desired_velocity = desired
 	
+	if player.linear_velocity.length() < 0.1:
+		$"../Walk".emitting = false
+	else:
+		$"../Walk".emitting = true

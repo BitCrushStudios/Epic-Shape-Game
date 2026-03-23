@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bihvhfy2na4xg"
-path="res://.godot/imported/Spawn Particle.png-0d5a3523d312349e0df21948351ae6e6.ctex"
+uid="uid://pojq8bpiexci"
+path="res://.godot/imported/Particle .png-e2d0b141426dc86226247ec907a42d99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Particles/Spawn Particle.png"
-dest_files=["res://.godot/imported/Spawn Particle.png-0d5a3523d312349e0df21948351ae6e6.ctex"]
+source_file="res://Assets/Art/Particles/Enemies/Particle .png"
+dest_files=["res://.godot/imported/Particle .png-e2d0b141426dc86226247ec907a42d99.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwguxlrdyindw"]
 
-[ext_resource type="Texture2D" uid="uid://dtgx5q0ur8r8x" path="res://Assets/Art/Particles/DashParticle.png" id="1_wdmwk"]
+[ext_resource type="Texture2D" uid="uid://dtgx5q0ur8r8x" path="res://Assets/Art/Particles/Dash/DashParticle.png" id="1_wdmwk"]
 
 [sub_resource type="Curve" id="Curve_sd8eo"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1690141, 0.3595506), 0.0, 0.0, 0, 0, Vector2(0.33098593, 1), 0.0, 0.0, 0, 0, Vector2(0.41549298, 0.79775286), -5.3183503, -5.3183503, 0, 0, Vector2(0.47887328, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
