@@ -38,6 +38,7 @@ max_contacts_reported = 5
 script = ExtResource("1_1behd")
 damage = 0.5
 activation_max = 5.0
+alt_action = 1
 
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]
 y_sort_enabled = true

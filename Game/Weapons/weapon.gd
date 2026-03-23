@@ -6,9 +6,13 @@ signal resource_changed()
 signal entered_hurtbox(node:Node)
 @export var damage = 1.0
 @export var activation_max = 1.0
+@export var alt_action:AltFireAction = AltFireAction.None
 var speed_damage_mult = 0.01
 var max_obstacle_radius = 30.0
 var activation_value = 0.0
+enum AltFireAction{
+	None, ReturnToPlayer
+}
 enum State{
 	Normal,Activated
 }
@@ -37,8 +41,9 @@ func _physics_process(_delta: float) -> void:
 	if weaponManager:
 		var player = (weaponManager.get_parent() as GameMain).player
 		if player and Input.is_action_pressed("alt_fire"):
-			var desired =(player.global_position - global_position).limit_length(500.0)/250.0 * 10_000.0 * mass
-			apply_central_force(desired - linear_velocity)
+			if alt_action==AltFireAction.ReturnToPlayer:
+				var desired =(player.global_position - global_position).limit_length(500.0)/250.0 * 10_000.0 * mass
+				apply_central_force(desired - linear_velocity)
 		
 	$NavigationObstacle2D.velocity = linear_velocity
 	if (linear_velocity.length()/300.0+absf(angular_velocity)/20.0)>1:
