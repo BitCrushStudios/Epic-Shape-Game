@@ -37,7 +37,7 @@ static func get_available_items():
 		ItemArmorPlatingResource,
 		ItemTinyManUpgradeResource,
 		ItemExtraBowlingBallUpgradeResource,
-		ItemExtraFistUpgradeResource,
+		#ItemExtraFistUpgradeResource,
 		ItemExtraGolfBallUpgradeResource,
 		ItemExtraDvdLogoUpgradeResource,
 	]
