@@ -76,13 +76,12 @@ _data = {
 }
 
 [node name="Death" type="GPUParticles2D" unique_id=755023520]
-z_index = -1
 emitting = false
-amount = 50
+amount = 10
 texture = ExtResource("1_4bfsk")
 lifetime = 2.0
 one_shot = true
-explosiveness = 0.75
+explosiveness = 0.85
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_70358")
 
