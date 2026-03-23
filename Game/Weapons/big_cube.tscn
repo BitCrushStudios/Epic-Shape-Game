@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/Weapon.gd" id="1_w0p7r"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="1_x460x"]
 [ext_resource type="Texture2D" uid="uid://2d075q7qepcy" path="res://Assets/Art/Weapons/Big Cube/CubeBigDeactivated.png" id="2_ek2q2"]
+[ext_resource type="Texture2D" uid="uid://dtgx5q0ur8r8x" path="res://Assets/Art/Particles/Dash/DashParticle.png" id="3_3gs5p"]
 [ext_resource type="Texture2D" uid="uid://cef2cu2d322qq" path="res://Assets/Art/Weapons/Big Cube/CubeBig.png" id="3_5anff"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="4_3gs5p"]
 [ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="4_w0p7r"]
@@ -24,6 +25,37 @@ colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hwnkp"]
 gradient = SubResource("Gradient_5pe0l")
 width = 100
+
+[sub_resource type="Curve" id="Curve_3gs5p"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24647889, 0.4044944), 0.0, 0.0, 0, 0, Vector2(0.45070425, 0.1460675), 0.0, 0.0, 0, 0, Vector2(0.73239446, 0.6516854), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_qtgvb"]
+curve = SubResource("Curve_3gs5p")
+
+[sub_resource type="Gradient" id="Gradient_3gs5p"]
+colors = PackedColorArray(1, 1, 1, 1, 0.99998873, 0.40725932, 0.33866552, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qtgvb"]
+gradient = SubResource("Gradient_3gs5p")
+
+[sub_resource type="Curve" id="Curve_l33jo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.40140846, 0.3146068), 0.0, 0.0, 0, 0, Vector2(0.56338036, 0.6741574), 0.0, 0.0, 0, 0, Vector2(0.7042254, 0.3370787), 0.0, 0.0, 0, 0, Vector2(0.82394373, 0.52808994), 0.0, 0.0, 0, 0, Vector2(0.99295783, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_hwnkp"]
+curve = SubResource("Curve_l33jo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qtgvb"]
+particle_flag_disable_z = true
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.099999994
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_hwnkp")
+color_ramp = SubResource("GradientTexture1D_qtgvb")
+alpha_curve = SubResource("CurveTexture_qtgvb")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0p7r"]
 radius = 55.0
@@ -49,6 +81,14 @@ texture_mode = 1
 script = ExtResource("4_3gs5p")
 length = 30
 metadata/_custom_type_script = "uid://onfsof0qcqtj"
+
+[node name="TrailDots" type="GPUParticles2D" parent="." unique_id=1110960937]
+z_index = -1
+amount = 100
+texture = ExtResource("3_3gs5p")
+lifetime = 0.5
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qtgvb")
 
 [node name="Origin" type="Node2D" parent="." unique_id=1689679530]
 
