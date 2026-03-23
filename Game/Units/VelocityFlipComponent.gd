@@ -4,6 +4,7 @@ extends Node
 var tween:Tween
 var direction = 1
 func _process(delta: float) -> void:
+	$"../ShadowOrigin/Shadow".scale = Vector2(0.7,0.7)
 	var node:Node2D = get_parent()
 	if direction != node.scale.x and tween:
 		tween.stop()
