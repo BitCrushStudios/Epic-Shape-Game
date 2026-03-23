@@ -13,7 +13,7 @@ config_version=5
 config/name="Squap!"
 run/main_scene="uid://tpvjvvghrvyj"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://biqn2bvx3o47v"
+config/icon="uid://bwvcff5bbnwf8"
 
 [audio]
 
