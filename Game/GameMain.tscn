@@ -7,8 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://cyb2odoopxere" path="res://Assets/Music/Background/Shop.mp3" id="3_ytreg"]
 [ext_resource type="PackedScene" uid="uid://cjp2b5iomkei" path="res://Game/Units/Player/Player.tscn" id="4_ytreg"]
 [ext_resource type="Script" uid="uid://hh7f588jlyvj" path="res://Game/Units/Enemies/EnemyManager.gd" id="6_2wbff"]
-[ext_resource type="PackedScene" uid="uid://dbvch1vqm1ay4" path="res://Game/Weapons/big_cube.tscn" id="6_17wm5"]
-[ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="7_b8v6r"]
+[ext_resource type="PackedScene" uid="uid://b2aqwrj35lr50" path="res://Game/Weapons/CircleWeapon.tscn" id="7_ojaob"]
+[ext_resource type="PackedScene" uid="uid://b24hq1w27cynw" path="res://Game/Weapons/DvdLogoWeapon.tscn" id="8_b8v6r"]
+[ext_resource type="PackedScene" uid="uid://cunk1470cwuhe" path="res://Game/Weapons/GolfBallWeapon.tscn" id="9_2wbff"]
 [ext_resource type="Script" uid="uid://b1pviu5iet1uc" path="res://Game/Waves/WaveTime.gd" id="9_ojaob"]
 [ext_resource type="Script" uid="uid://cx0degy3b2dww" path="res://Game/Waves/WavePair.gd" id="9_tju8d"]
 [ext_resource type="Texture2D" uid="uid://bt02phtscf45b" path="res://Assets/Art/Enemies/BasicTriangle/Basic Enemy.png" id="10_tqfok"]
@@ -29,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://dbni1vjfsywn1" path="res://Assets/Art/Backgrounds/Main Scene/Floor/Curve Shadow.png" id="27_052kc"]
 [ext_resource type="Texture2D" uid="uid://dysvuu5mn5dnt" path="res://Assets/Art/Backgrounds/Main Scene/Floor/Bubblebig.png" id="29_ojaob"]
 
-[sub_resource type="Resource" id="Resource_b8v6r"]
+[sub_resource type="Resource" id="Resource_56ne4"]
 resource_local_to_scene = true
 script = ExtResource("19_wohd7")
 speed = 600.0
@@ -120,14 +121,14 @@ script = ExtResource("12_ytreg")
 pairs = Array[ExtResource("9_tju8d")]([SubResource("Resource_eaylc")])
 condition = SubResource("Resource_wohd7")
 
-[sub_resource type="Resource" id="Resource_2wbff"]
+[sub_resource type="Resource" id="Resource_isxqs"]
 script = ExtResource("17_052kc")
 pair = SubResource("Resource_3jy75")
 
-[sub_resource type="Resource" id="Resource_56ne4"]
+[sub_resource type="Resource" id="Resource_ie25g"]
 script = ExtResource("18_ytreg")
 wave = SubResource("Resource_eihxa")
-pairs = Array[ExtResource("17_052kc")]([SubResource("Resource_2wbff")])
+pairs = Array[ExtResource("17_052kc")]([SubResource("Resource_isxqs")])
 
 [sub_resource type="Resource" id="Resource_17wm5"]
 script = ExtResource("19_wohd7")
@@ -318,25 +319,25 @@ bus = &"Music"
 
 [node name="Player" parent="." unique_id=2019408090 node_paths=PackedStringArray("weaponsManager") instance=ExtResource("4_ytreg")]
 position = Vector2(953, 542)
-resource = SubResource("Resource_b8v6r")
+resource = SubResource("Resource_56ne4")
 weaponsManager = NodePath("../WeaponManager")
 
 [node name="WeaponManager" type="Node" parent="." unique_id=81837248]
 script = ExtResource("3_052kc")
 
-[node name="BigCube" parent="WeaponManager" unique_id=1806346460 instance=ExtResource("6_17wm5")]
-position = Vector2(911, 353)
+[node name="WeaponCircle" parent="WeaponManager" unique_id=1251268979 instance=ExtResource("7_ojaob")]
+position = Vector2(777, 566)
 
-[node name="Weapon" parent="WeaponManager" unique_id=1251268979 instance=ExtResource("7_b8v6r")]
-position = Vector2(676, 540)
+[node name="DvdLogoWeapon" parent="WeaponManager" unique_id=1640340205 instance=ExtResource("8_b8v6r")]
+position = Vector2(891, 392)
 
-[node name="Weapon2" parent="WeaponManager" unique_id=896880161 instance=ExtResource("7_b8v6r")]
-position = Vector2(1133, 542)
+[node name="Golf Ball" parent="WeaponManager" unique_id=342556309 instance=ExtResource("9_2wbff")]
+position = Vector2(1137, 532)
 
 [node name="EnemyManager" type="Node" parent="." unique_id=578400424]
 script = ExtResource("6_2wbff")
 waves = Array[ExtResource("12_ytreg")]([SubResource("Resource_eihxa"), SubResource("Resource_aa4rq"), SubResource("Resource_vgc8n"), SubResource("Resource_52jib"), SubResource("Resource_0vmkl")])
-resource = SubResource("Resource_56ne4")
+resource = SubResource("Resource_ie25g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=386627239]
 position = Vector2(960, 540)

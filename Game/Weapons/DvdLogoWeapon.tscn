@@ -1,24 +1,15 @@
 [gd_scene format=3 uid="uid://b24hq1w27cynw"]
 
 [ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_o76kj"]
+[ext_resource type="Script" uid="uid://3iw4rixu2fg2" path="res://Game/Weapons/dvd_logo_movement.gd" id="2_foye2"]
 [ext_resource type="Script" uid="uid://7ycqd3p1ul76" path="res://Game/Weapons/RotateWithVelocity.gd" id="2_o76kj"]
-[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_vkmvh"]
-[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_4bis6"]
 [ext_resource type="Texture2D" uid="uid://b6qiyx4520m0n" path="res://Assets/Art/Weapons/Dvd Logo/Dvd Logo.png" id="4_gxgwt"]
-[ext_resource type="Texture2D" uid="uid://ofbpyov6dv04" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0000.png" id="5_d6nhb"]
-[ext_resource type="Texture2D" uid="uid://bxiuh0yo1ncto" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0001.png" id="6_ny4m2"]
-[ext_resource type="Texture2D" uid="uid://ccm2jxd3x4hkc" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0002.png" id="7_8fkbm"]
-[ext_resource type="Texture2D" uid="uid://cocw1thxukq66" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0003.png" id="8_u4q3h"]
-[ext_resource type="Texture2D" uid="uid://n4fg4on6xo6f" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0004.png" id="9_y8l8p"]
-[ext_resource type="Texture2D" uid="uid://coqxi4pi3fadr" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0005.png" id="10_q6vqc"]
-[ext_resource type="Texture2D" uid="uid://c8papk51mxa54" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0006.png" id="11_4tcfs"]
-[ext_resource type="Texture2D" uid="uid://jxfi475epduf" path="res://Assets/Art/Weapons/Basic Cube/Animations/Hit/frame0007.png" id="12_d5osd"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="14_t7orl"]
-[ext_resource type="Texture2D" uid="uid://c8ul4mta8vnus" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active.png" id="15_ipv1m"]
 [ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="16_7fx7j"]
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="17_fa4v4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
+friction = 0.0
 bounce = 1.0
 
 [sub_resource type="Curve" id="Curve_8q1de"]
@@ -39,78 +30,40 @@ width = 100
 radius = 25.531916
 height = 121.98582
 
-[sub_resource type="Animation" id="Animation_eov6p"]
-resource_name = "Hit"
-length = 0.65
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Origin/ActivatedSprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5, 0.56666666, 0.6333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("15_ipv1m"), ExtResource("6_ny4m2"), ExtResource("7_8fkbm"), ExtResource("8_u4q3h"), ExtResource("9_y8l8p"), ExtResource("10_q6vqc"), ExtResource("11_4tcfs"), ExtResource("12_d5osd"), ExtResource("5_d6nhb")]
-}
-
-[sub_resource type="Animation" id="Animation_iqdjm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Origin/ActivatedSprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("15_ipv1m")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmfvw"]
-_data = {
-&"Hit": SubResource("Animation_eov6p"),
-&"RESET": SubResource("Animation_iqdjm")
-}
-
 [node name="DvdLogoWeapon" type="RigidBody2D" unique_id=1251268979]
 y_sort_enabled = true
 collision_layer = 8
 collision_mask = 15
 mass = 6.0
 physics_material_override = SubResource("PhysicsMaterial_x6q4i")
+lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_o76kj")
 damage = 2.0
 activation_max = 5.0
 
+[node name="DvdLogoMovement" type="Node" parent="." unique_id=1541634742]
+script = ExtResource("2_foye2")
+
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]
 y_sort_enabled = true
 script = ExtResource("2_o76kj")
 
-[node name="ShadowOrigin" type="Node2D" parent="Origin" unique_id=1287599867]
-script = ExtResource("2_vkmvh")
+[node name="Node2D" type="Node2D" parent="Origin" unique_id=2084801298]
 
-[node name="Shadow" parent="Origin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_4bis6")]
-unique_name_in_owner = true
-position = Vector2(0, 27.554012)
-
-[node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
+[node name="NormalSprite" type="Sprite2D" parent="Origin/Node2D" unique_id=1895854747]
 unique_name_in_owner = true
 y_sort_enabled = true
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_gxgwt")
 
-[node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=822499435]
+[node name="ActivatedSprite" type="Sprite2D" parent="Origin/Node2D" unique_id=822499435]
 unique_name_in_owner = true
 self_modulate = Color(1, 0.8000001, 0, 1)
 y_sort_enabled = true
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("15_ipv1m")
+texture = ExtResource("4_gxgwt")
 
 [node name="Trail2D" type="Line2D" parent="." unique_id=1395042242]
 z_index = -1
@@ -131,9 +84,6 @@ shape = SubResource("CapsuleShape2D_o76kj")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
 radius = 20.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294832071]
-libraries/ = SubResource("AnimationLibrary_rmfvw")
 
 [node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1810944046]
 stream = ExtResource("16_7fx7j")

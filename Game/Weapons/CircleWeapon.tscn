@@ -1,26 +1,92 @@
 [gd_scene format=3 uid="uid://b2aqwrj35lr50"]
 
-[ext_resource type="PackedScene" uid="uid://cbt0babfbxfde" path="res://Game/Weapons/CubeWeapon.tscn" id="1_m07e8"]
-[ext_resource type="Texture2D" uid="uid://cvv4vtbf4683p" path="res://Assets/ProgrammerArt/ProgrammerArt__WeaponCircleActivated.png" id="2_j2afy"]
-[ext_resource type="Script" uid="uid://sh4xnpquev2s" path="res://Game/Items/ItemResource.gd" id="3_38vbf"]
-[ext_resource type="Texture2D" uid="uid://b7uufd58dxmpj" path="res://Assets/ProgrammerArt/ProgrammerArt__WeaponCircle.png" id="4_htisi"]
-[ext_resource type="Script" uid="uid://bvtjy2mkl872g" path="res://Game/Weapons/WeaponResource.gd" id="5_a6uwo"]
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_1behd"]
+[ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_r468g"]
+[ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_6twxi"]
+[ext_resource type="Texture2D" uid="uid://cyoh6d0gx735c" path="res://Assets/ProgrammerArt/ProgrammerArt__WeaponCircle.png" id="4_htisi"]
+[ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="6_fxuuq"]
+[ext_resource type="AudioStream" uid="uid://m7d22msqlpp8" path="res://Assets/Sound Effects/Cube Hit/Weapon Hit.wav" id="15_n7rt8"]
+[ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="16_xtiij"]
 
-[sub_resource type="Resource" id="Resource_6lxqi"]
-script = ExtResource("5_a6uwo")
-normal_texture = ExtResource("4_htisi")
-activated_texture = ExtResource("2_j2afy")
-name = "Cube Weapon"
-metadata/_custom_type_script = "uid://bvtjy2mkl872g"
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
+bounce = 1.0
 
-[node name="WeaponCircle" unique_id=1251268979 instance=ExtResource("1_m07e8")]
-resource = SubResource("Resource_6lxqi")
+[sub_resource type="Curve" id="Curve_8q1de"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[node name="NormalSprite" parent="Origin" parent_id_path=PackedInt32Array(1399568225) index="1" unique_id=1895854747]
+[sub_resource type="Gradient" id="Gradient_ueyrc"]
+colors = PackedColorArray(1, 0.42914, 0.32646862, 1, 1, 1, 1, 0.7019608)
+
+[sub_resource type="Gradient" id="Gradient_5pe0l"]
+colors = PackedColorArray(1, 0, 0, 0.5058824, 1, 1, 1, 0.29411766)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jet8k"]
+gradient = SubResource("Gradient_5pe0l")
+width = 100
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38vbf"]
+radius = 29.078014
+
+[node name="WeaponCircle" type="RigidBody2D" unique_id=1251268979]
+y_sort_enabled = true
+collision_layer = 8
+collision_mask = 15
+mass = 6.0
+physics_material_override = SubResource("PhysicsMaterial_x6q4i")
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_1behd")
+damage = 2.0
+activation_max = 5.0
+
+[node name="Origin" type="Node2D" parent="." unique_id=1399568225]
+y_sort_enabled = true
+
+[node name="ShadowOrigin" type="Node2D" parent="Origin" unique_id=1287599867]
+script = ExtResource("2_r468g")
+
+[node name="Shadow" parent="Origin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_6twxi")]
+unique_name_in_owner = true
+position = Vector2(0, 38)
+
+[node name="NormalSprite" type="Sprite2D" parent="Origin" unique_id=1895854747]
+unique_name_in_owner = true
+y_sort_enabled = true
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_htisi")
 
-[node name="ActivatedSprite" parent="Origin" parent_id_path=PackedInt32Array(1399568225) index="2" unique_id=1708969596]
-texture = ExtResource("2_j2afy")
+[node name="ActivatedSprite" type="Sprite2D" parent="Origin" unique_id=501149996]
+unique_name_in_owner = true
+modulate = Color(0.95000005, 1, 0, 1)
+y_sort_enabled = true
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_htisi")
 
-[node name="CollisionShape2D" parent="." index="2" unique_id=1915139529]
-visible = false
+[node name="Trail2D" type="Line2D" parent="." unique_id=1395042242]
+z_index = -1
+width = 45.0
+width_curve = SubResource("Curve_8q1de")
+default_color = Color(1, 0.4509804, 0.38431373, 0.09411765)
+gradient = SubResource("Gradient_ueyrc")
+texture = SubResource("GradientTexture2D_jet8k")
+texture_mode = 1
+script = ExtResource("6_fxuuq")
+length = 20
+metadata/_custom_type_script = "uid://onfsof0qcqtj"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915139529]
+scale = Vector2(1.41, 1.41)
+shape = SubResource("CircleShape2D_38vbf")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
+radius = 20.0
+
+[node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1810944046]
+stream = ExtResource("15_n7rt8")
+volume_db = -10.0
+pitch_scale = 1.2
+bus = &"Sound Effects"
+
+[node name="BasicHit" type="AudioStreamPlayer" parent="." unique_id=674658053]
+stream = ExtResource("16_xtiij")
