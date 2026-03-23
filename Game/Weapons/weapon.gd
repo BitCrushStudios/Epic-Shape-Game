@@ -28,11 +28,18 @@ func _entered_hurtbox(node:Node):
 		node.take_damage(damage + linear_velocity.length() * speed_damage_mult)
 		var r = 1-(mass/(node.mass + mass))
 		var f =  + node.linear_velocity.length()
-		apply_central_impulse(node.global_position.direction_to(global_position)*linear_velocity.length()*r*(node.mass))
+		#apply_central_impulse(node.global_position.direction_to(global_position)*linear_velocity.length()*r*(node.mass))
 	
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
+	var weaponManager:WeaponsManager = get_parent() 
+	if weaponManager:
+		var player = (weaponManager.get_parent() as GameMain).player
+		if player and Input.is_action_pressed("alt_fire"):
+			var desired =(player.global_position - global_position).limit_length(500.0)/250.0 * 10_000.0 * mass
+			apply_central_force(desired - linear_velocity)
+		
 	$NavigationObstacle2D.velocity = linear_velocity
 	if (linear_velocity.length()/300.0+absf(angular_velocity)/20.0)>1:
 		activation_value=clampf(activation_value+_delta,0,activation_max)
