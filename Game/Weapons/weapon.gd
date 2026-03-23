@@ -25,16 +25,10 @@ func _entered_hurtbox(node:Node):
 	if state != State.Activated:
 		return
 	if node is Enemy:
-		var g1 = global_position
-		var g2 = node.global_position
-		var c = (g1 + g2)/2.0
-		var d1 = (g1 - g2).normalized()
-		var d2 = -d1
 		node.take_damage(damage + linear_velocity.length() * speed_damage_mult)
-		var other_velocity = node.linear_velocity
-		apply_impulse(d1.project(linear_velocity) , c)
-		node.apply_impulse(d2.project(other_velocity) , c)
-
+		var r = 1-(mass/(node.mass + mass))
+		var f =  + node.linear_velocity.length()
+		apply_central_impulse(node.global_position.direction_to(global_position)*linear_velocity.length()*r*(node.mass))
 	
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():

@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://bfa7dg3tg535k" path="res://Assets/Sound Effects/Pop.wav" id="16_xtiij"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6q4i"]
-bounce = 1.0
 
 [sub_resource type="Curve" id="Curve_8q1de"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9947781, 0), 0.0, 0.0, 0, 0]
@@ -31,7 +30,7 @@ radius = 29.078014
 [node name="WeaponCircle" type="RigidBody2D" unique_id=1251268979]
 y_sort_enabled = true
 collision_layer = 8
-collision_mask = 15
+collision_mask = 11
 mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
