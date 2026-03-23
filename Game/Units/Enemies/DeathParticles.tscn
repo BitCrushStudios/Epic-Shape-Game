@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b010pf6ffj3tl"]
 
-[ext_resource type="Texture2D" uid="uid://bihvhfy2na4xg" path="res://Assets/Art/Particles/Spawn Particle.png" id="1_4bfsk"]
+[ext_resource type="Texture2D" uid="uid://bihvhfy2na4xg" path="res://Assets/Art/Particles/Enemies/Spawn Particle.png" id="1_4bfsk"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="2_lqxq2"]
 
 [sub_resource type="Curve" id="Curve_njj2x"]

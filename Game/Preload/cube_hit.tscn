@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ci4vvgqkeex5n"]
 
-[ext_resource type="Texture2D" uid="uid://dpbcknsq5kbj3" path="res://Assets/Art/Particles/Shard particle.png" id="1_f37ka"]
+[ext_resource type="Texture2D" uid="uid://dpbcknsq5kbj3" path="res://Assets/Art/Particles/Weapons/Shard particle.png" id="1_f37ka"]
 
 [sub_resource type="Curve" id="Curve_reswv"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13380283, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.19101131), 0.0, 0.0, 0, 0]
