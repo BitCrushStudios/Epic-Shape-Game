@@ -33,7 +33,7 @@ height = 121.98582
 [node name="DvdLogoWeapon" type="RigidBody2D" unique_id=1251268979]
 y_sort_enabled = true
 collision_layer = 8
-collision_mask = 15
+collision_mask = 11
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 lock_rotation = true
@@ -83,7 +83,7 @@ scale = Vector2(1.41, 1.41)
 shape = SubResource("CapsuleShape2D_o76kj")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
-radius = 20.0
+radius = 98.03
 
 [node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1810944046]
 stream = ExtResource("16_7fx7j")

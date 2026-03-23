@@ -80,7 +80,7 @@ scale = Vector2(1.41, 1.41)
 shape = SubResource("CircleShape2D_38vbf")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=284832773]
-radius = 20.0
+radius = 52.14
 
 [node name="EnemyHit" type="AudioStreamPlayer" parent="." unique_id=1810944046]
 stream = ExtResource("15_n7rt8")
