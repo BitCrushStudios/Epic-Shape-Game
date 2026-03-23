@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbt0babfbxfde"]
 
-[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_x6q4i"]
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/Weapon.gd" id="1_x6q4i"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_r617p"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_rdb24"]
 [ext_resource type="Texture2D" uid="uid://bhxm500gx7or4" path="res://Assets/Art/Weapons/Basic Cube/Basic Cube Weapon Active!.png" id="4_6u5qs"]

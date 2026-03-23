@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cunk1470cwuhe"]
 
-[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_vyif0"]
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/Weapon.gd" id="1_vyif0"]
 [ext_resource type="Texture2D" uid="uid://beoc88dltqqp8" path="res://Assets/Art/Weapons/Golf Ball/GolfBallFire.png" id="2_ac4bj"]
 [ext_resource type="Texture2D" uid="uid://bl18eu3hy061e" path="res://Assets/Art/Weapons/Golf Ball/GolfBall.png" id="4_qlfap"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="6_usxxg"]

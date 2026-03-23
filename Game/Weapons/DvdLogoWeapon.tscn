@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b24hq1w27cynw"]
 
-[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_o76kj"]
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/Weapon.gd" id="1_o76kj"]
 [ext_resource type="Script" uid="uid://3iw4rixu2fg2" path="res://Game/Weapons/dvd_logo_movement.gd" id="2_foye2"]
 [ext_resource type="Script" uid="uid://7ycqd3p1ul76" path="res://Game/Weapons/RotateWithVelocity.gd" id="2_o76kj"]
 [ext_resource type="Texture2D" uid="uid://b6qiyx4520m0n" path="res://Assets/Art/Weapons/Dvd Logo/Dvd Logo.png" id="4_gxgwt"]

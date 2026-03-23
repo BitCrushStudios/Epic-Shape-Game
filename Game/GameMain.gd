@@ -142,11 +142,6 @@ func _process(delta: float) -> void:
 			player.resource.stat_size -= 1
 		if Input.is_action_just_pressed("dev_player_die"):
 			player.resource.deplete_health()
-	if weaponsManager:
-		if Input.is_action_just_pressed("dev_weapon_count_up"):
-			weaponsManager.dev_add_weapon()
-		if Input.is_action_just_pressed("dev_weapon_count_down"):
-			weaponsManager.dev_remove_weapon()
 	
 	if Input.is_action_just_pressed("dev_player_respawn"):
 		if player:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://s63vso0w17h8"]
 
-[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/weapon.gd" id="1_x7nyb"]
+[ext_resource type="Script" uid="uid://blfgxaystxv8n" path="res://Game/Weapons/Weapon.gd" id="1_x7nyb"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="2_x7nyb"]
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="3_ugcor"]
 [ext_resource type="Script" uid="uid://onfsof0qcqtj" path="res://addons/trail_2d/trail_2d.gd" id="5_mmxj4"]
