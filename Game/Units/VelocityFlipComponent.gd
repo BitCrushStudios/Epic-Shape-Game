@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	if direction != node.scale.x and tween:
 		tween.stop()
 		tween = null
-	direction = 1 if body.linear_velocity.x<0 else -1
+	direction = 1 if body.linear_velocity.x>=0 else -1
 	if direction!=node.scale.x:
 		tween = create_tween()
 		tween.tween_property(node,"scale", Vector2(direction, 1), 0.05)

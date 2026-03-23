@@ -233,10 +233,6 @@ script = ExtResource("3_bccpk")
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=542101971]
 y_sort_enabled = true
 
-[node name="VelocityFlipComponent" type="Node" parent="SpriteOrigin" unique_id=953660155 node_paths=PackedStringArray("body")]
-script = ExtResource("4_y56ig")
-body = NodePath("../..")
-
 [node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=1106378316]
 script = ExtResource("3_hu5f4")
 
@@ -244,7 +240,9 @@ script = ExtResource("3_hu5f4")
 position = Vector2(0, 22)
 scale = Vector2(0.7, 0.7)
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=2057410270]
+[node name="Node2D" type="Node2D" parent="SpriteOrigin" unique_id=1262630541]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin/Node2D" unique_id=2057410270]
 unique_name_in_owner = true
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_y56ig")
@@ -255,16 +253,20 @@ autoplay = "default"
 frame_progress = 0.2224027
 speed_scale = 2.0
 
-[node name="Death" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=2135288138]
+[node name="Death" type="AnimatedSprite2D" parent="SpriteOrigin/Node2D" unique_id=2135288138]
 visible = false
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_ii70o")
 animation = &"Death"
 autoplay = "Death"
 
+[node name="VelocityFlipComponent" type="Node" parent="SpriteOrigin/Node2D" unique_id=953660155 node_paths=PackedStringArray("body")]
+script = ExtResource("4_y56ig")
+body = NodePath("../../..")
+
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=2112371104]
 unique_name_in_owner = true
-root_node = NodePath("../SpriteOrigin/Sprite2D")
+root_node = NodePath("../SpriteOrigin/Node2D/Sprite2D")
 libraries/ = SubResource("AnimationLibrary_u3lwl")
 playback_default_blend_time = 0.2
 

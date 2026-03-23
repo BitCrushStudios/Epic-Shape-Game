@@ -139,17 +139,15 @@ time_rate = 10.0
 
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=1373824456]
 
-[node name="VelocityFlipComponent" type="Node" parent="SpriteOrigin" unique_id=474895576 node_paths=PackedStringArray("body")]
-script = ExtResource("3_7yhbt")
-body = NodePath("../..")
-
 [node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=2067394731]
 script = ExtResource("3_aljkd")
 
 [node name="Shadow" parent="SpriteOrigin/ShadowOrigin" unique_id=29450177 instance=ExtResource("3_15di7")]
 position = Vector2(0, 47)
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin" unique_id=2138081243]
+[node name="Node2D" type="Node2D" parent="SpriteOrigin" unique_id=1641074826]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="SpriteOrigin/Node2D" unique_id=2138081243]
 unique_name_in_owner = true
 position = Vector2(2.9999998, 10)
 scale = Vector2(0.7, 0.7)
@@ -158,9 +156,13 @@ autoplay = "default"
 frame_progress = 0.12883197
 offset = Vector2(-6.875, 0)
 
+[node name="VelocityFlipComponent" type="Node" parent="SpriteOrigin/Node2D" unique_id=474895576 node_paths=PackedStringArray("body")]
+script = ExtResource("3_7yhbt")
+body = NodePath("../../..")
+
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=1503840458]
 unique_name_in_owner = true
-root_node = NodePath("../SpriteOrigin/Sprite2D")
+root_node = NodePath("../SpriteOrigin/Node2D/Sprite2D")
 libraries/ = SubResource("AnimationLibrary_1btlr")
 playback_default_blend_time = 0.2
 
