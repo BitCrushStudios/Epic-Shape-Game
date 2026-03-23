@@ -41,10 +41,10 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wylef"]
-radius = 35.014282
+radius = 68.06615
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pvrta"]
-radius = 54.00926
+radius = 90.0944
 
 [node name="BigRed" type="RigidBody2D" unique_id=1618506388 node_paths=PackedStringArray("agent")]
 contact_monitor = true
@@ -78,6 +78,7 @@ script = ExtResource("3_q4jc5")
 material = SubResource("ShaderMaterial_q4jc5")
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_8urup")
+offset = Vector2(0, 0.695)
 
 [node name="BronzeCrown" type="Sprite2D" parent="SpriteOrigin/Node2D/Sprite2D" unique_id=1620539478]
 position = Vector2(-3.7499995, -113.75)

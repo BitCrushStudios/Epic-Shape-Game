@@ -37,7 +37,7 @@ physics_material_override = SubResource("PhysicsMaterial_x6q4i")
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_1behd")
-damage = 2.0
+damage = 0.5
 activation_max = 5.0
 
 [node name="Origin" type="Node2D" parent="." unique_id=1399568225]

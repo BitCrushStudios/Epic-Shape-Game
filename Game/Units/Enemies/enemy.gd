@@ -72,7 +72,7 @@ func spawn_coins():
 		var gp:GoldPiece = preload("res://Game/Gold/GoldPiece.tscn").instantiate()
 		get_tree().current_scene.add_child(gp)
 		gp.global_position = global_position
-		gp.apply_central_impulse((Vector2.RIGHT*300.0).rotated(TAU*randf()))
+		gp.apply_central_impulse((Vector2.RIGHT*300.0*gp.mass).rotated(TAU*randf()))
 		await get_tree().process_frame
 		
 func _health_depleted():
