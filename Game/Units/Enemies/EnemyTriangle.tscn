@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://mf1q4gswoide" path="res://Common/Shadow/shadow.tscn" id="2_llcvg"]
 [ext_resource type="Script" uid="uid://c7cd1fhqdne4w" path="res://Game/Units/Enemies/EnemyController.gd" id="3_bccpk"]
 [ext_resource type="Script" uid="uid://cttwelxyjmy3j" path="res://Game/Units/ShadowOrigin.gd" id="3_hu5f4"]
+[ext_resource type="Script" uid="uid://cn8qo6qxyke4d" path="res://Game/Units/VelocityFlipComponent.gd" id="4_y56ig"]
 [ext_resource type="Texture2D" uid="uid://bcdq1bui4fm5t" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0000.png" id="5_fnvyr"]
 [ext_resource type="Texture2D" uid="uid://3agonshy8dmu" path="res://Assets/Art/Enemies/BasicTriangle/Animation 1/frame0001.png" id="6_kycqo"]
 [ext_resource type="Shader" uid="uid://dmgy8dm7vpbus" path="res://Game/Units/Enemies/EnemyTank.gdshader" id="6_t2gew"]
@@ -231,6 +232,10 @@ script = ExtResource("3_bccpk")
 
 [node name="SpriteOrigin" type="Node2D" parent="." unique_id=542101971]
 y_sort_enabled = true
+
+[node name="VelocityFlipComponent" type="Node" parent="SpriteOrigin" unique_id=953660155 node_paths=PackedStringArray("body")]
+script = ExtResource("4_y56ig")
+body = NodePath("../..")
 
 [node name="ShadowOrigin" type="Node2D" parent="SpriteOrigin" unique_id=1106378316]
 script = ExtResource("3_hu5f4")
