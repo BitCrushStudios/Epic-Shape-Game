@@ -2,6 +2,7 @@
 extends RigidBody2D
 class_name Enemy
 
+const DAMAGE_NUMBERS = preload("uid://b2a84cjx7ykkw")
 
 
 var iframe = 0.0
@@ -33,6 +34,7 @@ func take_damage(damage:float):
 func _ready():
 	z_index = 0
 	took_damage.connect(_recieved_damage)
+	
 	health_depleted.connect(_health_depleted)
 	entered_hurtbox.connect(_entered_hurtbox)
 	assert(max_contacts_reported==5)
@@ -64,6 +66,11 @@ func _physics_process(_delta: float) -> void:
 func _recieved_damage(_damage:float):
 	%Animation.play("damage")
 	_particle_create(preload("./DamageParticles.tscn").instantiate())
+	var damage_numbers:DamageNumbers = DAMAGE_NUMBERS.instantiate()
+	damage_numbers.damage_value = damage
+	damage_numbers.color = Color.RED
+	damage_numbers.global_position = global_position
+	get_tree().root.add_child(damage_numbers)
 	
 func spawn_coins():
 	var amount  = randf_range(0,4)
@@ -91,7 +98,12 @@ func _health_depleted():
 	await _particle_create(preload("./DeathParticles.tscn").instantiate())
 	queue_free()
 		
+
+
 	
+
+
+
 func _particle_create(particles:GPUParticles2D):
 	add_child(particles,true,INTERNAL_MODE_FRONT)
 	particles.one_shot = true

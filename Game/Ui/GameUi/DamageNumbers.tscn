@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b2a84cjx7ykkw"]
+
+[ext_resource type="FontFile" uid="uid://3rv7pk32ilcw" path="res://Assets/Fonts/Candy Beans.otf" id="1_i2py3"]
+[ext_resource type="Script" uid="uid://dis1smiw0xyyl" path="res://Game/Ui/GameUi/DamageNumbers.gd" id="2_nwtxk"]
+
+[node name="DamageNumbers" type="Label" unique_id=1435702202]
+offset_left = -33.0
+offset_top = -28.0
+offset_right = 33.0
+offset_bottom = 28.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_i2py3")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_nwtxk")
