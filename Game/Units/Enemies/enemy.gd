@@ -2,7 +2,7 @@
 extends RigidBody2D
 class_name Enemy
 
-const DAMAGE_NUMBERS = preload("uid://b2a84cjx7ykkw")
+const DAMAGE_NUMBERS = preload("res://Game/Ui/GameUi/DamageNumbers.tscn")
 
 
 var iframe = 0.0
@@ -68,7 +68,7 @@ func _recieved_damage(_damage:float):
 	_particle_create(preload("./DamageParticles.tscn").instantiate())
 	var damage_numbers:DamageNumbers = DAMAGE_NUMBERS.instantiate()
 	damage_numbers.damage_value = damage
-	damage_numbers.color = Color.RED
+	damage_numbers.color = Color.WHITE
 	damage_numbers.global_position = global_position
 	get_tree().root.add_child(damage_numbers)
 	
