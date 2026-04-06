@@ -214,7 +214,6 @@ default_font = ExtResource("6_llh7c")
 
 [node name="ShopModal" type="CanvasLayer" unique_id=1049521473]
 process_mode = 3
-visible = false
 script = ExtResource("1_oi6um")
 items = Array[ExtResource("2_saik7")]([null, null, null, null, null])
 
@@ -393,6 +392,21 @@ resource = null
 
 [node name="Control2" type="Control" parent="Control/PanelContainer/Control" unique_id=1723206551]
 layout_mode = 2
+
+[node name="RerollCostLabel" type="Label" parent="Control/PanelContainer/Control/Control2" unique_id=1990335329]
+layout_mode = 0
+offset_left = 136.96173
+offset_top = -91.171234
+offset_right = 383.62842
+offset_bottom = -51.171234
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 30
+text = "$ 10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NavContainer" type="HBoxContainer" parent="Control/PanelContainer/Control/Control2" unique_id=1771758401]
 layout_mode = 1
