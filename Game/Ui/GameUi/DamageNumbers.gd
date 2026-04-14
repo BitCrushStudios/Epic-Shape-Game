@@ -2,7 +2,7 @@ class_name DamageNumbers extends Label
 
 var damage_value:int
 var color:Color = Color(1,1,1,0)
-var wade_out_time:float = 1.0
+var wade_out_time:float = 0.5
 
 func _ready() -> void:
 	text = str(damage_value)
@@ -13,4 +13,4 @@ func _ready() -> void:
 	modulate = color
 	tweener.play()
 	await tweener.finished
-	queue_free()
+	$AnimationPlayer.play("Done")
