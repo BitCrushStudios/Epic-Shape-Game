@@ -36,11 +36,3 @@ Heat seeker - cubes slightly home in on your cursor
 
 
  
-
-
-
-
-
-
-
-

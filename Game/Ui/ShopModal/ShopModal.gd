@@ -4,9 +4,14 @@ class_name ShopModal
 
 signal item_selected(item:ItemResource)
 signal btn_pressed(btn:EquipItemButton)
-@export var animation_player : AnimationPlayer
-
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var accept_button: Button = %AcceptButton
+@onready var money_label: Label = %MoneyLabel
+@onready var reroll_button: Button = %RerollButton
+@onready var reroll_cost_label: Label = $Control/PanelContainer/Control/Control2/RerollCostLabel
+@export var reroll_base_cost:int = 10
+@export var reroll_cost_mulitiplier:float = 0.5
+var reroll_cost:int = reroll_base_cost
 @export var player:Player:
 	set(v):
 		if player and player.resource_changed.is_connected(update_player_ui):
@@ -53,9 +58,10 @@ func _changed():
 			if not buttons[i].disabled and get_parent():
 				var gameMain:GameMain = get_parent()
 				buttons[i].disabled = items[i].item.poll(gameMain)<=0
-	
-	%RerollButton.disabled = money<10
-	%MoneyLabel.text = "$ %d" % money
+	if reroll_button and (money - reroll_cost) >= 0:
+		reroll_button.disabled = money<10
+	if money_label:
+		money_label.text = "$ %d" % money
 	
 func swapEmpty():
 	var available_items = ItemResource.get_available_items()
@@ -75,13 +81,16 @@ func swapEmpty():
 		if vs[i]==null and available_items.size()>0:
 			var Item: GDScript = available_items.pop_at(randi_range(0, available_items.size()-1))
 			var item: ItemResource = Item.new()
-			print(item, Item.poll(get_parent()))
+			#print(item, Item.poll(get_parent()))
 			var shopItem = ShopItemResource.new()
 			shopItem.item = item
 			vs.set(i,shopItem)
 	items = vs
 func setup_ui():
 	items = []
+	reroll_cost_label.text = "$ "+str(reroll_cost)
+	money_label.text = "$ %d" % money
+	reroll_button.disabled = true if  money - reroll_cost < 0 else false
 	swapEmpty()
 
 @export_tool_button("Randomize")
@@ -99,13 +108,14 @@ signal modal_closed()
 func close():
 	modal_closing.emit()
 	await modal_closed
+
 func modal():
 	if OS.has_feature("standalone"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	$AnimationPlayer.play("Fly In")
+	animation_player.play("Fly In")
 	get_tree().paused=true
 	await modal_closing
-	$AnimationPlayer.play("Fly Out")
+	animation_player.play("Fly Out")
 	get_tree().paused=false
 	if OS.has_feature("standalone"):
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
@@ -113,16 +123,27 @@ func modal():
 
 func _ready():
 	setup_ui()
-	%RerollButton.pressed.connect(_reroll)
-	%AcceptButton.pressed.connect(close)
+	reroll_button.pressed.connect(_reroll)
+	accept_button.pressed.connect(close)
 	for btn in get_buttons():
 		btn.item_selected.connect(item_selected.emit)
 	item_selected.connect(_item_selected)
 	if get_tree().current_scene == self:
 		await modal()
+
 func _reroll():
-	money -= 10
-	setup_ui()
+	if money - reroll_cost >= 0:
+		money -= reroll_cost
+		player.resource.money -= reroll_cost
+		_increase_reroll_cost()
+		setup_ui()
+
+func _increase_reroll_cost()->void:
+	reroll_cost += roundi(reroll_base_cost * reroll_cost_mulitiplier)
+
+func reset_reroll_cost()->void:
+	reroll_cost = reroll_base_cost
+
 func _item_selected(shopItem:ShopItemResource):
 	if get_parent():
 		shopItem.item.apply(get_parent())
